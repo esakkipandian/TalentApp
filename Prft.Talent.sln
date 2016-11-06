@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Persistence", "4-Persistence", "{A97F100C-3236-40BE-AF14-EA63CDCEA02E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prft.Talent.Data", "4-Persistence\Prft.Talent.Data\Prft.Talent.Data.csproj", "{45FEE82D-AD08-4A9F-82E5-F1AC924AAF63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Application", "2-Application", "{BA03609B-6545-40EE-98D4-5FFF7361540F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prft.Talent.WebApi", "2-Application\Prft.Talent.WebApi\Prft.Talent.WebApi.csproj", "{B1D8912E-2D40-4CFC-AC26-B477BCC99FD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prft.Talent.Services", "2-Application\Prft.Talent.Services\Prft.Talent.Services.csproj", "{7C3D85FD-194A-4F5F-AB81-E93D94336A29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Core", "1-Core", "{1FB990F2-DD36-447D-93DC-559BE236A36D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prft.Talent.Framework", "1-Core\Prft.Talent.Framework\Prft.Talent.Framework.csproj", "{89AD5F8C-F855-4353-9E3E-376E59BA9B9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prft.Talent.Data.Repositories", "4-Persistence\Prft.Talent.Data.Repositories\Prft.Talent.Data.Repositories.csproj", "{3FCE69ED-F6D8-4BFE-B2A1-18982F598F38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{F9CC3BE0-4292-4359-814C-72AA14ADAD64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Test", "5-Test", "{A342D837-E8F4-4371-AC9E-074B8116E2E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6-Libs", "6-Libs", "{FA66763B-7B92-49D0-BE6A-6A03B55ED524}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MySql", "MySql", "{E28BC313-8ED1-4569-8159-F0590AFDFAFE}"
+	ProjectSection(SolutionItems) = preProject
+		6-Libs\MySql\MySql.Data.dll = 6-Libs\MySql\MySql.Data.dll
+		6-Libs\MySql\MySql.Data.Entity.EF6.dll = 6-Libs\MySql\MySql.Data.Entity.EF6.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45FEE82D-AD08-4A9F-82E5-F1AC924AAF63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45FEE82D-AD08-4A9F-82E5-F1AC924AAF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45FEE82D-AD08-4A9F-82E5-F1AC924AAF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45FEE82D-AD08-4A9F-82E5-F1AC924AAF63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1D8912E-2D40-4CFC-AC26-B477BCC99FD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1D8912E-2D40-4CFC-AC26-B477BCC99FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1D8912E-2D40-4CFC-AC26-B477BCC99FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1D8912E-2D40-4CFC-AC26-B477BCC99FD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C3D85FD-194A-4F5F-AB81-E93D94336A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C3D85FD-194A-4F5F-AB81-E93D94336A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C3D85FD-194A-4F5F-AB81-E93D94336A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C3D85FD-194A-4F5F-AB81-E93D94336A29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89AD5F8C-F855-4353-9E3E-376E59BA9B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89AD5F8C-F855-4353-9E3E-376E59BA9B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89AD5F8C-F855-4353-9E3E-376E59BA9B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89AD5F8C-F855-4353-9E3E-376E59BA9B9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FCE69ED-F6D8-4BFE-B2A1-18982F598F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FCE69ED-F6D8-4BFE-B2A1-18982F598F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FCE69ED-F6D8-4BFE-B2A1-18982F598F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FCE69ED-F6D8-4BFE-B2A1-18982F598F38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45FEE82D-AD08-4A9F-82E5-F1AC924AAF63} = {A97F100C-3236-40BE-AF14-EA63CDCEA02E}
+		{B1D8912E-2D40-4CFC-AC26-B477BCC99FD8} = {BA03609B-6545-40EE-98D4-5FFF7361540F}
+		{7C3D85FD-194A-4F5F-AB81-E93D94336A29} = {BA03609B-6545-40EE-98D4-5FFF7361540F}
+		{89AD5F8C-F855-4353-9E3E-376E59BA9B9E} = {1FB990F2-DD36-447D-93DC-559BE236A36D}
+		{3FCE69ED-F6D8-4BFE-B2A1-18982F598F38} = {A97F100C-3236-40BE-AF14-EA63CDCEA02E}
+		{E28BC313-8ED1-4569-8159-F0590AFDFAFE} = {FA66763B-7B92-49D0-BE6A-6A03B55ED524}
+	EndGlobalSection
+EndGlobal
