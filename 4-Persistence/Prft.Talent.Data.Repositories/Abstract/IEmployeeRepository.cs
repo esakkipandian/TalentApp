@@ -1,4 +1,5 @@
 ﻿using Prft.Talent.Data.Entities;
+using Prft.Talent.Domain.Talent;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Prft.Talent.Data.Repositories.Abstract
 {
     public interface IEmployeeRepository : IRepository
     {
-        IQueryable<employee> GetEmployees();
+        IEnumerable<Employee> GetEmployees();
     }
 }

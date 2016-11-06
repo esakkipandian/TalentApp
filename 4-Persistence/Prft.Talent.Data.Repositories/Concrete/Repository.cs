@@ -1,4 +1,5 @@
-﻿using Prft.Talent.Data.Repositories.Abstract;
+﻿using AutoMapper;
+using Prft.Talent.Data.Repositories.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,12 @@ namespace Prft.Talent.Data.Repositories.Concrete
     public abstract class Repository : IRepository
     {
         protected readonly PrftTalentDatabaseContext DatabaseContext;
+        protected readonly IMapper Mapper;
 
-        //public Repository(RepositoryDependencies dependencies)
-        //{
-        //    DatabaseContext = dependencies.DatabaseContext;
-        //}
-        public Repository(PrftTalentDatabaseContext dbContext)
+        public Repository(PrftTalentDatabaseContext dbContext, IMapper mapper)
         {
             DatabaseContext = dbContext;
+            Mapper = mapper;
         }
     }
 }

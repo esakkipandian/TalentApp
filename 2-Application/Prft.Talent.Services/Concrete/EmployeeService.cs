@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Prft.Talent.Data.Entities;
 using Prft.Talent.Data;
 using Prft.Talent.Data.Repositories.Abstract;
+using Prft.Talent.Domain.Talent;
 
 namespace Prft.Talent.Services.Concrete
 {
@@ -19,7 +20,7 @@ namespace Prft.Talent.Services.Concrete
             _employeeRepository = employeeRepository;
         }
 
-        public IEnumerable<employee> GetEmployees()
+        public IEnumerable<Employee> GetEmployees()
         {
             //PrftTalentDatabaseContext context = new PrftTalentDatabaseContext();
 

@@ -103,7 +103,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +121,14 @@
     <ProjectReference Include="..\..\1-Core\Prft.Talent.Framework\Prft.Talent.Framework.csproj">
       <Project>{89ad5f8c-f855-4353-9e3e-376e59ba9b9e}</Project>
       <Name>Prft.Talent.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3-Domain\Prft.Talent.Domain.Mapping\Prft.Talent.Domain.Mapping.csproj">
+      <Project>{29bd8d42-8e88-4b7d-88a4-2a830a631609}</Project>
+      <Name>Prft.Talent.Domain.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3-Domain\Prft.Talent.Domain\Prft.Talent.Domain.csproj">
+      <Project>{d8a9841d-948b-4b8f-99c4-8ce532b7967a}</Project>
+      <Name>Prft.Talent.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\4-Persistence\Prft.Talent.Data\Prft.Talent.Data.csproj">
       <Project>{45fee82d-ad08-4a9f-82e5-f1ac924aaf63}</Project>

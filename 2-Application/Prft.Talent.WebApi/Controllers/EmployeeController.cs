@@ -1,8 +1,8 @@
 ﻿using Prft.Talent.Data;
 using Prft.Talent.Data.Entities;
+using Prft.Talent.Domain.Talent;
 using Prft.Talent.Services.Abstract;
 using Prft.Talent.Services.Concrete;
-using Prft.Talent.WebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,7 @@ namespace Prft.Talent.WebApi.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<employee> Get()
+        public IEnumerable<Employee> Get()
         {
             //var employeeService = new EmployeeService();
             var employees = _employeeService.GetEmployees();

@@ -5,16 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Prft.Talent.Data.Entities;
+using AutoMapper;
+using Prft.Talent.Domain.Talent;
+using AutoMapper.QueryableExtensions;
 
 namespace Prft.Talent.Data.Repositories.Concrete
 {
     public class EmployeeRepository : Repository, IEmployeeRepository
     {
-        public EmployeeRepository(PrftTalentDatabaseContext dbContext) : base(dbContext) { }
+        public EmployeeRepository(PrftTalentDatabaseContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
 
-        public IQueryable<employee> GetEmployees()
+        public IEnumerable<Employee> GetEmployees()
         {
-            return DatabaseContext.employees;
+            return DatabaseContext.employees.ProjectTo<Employee>(Mapper.ConfigurationProvider).ToList();
         }
     }
 }
