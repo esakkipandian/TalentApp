@@ -1,5 +1,4 @@
-﻿using Prft.Talent.Data.Entities;
-using Prft.Talent.Domain.Talent;
+﻿using Prft.Talent.Domain.Talent;
 using System;
 using System.Collections.Generic;
 using System.Linq;

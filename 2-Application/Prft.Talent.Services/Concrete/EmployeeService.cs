@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Prft.Talent.Data.Entities;
 using Prft.Talent.Data;
 using Prft.Talent.Data.Repositories.Abstract;
 using Prft.Talent.Domain.Talent;
@@ -22,8 +21,6 @@ namespace Prft.Talent.Services.Concrete
 
         public IEnumerable<Employee> GetEmployees()
         {
-            //PrftTalentDatabaseContext context = new PrftTalentDatabaseContext();
-
             return _employeeRepository.GetEmployees().ToList();
         }
     }

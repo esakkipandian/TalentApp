@@ -130,10 +130,6 @@
       <Project>{d8a9841d-948b-4b8f-99c4-8ce532b7967a}</Project>
       <Name>Prft.Talent.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\4-Persistence\Prft.Talent.Data\Prft.Talent.Data.csproj">
-      <Project>{45fee82d-ad08-4a9f-82e5-f1ac924aaf63}</Project>
-      <Name>Prft.Talent.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Prft.Talent.Services\Prft.Talent.Services.csproj">
       <Project>{7c3d85fd-194a-4f5f-ab81-e93d94336a29}</Project>
       <Name>Prft.Talent.Services</Name>

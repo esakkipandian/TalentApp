@@ -1,6 +1,4 @@
-﻿using Prft.Talent.Data;
-using Prft.Talent.Data.Entities;
-using Prft.Talent.Domain.Talent;
+﻿using Prft.Talent.Domain.Talent;
 using Prft.Talent.Services.Abstract;
 using Prft.Talent.Services.Concrete;
 using System;

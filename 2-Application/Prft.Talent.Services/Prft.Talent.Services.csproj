@@ -56,10 +56,6 @@
       <Project>{3fce69ed-f6d8-4bfe-b2a1-18982f598f38}</Project>
       <Name>Prft.Talent.Data.Repositories</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\4-Persistence\Prft.Talent.Data\Prft.Talent.Data.csproj">
-      <Project>{45fee82d-ad08-4a9f-82e5-f1ac924aaf63}</Project>
-      <Name>Prft.Talent.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
