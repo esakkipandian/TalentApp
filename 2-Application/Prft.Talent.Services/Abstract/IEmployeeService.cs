@@ -9,6 +9,6 @@ namespace Prft.Talent.Services.Abstract
 {
     public interface IEmployeeService : IApi
     {
-        IEnumerable<Employee> GetEmployees();
+        Task<IEnumerable<Employee>> GetEmployeesAsync();
     }
 }

@@ -8,6 +8,7 @@ using Prft.Talent.Data.Entities;
 using AutoMapper;
 using Prft.Talent.Domain.Talent;
 using AutoMapper.QueryableExtensions;
+using System.Data.Entity;
 
 namespace Prft.Talent.Data.Repositories.Concrete
 {
@@ -15,9 +16,9 @@ namespace Prft.Talent.Data.Repositories.Concrete
     {
         public EmployeeRepository(PrftTalentDatabaseContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
 
-        public IEnumerable<Employee> GetEmployees()
+        public async Task<IEnumerable<Employee>> GetEmployeesAsync()
         {
-            return DatabaseContext.employees.ProjectTo<Employee>(Mapper.ConfigurationProvider).ToList();
+            return await DatabaseContext.employees.ProjectTo<Employee>(Mapper.ConfigurationProvider).ToListAsync();
         }
     }
 }

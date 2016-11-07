@@ -10,6 +10,6 @@ namespace Prft.Talent.Data.Repositories.Abstract
 {
     public interface IEmployeeRepository : IRepository
     {
-        IEnumerable<Employee> GetEmployees();
+        Task<IEnumerable<Employee>> GetEmployeesAsync();
     }
 }

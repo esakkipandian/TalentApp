@@ -19,9 +19,9 @@ namespace Prft.Talent.Services.Concrete
             _employeeRepository = employeeRepository;
         }
 
-        public IEnumerable<Employee> GetEmployees()
+        public async Task<IEnumerable<Employee>> GetEmployeesAsync()
         {
-            return _employeeRepository.GetEmployees().ToList();
+            return  await _employeeRepository.GetEmployeesAsync();
         }
     }
 }

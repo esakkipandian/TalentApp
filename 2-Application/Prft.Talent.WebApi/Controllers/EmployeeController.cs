@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Prft.Talent.WebApi.Controllers
@@ -20,10 +21,10 @@ namespace Prft.Talent.WebApi.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<Employee> Get()
+        public async Task<IEnumerable<Employee>> Get()
         {
             //var employeeService = new EmployeeService();
-            var employees = _employeeService.GetEmployees();
+            var employees = await _employeeService.GetEmployeesAsync();
             return employees;
         }
 
