@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prft.Talent.Domain", "3-Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prft.Talent.Domain.Mapping", "3-Domain\Prft.Talent.Domain.Mapping\Prft.Talent.Domain.Mapping.csproj", "{29BD8D42-8E88-4B7D-88A4-2A830A631609}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prft.Talent.Resources", "1-Core\Prft.Talent.Resources\Prft.Talent.Resources.csproj", "{EE904DA0-0AFD-4135-8DAF-9FEDAAAEFA78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{29BD8D42-8E88-4B7D-88A4-2A830A631609}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29BD8D42-8E88-4B7D-88A4-2A830A631609}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29BD8D42-8E88-4B7D-88A4-2A830A631609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE904DA0-0AFD-4135-8DAF-9FEDAAAEFA78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE904DA0-0AFD-4135-8DAF-9FEDAAAEFA78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE904DA0-0AFD-4135-8DAF-9FEDAAAEFA78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE904DA0-0AFD-4135-8DAF-9FEDAAAEFA78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,5 +88,6 @@ Global
 		{E28BC313-8ED1-4569-8159-F0590AFDFAFE} = {FA66763B-7B92-49D0-BE6A-6A03B55ED524}
 		{D8A9841D-948B-4B8F-99C4-8CE532B7967A} = {F9CC3BE0-4292-4359-814C-72AA14ADAD64}
 		{29BD8D42-8E88-4B7D-88A4-2A830A631609} = {F9CC3BE0-4292-4359-814C-72AA14ADAD64}
+		{EE904DA0-0AFD-4135-8DAF-9FEDAAAEFA78} = {1FB990F2-DD36-447D-93DC-559BE236A36D}
 	EndGlobalSection
 EndGlobal
