@@ -53,6 +53,7 @@
     <Content Include="gruntfile.js" />
     <Content Include="home.html" />
     <Content Include="html\dashboard1.html" />
+    <Content Include="html\employee.html" />
     <Content Include="html\interview.html" />
     <Content Include="html\templates\panelTemplate.html" />
     <Content Include="images\bg.jpg" />
@@ -84,6 +85,7 @@
     <Content Include="images\sort_desc.png" />
     <Content Include="images\user.jpg" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\controller\employeeController.js" />
     <Content Include="scripts\controller\interviewController.js" />
     <Content Include="scripts\hash\md5.js" />
     <Content Include="scripts\hash\sha512.js" />
