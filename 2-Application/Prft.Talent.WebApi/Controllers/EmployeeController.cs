@@ -1,5 +1,7 @@
 ﻿using Prft.Talent.Domain.Talent;
+using Prft.Talent.Services;
 using Prft.Talent.Services.Abstract;
+using Prft.Talent.Services.Api;
 using Prft.Talent.Services.Concrete;
 using System;
 using System.Collections.Generic;
@@ -21,7 +23,7 @@ namespace Prft.Talent.WebApi.Controllers
         }
 
         // GET api/<controller>
-        public async Task<IEnumerable<Employee>> Get()
+        public async Task<EmployeeResponse> Get()
         {
             var employees = await _employeeService.GetEmployeesAsync();
             return employees;

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Prft.Talent.Data;
 using Prft.Talent.Data.Repositories.Abstract;
 using Prft.Talent.Domain.Talent;
+using Prft.Talent.Services.Api;
 
 namespace Prft.Talent.Services.Concrete
 {
@@ -19,9 +20,12 @@ namespace Prft.Talent.Services.Concrete
             _employeeRepository = employeeRepository;
         }
 
-        public async Task<IEnumerable<Employee>> GetEmployeesAsync()
+        public async Task<EmployeeResponse> GetEmployeesAsync()
         {
-            return  await _employeeRepository.GetEmployeesAsync();
+            return new EmployeeResponse
+            {
+                Entity = await _employeeRepository.GetEmployeesAsync()
+            };
         }
     }
 }

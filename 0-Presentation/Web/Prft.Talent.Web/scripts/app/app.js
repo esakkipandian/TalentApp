@@ -21,8 +21,8 @@ var mainApp = angular.module("perficientHr",
 	        templateUrl: 'html/dashboard1.html',
 	        controller: ''
 	    })
-	    .when('/employees', {
-	        templateUrl: 'html/employees.html',
+	    .when('/employee', {
+	        templateUrl: 'html/employee.html',
 	        controller: 'employeeController'
 	    })
 	    .when('/profile', {

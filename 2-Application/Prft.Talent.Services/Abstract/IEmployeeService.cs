@@ -1,4 +1,5 @@
 ﻿using Prft.Talent.Domain.Talent;
+using Prft.Talent.Services.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Prft.Talent.Services.Abstract
 {
     public interface IEmployeeService : IApi
     {
-        Task<IEnumerable<Employee>> GetEmployeesAsync();
+        Task<EmployeeResponse> GetEmployeesAsync();
     }
 }
