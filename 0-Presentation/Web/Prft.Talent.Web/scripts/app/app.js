@@ -1,4 +1,4 @@
-var mainApp = angular.module("perficientHr",
+var mainApp = angular.module("prftApp",
         ['ngRoute', 'ngResource', 'ngAnimate', 'ngMessages',
          'mwl.calendar', 'ui.bootstrap', 'nya.bootstrap.select',
          'datatables', 'datatables.bootstrap', 'datatables.buttons', 'datatables.columnfilter',
