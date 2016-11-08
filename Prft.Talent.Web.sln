@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prft.Talent.Web", "Prft.Talent.Web\Prft.Talent.Web.csproj", "{CC361D6A-8E60-4AE1-A63A-C781A6516D40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prft.Talent.Web", "0-Presentation\Web\Prft.Talent.Web\Prft.Talent.Web.csproj", "{CC361D6A-8E60-4AE1-A63A-C781A6516D40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
