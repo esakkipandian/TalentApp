@@ -15,7 +15,7 @@ namespace Prft.Talent.Data.Repositories
         public void Configure(Container container)
         {
             //container.Register<RepositoryDependencies>(Lifestyle.Scoped);
-            container.Register<PrftTalentDatabaseContext>(Lifestyle.Scoped);
+            container.Register<PrftDatabaseContext>(Lifestyle.Scoped);
             RegisterRepositories(container);
         }
 

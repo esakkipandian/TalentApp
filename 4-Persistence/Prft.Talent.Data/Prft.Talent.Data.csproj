@@ -58,7 +58,7 @@
     <Compile Include="Entities\employee.cs" />
     <Compile Include="Entities\TalentContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="PrftTalentDatabaseContext.cs" />
+    <Compile Include="PrftDatabaseContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

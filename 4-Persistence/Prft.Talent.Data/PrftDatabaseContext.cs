@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Prft.Talent.Data
 {
-    public class PrftTalentDatabaseContext : TalentContext, IDisposable
+    public class PrftDatabaseContext : TalentContext, IDisposable
     {
-        public PrftTalentDatabaseContext() : base()
+        public PrftDatabaseContext() : base()
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;

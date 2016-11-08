@@ -23,7 +23,6 @@ namespace Prft.Talent.WebApi.Controllers
         // GET api/<controller>
         public async Task<IEnumerable<Employee>> Get()
         {
-            //var employeeService = new EmployeeService();
             var employees = await _employeeService.GetEmployeesAsync();
             return employees;
         }

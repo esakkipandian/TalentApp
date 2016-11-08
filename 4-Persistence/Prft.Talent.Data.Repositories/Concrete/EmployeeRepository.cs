@@ -14,7 +14,7 @@ namespace Prft.Talent.Data.Repositories.Concrete
 {
     public class EmployeeRepository : Repository, IEmployeeRepository
     {
-        public EmployeeRepository(PrftTalentDatabaseContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
+        public EmployeeRepository(PrftDatabaseContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
 
         public async Task<IEnumerable<Employee>> GetEmployeesAsync()
         {

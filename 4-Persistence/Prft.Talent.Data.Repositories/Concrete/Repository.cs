@@ -10,10 +10,10 @@ namespace Prft.Talent.Data.Repositories.Concrete
 {
     public abstract class Repository : IRepository
     {
-        protected readonly PrftTalentDatabaseContext DatabaseContext;
+        protected readonly PrftDatabaseContext DatabaseContext;
         protected readonly IMapper Mapper;
 
-        public Repository(PrftTalentDatabaseContext dbContext, IMapper mapper)
+        public Repository(PrftDatabaseContext dbContext, IMapper mapper)
         {
             DatabaseContext = dbContext;
             Mapper = mapper;
