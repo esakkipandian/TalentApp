@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-touch">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perficient Chennai - WFM</title>
+    <!-- Vendors CSS -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/p.png" />
+    <link rel="stylesheet" href="css/vendors.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/perf.css">
+    <link rel="stylesheet" href="css/theme3.css">
+</head>
+<body ng-app="perficientHr" class="fixedsubmenu">
+    <nav id="menu" class="mm-menu" style="display: none;">
+        <ul>
+            <li><a href="#/home"><i class="fa fa-home fa-lg" aria-hidden="true"></i>Dashboard</a></li>
+            <li>
+                <a href="#"><i class="fa fa-university fa-lg" aria-hidden="true"></i>Administration</a>
+                <ul>
+                    <li><a href="#/componentroles"><i class="fa fa-user-times fa-lg" aria-hidden="true"></i>Component Roles Management</a></li>
+                    <li><a href="#/emproles"><i class="fa fa-user-times fa-lg" aria-hidden="true"></i>Employee Roles Management</a></li>
+                    <li><a href="#/importpto"><i class="fa fa-upload fa-lg" aria-hidden="true"></i>Manage Leaves</a></li>
+                    <li><a href="#/designations"><i class="fa fa-user-md fa-lg" aria-hidden="true"></i>Job Title</a></li>
+                    <li><a href="#/roles"><i class="fa fa-user-secret fa-lg" aria-hidden="true"></i>Roles</a></li>
+                    <li><a href="#/components"><i class="fa fa-shopping-basket fa-lg" aria-hidden="true"></i>Components</a></li>
+                    <li><a href="#/projects"><i class="fa fa-database fa-lg" aria-hidden="true"></i>Projects</a></li>
+                    <li><a href="#/projectmembers"><i class="fa fa-user-plus fa-lg" aria-hidden="true"></i>Project Members</a></li>
+                    <li>
+                        <a href="#">Reports</a>
+                        <ul>
+                            <li><a href="#/report/jobtitle"><i class="fa fa-code fa-lg" aria-hidden="true"></i>Job Title</a></li>
+                            <li><a href="#/report/reports_wfh"><i class="fa fa-table fa-lg" aria-hidden="true"></i>WFH Reports</a></li>
+                            <li><a href="#/report/reports_pto"><i class="fa fa-list fa-lg" aria-hidden="true"></i>PTO Reports</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>            
+            <li>
+                <a href="#">Referral</a>
+                <ul>
+                    <li><a href="#/candidate">Candidate</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Interview</a>
+                <ul>
+                    <li><a href="#/interview">L1</a></li>
+                </ul>
+            </li>
+            <li><a href="logout"><i class="fa fa-power-off fa-lg" aria-hidden="true"></i>Logout</a></li>
+        </ul>
+    </nav>
+
+    <a id="sidePanel" class="mm-slideout" href="#"><span></span></a>
+
+    <div class="submenu fixed mm-slideout">
+        <div class="header">
+            <h1><a href="#/dashboard"><img class="" src="images/logo2.png"></a></h1>
+            <ul class="nav-right pull-right list-inline">
+                <li class="dropdown nav-profile">
+                    <a data-toggle="dropdown" class="dropdown-toggle rightheader" href="" aria-expanded="true">
+                        <figure class="user-image"><i class="fa fa-user fa-3x"></i></figure>
+                        <label>{{user.firstName}}, {{user.lastName}}<i class="fa fa-angle-down"></i></label>
+                    </a>
+                    <ul role="menu" class="dropdown-menu animated littleFadeInRight">
+                        <li>
+                            <a href="#/profile">
+                                <i class="fa fa-user"></i>Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="logout">
+                                <i class="fa fa-sign-out"></i>Logout
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-cog"></i>Theme Settings
+                            </a>
+                        </li>
+                        <ul class="colortheme">
+                            <li class="lime themecolor"></li>
+                            <li class="black themecolor"></li>
+                            <li class="bright-red themecolor"></li>
+
+                            <li class="dark-blue themecolor"></li>
+                            <li class="cyan themecolor"></li>
+                            <li class="scorpion themecolor"></li>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="divContainer" id="divContainer">
+            <div id="overlay" ajax-loading><img id="loading" src="images/gears.gif"></div>
+            <ng-view></ng-view>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="scripts/lib.js"></script>
+<script src="scripts/app/app.js"></script>
+<script src="scripts/perf-common.min.js"></script>
+<script src="scripts/controller/interviewController.js"></script>
