@@ -45,6 +45,7 @@
     <None Include="package.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\GridView.css" />
     <Content Include="css\perf.css" />
     <Content Include="css\theme3.css" />
     <Content Include="css\vendors.css" />
@@ -52,7 +53,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="gruntfile.js" />
     <Content Include="home.html" />
+    <Content Include="html\dashboard.html" />
     <Content Include="html\dashboard1.html" />
+    <Content Include="html\educationDetails.html" />
     <Content Include="html\employee.html" />
     <Content Include="html\interview.html" />
     <Content Include="html\templates\panelTemplate.html" />
@@ -87,6 +90,7 @@
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\controller\employeeController.js" />
     <Content Include="scripts\controller\interviewController.js" />
+    <Content Include="scripts\controller\educationController.js" />
     <Content Include="scripts\hash\md5.js" />
     <Content Include="scripts\hash\sha512.js" />
     <Content Include="scripts\lib.js" />
