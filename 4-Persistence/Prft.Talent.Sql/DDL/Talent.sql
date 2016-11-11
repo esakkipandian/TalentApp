@@ -1,3 +1,71 @@
+CREATE TABLE `college` (
+  `PK` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` varchar(5) DEFAULT NULL,
+  `Description` varchar(250) DEFAULT NULL,
+  `IsActive` bit(1) DEFAULT NULL,
+  `CreatedBy` varchar(100) DEFAULT NULL,
+  `CreatedDate` datetime DEFAULT NULL,
+  `LastUpdatedBy` varchar(100) DEFAULT NULL,
+  `LastUpdatedDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`PK`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='College List';
+
+
+CREATE TABLE `university` (
+  `PK` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` varchar(5) DEFAULT NULL,
+  `Description` varchar(250) DEFAULT NULL,
+  `IsActive` bit(1) DEFAULT NULL,
+  `CreatedBy` varchar(100) DEFAULT NULL,
+  `CreatedDate` datetime DEFAULT NULL,
+  `LastUpdatedBy` varchar(100) DEFAULT NULL,
+  `LastUpdatedDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`PK`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='All Universities List';
+
+
+CREATE TABLE `state` (
+  `PK` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` varchar(5) DEFAULT NULL,
+  `Description` varchar(250) DEFAULT NULL,
+  `IsActive` bit(1) DEFAULT NULL,
+  `CreatedBy` varchar(100) DEFAULT NULL,
+  `CreatedDate` datetime DEFAULT NULL,
+  `LastUpdatedBy` varchar(100) DEFAULT NULL,
+  `LastUpdatedDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`PK`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='State List';
+
+
+
+CREATE TABLE `country` (
+  `PK` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` varchar(5) DEFAULT NULL,
+  `Description` varchar(250) DEFAULT NULL,
+  `IsActive` bit(1) DEFAULT NULL,
+  `CreatedBy` varchar(100) DEFAULT NULL,
+  `CreatedDate` datetime DEFAULT NULL,
+  `LastUpdatedBy` varchar(100) DEFAULT NULL,
+  `LastUpdatedDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`PK`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Country List';
+
+
+
+CREATE TABLE `skill` (
+  `PK` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` varchar(5) DEFAULT NULL,
+  `Description` varchar(250) DEFAULT NULL,
+  `IsActive` bit(1) DEFAULT NULL,
+  `CreatedBy` varchar(100) DEFAULT NULL,
+  `CreatedDate` datetime DEFAULT NULL,
+  `LastUpdatedBy` varchar(100) DEFAULT NULL,
+  `LastUpdatedDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`PK`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of Skill Sets';
+
+
+
 CREATE TABLE `addresstype` (
   `PK` int(11) NOT NULL AUTO_INCREMENT,
   `Code` varchar(50) NOT NULL,
@@ -9,6 +77,8 @@ CREATE TABLE `addresstype` (
   `LastUpdatedDate` datetime DEFAULT NULL,
   PRIMARY KEY (`PK`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List the types of address';
+
+
 
 CREATE TABLE `candidate` (
   `PK` int(11) NOT NULL AUTO_INCREMENT,
@@ -86,6 +156,7 @@ CREATE TABLE `candidateeducation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+
 CREATE TABLE `candidateskill` (
   `PK` int(11) NOT NULL,
   `CandidateId` int(11) NOT NULL,
@@ -106,6 +177,7 @@ CREATE TABLE `candidateskill` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+
 CREATE TABLE `candidateworkexperience` (
   `PK` int(11) NOT NULL,
   `CandidateId` int(11) NOT NULL,
@@ -122,71 +194,7 @@ CREATE TABLE `candidateworkexperience` (
   `ModifiedBy` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`PK`),
   KEY `FK_CANDIATE_idx` (`CandidateId`),
-  KEY `FK_CANDIATEID_idx` (`CandidateId`),
   CONSTRAINT `FK_CANDIATEID` FOREIGN KEY (`CandidateId`) REFERENCES `candidate` (`PK`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
-CREATE TABLE `college` (
-  `PK` int(11) NOT NULL AUTO_INCREMENT,
-  `Code` varchar(5) DEFAULT NULL,
-  `Description` varchar(250) DEFAULT NULL,
-  `IsActive` bit(1) DEFAULT NULL,
-  `CreatedBy` varchar(100) DEFAULT NULL,
-  `CreatedDate` datetime DEFAULT NULL,
-  `LastUpdatedBy` varchar(100) DEFAULT NULL,
-  `LastUpdatedDate` datetime DEFAULT NULL,
-  PRIMARY KEY (`PK`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='College List';
-
-CREATE TABLE `country` (
-  `PK` int(11) NOT NULL AUTO_INCREMENT,
-  `Code` varchar(5) DEFAULT NULL,
-  `Description` varchar(250) DEFAULT NULL,
-  `IsActive` bit(1) DEFAULT NULL,
-  `CreatedBy` varchar(100) DEFAULT NULL,
-  `CreatedDate` datetime DEFAULT NULL,
-  `LastUpdatedBy` varchar(100) DEFAULT NULL,
-  `LastUpdatedDate` datetime DEFAULT NULL,
-  PRIMARY KEY (`PK`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Country List';
-
-
-CREATE TABLE `skill` (
-  `PK` int(11) NOT NULL AUTO_INCREMENT,
-  `Code` varchar(5) DEFAULT NULL,
-  `Description` varchar(250) DEFAULT NULL,
-  `IsActive` bit(1) DEFAULT NULL,
-  `CreatedBy` varchar(100) DEFAULT NULL,
-  `CreatedDate` datetime DEFAULT NULL,
-  `LastUpdatedBy` varchar(100) DEFAULT NULL,
-  `LastUpdatedDate` datetime DEFAULT NULL,
-  PRIMARY KEY (`PK`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of Skill Sets';
-
-CREATE TABLE `state` (
-  `PK` int(11) NOT NULL AUTO_INCREMENT,
-  `Code` varchar(5) DEFAULT NULL,
-  `Description` varchar(250) DEFAULT NULL,
-  `IsActive` bit(1) DEFAULT NULL,
-  `CreatedBy` varchar(100) DEFAULT NULL,
-  `CreatedDate` datetime DEFAULT NULL,
-  `LastUpdatedBy` varchar(100) DEFAULT NULL,
-  `LastUpdatedDate` datetime DEFAULT NULL,
-  PRIMARY KEY (`PK`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='State List';
-
-CREATE TABLE `university` (
-  `PK` int(11) NOT NULL AUTO_INCREMENT,
-  `Code` varchar(5) DEFAULT NULL,
-  `Description` varchar(250) DEFAULT NULL,
-  `IsActive` bit(1) DEFAULT NULL,
-  `CreatedBy` varchar(100) DEFAULT NULL,
-  `CreatedDate` datetime DEFAULT NULL,
-  `LastUpdatedBy` varchar(100) DEFAULT NULL,
-  `LastUpdatedDate` datetime DEFAULT NULL,
-  PRIMARY KEY (`PK`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='All Universities List';
-
 
 
