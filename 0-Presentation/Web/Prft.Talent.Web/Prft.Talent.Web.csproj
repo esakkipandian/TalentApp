@@ -54,7 +54,6 @@
     <Content Include="gruntfile.js" />
     <Content Include="home.html" />
     <Content Include="html\dashboard.html" />
-    <Content Include="html\dashboard1.html" />
     <Content Include="html\educationDetails.html" />
     <Content Include="html\employee.html" />
     <Content Include="html\interview.html" />
