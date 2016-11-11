@@ -55,10 +55,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\addresstype.cs" />
+    <Compile Include="Entities\candidate.cs" />
+    <Compile Include="Entities\candidateaddress.cs" />
+    <Compile Include="Entities\candidateeducation.cs" />
+    <Compile Include="Entities\candidateskill.cs" />
+    <Compile Include="Entities\candidateworkexperience.cs" />
+    <Compile Include="Entities\college.cs" />
+    <Compile Include="Entities\country.cs" />
     <Compile Include="Entities\employee.cs" />
+    <Compile Include="Entities\skill.cs" />
+    <Compile Include="Entities\state.cs" />
     <Compile Include="Entities\TalentContext.cs" />
     <Compile Include="Entities\test.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Entities\university.cs" />
     <Compile Include="PrftDatabaseContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,7 +76,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

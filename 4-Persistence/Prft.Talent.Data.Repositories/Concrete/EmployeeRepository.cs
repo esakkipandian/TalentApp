@@ -18,7 +18,8 @@ namespace Prft.Talent.Data.Repositories.Concrete
 
         public async Task<IEnumerable<Employee>> GetEmployeesAsync()
         {
-            return await DatabaseContext.employees.ProjectTo<Employee>(Mapper.ConfigurationProvider).ToListAsync();
+            return new List<Employee>();
+            //return await DatabaseContext.employees.ProjectTo<Employee>(Mapper.ConfigurationProvider).ToListAsync();
         }
     }
 }
