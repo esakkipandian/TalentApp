@@ -36,18 +36,21 @@ namespace Prft.Talent.WebApi.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post(AddressType addressType)
         {
+            _addressTypeService.AddAddressTypeAsync(addressType);
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(AddressType addressType)
         {
+            _addressTypeService.UpdateAddressTypeAsync(addressType);
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        public void Delete(AddressType addressType)
         {
+
         }
     }
 }

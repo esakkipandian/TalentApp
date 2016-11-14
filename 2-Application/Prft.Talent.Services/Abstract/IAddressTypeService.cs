@@ -11,5 +11,11 @@ namespace Prft.Talent.Services.Abstract
     public interface IAddressTypeService : IApi
     {
         Task<AddressTypeResponse> GetAddressTypesAsync();
+
+        Task<int> AddAddressTypeAsync(AddressType addressType);
+
+        Task<int> UpdateAddressTypeAsync(AddressType addressType);
+
+        Task<bool> DeleteAddressTypeAsync(int pk);
     }
 }

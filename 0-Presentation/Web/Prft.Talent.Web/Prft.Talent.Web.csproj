@@ -55,8 +55,10 @@
     <Content Include="home.html" />
     <Content Include="html\dashboard.html" />
     <Content Include="html\educationDetails.html" />
+    <Content Include="html\addresstype.html" />
     <Content Include="html\employee.html" />
     <Content Include="html\interview.html" />
+    <Content Include="html\templates\deleteTemplate.html" />
     <Content Include="html\templates\panelTemplate.html" />
     <Content Include="images\bg.jpg" />
     <Content Include="images\bg1.jpg" />
@@ -87,6 +89,7 @@
     <Content Include="images\sort_desc.png" />
     <Content Include="images\user.jpg" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\controller\addressTypeController.js" />
     <Content Include="scripts\controller\employeeController.js" />
     <Content Include="scripts\controller\interviewController.js" />
     <Content Include="scripts\controller\educationController.js" />

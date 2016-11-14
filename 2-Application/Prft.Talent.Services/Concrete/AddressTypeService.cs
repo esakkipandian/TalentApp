@@ -20,6 +20,16 @@ namespace Prft.Talent.Services.Concrete
             _addressTypeRepository = addressTypeRepository;
         }
 
+        public async Task<int> AddAddressTypeAsync(AddressType addressType)
+        {
+            return await _addressTypeRepository.AddAddressTypeAsync(addressType);
+        }
+
+        public async Task<bool> DeleteAddressTypeAsync(int pk)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<AddressTypeResponse> GetAddressTypesAsync()
         {
             return new AddressTypeResponse
@@ -28,5 +38,9 @@ namespace Prft.Talent.Services.Concrete
             };
         }
 
+        public async Task<int> UpdateAddressTypeAsync(AddressType addressType)
+        {
+            return await _addressTypeRepository.UpdateAddressTypeAsync(addressType);
+        }
     }
 }

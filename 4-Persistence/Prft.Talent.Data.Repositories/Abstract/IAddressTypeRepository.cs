@@ -11,5 +11,11 @@ namespace Prft.Talent.Data.Repositories.Abstract
     public interface IAddressTypeRepository : IRepository
     {
         Task<IEnumerable<AddressType>> GetAddressTypesAsync();
+
+        Task<int> AddAddressTypeAsync(AddressType addressType);
+
+        Task<int> UpdateAddressTypeAsync(AddressType addressType);
+
+        Task<bool> DeleteAddressTypeAsync(int pk);
     }
 }
