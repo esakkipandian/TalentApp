@@ -46,8 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IApi.cs" />
+    <Compile Include="Abstract\IAddressTypeService.cs" />
     <Compile Include="Abstract\IEmployeeService.cs" />
+    <Compile Include="Api\AddressTypeResponse.cs" />
     <Compile Include="Api\EmployeeResponse.cs" />
+    <Compile Include="Concrete\AddressTypeService.cs" />
     <Compile Include="ResponseBase.cs" />
     <Compile Include="Concrete\EmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

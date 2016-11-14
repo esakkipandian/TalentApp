@@ -57,7 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAddressTypeRepository.cs" />
     <Compile Include="Abstract\IEmployeeRepository.cs" />
+    <Compile Include="Concrete\AddressTypeRepository.cs" />
     <Compile Include="Concrete\EmployeeRepository.cs" />
     <Compile Include="IocRegistration.cs" />
     <Compile Include="Abstract\IRepository.cs" />
