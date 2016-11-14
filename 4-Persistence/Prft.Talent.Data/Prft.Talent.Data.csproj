@@ -67,11 +67,10 @@
     <Compile Include="Entities\skill.cs" />
     <Compile Include="Entities\state.cs" />
     <Compile Include="Entities\TalentContext.cs" />
-    <Compile Include="Entities\test.cs" />
     <Compile Include="Entities\university.cs" />
-    <Compile Include="Migrations\201611110549260_InitalEntities.cs" />
-    <Compile Include="Migrations\201611110549260_InitalEntities.Designer.cs">
-      <DependentUpon>201611110549260_InitalEntities.cs</DependentUpon>
+    <Compile Include="Migrations\201611140519089_InitialModel.cs" />
+    <Compile Include="Migrations\201611140519089_InitialModel.Designer.cs">
+      <DependentUpon>201611140519089_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PrftDatabaseContext.cs" />
@@ -82,8 +81,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611110549260_InitalEntities.resx">
-      <DependentUpon>201611110549260_InitalEntities.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611140519089_InitialModel.resx">
+      <DependentUpon>201611140519089_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

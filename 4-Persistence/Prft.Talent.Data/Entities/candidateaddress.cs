@@ -6,7 +6,7 @@ namespace Prft.Talent.Data.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("talent.candidateaddress")]
+    [Table("candidateaddress")]
     public partial class candidateaddress
     {
         [Key]

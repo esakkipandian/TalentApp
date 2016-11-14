@@ -7,13 +7,13 @@ namespace Prft.Talent.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitalEntities : IMigrationMetadata
+    public sealed partial class InitialModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitalEntities));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611110549260_InitalEntities"; }
+            get { return "201611140519089_InitialModel"; }
         }
         
         string IMigrationMetadata.Source
