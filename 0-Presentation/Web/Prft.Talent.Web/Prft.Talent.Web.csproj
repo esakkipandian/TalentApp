@@ -90,6 +90,7 @@
     <Content Include="images\sort_desc.png" />
     <Content Include="images\user.jpg" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\app\common.js" />
     <Content Include="scripts\constants\constants.js" />
     <Content Include="scripts\constants\url.js" />
     <Content Include="scripts\constants\utils.js" />
