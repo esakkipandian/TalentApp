@@ -11,6 +11,7 @@ using SimpleInjector.Integration.WebApi;
 using Prft.Talent.Services.Abstract;
 using Prft.Talent.Services.Concrete;
 using Prft.Talent.WebApi.App_Start;
+using Newtonsoft.Json.Serialization;
 
 namespace Prft.Talent.WebApi
 {
@@ -19,8 +20,10 @@ namespace Prft.Talent.WebApi
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
-            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+            var config = GlobalConfiguration.Configuration;
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
 
             ConfigureContainer();
         }

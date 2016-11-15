@@ -7,8 +7,8 @@
             <form role="form" class="form-horizontal" novalidate>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" ng-show="!data.PK" id="myModalLabel">Add Address Type</h4>
-                    <h4 class="modal-title" ng-show="data.PK" id="myModalLabel">Update Address Type</h4>
+                    <h4 class="modal-title" ng-show="!data.pk" id="myModalLabel">Add Address Type</h4>
+                    <h4 class="modal-title" ng-show="data.pk" id="myModalLabel">Update Address Type</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -16,8 +16,8 @@
                             <div class="form-group">
                                 <label for="addressTypeCode" class="col-md-4 control-label required">Address Code :</label>
                                 <div class="col-md-8">
-                                    <input type="text" id="addressTypeCode" ng-model="data.Code" class="form-control" placeholder="Code" 
-                                        name="Address Type"  ng-minlength="1" ng-maxlength="50" validType="text-only" value="{{data.Code}}" required>
+                                    <input type="text" id="addressTypeCode" ng-model="data.code" class="form-control" placeholder="Code" 
+                                        name="Address Type"  ng-minlength="1" ng-maxlength="50" validType="text-only" value="{{data.code}}" required>
                                 </div>
                             </div>
                         </div>
@@ -25,7 +25,7 @@
                             <div class="form-group">
                                 <label for="addressTypeDescription" class="col-md-4 control-label requi">Address Code :</label>
                                 <div class="col-md-8">
-                                    <input type="text" id="addressTypeDescription" ng-model="data.Description" class="form-control" placeholder="Description" value="{{data.Description}} required">
+                                    <input type="text" id="addressTypeDescription" ng-model="data.description" class="form-control" placeholder="Description" value="{{data.description}} required">
                                 </div>
                             </div>
                         </div>
@@ -36,8 +36,8 @@
                     <div class="row">
                         <div class="col-sm-12 col-lg-12">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" ng-show="!data.PK" action="save">Save</button>
-                            <button type="submit" class="btn btn-primary" ng-show="data.PK" action="update">Update</button>
+                            <button type="submit" class="btn btn-primary" ng-show="!data.pk" action="save">Save</button>
+                            <button type="submit" class="btn btn-primary" ng-show="data.pk" action="update">Update</button>
                         </div>
                     </div>
                 </div>

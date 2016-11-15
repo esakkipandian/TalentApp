@@ -3,8 +3,8 @@
     var AddressTypeController = function ($scope, $controller, DTColumnBuilder) {
         var _this = this;
         $scope.dtColumns = [
-            DTColumnBuilder.newColumn('Code').withTitle('Address Type Code'),
-            DTColumnBuilder.newColumn('Description').withTitle('Address Type')
+            DTColumnBuilder.newColumn('code').withTitle('Address Type Code'),
+            DTColumnBuilder.newColumn('description').withTitle('Address Type')
         ];
 
         $scope.validate = function () {
