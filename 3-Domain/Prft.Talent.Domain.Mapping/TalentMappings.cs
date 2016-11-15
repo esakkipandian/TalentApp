@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using Prft.Talent.Data.Entities;
 using Prft.Talent.Domain.Talent;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Prft.Talent.Domain.Talent.Candidate;
+
 
 namespace Prft.Talent.Domain.Mapping
 {
@@ -14,7 +11,10 @@ namespace Prft.Talent.Domain.Mapping
         public static void RegisterTalentMappings(IProfileExpression profile)
         {
             profile.CreateMap<employee, Employee>();
-            profile.CreateMap<addresstype, AddressType>().ReverseMap();           
+            profile.CreateMap<addresstype, AddressType>().ReverseMap();
+            profile.CreateMap<candidate, PersonalInformation>()
+                .ForMember(x => x.CandidateId, map => map.MapFrom(c => c.PK)).ReverseMap();
+
         }
     }
 }
