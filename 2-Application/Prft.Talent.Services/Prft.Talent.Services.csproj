@@ -47,10 +47,14 @@
   <ItemGroup>
     <Compile Include="Abstract\IApi.cs" />
     <Compile Include="Abstract\IAddressTypeService.cs" />
+    <Compile Include="Abstract\ICandidateSkillSetService.cs" />
     <Compile Include="Abstract\IEmployeeService.cs" />
     <Compile Include="Api\AddressTypeResponse.cs" />
+    <Compile Include="Api\CandidateSkillSetResponse.cs" />
     <Compile Include="Api\EmployeeResponse.cs" />
     <Compile Include="Concrete\AddressTypeService.cs" />
+    <Compile Include="Concrete\CandidateSkillSetService.cs" />
+    <Compile Include="RequestBase.cs" />
     <Compile Include="ResponseBase.cs" />
     <Compile Include="Concrete\EmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

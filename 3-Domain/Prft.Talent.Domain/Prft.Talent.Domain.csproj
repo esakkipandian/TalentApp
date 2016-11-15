@@ -44,6 +44,7 @@
     <Compile Include="IDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Talent\AddressType.cs" />
+    <Compile Include="Talent\CandidateSkillSet.cs" />
     <Compile Include="Talent\Employee.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
