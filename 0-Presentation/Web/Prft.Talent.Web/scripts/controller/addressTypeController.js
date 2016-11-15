@@ -17,7 +17,7 @@
             'scope': $scope,
             'addUrl': perfUrl['addAddressType'],
             'updateUrl': perfUrl['updateAddressType'],
-            'deleteUrl': 'http://localhost:8080/api/AddressType',
+            'deleteUrl': perfUrl['deleteAddressType'],
             'loadListUrl': perfUrl['loadAddressType']
         };
         angular.extend(this, $controller('AbstractController', { _this: _this, vm: vm }));

@@ -16,6 +16,6 @@ namespace Prft.Talent.Services.Abstract
 
         Task<int> UpdateAddressTypeAsync(AddressType addressType);
 
-        Task<bool> DeleteAddressTypeAsync(int pk);
+        Task<int> DeleteAddressTypeAsync(AddressType addressType);
     }
 }

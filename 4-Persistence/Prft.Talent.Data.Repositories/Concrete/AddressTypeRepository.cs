@@ -19,24 +19,32 @@ namespace Prft.Talent.Data.Repositories.Concrete
         public async Task<int> AddAddressTypeAsync(AddressType addressType)
         {
             var objectToAdd = Mapper.Map<addresstype>(addressType);
+            objectToAdd.IsActive = true;
             DatabaseContext.addresstypes.Add(objectToAdd);
             return await DatabaseContext.SaveChangesAsync();
         }
 
-        public Task<bool> DeleteAddressTypeAsync(int pk)
+        public async Task<int> DeleteAddressTypeAsync(AddressType addressType)
         {
-            throw new NotImplementedException();
+            var objectToDelete = Mapper.Map<addresstype>(addressType);
+            objectToDelete.IsActive = false;
+            DatabaseContext.Entry(objectToDelete).State = EntityState.Modified;
+            return await DatabaseContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<AddressType>> GetAddressTypesAsync()
         {
-            return await DatabaseContext.addresstypes.ProjectTo<AddressType>(Mapper.ConfigurationProvider).ToListAsync();
+            return await DatabaseContext.addresstypes
+                        .Where(x=>x.IsActive == true)
+                        .ProjectTo<AddressType>(Mapper.ConfigurationProvider)
+                        .ToListAsync();
         }
 
         public async Task<int> UpdateAddressTypeAsync(AddressType addressType)
         {
-            var objectToAdd = Mapper.Map<addresstype>(addressType);
-            DatabaseContext.Entry(objectToAdd).State = EntityState.Modified;
+            var objectToUpdate = Mapper.Map<addresstype>(addressType);
+            objectToUpdate.IsActive = true;
+            DatabaseContext.Entry(objectToUpdate).State = EntityState.Modified;
             return await DatabaseContext.SaveChangesAsync();
         }
     }
