@@ -2,9 +2,9 @@
     
     var CandidateInformationController = function ($scope, $controller, $window) {
         $scope.tabs = [
-          { title: 'Personal Information', content: 'Dynamic content 1', url: 'DynamicControls.html' },
+          { title: 'Personal Information', content: 'Dynamic content 1', url:''},
           { title: 'Educational Qualifications', url: '' },
-          { title: 'Skills', url: '' },
+          { title: 'Skills', url: 'html/skillSet.html' },
           { title: 'Employment Details', url: '' }
 
         ];
@@ -15,7 +15,7 @@
             return _.indexOf($scope.tabs, $scope.selection);
         };
 
-        // Go to a defined step index
+        
         $scope.goToTab = function (index) {
             if (!_.isUndefined($scope.tabs[index])) {
                 $scope.selection = $scope.tabs[index];
@@ -26,15 +26,13 @@
 
         $scope.hasNextTab = function () {
             var tabIndex = $scope.getCurrentTabIndex();
-            var nextTab = tabIndex + 1;
-            // Return true if there is a next step, false if not
+            var nextTab = tabIndex + 1;          
             return !_.isUndefined($scope.tabs[nextTab]);
         };
 
         $scope.hasPreviousTab = function () {
             var tabIndex = $scope.getCurrentTabIndex();
-            var previousTab = tabIndex - 1;
-            // Return true if there is a next step, false if not
+            var previousTab = tabIndex - 1;           
             return !_.isUndefined($scope.tabs[previousTab]);
         };
 

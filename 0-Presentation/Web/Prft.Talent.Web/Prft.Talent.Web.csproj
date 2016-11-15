@@ -61,6 +61,7 @@
     <Content Include="html\employee.html" />
     <Content Include="html\interview.html" />
     <Content Include="html\personalInformation.html" />
+    <Content Include="html\skillset.html" />
     <Content Include="html\templates\deleteTemplate.html" />
     <Content Include="html\templates\panelTemplate.html" />
     <Content Include="images\bg.jpg" />
@@ -104,6 +105,8 @@
     <Content Include="scripts\controller\interviewController.js" />
     <Content Include="scripts\controller\educationController.js" />
     <Content Include="scripts\controller\personalInformationController.js" />
+    <Content Include="scripts\controller\primarySkillsetController.js" />
+    <Content Include="scripts\controller\secondarySkillSetController.js" />
     <Content Include="scripts\directive\perfdirective.js" />
     <Content Include="scripts\hash\md5.js" />
     <Content Include="scripts\hash\sha512.js" />

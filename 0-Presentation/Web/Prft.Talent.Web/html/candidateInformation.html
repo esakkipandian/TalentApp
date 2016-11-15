@@ -1,5 +1,5 @@
-﻿<div id="tabbed" class="tab tabbed-view" >
-        <form name="TabbeView" ng-controller="candidateInformationController" class="form">
+﻿<div id="candidateinformation" class="tab" >
+        <form name="candidateinforamtionform" ng-controller="candidateInformationController" class="form">
             <div>
                 <uib-tabset active="active" justified="true" type="pills">
                     <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" ng-click="goToTab($index)"
