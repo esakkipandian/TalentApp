@@ -1,4 +1,5 @@
-var urlPrefix = 'v-';
+var urlPrefix = '';
+var apiUri = 'http://localhost:8080/api/';
 var PerfWidgetCache = [];
 var lastRequestTime = new Date().getTime();
 var timeoutHandle;

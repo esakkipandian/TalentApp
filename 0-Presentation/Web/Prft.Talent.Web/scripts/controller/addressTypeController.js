@@ -15,10 +15,10 @@
             'title': 'Address Types',
             'formId': 'addressTypeForm',
             'scope': $scope,
-            'addUrl': 'http://localhost:8080/api/AddressType',
-            'updateUrl': 'http://localhost:8080/api/AddressType',
+            'addUrl': perfUrl['addAddressType'],
+            'updateUrl': perfUrl['updateAddressType'],
             'deleteUrl': 'http://localhost:8080/api/AddressType',
-            'loadListUrl': 'http://localhost:8080/api/AddressType'
+            'loadListUrl': perfUrl['loadAddressType']
         };
         angular.extend(this, $controller('AbstractController', { _this: _this, vm: vm }));
     };
