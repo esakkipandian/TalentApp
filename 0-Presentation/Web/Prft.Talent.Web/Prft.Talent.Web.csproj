@@ -45,6 +45,7 @@
     <None Include="package.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\candidateinformation.css" />
     <Content Include="css\GridView.css" />
     <Content Include="css\perf.css" />
     <Content Include="css\theme3.css" />
@@ -53,6 +54,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="gruntfile.js" />
     <Content Include="home.html" />
+    <Content Include="html\candidateInformation.html" />
     <Content Include="html\dashboard.html" />
     <Content Include="html\educationDetails.html" />
     <Content Include="html\addresstype.html" />
@@ -96,6 +98,7 @@
     <Content Include="scripts\constants\utils.js" />
     <Content Include="scripts\controller\abstractController.js" />
     <Content Include="scripts\controller\addressTypeController.js" />
+    <Content Include="scripts\controller\candidateInformationController.js" />
     <Content Include="scripts\controller\datatableController.js" />
     <Content Include="scripts\controller\employeeController.js" />
     <Content Include="scripts\controller\interviewController.js" />
@@ -148,6 +151,8 @@
     <Content Include="scripts\lib\nya-bs-select.min.js" />
     <Content Include="scripts\lib\select.js" />
     <Content Include="scripts\lib\ui-bootstrap-tpls-1.3.2.js" />
+    <Content Include="scripts\lib\underscore.js" />
+    <Content Include="scripts\lib\underscore.min.js" />
     <Content Include="scripts\perf-common.min.js" />
     <Content Include="scripts\service\commonServices.js" />
   </ItemGroup>

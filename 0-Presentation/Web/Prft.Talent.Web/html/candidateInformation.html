@@ -1,0 +1,28 @@
+﻿<div id="tabbed" class="tab tabbed-view" >
+        <form name="TabbeView" ng-controller="candidateInformationController" class="form">
+            <div>
+                <uib-tabset active="active" justified="true" type="pills">
+                    <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" ng-click="goToTab($index)"
+                             class="{active: $index==getCurrentTabIndex()}">
+                        <br /><br />
+                        <div ng-include="tab.url">
+                        </div>
+                    </uib-tab>
+                </uib-tabset>
+
+            </div>
+            <div>
+                <button  type="button" class="btn btn-primary" ng-show="hasPreviousTab()" ng-click="decrementTab()">
+                    <i class="glyphicon glyphicon-circle-arrow-left"></i> Previous Section
+                </button>
+                <button type="button" class="btn btn-primary" ng-hide="!hasNextTab()" ng-click="incrementTab()">
+                    <i class="glyphicon glyphicon-circle-arrow-right"></i> Save and Continue
+                </button>
+                <button id="submit" type="button" class="pull-right btn btn-success" ng-show="!hasNextTab()">
+                    <i class="glyphicon glyphicon-ok-circle"></i> Submit
+                </button>
+
+            </div>
+        </form>
+    </div>
+

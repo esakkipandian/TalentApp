@@ -10,6 +10,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/perf.css">
     <link rel="stylesheet" href="css/theme3.css">
+    <link href="css/candidateinformation.css" rel="stylesheet" />
 </head>
 <body ng-app="prftApp" class="fixedsubmenu">
     <nav id="menu" class="mm-menu" style="display: none;">
@@ -50,6 +51,7 @@
             </li>-->
             <li> <a href="#/employee"><i class="fa fa-user-times fa-lg" aria-hidden="true"></i>Employee</a></li>
             <li> <a href="#/addresstype"><i class="fa fa-user-times fa-lg" aria-hidden="true"></i>Address Type</a></li>
+            <li> <a href="#/candidateinformation"><i class="fa fa-user-times fa-lg" aria-hidden="true"></i>Candidate Information</a></li>
             <li><a href="logout"><i class="fa fa-power-off fa-lg" aria-hidden="true"></i>Logout</a></li>
         </ul>
     </nav>
@@ -113,14 +115,15 @@
 <script src="scripts/constants/constants.js"></script>
 <script src="scripts/constants/url.js"></script>
 <script src="scripts/constants/utils.js"></script>
-
 <script src="scripts/directive/perfdirective.js"></script>
 <script src="scripts/service/commonServices.js"></script>
 <script src="scripts/controller/abstractController.js"></script>
 <script src="scripts/controller/datatableController.js"></script>
+<script src="scripts/lib/underscore.min.js"></script>
 <!--Common Script End -->
 
 <script src="scripts/controller/interviewController.js"></script>
 <script src="scripts/controller/employeeController.js"></script>
 <script src="scripts/controller/addressTypeController.js"></script>
 <script src="scripts/controller/personalInformationController.js"></script>
+<script src="scripts/controller/candidateInformationController.js"></script>
