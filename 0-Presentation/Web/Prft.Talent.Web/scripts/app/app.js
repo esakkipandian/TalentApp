@@ -42,6 +42,10 @@ var mainApp = angular.module("prftApp",
                 templateUrl: 'html/candidateInformation.html',
                 controller: 'candidateController'
             })
+          .when('/fileupload', {
+              templateUrl: 'html/fileupload.html',
+              controller: 'fileuploadController'
+          })
 	    .otherwise({
 	        redirectTo: '/home'
 	    });

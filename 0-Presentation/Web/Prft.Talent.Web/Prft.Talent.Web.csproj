@@ -59,6 +59,7 @@
     <Content Include="html\educationDetails.html" />
     <Content Include="html\addresstype.html" />
     <Content Include="html\employee.html" />
+    <Content Include="html\fileupload.html" />
     <Content Include="html\interview.html" />
     <Content Include="html\personalInformation.html" />
     <Content Include="html\skillset.html" />
@@ -102,11 +103,13 @@
     <Content Include="scripts\controller\candidateInformationWizardController.js" />
     <Content Include="scripts\controller\datatableController.js" />
     <Content Include="scripts\controller\employeeController.js" />
+    <Content Include="scripts\controller\fileuploadController.js" />
     <Content Include="scripts\controller\interviewController.js" />
     <Content Include="scripts\controller\educationController.js" />
     <Content Include="scripts\controller\personalInformationController.js" />
     <Content Include="scripts\controller\primarySkillsetController.js" />
     <Content Include="scripts\controller\secondarySkillSetController.js" />
+    <Content Include="scripts\directive\fileuploaddirective.js" />
     <Content Include="scripts\directive\perfdirective.js" />
     <Content Include="scripts\hash\md5.js" />
     <Content Include="scripts\hash\sha512.js" />
@@ -158,6 +161,7 @@
     <Content Include="scripts\lib\underscore.min.js" />
     <Content Include="scripts\perf-common.min.js" />
     <Content Include="scripts\service\commonServices.js" />
+    <Content Include="scripts\service\fileuploadServices.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
