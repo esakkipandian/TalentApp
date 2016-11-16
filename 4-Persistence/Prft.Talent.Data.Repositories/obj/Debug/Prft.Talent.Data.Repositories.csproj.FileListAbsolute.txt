@@ -24,3 +24,29 @@ C:\AngularJS\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\SimpleInjecto
 C:\AngularJS\4-Persistence\Prft.Talent.Data.Repositories\obj\Debug\Prft.Talent.Data.Repositories.csprojResolveAssemblyReference.cache
 C:\AngularJS\4-Persistence\Prft.Talent.Data.Repositories\obj\Debug\Prft.Talent.Data.Repositories.dll
 C:\AngularJS\4-Persistence\Prft.Talent.Data.Repositories\obj\Debug\Prft.Talent.Data.Repositories.pdb
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Data.Repositories.dll.config
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Data.Repositories.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Data.Repositories.pdb
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\AutoMapper.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\EntityFramework.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Data.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Domain.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Domain.Mapping.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Framework.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\SimpleInjector.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\SimpleInjector.Extensions.LifetimeScoping.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\MySql.Data.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Framework.pdb
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Domain.Mapping.pdb
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Domain.pdb
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\Prft.Talent.Data.pdb
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\AutoMapper.xml
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\EntityFramework.xml
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\SimpleInjector.xml
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\bin\Debug\SimpleInjector.Extensions.LifetimeScoping.xml
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\obj\Debug\Prft.Talent.Data.Repositories.csprojResolveAssemblyReference.cache
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\obj\Debug\Prft.Talent.Data.Repositories.dll
+C:\Latest GITHUB\4-Persistence\Prft.Talent.Data.Repositories\obj\Debug\Prft.Talent.Data.Repositories.pdb
