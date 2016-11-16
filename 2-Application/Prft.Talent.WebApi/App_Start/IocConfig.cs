@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using Prft.Talent.Logger;
 
 namespace Prft.Talent.WebApi.App_Start
 {
@@ -21,6 +22,8 @@ namespace Prft.Talent.WebApi.App_Start
 
             RegisterServices(container);
 
+            RegisterLogger(container);
+
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 
             container.Verify();
@@ -29,6 +32,15 @@ namespace Prft.Talent.WebApi.App_Start
                 new SimpleInjectorWebApiDependencyResolver(container);
 
             return container;
+        }
+
+        private static void RegisterLogger(Container container)
+        {
+            container.RegisterConditional(
+                        typeof(IPrftLogger),
+                        c => typeof(PrftLogger<>).MakeGenericType(c.Consumer.ImplementationType),
+                        Lifestyle.Singleton,
+                        c => true);
         }
 
         private static void RegisterServices(Container container)

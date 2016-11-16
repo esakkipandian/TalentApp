@@ -33,19 +33,6 @@ namespace Prft.Talent.WebApi
 
             IocConfig.RegisterDependencies();
 
-            //var container = new Container();
-            //container.Options.DefaultScopedLifestyle = new WebApiRequestLifestyle();
-
-            //// Register your types, for instance using the scoped lifestyle:
-            //container.Register<IEmployeeService, EmployeeService>(Lifestyle.Scoped);
-
-            //// This is an extension method from the integration package.
-            //container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
-
-            //container.Verify();
-
-            //GlobalConfiguration.Configuration.DependencyResolver =
-            //    new SimpleInjectorWebApiDependencyResolver(container);
         }
     }
 }
