@@ -1,19 +1,21 @@
 ﻿<div>
-    <fieldset class="pull left " ng-controller="PrimarySkillSetController">
+    <fieldset id="field1" ng-controller="PrimarySkillSetController">
+        <legend>Primary Skills</legend>
         <div data-ng-repeat="primaryskill in primaryskills" ng-model="primaryskill.length">
             <input type="text" ng-model="primaryskill.name" name="" placeholder="Primary Skill">
             <input type="text" ng-model="primaryskill.rating" name="" placeholder="Rating" style="width:40px">
             <button class="remove" ng-click="removePrimarySkill($index)" ng-show="primaryskills.length>1">-</button>
-            <button class="remove" ng-show="$last" ng-click="addNewPrimarySkill()">+</button>
+            <button class="remove" ng-show="$last" ng-click="addNewPrimarySkill()">+</button><br /><br />
         </div>
     </fieldset>
-    <fieldset class="pull-right" ng-controller="SecondarySkillSetController">
 
+    <fieldset id="field2" ng-controller="SecondarySkillSetController">
+        <legend>Secondary Skills</legend>
         <div data-ng-repeat="secondaryskill in secondaryskills">
             <input type="text" ng-model="secondaryskill.name" name="" placeholder="Secondary Skill">
             <input type="text" ng-model="secondaryskill.rating" name="" placeholder="Rating" style="width:40px">
             <button class="remove" ng-click="removeSecondarySkill($index)" ng-show="secondaryskills.length>1">-</button>
-            <button class="remove" ng-show="$last" ng-click="addNewSecondarySkill()">+</button>
+            <button class="remove" ng-show="$last" ng-click="addNewSecondarySkill()">+</button><br /><br />
         </div>
     </fieldset>
 </div>

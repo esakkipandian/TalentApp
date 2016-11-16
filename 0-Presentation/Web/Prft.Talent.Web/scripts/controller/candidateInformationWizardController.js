@@ -1,6 +1,6 @@
 ﻿(function (angular) {
     
-    var CandidateInformationController = function ($scope, $controller, $window) {
+    var CandidateInformationWizardController = function ($scope, $controller, $window) {
         $scope.tabs = [
           { title: 'Personal Information', content: 'Dynamic content 1', url:''},
           { title: 'Educational Qualifications', url: '' },
@@ -52,6 +52,6 @@
             }
         };
     };
-    CandidateInformationController.$inject = ['$scope', '$controller', '$window'];
-    mainApp.controller('candidateInformationController', CandidateInformationController);
+    CandidateInformationWizardController.$inject = ['$scope', '$controller', '$window'];
+    mainApp.controller('candidateInformationWizardController', CandidateInformationWizardController);
 })(angular);
