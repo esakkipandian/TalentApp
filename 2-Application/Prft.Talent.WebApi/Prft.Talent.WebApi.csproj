@@ -111,6 +111,7 @@
     <Compile Include="App_Start\IocConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AddressTypeController.cs" />
+    <Compile Include="Controllers\CandidatesController.cs" />
     <Compile Include="Controllers\CandidateSkillSetController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Global.asax.cs">

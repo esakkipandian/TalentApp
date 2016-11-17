@@ -60,8 +60,10 @@
     <Compile Include="Abstract\Candidate\IPersonalInformationRepository.cs" />
     <Compile Include="Abstract\IAddressTypeRepository.cs" />
     <Compile Include="Abstract\ICandidateSkillSetRepository.cs" />
+    <Compile Include="Abstract\ICandidatesRepository.cs" />
     <Compile Include="Abstract\IEmployeeRepository.cs" />
     <Compile Include="Concrete\AddressTypeRepository.cs" />
+    <Compile Include="Concrete\CandidatesRepository.cs" />
     <Compile Include="Concrete\CandidateSkillSetRepository.cs" />
     <Compile Include="Concrete\Candidate\PersonalInformationRepository.cs" />
     <Compile Include="Concrete\EmployeeRepository.cs" />
