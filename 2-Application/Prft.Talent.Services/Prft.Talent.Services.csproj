@@ -48,13 +48,16 @@
     <Compile Include="Abstract\Candidate\IPersonalInformationService.cs" />
     <Compile Include="Abstract\IApi.cs" />
     <Compile Include="Abstract\IAddressTypeService.cs" />
+    <Compile Include="Abstract\ICandidatesService.cs" />
     <Compile Include="Abstract\ICandidateSkillSetService.cs" />
     <Compile Include="Abstract\IEmployeeService.cs" />
     <Compile Include="Api\AddressTypeResponse.cs" />
+    <Compile Include="Api\CandidatesResponse.cs" />
     <Compile Include="Api\CandidateSkillSetResponse.cs" />
     <Compile Include="Api\Candidate\PersonalInformationResponse.cs" />
     <Compile Include="Api\EmployeeResponse.cs" />
     <Compile Include="Concrete\AddressTypeService.cs" />
+    <Compile Include="Concrete\CandidatesService.cs" />
     <Compile Include="Concrete\CandidateSkillSetService.cs" />
     <Compile Include="Concrete\Candidate\PersonalInformationService.cs" />
     <Compile Include="RequestBase.cs" />
