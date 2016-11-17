@@ -46,10 +46,7 @@ var mainApp = angular.module("prftApp",
              templateUrl: 'html/educationDetails.html',
              controller: 'educationController'
          })
-          .when('/',
-          {
-              
-          })
+         
 	    .otherwise({
 	        redirectTo: '/home'
 	    });
