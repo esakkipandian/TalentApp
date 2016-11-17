@@ -5,50 +5,53 @@ var mainApp = angular.module("prftApp",
          'ngSanitize', 'ui.select', 'ui.multiselect']);
 
 (function(window){
-	mainApp.value('user', {
-	    loggedUser:{}
-	});
+    mainApp.value('user', {
+        loggedUser:{}
+    });
 	
-	/*Set the selected menu/sub-menu open on refresh/reload*/
-	var pageEle = '#'+window.location.href.split('#')[1];
-	$("#menu li a[href='"+pageEle+"']").parent().addClass('Selected');
+    /*Set the selected menu/sub-menu open on refresh/reload*/
+    var pageEle = '#'+window.location.href.split('#')[1];
+    $("#menu li a[href='"+pageEle+"']").parent().addClass('Selected');
 	
-	var rand = Math.floor(Math.random()*(3-1+1)+1);
+    var rand = Math.floor(Math.random()*(3-1+1)+1);
 	
-	mainApp.config(function($routeProvider) {
-	  $routeProvider
-	    .when('/home', {
-	        templateUrl: 'html/dashboard.html',
-	        controller: ''
-	    })
-	    .when('/employee', {
-	        templateUrl: 'html/employee.html',
-	        controller: 'employeeController'
-	    })
-          .when('/addresstype', {
-            templateUrl: 'html/addresstype.html',
-            controller : 'addressTypeController'
-        })
-          .when('/personalInformation', {
-              templateUrl: 'html/personalInformation.html',
-              controller: 'personalInformationController'
+    mainApp.config(function($routeProvider) {
+        $routeProvider
+          .when('/home', {
+              templateUrl: 'html/dashboard.html',
+              controller: ''
           })
-
-          .when('/candidateinformationwizard', {
-              templateUrl: 'html/candidateInformationWizard.html',
-              controller: 'candidateInformationWizardController'
+          .when('/employee', {
+              templateUrl: 'html/employee.html',
+              controller: 'employeeController'
           })
-            .when('/candidateInformation', {
-                templateUrl: 'html/candidateInformation.html',
-                controller: 'candidateController'
+            .when('/addresstype', {
+                templateUrl: 'html/addresstype.html',
+                controller : 'addressTypeController'
             })
-         .when('/educationDetails', {
-             templateUrl: 'html/educationDetails.html',
-             controller: 'educationController'
-         })
-         
-	    .otherwise({
-	        redirectTo: '/home'
-	    });
-	});
+            .when('/personalInformation', {
+                templateUrl: 'html/personalInformation.html',
+                controller: 'personalInformationController'
+            })
+
+            .when('/candidateinformationwizard', {
+                templateUrl: 'html/candidateInformationWizard.html',
+                controller: 'candidateInformationWizardController'
+            })
+              .when('/candidateInformation', {
+                  templateUrl: 'html/candidateInformation.html',
+                  controller: 'candidateController'
+              })
+           .when('/educationDetails', {
+               templateUrl: 'html/educationDetails.html',
+               controller: 'educationController'
+           })
+          .when('/fileupload', {
+              templateUrl: 'html/fileupload.html',
+              controller: 'fileuploadController'
+          })
+          .otherwise({
+              redirectTo: '/home'
+          });
+    });
 }(window));

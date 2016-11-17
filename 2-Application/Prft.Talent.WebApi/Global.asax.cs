@@ -14,6 +14,8 @@ using Prft.Talent.WebApi.App_Start;
 using Newtonsoft.Json.Serialization;
 using System.Web.Http.ExceptionHandling;
 using Prft.Talent.WebApi.Exception;
+using MultipartDataMediaFormatter;
+using Prft.Talent.WebApi.Infrastructure;
 
 namespace Prft.Talent.WebApi
 {
@@ -26,6 +28,7 @@ namespace Prft.Talent.WebApi
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+            config.Formatters.Add(new FormMultipartEncodedMediaTypeFormatter());
 
             config.Services.Replace(typeof(IExceptionHandler), new PrftExceptionHandler());
 
