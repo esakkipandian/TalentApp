@@ -22,7 +22,9 @@ namespace Prft.Talent.WebApi.Controllers
             _logger = logger;
             _personalInformationService = personalInformationService;
         }
-        // GET api/<controller>
+        
+        [HttpGet]
+        [Route("api/Candidates/GetCandidate")]
         public async Task<CandidatesResponse> GetCandidate()
         {
             var candidateInformation = await _candidateService.GetCandidatesAsync();

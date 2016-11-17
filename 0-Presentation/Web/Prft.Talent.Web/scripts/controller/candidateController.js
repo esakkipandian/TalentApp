@@ -3,9 +3,9 @@
     var CandidateInformationController = function ($scope, $controller, DTColumnBuilder) {
         var _this = this;
         $scope.dtColumns = [
-            DTColumnBuilder.newColumn('Code').withTitle('Candidate Name'),
-            DTColumnBuilder.newColumn('Description').withTitle('Phone number'),
-              DTColumnBuilder.newColumn('Description').withTitle('Email ID')
+            DTColumnBuilder.newColumn('fullName').withTitle('Candidate Name'),
+            DTColumnBuilder.newColumn('mobile').withTitle('Phone number'),
+            DTColumnBuilder.newColumn('email').withTitle('Email ID')
         ];
 
         $scope.validate = function () {
@@ -16,10 +16,10 @@
             'title': 'Candidate Information',
             'formId': 'addressTypeForm',
             'scope': $scope,
-            'addUrl': perfUrl['addCandidateName'],
-            'updateUrl': perfUrl['updateCandidateName'],
+            'addUrl': perfUrl['addCandidateInformation'],
+            'updateUrl': perfUrl['updateCandidateInformation'],
             'deleteUrl': 'http://localhost:8080/api/AddressType',
-            'loadListUrl': perfUrl['loadCandidateName']
+            'loadListUrl': perfUrl['loadCandidateInformation']
         };
         angular.extend(this, $controller('AbstractController', { _this: _this, vm: vm }));
     };
