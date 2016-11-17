@@ -12,10 +12,11 @@ namespace Prft.Talent.Data.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public candidate()
         {
-            candidateskills = new HashSet<candidateskill>();
-            candidateworkexperiences = new HashSet<candidateworkexperience>();
             candidateaddresses = new HashSet<candidateaddress>();
             candidateeducations = new HashSet<candidateeducation>();
+            candidateskills = new HashSet<candidateskill>();
+            candidateworkexperiences = new HashSet<candidateworkexperience>();
+            candidatedocuments = new HashSet<candidatedocument>();
         }
 
         [Key]
@@ -67,15 +68,18 @@ namespace Prft.Talent.Data.Entities
         public string ModifiedBy { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<candidateaddress> candidateaddresses { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<candidateeducation> candidateeducations { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidateskill> candidateskills { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidateworkexperience> candidateworkexperiences { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<candidateaddress> candidateaddresses { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<candidateeducation> candidateeducations { get; set; }
+        public virtual ICollection<candidatedocument> candidatedocuments { get; set; }
     }
 }

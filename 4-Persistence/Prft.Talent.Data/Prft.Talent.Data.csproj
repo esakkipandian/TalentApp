@@ -58,12 +58,12 @@
     <Compile Include="Entities\addresstype.cs" />
     <Compile Include="Entities\candidate.cs" />
     <Compile Include="Entities\candidateaddress.cs" />
+    <Compile Include="Entities\candidatedocument.cs" />
     <Compile Include="Entities\candidateeducation.cs" />
     <Compile Include="Entities\candidateskill.cs" />
     <Compile Include="Entities\candidateworkexperience.cs" />
     <Compile Include="Entities\college.cs" />
     <Compile Include="Entities\country.cs" />
-    <Compile Include="Entities\employee.cs" />
     <Compile Include="Entities\skill.cs" />
     <Compile Include="Entities\state.cs" />
     <Compile Include="Entities\TalentContext.cs" />
@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201611140519089_InitialModel.cs" />
     <Compile Include="Migrations\201611140519089_InitialModel.Designer.cs">
       <DependentUpon>201611140519089_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611171134513_AddedCandidateDocument.cs" />
+    <Compile Include="Migrations\201611171134513_AddedCandidateDocument.Designer.cs">
+      <DependentUpon>201611171134513_AddedCandidateDocument.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PrftDatabaseContext.cs" />
@@ -83,6 +87,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611140519089_InitialModel.resx">
       <DependentUpon>201611140519089_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611171134513_AddedCandidateDocument.resx">
+      <DependentUpon>201611171134513_AddedCandidateDocument.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
