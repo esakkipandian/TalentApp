@@ -29,21 +29,7 @@ namespace Prft.Talent.WebApi.Controllers
         public async Task<AddressTypeResponse> Get()
         {
             var addressTypes = await _addressTypeService.GetAddressTypesAsync();
-            //LogException();
             return addressTypes;
-        }
-
-        private void LogException()
-        {
-            try
-            {
-                var x = 0;
-                var y = 10 / x;
-            }
-            catch (Exception ex)
-            {
-                _logger.Log(ex, "Application Internal Exception");
-            }
         }
 
         // GET api/<controller>/5

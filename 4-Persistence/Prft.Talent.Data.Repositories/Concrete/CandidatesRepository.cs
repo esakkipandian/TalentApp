@@ -8,12 +8,13 @@ using System.Data.Entity;
 using Prft.Talent.Data.Repositories.Abstract;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Prft.Talent.Logger;
 
 namespace Prft.Talent.Data.Repositories.Concrete
 {
     public class CandidatesRepository : Repository, ICandidatesRepository
     {
-        public CandidatesRepository(PrftDatabaseContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
+        public CandidatesRepository(PrftDatabaseContext dbContext, IMapper mapper, IPrftLogger logger) : base(dbContext, mapper, logger) { }
 
         public async Task<IEnumerable<Candidates>> GetCandidateInformationAsync()
         {

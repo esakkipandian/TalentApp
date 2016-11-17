@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Prft.Talent.Domain.Talent;
+using Prft.Talent.Logger;
 
 namespace Prft.Talent.Data.Repositories.Concrete
 {
     public class CandidateSkillSetRepository : Repository, ICandidateSkillSetRepository
     {
-        public CandidateSkillSetRepository(PrftDatabaseContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
+        public CandidateSkillSetRepository(PrftDatabaseContext dbContext, IMapper mapper, IPrftLogger logger) : base(dbContext, mapper, logger) { }
 
         public Task<IEnumerable<CandidateSkillSet>> GetCandidateSkillSetsAsync()
         {

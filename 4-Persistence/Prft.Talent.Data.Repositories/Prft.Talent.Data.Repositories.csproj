@@ -77,6 +77,10 @@
       <Project>{89ad5f8c-f855-4353-9e3e-376e59ba9b9e}</Project>
       <Name>Prft.Talent.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\1-Core\Prft.Talent.Logger\Prft.Talent.Logger.csproj">
+      <Project>{06549393-01ac-4634-bde8-b1b79e5b7c28}</Project>
+      <Name>Prft.Talent.Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\3-Domain\Prft.Talent.Domain.Mapping\Prft.Talent.Domain.Mapping.csproj">
       <Project>{29bd8d42-8e88-4b7d-88a4-2a830a631609}</Project>
       <Name>Prft.Talent.Domain.Mapping</Name>

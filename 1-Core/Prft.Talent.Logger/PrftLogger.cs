@@ -10,24 +10,37 @@ namespace Prft.Talent.Logger
 {
     public class PrftLogger<T> :  IPrftLogger
     {
-
+    
         private static readonly ILogger logger = LogManager.GetLogger(typeof(T).FullName);
 
-        public void Log(Exception ex, string message)
+        public void Log(string logContent)
         {
-            logger.Error(ex, message);
+            logger.Log(LogLevel.Info, logContent);
         }
 
-        //public void Log( entry)
-        //{
-        //    if (entry.LoggingEventType == LoggingEventType.Information)
-        //        logger.Info(entry.Message, entry.Exception);
-        //    else if (entry.LoggingEventType == LoggingEventType.Warning)
-        //        logger.Warn(entry.Message, entry.Exception);
-        //    else if (entry.LoggingEventType == LoggingEventType.Error)
-        //        logger.Error(entry.Message, entry.Exception);
-        //    else
-        //        logger.Fatal(entry.Message, entry.Exception);
-        //}
+        public void Log(PrftLogLevel logLevel, Exception ex, string message)
+        {
+            switch (logLevel)
+            {
+                case PrftLogLevel.Trace:
+                    logger.Trace(ex, message);
+                    break;
+                case PrftLogLevel.Debug:
+                    logger.Debug(ex, message);
+                    break;
+                case PrftLogLevel.Info:
+                    logger.Info(ex, message);
+                    break;
+                case PrftLogLevel.Warning:
+                    logger.Warn(ex, message);
+                    break;
+                case PrftLogLevel.Error:
+                    logger.Error(ex, message);
+                    break;
+                case PrftLogLevel.Fatal:
+                    logger.Fatal(ex, message);
+                    break;
+            }
+        }
     }
 }

@@ -114,6 +114,7 @@
     <Compile Include="Controllers\CandidatesController.cs" />
     <Compile Include="Controllers\CandidateSkillSetController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Exception\PrftExceptionHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -125,6 +126,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

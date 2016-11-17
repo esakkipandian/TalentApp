@@ -10,6 +10,7 @@ namespace Prft.Talent.Logger
 {
     public interface IPrftLogger
     {
-        void Log(Exception ex, string message);
+        void Log(PrftLogLevel logLevel, Exception ex, string message);
+        void Log(string logContent);
     }
 }

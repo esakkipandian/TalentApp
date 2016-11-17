@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IPrftLogger.cs" />
+    <Compile Include="PrftLogConstants.cs" />
     <Compile Include="PrftLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
