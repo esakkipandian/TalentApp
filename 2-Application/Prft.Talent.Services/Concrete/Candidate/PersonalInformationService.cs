@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Prft.Talent.Services.Concrete.Candidate
 {
-    class PersonalInformationService : IPersonalInformationService
+    public class PersonalInformationService : IPersonalInformationService
     {
         private readonly IPersonalInformationRepository _personalInformationRepository;
 
