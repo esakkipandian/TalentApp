@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Prft.Talent.Domain.Talent
+namespace Prft.Talent.Domain.Talent.Candidate
 {
     public class PersonalInformation : BaseDomain
     {

@@ -1,11 +1,11 @@
-﻿using Prft.Talent.Data.Repositories.Abstract;
+﻿using Prft.Talent.Data.Repositories.Abstract.Candidate;
 using System.Linq;
 using AutoMapper;
 using System.Threading.Tasks;
-using Prft.Talent.Domain.Talent;
+using Prft.Talent.Domain.Talent.Candidate;
 using AutoMapper.QueryableExtensions;
 
-namespace Prft.Talent.Data.Repositories.Concrete
+namespace Prft.Talent.Data.Repositories.Concrete.Candidate
 {
     public class PersonalInformationRepository : Repository, IPersonalInformationRepository
     {

@@ -1,4 +1,4 @@
-﻿using Prft.Talent.Data.Repositories.Abstract;
+﻿using Prft.Talent.Data.Repositories.Abstract.Candidate;
 using Prft.Talent.Services.Abstract.Candidate;
 using Prft.Talent.Services.Api.Candidate;
 using System;

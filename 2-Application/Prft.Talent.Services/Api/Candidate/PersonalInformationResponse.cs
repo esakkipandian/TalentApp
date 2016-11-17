@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Prft.Talent.Domain.Talent;
+using Prft.Talent.Domain.Talent.Candidate;
 using Newtonsoft.Json;
 
 namespace Prft.Talent.Services.Api.Candidate
