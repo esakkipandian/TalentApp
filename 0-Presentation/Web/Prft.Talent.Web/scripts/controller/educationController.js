@@ -1,10 +1,32 @@
 ﻿
- var app = angular.module('educationApp', ['ngGrid']);
-app.controller('educationController', function ($scope) {
-    $scope.myData = [{ name: "Moroni", age: 50 },
-                     { name: "Tiancum", age: 43 },
-                     { name: "Jacob", age: 27 },
-                     { name: "Nephi", age: 29 },
-                     { name: "Enos", age: 34 }];
-    $scope.gridOptions = { data: 'myData' };
-});
+
+app.controller('educationController', ['$scope', '$http', function ($scope, $http) {
+
+
+
+
+    $scope.submitEducationalInformation = function () {
+        if ($scope.PI.$error.required) {
+            $scope.submitted = true;
+
+            return;
+        }
+
+
+        var inputDate = $scope.EducationalInformation;
+        $http({
+            method: 'POST',
+            url: '',
+            data: $scope.EducationalInformation,//form user object
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+
+        }).success(function (data) {
+            if (!data.errors) {
+                // Showing errors.
+                $scope.message = "success";
+
+            }
+        })
+
+    }
+}]);
