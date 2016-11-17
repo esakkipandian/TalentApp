@@ -112,7 +112,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AddressTypeController.cs" />
     <Compile Include="Controllers\CandidateSkillSetController.cs" />
-    <Compile Include="Controllers\Candidate\PersonalInformationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
