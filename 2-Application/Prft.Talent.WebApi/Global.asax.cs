@@ -15,7 +15,6 @@ using Newtonsoft.Json.Serialization;
 using System.Web.Http.ExceptionHandling;
 using Prft.Talent.WebApi.Exception;
 using MultipartDataMediaFormatter;
-using Prft.Talent.WebApi.Infrastructure;
 
 namespace Prft.Talent.WebApi
 {
