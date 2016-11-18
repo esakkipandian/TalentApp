@@ -1,23 +1,23 @@
-﻿<div>
-    <fieldset id="field1" ng-controller="PrimarySkillSetController">
-        <legend>Primary Skills</legend>
-        <div data-ng-repeat="primaryskill in primaryskills" ng-model="primaryskill.length">
-            <input type="text" ng-model="primaryskill.name" name="" placeholder="Primary Skill">
-            <input type="text" ng-model="primaryskill.rating" name="" placeholder="Rating" style="width:40px">
+﻿<div ng-controller="PrimarySkillSetController">
+
+    <div data-ng-repeat="primaryskill in primaryskills" ng-model="primaryskill.length" class="skillset">
+        <input type="text" class="textbox" ng-model="primaryskill.name" name="" placeholder="Skill">
+        <select class="dropdown">
+            <option value="Primary">Primary</option>
+            <option value="Secondary">Secondary</option>
+        </select>        
+
+        <input class="form-control" type="text" datepicker-popup ng-model="primaryskill.date" is-open="examplisOpen" />
+        
+        <span>
+
+            <input type="text" class="textbox" ng-model="primaryskill.rating" name="" placeholder="Rating">
             <button class="remove" ng-click="removePrimarySkill($index)" ng-show="primaryskills.length>1">-</button>
             <button class="remove" ng-show="$last" ng-click="addNewPrimarySkill()">+</button><br /><br />
-        </div>
-    </fieldset>
+        </span>
+    </div>
 
-    <fieldset id="field2" ng-controller="SecondarySkillSetController">
-        <legend>Secondary Skills</legend>
-        <div data-ng-repeat="secondaryskill in secondaryskills">
-            <input type="text" ng-model="secondaryskill.name" name="" placeholder="Secondary Skill">
-            <input type="text" ng-model="secondaryskill.rating" name="" placeholder="Rating" style="width:40px">
-            <button class="remove" ng-click="removeSecondarySkill($index)" ng-show="secondaryskills.length>1">-</button>
-            <button class="remove" ng-show="$last" ng-click="addNewSecondarySkill()">+</button><br /><br />
-        </div>
-    </fieldset>
+
 </div>
 
 

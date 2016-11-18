@@ -11,13 +11,13 @@
 
 
         $scope.selection = $scope.tabs[0];
-        $scope.getCurrentTabIndex = function () {
-            return _.indexOf($scope.tabs, $scope.selection);
+        $scope.getCurrentTabIndex = function () {           
+            return $scope.tabs.indexOf($scope.selection);
         };
 
         
         $scope.goToTab = function (index) {
-            if (!_.isUndefined($scope.tabs[index])) {
+            if (typeof $scope.tabs[index] != 'undefined') {
                 $scope.selection = $scope.tabs[index];
                 $scope.active = index;
             }
@@ -26,14 +26,17 @@
 
         $scope.hasNextTab = function () {
             var tabIndex = $scope.getCurrentTabIndex();
-            var nextTab = tabIndex + 1;          
-            return !_.isUndefined($scope.tabs[nextTab]);
+            var nextTab = tabIndex + 1;           
+            if (typeof $scope.tabs[nextTab] != 'undefined')
+                return true;
+            
         };
 
         $scope.hasPreviousTab = function () {
             var tabIndex = $scope.getCurrentTabIndex();
-            var previousTab = tabIndex - 1;           
-            return !_.isUndefined($scope.tabs[previousTab]);
+            var previousTab = tabIndex - 1;                       
+            if (typeof $scope.tabs[previousTab] != 'undefined')
+                return true;
         };
 
         $scope.incrementTab = function () {

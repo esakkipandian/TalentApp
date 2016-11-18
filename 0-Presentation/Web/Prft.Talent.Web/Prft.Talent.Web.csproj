@@ -110,7 +110,6 @@
     <Content Include="scripts\controller\educationController.js" />
     <Content Include="scripts\controller\personalInformationController.js" />
     <Content Include="scripts\controller\primarySkillsetController.js" />
-    <Content Include="scripts\controller\secondarySkillSetController.js" />
     <Content Include="scripts\directive\fileuploaddirective.js" />
     <Content Include="scripts\directive\perfdirective.js" />
     <Content Include="scripts\hash\md5.js" />
@@ -159,8 +158,6 @@
     <Content Include="scripts\lib\nya-bs-select.min.js" />
     <Content Include="scripts\lib\select.js" />
     <Content Include="scripts\lib\ui-bootstrap-tpls-1.3.2.js" />
-    <Content Include="scripts\lib\underscore.js" />
-    <Content Include="scripts\lib\underscore.min.js" />
     <Content Include="scripts\perf-common.min.js" />
     <Content Include="scripts\service\commonServices.js" />
     <Content Include="scripts\service\fileuploadServices.js" />

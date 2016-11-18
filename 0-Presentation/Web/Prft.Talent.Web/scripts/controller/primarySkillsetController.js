@@ -1,7 +1,12 @@
 ﻿
 mainApp.controller('PrimarySkillSetController', function ($scope) {
 
-    $scope.primaryskills = [{ id: 'primaryskill' }];
+    $scope.primaryskills = [
+        {
+            id: 'primaryskill'
+            
+        }
+    ];
 
     $scope.addNewPrimarySkill = function () {       
         var primarySkill = $scope.primaryskills.length + 1;
@@ -12,6 +17,16 @@ mainApp.controller('PrimarySkillSetController', function ($scope) {
         $scope.primaryskills.splice(index, 1);
     };
 
+    $scope.open = function ($event, example) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        datePicker.isOpen = true;
+    };
+
+    $scope.datePicker = [{
+        opened: false
+    }];
 });
 
 
