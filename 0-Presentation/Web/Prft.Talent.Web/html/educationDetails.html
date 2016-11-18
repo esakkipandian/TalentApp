@@ -8,72 +8,104 @@
     <script src="../scripts/controller/educationController.js"></script>
 </head>
 <body ng-app="educationApp">
-    <div ng-controller="educationController">
+    <!--<div ng-controller="educationController">
         <div class="gridStyle" ng-grid="gridOptions">
         </div>
-    </div>
-    <form name="PI">
-        <span class="error" ng-show="PI.$error.required">All Mandatory Fields need to be Filled</span>
+    </div>-->
+    <form name="PI">      
         <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <label class="required"> University Name</label>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <label class="required">Highest Qualification</label>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <input type="text" name="FirstName" ng-model="EducationalInformation.UnversityName" required />
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <select  style="max-width:80%;">
+                    <option value=""><--Select--></option>
+                    <option value="1">Doctorate</option>
+                    <option value="2">PostGraduate</option>
+                    <option value="3">UnderGraduate</option>
+                </select>
+                <!--<input type="text" name="FirstName" ng-model="EducationalInformation.UnversityName" required />-->
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <label class="required"> Course Name</label>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <label class="required"> Course</label>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <input type="text" name="LastName" ng-model="EducationalInformation.CourseName" required />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <label>Specification </label>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <input type="text" name="CurrentAddress" ng-model="EducationalInformation.Specification" required />
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <select  style="max-width:80%;">
+                    <option><--Select--></option>
+                </select>
+                <!--<input type="text" name="LastName" ng-model="EducationalInformation.CourseName" required />-->
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <label>Mode of Education</label>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <label class="required">Specialization</label>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <select  style="max-width:80%;">
+                    <option><--Select--></option>
+                </select>
+                <!--<input type="text" name="CurrentAddress" ng-model="EducationalInformation.Specification" required />-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <label class="required">University</label>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <select  style="max-width:80%;">
+                    <option><--Select--></option>
+                </select>
+                <!--<input type="text" name="CurrentAddress" ng-model="EducationalInformation.Specification" required />-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <label class="required">College</label>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <select  style="max-width:80%;">
+                    <option><--Select--></option>
+                </select>
+                <!--<input type="text" name="CurrentAddress" ng-model="EducationalInformation.Specification" required />-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <label class="required">Course Type </label>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                 <input type="radio" />Full Time
-                <input type="radio" />Half Time
+                <input type="radio" />Part Time
+                <input type="radio" />Correspondence
             </div>
         </div>
-
         <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <label>Year of Passed Out</label>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <label class="required">Passing Year</label>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <input type="text" name="Age" ng-model="EducationalInformation.YearOfPassedOut" required />
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <select  style="max-width:80%;">
+                    <option><--Select--></option>
+                </select>
+                <!--<input type="text" name="Age" ng-model="EducationalInformation.YearOfPassedOut" required />-->
             </div>
 
         </div>
         <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <label>percentage or CGPA</label>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <label class="required">Percentage/CGPA</label>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                 <input type="text" name="ContactNumber" ng-model="EducationalInformation.Percentage" required maxlength="10" />
             </div>
         </div>
-
-
-
-        <div class="row">
+        <!--<div class="row">
             <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <input type="button" action="submitEducationalInformation" ng-click="Submit()" value="Submit" />
-                {{message}}
+                <input type="button" action="submitEducationalInformation" ng-click="Submit()" value="Submit" />                
             </div>
-        </div>
+        </div>-->
     </form>
 </body>
 </html>
