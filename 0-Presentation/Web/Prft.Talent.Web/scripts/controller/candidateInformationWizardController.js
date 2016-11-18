@@ -2,9 +2,10 @@
 
     var CandidateInformationWizardController = function ($scope, $controller, $window) {
         $scope.tabs = [
-          { title: 'Personal Information', url: 'html/candidatewizard/personalInformation.html' },
-          { title: 'Educational Information', url: 'html/candidatewizard/Step2.html' },
-          { title: 'Employer Information', url: 'html/candidatewizard/Step3.html' }
+          { title: 'Personal Details', url: 'html/candidatewizard/personalInformation.html' },
+          { title: 'Educational Details', url: 'html/candidatewizard/educationDetails.html' },
+          { title: 'Skillset Details', url: 'html/candidatewizard/skillset.html' },
+          { title: 'Resume', url: 'html/candidatewizard/fileupload.html' }
         ];
 
 
