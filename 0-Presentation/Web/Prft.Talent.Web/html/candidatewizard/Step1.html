@@ -1,0 +1,39 @@
+﻿<h2>Step 1</h2>
+
+<form role="form" class="form-horizontal" id="step1candicatewizard" ng-controller="step1Controller" novalidate>
+    <div class="modal-header">
+        <h4 class="modal-title" ng-show="!data.pk" id="myModalLabel">Add Address Type</h4>
+        <h4 class="modal-title" ng-show="data.pk" id="myModalLabel">Update Address Type</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6">
+                <div class="form-group">
+                    <label for="addressTypeCode" class="col-md-4 control-label required">Address Code :</label>
+                    <div class="col-md-8">
+                        <input type="text" id="addressTypeCode" ng-model="data.code" class="form-control" placeholder="Code"
+                               name="Address Type" ng-minlength="1" ng-maxlength="50" validType="text-only" value="{{data.code}}" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6">
+                <div class="form-group">
+                    <label for="addressTypeDescription" class="col-md-4 control-label requi">Address Code :</label>
+                    <div class="col-md-8">
+                        <input type="text" id="addressTypeDescription" ng-model="data.description" class="form-control" placeholder="Description" value="{{data.description}} required">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="perfhr-widget-footer">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" ng-show="!data.pk" action="save">Save</button>
+                <button type="submit" class="btn btn-primary" ng-show="data.pk" action="update">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
