@@ -43,10 +43,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                    <label class="required"> Current Address</label>
+                    <label class="required"> Email Address</label>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                    <input type="text" name="CurrentAddress" ng-model="PersonalInformation.CurrentAddress" required />
+                    <input type="text" name="CurrentAddress" ng-model="PersonalInformation.Email" required />
                 </div>
             </div>
             <div class="row">
@@ -63,7 +63,7 @@
                     <label class="required"> Contact Number</label>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                    <input type="text" name="ContactNumber" ng-model="PersonalInformation.ContactNumber" required maxlength="10" />
+                    <input type="text" name="ContactNumber" ng-model="PersonalInformation.Mobile" required maxlength="10" />
                 </div>
             </div>
             <div class="row">
@@ -71,7 +71,7 @@
                     <label>Alternate Contact Number</label>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                    <input type="text" name="AlternateContactNumber" ng-model="PersonalInformation.AlternateContactNumber" required maxlength="10" />
+                    <input type="text" name="AlternateContactNumber" ng-model="PersonalInformation.AlternateContact" required maxlength="10" />
                 </div>
             </div>
             <div class="row">
@@ -96,13 +96,12 @@
                     <input type="text" name="OtherNationality" ng-model="PersonalInformation.Others" required />
                 </div>
             </div>
-        </form>
-        <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-                <button type="submit" action="submitPersonalInformation">Submit</button>
-                {{message}}
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                    <button type="submit" action="submitPersonalInformation">Submit</button>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 <!--</body>-->
 <!--</html>-->

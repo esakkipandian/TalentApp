@@ -43,8 +43,8 @@ namespace Prft.Talent.WebApi.Controllers
         }
 
 
-        [HttpGet]
-        [Route("api/PersonalInformation/AddPersonalInformation")]
+        [HttpPost]
+        [Route("api/Candidates/AddPersonalInformation")]
         public async Task<int> AddPersonalInformation(PersonalInformation personalInformation)
         {
             var successFlag = await _personalInformationService.SetCandidatePersonalInformationAsync(
