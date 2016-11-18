@@ -60,13 +60,13 @@
     <Content Include="html\candidatewizard\Step2.html" />
     <Content Include="html\candidatewizard\Step3.html" />
     <Content Include="html\dashboard.html" />
-    <Content Include="html\educationDetails.html" />
+    <Content Include="html\candidatewizard\educationDetails.html" />
     <Content Include="html\addresstype.html" />
     <Content Include="html\employee.html" />
-    <Content Include="html\fileupload.html" />
+    <Content Include="html\candidatewizard\fileupload.html" />
     <Content Include="html\interview.html" />
     <Content Include="html\candidatewizard\personalInformation.html" />
-    <Content Include="html\skillset.html" />
+    <Content Include="html\candidatewizard\skillset.html" />
     <Content Include="html\templates\deleteTemplate.html" />
     <Content Include="html\templates\panelTemplate.html" />
     <Content Include="images\bg.jpg" />
@@ -106,6 +106,7 @@
     <Content Include="scripts\controller\addressTypeController.js" />
     <Content Include="scripts\controller\candidateController.js" />
     <Content Include="scripts\controller\candidateInformationWizardController.js" />
+    <Content Include="scripts\controller\candidate\candidateEducationController.js" />
     <Content Include="scripts\controller\candidate\step1controller.js" />
     <Content Include="scripts\controller\datatableController.js" />
     <Content Include="scripts\controller\employeeController.js" />
