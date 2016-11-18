@@ -18,7 +18,9 @@ namespace Prft.Talent.Data.Repositories.Concrete
 
         public async Task<IEnumerable<Candidates>> GetCandidateInformationAsync()
         {
-            return await DatabaseContext.candidates.ProjectTo<Candidates>(Mapper.ConfigurationProvider).ToListAsync();
+            return await DatabaseContext.candidates
+                .Where(x => x.IsActive == true)
+                .ProjectTo<Candidates>(Mapper.ConfigurationProvider).ToListAsync();
         }
     }
 }

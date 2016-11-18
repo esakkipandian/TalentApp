@@ -26,7 +26,7 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
         public async Task<int> SetCandidatePersonalInformationAsync(PersonalInformation personalInformation)
         {
             var objectToAdd = Mapper.Map<Entities.candidate>(personalInformation);
-            objectToAdd.PK = personalInformation.CandidateId;
+            objectToAdd.IsActive = true;
             DatabaseContext.candidates.Add(objectToAdd);
             return await DatabaseContext.SaveChangesAsync();
         }
