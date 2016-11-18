@@ -1,22 +1,13 @@
 ﻿(function (angular) {
-    /* Designation Controller*/
-    var Step1Controller = function ($scope, $controller, DTColumnBuilder) {
+    var Step1Controller = function ($scope, $controller, DTColumnBuilder, commonAPIservice) {
         var _this = this;
+        _this.service = commonAPIservice;
         
         $scope.save = function () {
             console.log("Step 1 Loaded");
+            _this.service.add(perfUrl['addAddressType'], $scope.data);
         };
-        //var vm = {
-        //    'title': 'Step 1',
-        //    'formId': 'step1candicatewizard',
-        //    'scope': $scope,
-        //    'addUrl': perfUrl['addAddressType'],
-        //    'updateUrl': perfUrl['updateAddressType'],
-        //    'deleteUrl': perfUrl['deleteAddressType'],
-        //    'loadListUrl': ''
-        //};
-        //angular.extend(this, $controller('AbstractController', { _this: _this, vm: vm }));
     };
-    Step1Controller.$inject = ['$scope', '$controller', 'DTColumnBuilder'];
+    Step1Controller.$inject = ['$scope', '$controller', 'DTColumnBuilder', 'commonAPIservice'];
     mainApp.controller('step1Controller', Step1Controller);
 })(angular);
