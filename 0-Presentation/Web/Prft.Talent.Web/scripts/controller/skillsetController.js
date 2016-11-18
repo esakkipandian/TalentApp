@@ -1,5 +1,5 @@
-﻿
-mainApp.controller('PrimarySkillSetController', function ($scope) {
+﻿(function (angular) {
+var SkillSetController = function ($scope, $controller) {
 
     $scope.primaryskills = [
         {
@@ -17,16 +17,8 @@ mainApp.controller('PrimarySkillSetController', function ($scope) {
         $scope.primaryskills.splice(index, 1);
     };
 
-    $scope.open = function ($event, example) {
-        $event.preventDefault();
-        $event.stopPropagation();
-
-        datePicker.isOpen = true;
-    };
-
-    $scope.datePicker = [{
-        opened: false
-    }];
-});
-
-
+    
+};
+SkillSetController.$inject = ['$scope', '$controller'];
+mainApp.controller('skillSetController', SkillSetController);
+})(angular);

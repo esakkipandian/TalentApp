@@ -1,4 +1,4 @@
-﻿<div ng-controller="PrimarySkillSetController">
+﻿<div ng-controller="skillSetController">
 
     <div data-ng-repeat="primaryskill in primaryskills" ng-model="primaryskill.length" class="skillset">
         <input type="text" class="textbox" ng-model="primaryskill.name" name="" placeholder="Skill">
@@ -7,8 +7,7 @@
             <option value="Secondary">Secondary</option>
         </select>        
 
-        <input class="form-control" type="text" datepicker-popup ng-model="primaryskill.date" is-open="examplisOpen" />
-        
+              
         <span>
 
             <input type="text" class="textbox" ng-model="primaryskill.rating" name="" placeholder="Rating">

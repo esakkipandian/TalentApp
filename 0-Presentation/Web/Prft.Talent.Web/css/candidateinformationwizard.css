@@ -24,14 +24,10 @@
   padding-top:20px;
   box-sizing:border-box;
   background:#f9f9f9;
-  padding:0px 0px 0px 0px;  
+  padding:5px 5px 5px 5px;  
   cursor:pointer;
   transition:background .4s;
-}
-
-.form{
-     
-     margin: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {

@@ -1,5 +1,4 @@
-﻿<div id="candidateinformation" class="tab" >
-        <form name="candidateinforamtionform" ng-controller="candidateInformationWizardController" class="form">
+﻿<div id="candidateinformation" class="tab" >        
             <div>
                 <uib-tabset active="active" justified="true" type="pills">
                     <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" ng-click="goToTab($index)"
@@ -10,8 +9,7 @@
                     </uib-tab>
                 </uib-tabset>
 
-            </div>
-            <div>
+            </div>            <div>
                 <button  type="button" class="btn btn-primary" ng-show="hasPreviousTab()" ng-click="decrementTab()">
                     <i class="glyphicon glyphicon-circle-arrow-left"></i> Previous Section
                 </button>
@@ -22,7 +20,6 @@
                     <i class="glyphicon glyphicon-ok-circle"></i> Submit
                 </button>
 
-            </div>
-        </form>
+            </div>       
     </div>
 
