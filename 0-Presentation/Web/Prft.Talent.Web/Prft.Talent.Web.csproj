@@ -65,7 +65,7 @@
     <Content Include="html\employee.html" />
     <Content Include="html\fileupload.html" />
     <Content Include="html\interview.html" />
-    <Content Include="html\personalInformation.html" />
+    <Content Include="html\candidatewizard\personalInformation.html" />
     <Content Include="html\skillset.html" />
     <Content Include="html\templates\deleteTemplate.html" />
     <Content Include="html\templates\panelTemplate.html" />
@@ -112,7 +112,7 @@
     <Content Include="scripts\controller\fileuploadController.js" />
     <Content Include="scripts\controller\interviewController.js" />
     <Content Include="scripts\controller\educationController.js" />
-    <Content Include="scripts\controller\personalInformationController.js" />
+    <Content Include="scripts\controller\candidate\personalInformationController.js" />
     <Content Include="scripts\controller\skillsetController.js" />
     <Content Include="scripts\directive\fileuploaddirective.js" />
     <Content Include="scripts\directive\perfdirective.js" />
