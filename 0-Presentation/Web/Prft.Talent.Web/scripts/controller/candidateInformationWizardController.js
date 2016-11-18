@@ -1,23 +1,19 @@
 ﻿(function (angular) {
-    
+
     var CandidateInformationWizardController = function ($scope, $controller, $window) {
         $scope.tabs = [
-          { title: 'Personal Information', content: 'Dynamic content 1', url: 'html/candidatewizard/Step1.html' },
-          { title: 'Educational Information', content: 'Dynamic content 1', url: 'html/candidatewizard/Step2.html' },
-        { title: 'Employer Information', content: 'Dynamic content 1', url: 'html/candidatewizard/Step3.html' }
-          //{ title: 'Educational Qualifications', url: 'html/educationDetails.html' },
-          //{ title: 'Skills', url: 'html/skillSet.html' },
-          //{ title: 'Employment Details', url: 'html/employee.html' }
-
+          { title: 'Personal Information', url: 'html/candidatewizard/personalInformation.html' },
+          { title: 'Educational Information', url: 'html/candidatewizard/Step2.html' },
+          { title: 'Employer Information', url: 'html/candidatewizard/Step3.html' }
         ];
 
 
         $scope.selection = $scope.tabs[0];
-        $scope.getCurrentTabIndex = function () {           
+        $scope.getCurrentTabIndex = function () {
             return $scope.tabs.indexOf($scope.selection);
         };
 
-        
+
         $scope.goToTab = function (index) {
             if (typeof $scope.tabs[index] != 'undefined') {
                 $scope.selection = $scope.tabs[index];
@@ -28,15 +24,14 @@
 
         $scope.hasNextTab = function () {
             var tabIndex = $scope.getCurrentTabIndex();
-            var nextTab = tabIndex + 1;           
+            var nextTab = tabIndex + 1;
             if (typeof $scope.tabs[nextTab] != 'undefined')
                 return true;
-            
         };
 
         $scope.hasPreviousTab = function () {
             var tabIndex = $scope.getCurrentTabIndex();
-            var previousTab = tabIndex - 1;                       
+            var previousTab = tabIndex - 1;
             if (typeof $scope.tabs[previousTab] != 'undefined')
                 return true;
         };
