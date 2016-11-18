@@ -10,7 +10,7 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
 {
     public class PersonalInformationRepository : Repository, IPersonalInformationRepository
     {
-        public PersonalInformationRepository(PrftDatabaseContext dbContext, IMapper mapper, IPrftLogger logger) 
+        public PersonalInformationRepository(PrftDatabaseContext dbContext, IMapper mapper, IPrftLogger logger)
             : base(dbContext, mapper, logger)
         {
         }
@@ -29,6 +29,17 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
             objectToAdd.IsActive = true;
             DatabaseContext.candidates.Add(objectToAdd);
             return await DatabaseContext.SaveChangesAsync();
+        }
+        public async Task<int> DeleteCandidatePersonalInformationAsync(int candidateId)
+        {
+            var candidate = DatabaseContext.candidates.Where(x => x.PK == candidateId).SingleOrDefault();
+            if (candidate != null)
+            {
+                candidate.IsActive = false;
+                candidate.IsExperienced = true;
+                return await DatabaseContext.SaveChangesAsync();
+            }
+            return 0;
         }
     }
 }

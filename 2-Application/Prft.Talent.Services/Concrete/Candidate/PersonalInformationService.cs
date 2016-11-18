@@ -18,6 +18,14 @@ namespace Prft.Talent.Services.Concrete.Candidate
             _personalInformationRepository = personalInformationRepository;
         }
 
+        public async Task<SetPersonalInformationResponse> DeleteCandidatePersonalInformationAsync(GetPersonalInformationRequest personalInformationRequest)
+        {
+            return new SetPersonalInformationResponse
+            {
+                SuccessFlag = await _personalInformationRepository.DeleteCandidatePersonalInformationAsync(personalInformationRequest.CandidateId)
+            };
+        }
+
         public async Task<PersonalInformationResponse> GetCandidatePersonalInformationAsync(GetPersonalInformationRequest personalInformationRequest)
         {
             return new PersonalInformationResponse

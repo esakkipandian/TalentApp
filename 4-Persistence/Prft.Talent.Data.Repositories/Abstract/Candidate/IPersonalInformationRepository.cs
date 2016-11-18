@@ -12,5 +12,7 @@ namespace Prft.Talent.Data.Repositories.Abstract.Candidate
         Task<PersonalInformation> GetCandidatePersonalInformationAsync(int CandidateId);
 
         Task<int> SetCandidatePersonalInformationAsync(PersonalInformation PersonalInformation);
+
+        Task<int> DeleteCandidatePersonalInformationAsync(int CandidateId);
     }
 }

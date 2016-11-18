@@ -22,7 +22,7 @@ namespace Prft.Talent.WebApi.Controllers
             _logger = logger;
             _personalInformationService = personalInformationService;
         }
-        
+
         [HttpGet]
         [Route("api/Candidates/GetCandidate")]
         public async Task<CandidatesResponse> GetCandidate()
@@ -40,6 +40,16 @@ namespace Prft.Talent.WebApi.Controllers
                     CandidateId = id
                 });
             return personalInformation;
+        }
+
+        public async Task<int> DeleteCandidatePersonalInformation(int id)
+        {
+            var successFlag = await _personalInformationService.DeleteCandidatePersonalInformationAsync(
+                new GetPersonalInformationRequest
+                {
+                    CandidateId = id
+                });
+            return successFlag.SuccessFlag;
         }
 
 
