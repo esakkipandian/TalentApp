@@ -4,7 +4,11 @@
         _this.service = commonAPIservice;
 
         $scope.save = function () {
-            console.log("Step 1 Loaded");
+            if ($scope.personalInformation.$error.required){
+                $scope.Submitted = true;
+                return;
+            }
+            if ($scope.personalInformation.$error.email){return}
             _this.service.add('http://localhost:8080/api/Candidates/AddPersonalInformation/', $scope.PersonalInformation);
         };
     };

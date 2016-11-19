@@ -1,86 +1,88 @@
 ﻿
-
-<form role="form" class="form-horizontal" id="personalInformation" ng-controller="personalInformationController" novalidate >
-    <span class="error" ng-show="Submitted">All Mandatory Fields need to be Filled</span>
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <label class="required"> First Name</label>
+<div class="container">
+    <form role="form"  name="personalInformation"class="form-horizontal"  ng-controller="personalInformationController" novalidate>
+        <span ng-show="Submitted">All the Mandatory Fields are required</span>
+        <span ng-show="personalInformation.$error.email">This is not a valid email.</span>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <label class="required"> First Name</label>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <input type="text" name="FirstName" ng-model="PersonalInformation.FirstName" required />
+            </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <input type="text" name="FirstName" ng-model="PersonalInformation.FirstName" required />
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <label class="required"> Last Name</label>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <input type="text" name="LastName" ng-model="PersonalInformation.LastName" required />
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <label class="required"> Last Name</label>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <label class="required">D.O.B</label>
+            </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <input type="text" name="LastName" ng-model="PersonalInformation.LastName" required />
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <label class="required"> Email Address</label>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <input type="email" name="CurrentAddress" ng-model="PersonalInformation.Email" required />
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <label class="required">D.O.B</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <label class="required"> Email Address</label>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <input type="text" name="CurrentAddress" ng-model="PersonalInformation.Email" required />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <label class="required">Age</label>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <input type="text" name="Age" ng-model="PersonalInformation.Age" required />
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <label class="required"> Contact Number</label>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <input type="text" name="ContactNumber" ng-model="PersonalInformation.Mobile" required maxlength="10" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <label>Alternate Contact Number</label>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <input type="text" name="AlternateContactNumber" ng-model="PersonalInformation.AlternateContact" required maxlength="10" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <label> Nationality</label>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <!--<input type="text" name="LastName" ng-model="PersonalInformation.Nationality" required />-->
-            <select ng-model="PersonalInformation.Nationality" required>
-                <option value="">--Please Select--</option>
-                <option value="1">Indian</option>
-                <option value="2">Others</option>
-            </select>
-        </div>
-    </div>
-    <div class="row" ng-if="PersonalInformation.Nationality==2">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <label> Others</label>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <label class="required">Age</label>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <input type="number" name="Age" ng-model="PersonalInformation.Age" maxlength="2" required />
+            </div>
 
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <input type="text" name="OtherNationality" ng-model="PersonalInformation.Others" required />
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <label class="required"> Contact Number</label>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <input type="number" name="ContactNumber" ng-model="PersonalInformation.Mobile" required maxlength="10" />
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <button type="submit" class="btn btn-primary" action="save">Submit</button>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <label class="required">Alternate Contact Number</label>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <input type="text" name="AlternateContactNumber" ng-model="PersonalInformation.AlternateContact" required maxlength="10" />
+            </div>
         </div>
-    </div>
-</form>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <label class="required"> Nationality</label>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <!--<input type="text" name="LastName" ng-model="PersonalInformation.Nationality" required />-->
+                <select ng-model="PersonalInformation.Nationality" required>
+                    <option value="">--Please Select--</option>
+                    <option value="1">Indian</option>
+                    <option value="2">Others</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" ng-if="PersonalInformation.Nationality==2">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <label> Others</label>
+
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <input type="text" name="OtherNationality" ng-model="PersonalInformation.Others" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+                <button type="submit" class="btn btn-primary" action="save">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
