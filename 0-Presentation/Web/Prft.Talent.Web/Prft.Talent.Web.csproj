@@ -114,7 +114,7 @@
     <Content Include="scripts\controller\interviewController.js" />
     <Content Include="scripts\controller\educationController.js" />
     <Content Include="scripts\controller\candidate\personalInformationController.js" />
-    <Content Include="scripts\controller\skillsetController.js" />
+    <Content Include="scripts\controller\candidate\skillsetController.js" />
     <Content Include="scripts\directive\fileuploaddirective.js" />
     <Content Include="scripts\directive\perfdirective.js" />
     <Content Include="scripts\hash\md5.js" />

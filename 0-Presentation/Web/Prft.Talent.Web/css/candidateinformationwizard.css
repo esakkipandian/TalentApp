@@ -65,14 +65,73 @@ fieldset, input {
     height:30px;
 }
 
+.datepicker{
+    
+    width:150px;
+    height:30px;
+}
+
 .dropdown{
     padding-left:15px;
-    width:200px;
+    width:150px;
     height:30px;
 }
 
 .datepicker{
     padding-left:15px;
-    width:100px;
+    width:150px;
     height:30px;
+}
+
+.dropdown option:first-child{
+    color:grey;
+}
+.drop option[disabled]:first-child{
+    display:none;
+}
+select option:first-child {
+	color: grey;
+}
+select.empty {
+	color: grey;
+}
+
+select option {
+	color: black;
+}
+select option::selection{
+    color:black;
+}
+/* Hidden placeholder */
+select option[disabled]:first-child {
+	display: none;
+}
+
+.glyphicon-star {
+    color: rgba(255, 255, 0, 0.94);    
+    padding: 1px;   
+    font-size: 20px;
+    text-shadow: .05em .05em #aaa;
+    list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+ .glyphicon-star:focus {
+    outline: none;
+    border: 0;
+ }
+ .glyphicon-star-empty:focus {
+    outline: none;
+    border: 0;
+ }
+
+
+.glyphicon-star-empty {
+    color: #0e0e0e;    
+    padding: 1px;   
+    font-size: 20px;    
+    list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
 }
