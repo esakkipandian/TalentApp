@@ -17,9 +17,12 @@
             _this.service.loadRecords(url)
                          .then(function (response) {
                              $scope.PersonalInformation = response.data;
+                             perfDatatable.recordId = 0;
                          });
         };
-        loadPersonalInformation();
+        if (perfDatatable.recordId && perfDatatable.recordId > 0) {
+            loadPersonalInformation();
+        };
     };
     PersonalInformationController.$inject = ['$scope', '$controller', 'DTColumnBuilder', 'commonAPIservice'];
     mainApp.controller('personalInformationController', PersonalInformationController);
