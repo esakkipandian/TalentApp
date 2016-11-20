@@ -1,6 +1,13 @@
 ﻿(function (angular) {
 
-    var CandidateInformationWizardController = function ($scope, $controller, $window) {
+    var CandidateInformationWizardController = function ($scope, $controller, $window, candidateCommonServices) {
+        var _this = this;
+        _this.CandidateCommonServices = candidateCommonServices;
+
+        if (perfDatatable.recordId) {
+            _this.CandidateCommonServices.setCandidateId(perfDatatable.recordId);
+        };
+
         $scope.tabs = [
           { title: 'Personal Details', url: 'html/candidatewizard/personalInformation.html' },
           { title: 'Educational Details', url: 'html/candidatewizard/educationDetails.html' },
@@ -53,6 +60,6 @@
             }
         };
     };
-    CandidateInformationWizardController.$inject = ['$scope', '$controller', '$window'];
+    CandidateInformationWizardController.$inject = ['$scope', '$controller', '$window', 'candidateCommonServices'];
     mainApp.controller('candidateInformationWizardController', CandidateInformationWizardController);
 })(angular);

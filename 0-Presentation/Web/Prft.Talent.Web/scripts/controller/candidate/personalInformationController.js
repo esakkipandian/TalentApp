@@ -1,7 +1,8 @@
 ﻿(function (angular) {
-    var PersonalInformationController = function ($scope, $controller, DTColumnBuilder, commonAPIservice) {
+    var PersonalInformationController = function ($scope, $controller, DTColumnBuilder, commonAPIservice, candidateCommonServices) {
         var _this = this;
         _this.service = commonAPIservice;
+        _this.CandidateCommonServices = candidateCommonServices;
 
         $scope.save = function () {
             if ($scope.personalInformation.$error.required){
@@ -20,11 +21,11 @@
                              perfDatatable.recordId = 0;
                          });
         };
-        if (perfDatatable.recordId && perfDatatable.recordId > 0) {
+        if (_this.CandidateCommonServices.getCandidateId() > 0) {
             loadPersonalInformation();
         };
     };
-    PersonalInformationController.$inject = ['$scope', '$controller', 'DTColumnBuilder', 'commonAPIservice'];
+    PersonalInformationController.$inject = ['$scope', '$controller', 'DTColumnBuilder', 'commonAPIservice', 'candidateCommonServices'];
     mainApp.controller('personalInformationController', PersonalInformationController);
 })(angular);
 
