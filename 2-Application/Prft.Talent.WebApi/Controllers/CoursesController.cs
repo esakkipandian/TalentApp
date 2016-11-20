@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,25 +11,23 @@ using Prft.Talent.Services.Api;
 using Prft.Talent.Services.Concrete;
 using System.Threading.Tasks;
 
-
-
 namespace Prft.Talent.WebApi.Controllers
 {
-    public class EducationController : ApiController
+    public class CoursesController : ApiController
     {
-         private readonly ICollegesServices _collegesService;
+        private readonly ICoursesService _courseService;
         private readonly IPrftLogger _logger;
-        public EducationController(ICollegesServices collegeservices, IPrftLogger logger)
+        public CoursesController(ICoursesService courseservices, IPrftLogger logger)
         {
 
-            _collegesService = collegeservices;
+            _courseService = courseservices;
             _logger = logger;
-           }
-        public async Task<CollegesReponse> Get()
+        }
+        public async Task<CoursesResponse> Get()
         {
-            var Collges = await _collegesService.GetCollegesAsync();
+            var Courses = await _courseService.GetCoursesAsync();
             //LogException();
-            return Collges;
+            return Courses;
         }
     }
 }

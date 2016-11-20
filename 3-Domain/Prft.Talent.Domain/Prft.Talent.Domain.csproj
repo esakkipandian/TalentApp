@@ -49,7 +49,9 @@
     <Compile Include="Talent\Candidate\PersonalInformation.cs" />
     <Compile Include="Talent\CandiateDocument.cs" />
     <Compile Include="Talent\Colleges.cs" />
+    <Compile Include="Talent\Courses.cs" />
     <Compile Include="Talent\Employee.cs" />
+    <Compile Include="Talent\University.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

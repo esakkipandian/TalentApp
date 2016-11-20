@@ -21,6 +21,11 @@ namespace Prft.Talent.Domain.Mapping
                   .ForMember(x => x.CollegeName, map => map.MapFrom(c => c.Description))
                 
                 .ReverseMap();
+            profile.CreateMap<university, University > ()
+                  .ForMember(x => x.UniversityCode, map => map.MapFrom(c => c.Code))
+                  .ForMember(x => x.UniversityName, map => map.MapFrom(c => c.Description))
+
+                .ReverseMap();
         }
     }
 }

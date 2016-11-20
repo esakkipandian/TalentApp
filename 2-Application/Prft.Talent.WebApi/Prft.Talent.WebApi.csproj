@@ -117,8 +117,11 @@
     <Compile Include="Controllers\AddressTypeController.cs" />
     <Compile Include="Controllers\CandidatesController.cs" />
     <Compile Include="Controllers\CandidateSkillSetController.cs" />
+    <Compile Include="Controllers\CollegesController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\FileuploadController.cs" />
+    <Compile Include="Controllers\UniversityController.cs" />
     <Compile Include="Exception\PrftExceptionHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
