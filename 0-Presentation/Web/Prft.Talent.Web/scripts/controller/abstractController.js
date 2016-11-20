@@ -1,6 +1,7 @@
 (function(angular) {
-	var AbstractController = function($controller, vm, commonAPIservice, $compile, DTOptionsBuilder, DTColumnBuilder){
-		var _this = this; _this.vm = vm;  _this.service = commonAPIservice;
+    var AbstractController = function ($controller, vm, commonAPIservice, $compile, DTOptionsBuilder, DTColumnBuilder, $window) {
+        var _this = this; _this.vm = vm; _this.service = commonAPIservice;
+        _this.window = $window;
 		vm.scope.add = function(){
 	        _this.add();
 	    };
@@ -24,15 +25,22 @@
             "service" : commonAPIservice,
             'loadListUrl' : vm.loadListUrl,
             'editFormId' : vm.formId,
-            'deleteFormId' : 'deleteRecord'
+            'deleteFormId': 'deleteRecord',
+            'navigateToUrl': vm.navigateToUrl,
+            'editNavigateUrl' : vm.editNavigateUrl
         };
         perfDatatable.loadTable.init(paramObj);
 	};
 	
-	AbstractController.prototype.add = function(){
-		this.vm.scope.data = {};
-		perfUtils.getInstance().resetForm();
-		$('#'+this.vm.formId).modal();
+	AbstractController.prototype.add = function () {
+	    if (this.vm.navigateToUrl === true) {
+	        //this.location.path("#/candidateinformationwizard");
+	        this.window.location = this.vm.addNavigateUrl;
+	    } else {
+	        this.vm.scope.data = {};
+	        perfUtils.getInstance().resetForm();
+	        $('#' + this.vm.formId).modal();
+	    }
 	};
 	
 	AbstractController.prototype.save = function(){
@@ -62,6 +70,6 @@
         });
 	};
 
-	AbstractController.$inject = ['_this', 'vm', 'commonAPIservice','$compile', 'DTOptionsBuilder', 'DTColumnBuilder'];
+	AbstractController.$inject = ['_this', 'vm', 'commonAPIservice','$compile', 'DTOptionsBuilder', 'DTColumnBuilder', '$window'];
 	mainApp.controller('AbstractController', AbstractController);
 })(angular);

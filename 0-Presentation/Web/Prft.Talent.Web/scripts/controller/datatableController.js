@@ -55,11 +55,20 @@
             }
             function actionsHtml(data) {
                 params.vm.datalist[data.pk] = data;
-                var editRecord='', deleteRecord ='';
-                if(params.editRow){
-                    editRecord = '<button class="btn btn-edit" data-toggle="modal" onclick="perfDatatable.loadTable.popRecord(this, '+data.pk+', '+params.editFormId+')">' +
-                    '   <i class="fa fa-pencil"></i>' +
-                    '</button>&nbsp;';
+                var editRecord = '', deleteRecord = '';
+                var formId = (params.editFormId != '') ? param.editFormId : '';
+                if (params.editRow) {
+                    if (params.navigateToUrl === true) {
+                        editRecord = '<button class="btn btn-edit" data-toggle="modal" onclick="perfDatatable.loadTable.openRecord(this, '
+                                        + data.pk + ', \'' + params.editNavigateUrl + '\' )">' +
+                                        '   <i class="fa fa-pencil"></i>' +
+                                        '</button>&nbsp;';
+                    }
+                    else {
+                        editRecord = '<button class="btn btn-edit" data-toggle="modal" onclick="perfDatatable.loadTable.popRecord(this, ' + data.pk + ', ' + params.editFormId + ' )">' +
+                        '   <i class="fa fa-pencil"></i>' +
+                        '</button>&nbsp;';
+                    }
                 }
                 if(params.deleteRow){
                     deleteRecord = '<button class="btn btn-danger" data-toggle="modal" onclick="perfDatatable.loadTable.popRecord(this, '+data.pk+', '+params.deleteFormId+')">' +
@@ -69,13 +78,17 @@
                 return  editRecord+deleteRecord;
             };
         },
-        popRecord: function(ele, id, formId){
+        popRecord: function (ele, id, formId) {
             this.params.vm.dtInstance.DataTable.$('tr.selected').removeClass('selected');
             $(ele).parents('tr').addClass('selected');
-        	this.params.vm.data = angular.copy(this.params.vm.datalist[id]);        
-            this.params.vm.$apply();	
+            this.params.vm.data = angular.copy(this.params.vm.datalist[id]);
+            this.params.vm.$apply();
             $(formId).modal('show');
+        },
+        openRecord: function (ele, id, navigateUrl) {
+            window.location = '#/' + navigateUrl;
         }
+
     };
     root.perfDatatable = perfDatatable;
 })(this);

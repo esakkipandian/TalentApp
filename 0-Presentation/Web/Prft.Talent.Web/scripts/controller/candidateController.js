@@ -12,14 +12,21 @@
             console.log('in validate');
         };
 
+        $scope.add = function () {
+            console.log("Add Called");
+        }
+
         var vm = {
             'title': 'Candidate Information',
-            'formId': 'addressTypeForm',
+            'formId': '',
             'scope': $scope,
             'addUrl': perfUrl['addCandidateInformation'],
             'updateUrl': perfUrl['updateCandidateInformation'],
             'deleteUrl': 'http://localhost:8080/api/AddressType',
-            'loadListUrl': perfUrl['loadCandidateInformation']
+            'loadListUrl': perfUrl['loadCandidateInformation'],
+            'navigateToUrl': true,
+            'addNavigateUrl': 'candidateinformationwizard',
+            'editNavigateUrl': 'candidateinformationwizard'
         };
         angular.extend(this, $controller('AbstractController', { _this: _this, vm: vm }));
     };
