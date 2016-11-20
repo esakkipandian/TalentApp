@@ -34,8 +34,7 @@
 	
 	AbstractController.prototype.add = function () {
 	    if (this.vm.navigateToUrl === true) {
-	        //this.location.path("#/candidateinformationwizard");
-	        this.window.location = this.vm.addNavigateUrl;
+	        this.window.location = "#/" + this.vm.addNavigateUrl;
 	    } else {
 	        this.vm.scope.data = {};
 	        perfUtils.getInstance().resetForm();
