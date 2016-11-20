@@ -164,6 +164,7 @@
     <Content Include="scripts\lib\select.js" />
     <Content Include="scripts\lib\ui-bootstrap-tpls-1.3.2.js" />
     <Content Include="scripts\perf-common.min.js" />
+    <Content Include="scripts\service\candidateCommonServices.js" />
     <Content Include="scripts\service\commonServices.js" />
     <Content Include="scripts\service\fileuploadServices.js" />
   </ItemGroup>
