@@ -1,4 +1,5 @@
 ﻿using Prft.Talent.Data.Repositories.Abstract.Candidate;
+using Prft.Talent.Domain.Talent.Candidate;
 using Prft.Talent.Services.Abstract.Candidate;
 using Prft.Talent.Services.Api.Candidate;
 using System;
@@ -26,12 +27,13 @@ namespace Prft.Talent.Services.Concrete.Candidate
             };
         }
 
-        public async Task<PersonalInformationResponse> GetCandidatePersonalInformationAsync(GetPersonalInformationRequest personalInformationRequest)
+        public async Task<PersonalInformation> GetCandidatePersonalInformationAsync(GetPersonalInformationRequest personalInformationRequest)
         {
-            return new PersonalInformationResponse
-            {
-                Entity = await _personalInformationRepository.GetCandidatePersonalInformationAsync(personalInformationRequest.CandidateId)
-            };
+            return await _personalInformationRepository.GetCandidatePersonalInformationAsync(personalInformationRequest.CandidateId);
+            //return new PersonalInformationResponse
+            //{
+            //    PersonalInformation = await _personalInformationRepository.GetCandidatePersonalInformationAsync(personalInformationRequest.CandidateId)
+            //};
         }
 
         public async Task<SetPersonalInformationResponse> SetCandidatePersonalInformationAsync(PersonalInformationRequest personalInformationRequest)

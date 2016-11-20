@@ -32,7 +32,7 @@ namespace Prft.Talent.WebApi.Controllers
             return candidateInformation;
         }
 
-        public async Task<PersonalInformationResponse> GetCandidatePersonalInformation(int id)
+        public async Task<PersonalInformation> GetCandidatePersonalInformation(int id)
         {
             var personalInformation = await _personalInformationService.GetCandidatePersonalInformationAsync(
                 new GetPersonalInformationRequest

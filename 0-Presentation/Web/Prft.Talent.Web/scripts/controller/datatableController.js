@@ -86,6 +86,7 @@
             $(formId).modal('show');
         },
         openRecord: function (ele, id, navigateUrl) {
+            perfDatatable.recordId = id;
             window.location = '#/' + navigateUrl;
         }
 

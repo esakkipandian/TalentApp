@@ -10,8 +10,7 @@ namespace Prft.Talent.Services.Api.Candidate
 {
     public class PersonalInformationResponse : ResponseBase
     {
-        [JsonProperty("entity")]
-        public PersonalInformation Entity { get; set; }
+        public PersonalInformation PersonalInformation { get; set; }
     }
 
     public class SetPersonalInformationResponse : ResponseBase

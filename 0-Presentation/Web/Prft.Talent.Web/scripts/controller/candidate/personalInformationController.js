@@ -11,6 +11,15 @@
             if ($scope.personalInformation.$error.email){return}
             _this.service.add('http://localhost:8080/api/Candidates/AddPersonalInformation/', $scope.PersonalInformation);
         };
+
+        var loadPersonalInformation = function () {
+            var url = 'http://localhost:8080/api/candidates/' + perfDatatable.recordId;
+            _this.service.loadRecords(url)
+                         .then(function (response) {
+                             $scope.PersonalInformation = response.data;
+                         });
+        };
+        loadPersonalInformation();
     };
     PersonalInformationController.$inject = ['$scope', '$controller', 'DTColumnBuilder', 'commonAPIservice'];
     mainApp.controller('personalInformationController', PersonalInformationController);
