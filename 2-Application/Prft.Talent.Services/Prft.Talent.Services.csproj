@@ -54,7 +54,7 @@
     <Compile Include="Abstract\ICoursesService.cs" />
     <Compile Include="Abstract\IEducationalIformationService.cs" />
     <Compile Include="Abstract\IEmployeeService.cs" />
-    <Compile Include="Abstract\IFileuploadService.cs" />
+    <Compile Include="Abstract\ICandidateDocumentService.cs" />
     <Compile Include="Abstract\IUniversityServices.cs" />
     <Compile Include="Api\AddressTypeResponse.cs" />
     <Compile Include="Api\CandidatesResponse.cs" />
@@ -64,7 +64,7 @@
     <Compile Include="Api\CoursesResponse.cs" />
     <Compile Include="Api\EducationalInforamtionResponse.cs" />
     <Compile Include="Api\EmployeeResponse.cs" />
-    <Compile Include="Api\FileuploadResponse.cs" />
+    <Compile Include="Api\CandidateDocumentResponse.cs" />
     <Compile Include="Api\UniversityResponse.cs" />
     <Compile Include="Concrete\AddressTypeService.cs" />
     <Compile Include="Concrete\CandidatesService.cs" />
@@ -73,7 +73,7 @@
     <Compile Include="Concrete\CollegesService.cs" />
     <Compile Include="Concrete\CoursesServices.cs" />
     <Compile Include="Concrete\EducationalInformationService.cs" />
-    <Compile Include="Concrete\FileuploadService.cs" />
+    <Compile Include="Concrete\CandidateDocumentService.cs" />
     <Compile Include="Concrete\UniversityServices.cs" />
     <Compile Include="RequestBase.cs" />
     <Compile Include="ResponseBase.cs" />

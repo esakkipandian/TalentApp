@@ -9,6 +9,7 @@ using Prft.Talent.Data.Repositories.Abstract;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Prft.Talent.Logger;
+using Prft.Talent.Data.Entities;
 
 namespace Prft.Talent.Data.Repositories.Concrete
 {
@@ -22,5 +23,14 @@ namespace Prft.Talent.Data.Repositories.Concrete
                 .Where(x => x.IsActive == true)
                 .ProjectTo<Candidates>(Mapper.ConfigurationProvider).ToListAsync();
         }
+
+        public async Task<int> AddCandidateDocumentAsync(CandiateDocument candiateDocument)
+        {
+            var objectToAdd = Mapper.Map<candidatedocument>(candiateDocument);
+            objectToAdd.IsActive = true;
+            DatabaseContext.candidatedocuments.Add(objectToAdd);
+            return await DatabaseContext.SaveChangesAsync();
+        }
+        
     }
 }

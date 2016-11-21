@@ -19,9 +19,9 @@ namespace Prft.Talent.Data.Repositories.Concrete
             return await DatabaseContext.candidatedocuments.ProjectTo<CandiateDocument>(Mapper.ConfigurationProvider).ToListAsync();
         }
 
-        public async Task<int> AddCandidateDocumentAsync(CandiateDocument candidateDocument)
+        public async Task<int> AddCandidateDocumentsAsync(CandiateDocument candiateDocument)
         {
-            var objectToAdd = Mapper.Map<candidatedocument>(candidateDocument);
+            var objectToAdd = Mapper.Map<candidatedocument>(candiateDocument);
             objectToAdd.IsActive = true;
             DatabaseContext.candidatedocuments.Add(objectToAdd);
             return await DatabaseContext.SaveChangesAsync();

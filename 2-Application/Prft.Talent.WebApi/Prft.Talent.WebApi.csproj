@@ -161,7 +161,7 @@
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\EducationInformationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
-    <Compile Include="Controllers\FileuploadController.cs" />
+    <Compile Include="Controllers\CandidateDocumentController.cs" />
     <Compile Include="Controllers\UniversityController.cs" />
     <Compile Include="Exception\PrftExceptionHandler.cs" />
     <Compile Include="Global.asax.cs">
