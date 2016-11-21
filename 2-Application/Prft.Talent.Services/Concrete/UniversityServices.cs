@@ -28,7 +28,7 @@ namespace Prft.Talent.Services.Concrete
 
             return new UniversityResponse
             {
-                University = await _UniversityRepository.GetUniversityAsync()
+                Universities = await _UniversityRepository.GetUniversityAsync()
             };
 
         }

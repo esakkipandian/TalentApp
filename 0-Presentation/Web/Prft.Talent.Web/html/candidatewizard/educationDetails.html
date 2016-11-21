@@ -12,16 +12,7 @@
                                 <option value="Primary">Doctorate</option>
                                 <option value="Secondary">PostGraduate</option>
                                 <option value="Secondary">UnderGraduate</option>
-                            </select>
-                            <!--<ol class="form-control nya-bs-select" name="Qualification" title="Select" data-live-search="true" required validType="select"
-                                disabled="isProfile" ng-model="EducationalInformation.college" ng-selected="{{EducationalInformation.college}}">
-                                <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
-                                    <a>
-                                        {{college.collegeName}}
-                                        <span class="glyphicon glyphicon-ok check-mark"></span>
-                                    </a>
-                                </li>
-                            </ol>-->
+                            </select>                           
                         </div>
                     </div>
                 </div>
@@ -31,9 +22,9 @@
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="course" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.course" ng-selected="{{EducationalInformation.course}}">
-                                <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+                                <li nya-bs-option="course in Courses | orderBy: 'course' track by course.courseCode" data-value="course.courseName">
                                     <a>
-                                        {{college.course}}
+                                        {{course.courseName}}
                                         <span class="glyphicon glyphicon-ok check-mark"></span>
                                     </a>
                                 </li>
@@ -58,9 +49,9 @@
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="University" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.university" ng-selected="{{EducationalInformation.university}}">
-                                <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+                                <li nya-bs-option="university in Universities | orderBy: 'university' track by university.universityCode" data-value="university.universityName">
                                     <a>
-                                        {{college.university}}
+                                        {{university.universityName}}
                                         <span class="glyphicon glyphicon-ok check-mark"></span>
                                     </a>
                                 </li>
@@ -109,16 +100,7 @@
                                 <option value="Secondary">2012</option>
                                 <option value="Secondary">2011</option>
                                 <option value="Secondary">2010</option>
-                            </select>
-                            <!--<ol class="form-control nya-bs-select" name="PassingYear" title="Select" data-live-search="true" required validType="select"
-                                disabled="isProfile" ng-model="EducationalInformation." ng-selected="{{EducationalInformation.college}}">
-                                <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
-                                    <a>
-                                        {{college.collegeName}}
-                                        <span class="glyphicon glyphicon-ok check-mark"></span>
-                                    </a>
-                                </li>
-                            </ol>-->
+                            </select>                          
                         </div>
                     </div>
                 </div>
@@ -141,12 +123,13 @@
                     <div class="pull-right">
                         <div>
                             <button type="submit" class="btn btn-primary" action="save">Save</button>
-                            <button class="remove" ng-click="addNewQualification()">+</button>
-                            <button class="remove" ng-click="removeQualification($index)">-</button>
+                            <button class="remove" ng-click="addNewQualification()" >+</button>
+                            <button class="remove" ng-click="removeQualification($index)" ng-show="qualification.length>1">-</button>
                         </div>
                     </div>
                 </div>
             </div>
+           <br/>
         </div>
     </div>
 </form>
