@@ -50,10 +50,9 @@ fieldset, input {
     background: #C0392B;
     color: #FFF;
     font-weight: bold;
-    font-size: 21px;
+    font-size: 18px;
     border: 0;
-    cursor: pointer;
-   
+    cursor: pointer;   
     display: inline-block;
     padding: 4px 9px;
     vertical-align: top;
@@ -102,7 +101,7 @@ select option {
 select option::selection{
     color:black;
 }
-/* Hidden placeholder */
+
 select option[disabled]:first-child {
 	display: none;
 }
@@ -133,5 +132,4 @@ select option[disabled]:first-child {
     font-size: 20px;    
     list-style-type: none;
     display: inline-block;
-    cursor: pointer;
-}
+    cursor: pointer;
