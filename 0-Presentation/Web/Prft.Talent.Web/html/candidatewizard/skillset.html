@@ -1,11 +1,19 @@
-﻿<form name="candidateSkillSetForm" class="form-horizontal" id="candidateSkillSetForm" ng-controller="skillSetController" 
+﻿<form name="candidateSkillSetForm" class="form-horizontal" id="candidateSkillSetForm" ng-controller="skillSetController"
       ng-submit="submit()" novalidate>
     <div class="skillset">
 
         <div data-ng-repeat="skill in skillset" ng-model="skill.length">
             <div class="col-sm-3">
-                <input type="text" class="textbox" ng-model="skill.name" name="skillname" placeholder="Skill" required>
-               
+                <ol class="form-control nya-bs-select" name="Job Title" title="Select" data-live-search="true" required validType="select"
+                    ng-model="skill.candidateSkillSetName">
+                    <li nya-bs-option="skillSet in skillSets">
+                        <a>
+                            {{skillSet.candidateSkillSetName}}
+                            <span class="glyphicon glyphicon-ok check-mark"></span>
+                        </a>
+                    </li>
+                </ol>
+
             </div>
             <div class="col-sm-2">
                 <select class="dropdown empty" name="skilltype" required>
@@ -13,28 +21,28 @@
                     <option value="Primary">Primary</option>
                     <option value="Secondary">Secondary</option>
                 </select>
-               
+
             </div>
 
             <div ng-repeat="dt in skill.dates" class="col-sm-2">
-                <input type="text" class="datepicker" uib-datepicker-popup ng-model="dt.dates" is-open="dt.opened" ng-click="open($event,dt)" 
-                       placeholder="Last Used Date" name="lastuseddate" required/>
-                
+                <input type="text" class="datepicker" uib-datepicker-popup ng-model="dt.dates" is-open="dt.opened" ng-click="open($event,dt)"
+                       placeholder="Last Used Date" name="lastuseddate" required />
+
             </div>
 
             <div class="col-sm-2">
                 <span uib-rating ng-model="rate" max="max" enable-reset="false" required></span> {{rate}}
             </div>
             <div class="col-sm-2">
-                <button class="remove" ng-click="removeSkill($index)" ng-show="skill.length>1">-</button>
+                <button class="remove" ng-click="removeSkill($index)" ng-show="skillset.length>1">-</button>
                 <button class="remove" ng-show="$last" ng-click="addNewSkill()">+</button><br /><br />
             </div>
         </div>
     </div>
     <div class="col-sm-2 pull-left">
-        <div class="row">                          
-                <input type="submit" ng-click="submit()" class="btn btn-primary"/>               
-            
+        <div class="row">
+            <input type="submit" ng-click="submit()" class="btn btn-primary" />
+
         </div>
     </div>
 </form>

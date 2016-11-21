@@ -35,6 +35,7 @@ namespace Prft.Talent.Domain.Mapping
             .ForMember(x => x.College, map => map.MapFrom(c => c.College))
             .ForMember(x => x.Percentage, map => map.MapFrom(c => c.Percentage)).ReverseMap();
 
+            profile.CreateMap<skill, SkillSet>().ReverseMap();
 
 
         }

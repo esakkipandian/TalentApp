@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Prft.Talent.Domain.Talent
 {
-    public class CandidateSkillSet
+    public class SkillSet
     {
-        public int CandidateSkillSetId { get; set; }
-        public string CandidateSkillSetName { get; set; }
+        public int PK { get; set; }
+        public string Code { get; set; }
     }
 }

@@ -1,5 +1,7 @@
 ﻿(function (angular) {
-    var SkillSetController = function ($scope, $controller) {
+    var SkillSetController = function ($scope, $controller, commonAPIservice) {
+        var _this = this;
+        _this.service = commonAPIservice;
 
         $scope.skillset = [
             {
@@ -8,11 +10,20 @@
             }
         ];
 
+
+        var loadSkillSets = function () {
+            var url = 'http://localhost:8080/api/candidateskillset';
+            _this.service.loadRecords(url)
+                         .then(function (response) {
+                             $scope.skillSets = response.data.candidateSkillSets;
+                         });
+        };
+
         $scope.addNewSkill = function () {
             var primarySkill = $scope.skillset.length + 1;
             var date = new Date();
             $scope.skillset.push({ 'id': 'skill' + primarySkill, 'dates': { date } });
-            
+
         };
 
         $scope.removeSkill = function (index) {

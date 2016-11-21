@@ -156,7 +156,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AddressTypeController.cs" />
     <Compile Include="Controllers\CandidatesController.cs" />
-    <Compile Include="Controllers\CandidateSkillSetController.cs" />
+    <Compile Include="Controllers\SkillSetController.cs" />
     <Compile Include="Controllers\CollegesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\EducationInformationController.cs" />
