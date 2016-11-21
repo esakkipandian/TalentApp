@@ -1,8 +1,10 @@
 ﻿<div id="candidateinformation" class="tab">
     <uib-tabset active="active" justified="true" type="pills">
-        <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" ng-click="goToTab($index)"
-                 class="{active: $index==getCurrentTabIndex()}">
-            <br /><br />
+        <uib-tab ng-repeat="tab in tabs" ng-click="goToTab($index)" class="{active: $index==getCurrentTabIndex()}">
+            <uib-tab-heading>
+               <i class="{{tab.icon}}"></i> {{tab.title}}
+            </uib-tab-heading>
+            <br />
             <div ng-include="tab.url">
             </div>
         </uib-tab>
