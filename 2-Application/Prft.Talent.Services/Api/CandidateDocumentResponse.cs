@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Prft.Talent.Services.Api
 {
-    public class FileuploadResponse : ResponseBase
+    public class CandidateDocumentResponse : ResponseBase
     {
         [JsonProperty("entity")]
-        public IEnumerable<CandiateDocument> Entity { get; set; }
+        public IEnumerable<CandidateDocument> Entity { get; set; }
     }
 }

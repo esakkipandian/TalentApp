@@ -37,6 +37,8 @@ namespace Prft.Talent.Domain.Mapping
 
             profile.CreateMap<skill, SkillSet>().ReverseMap();
 
+            profile.CreateMap<candidatedocument, CandidateDocument>()
+                   .ForMember(x => x.CandidateId, map => map.MapFrom(c => c.CandidateId)).ReverseMap();
 
         }
     }

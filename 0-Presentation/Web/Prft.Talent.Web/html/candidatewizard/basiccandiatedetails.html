@@ -1,6 +1,6 @@
 ﻿
 
-<form role="form" name="personalInformation" class="form-horizontal" novalidate>
+<form role="form" name="personalInformation" class="form-horizontal" ng-controller="personalInformationController" novalidate>
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
@@ -24,16 +24,17 @@
             <div class="form-group">
                 <label for="DOB" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">D.O.B: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="text" class="datepicker" uib-datepicker-popup ng-model="PersonalInformation.DOB" is-open="PersonalInformation.opened" ng-click="open($event,dt)"
-                           placeholder="Date Of Birth" name="dateOfBirth" required />
+                    <!--<input type="text" class="form-control" uib-datepicker-popup="dd MM yyyy" ng-model="PersonalInformation.DOB" is-open="PersonalInformation.startOpen" ng-click="toggle($event,'startOpen',event)"
+                           placeholder="Date Of Birth" name="dateOfBirth" required />-->
+                    <input type="date" placeholder="Date Of Birth" uib-datepicker-popup="dd MM yyyy" ng-model="PersonalInformation.DOB" />
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
-                <label for="fatherName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Father Name: </label>
+                <label for="fatherName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label ">Father Name: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="text" class="form-control" placeholder="Father Name" name="FatherName" ng-model="PersonalInformation.fatherName" required />
+                    <input type="text" class="form-control" placeholder="Father Name" name="FatherName" ng-model="PersonalInformation.fatherName"/>
                 </div>
             </div>
         </div>
@@ -41,9 +42,9 @@
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
-                <label for="motherName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Mother Name:</label>
+                <label for="motherName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label ">Mother Name:</label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="text" class="form-control" placeholder="Mother Name" name="MotherName" ng-model="PersonalInformation.motherName" required />
+                    <input type="text" class="form-control" placeholder="Mother Name" name="MotherName" ng-model="PersonalInformation.motherName" />
                 </div>
             </div>
         </div>
@@ -62,20 +63,20 @@
             <div class="form-group">
                 <label for="contactNumber" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Contact Number </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="number" class="form-control" placeholder="Mobile" name="Mobile" ng-model="PersonalInformation.mobile" maxlength="10" required />
+                    <input type="text" class="form-control"  placeholder="Mobile" name="Mobile" ng-model="PersonalInformation.mobile" maxlength="10" required />
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
-                <label for="alternateContact" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Alternate Contact: </label>
+                <label for="alternateContact" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label">Alternate Contact: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="number" class="form-control" placeholder="Alternate Contact Number" name="AlternateContact" ng-model="PersonalInformation.alternateContact" required maxlength="10" />
+                    <input type="text" class="form-control" placeholder="Alternate Contact Number" name="AlternateContact" ng-model="PersonalInformation.alternateContact"  maxlength="10" />
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <!--<div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
                 <label for="nationality" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Nationality:</label>
@@ -89,12 +90,64 @@
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="form-group" ng-if="PersonalInformation.nationality=='Others'">
+            <div class="form-group" ng-show="PersonalInformation.nationality=='Others'">
                 <label for="otherNationality" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Others: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                     <input type="text" class="form-control" placeholder="Other Nationality" name="Others" ng-model="PersonalInformation.nationality" />
                 </div>
             </div>
+        </div>
+    </div>-->
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="actualCTC" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Actual CTC:</label>               
+                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                        <input type="number" class="form-control" placeholder="Actual CTC" name="ActualCTC" ng-model="PersonalInformation.actualCTC" />
+                    </div>
+                
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="expectedCTC" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Expected CTC: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="number" class="form-control" placeholder="Expected CTC" name="ExpectedCTC" ng-model="PersonalInformation.expectedCTC" />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="noticePeroid" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Notice Peroid:</label>              
+                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                        <input type="number" class="form-control" placeholder="Enter in Days"  maxlength="3" name="NoticePeroid" ng-model="PersonalInformation.noticePeroid" />
+                    </div>             
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="Offer" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label">Have Any Offer ?: </label>
+                <div class="col-md-2">
+                    <input type="checkbox" style="margin:7px"  name="isOffer" ng-model="PersonalInformation.haveoffer" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-if="PersonalInformation.haveoffer">
+            <div class="form-group">
+                <label for="offerDescription" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Offer Description:</label>                
+                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                        <input type="text"  class="form-control" placeholder="Offer Description" name="OfferDescription" ng-model="PersonalInformation.offerDescription" />
+                    </div>              
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            
         </div>
     </div>
 

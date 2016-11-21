@@ -10,6 +10,8 @@ namespace Prft.Talent.Services.Abstract.Candidate
 
         Task<SetPersonalInformationResponse> SetCandidatePersonalInformationAsync(PersonalInformationRequest PersonalInformationRequest);
 
+        Task<SetPersonalInformationResponse> UpdateCandidatePersonalInformationAsync(PersonalInformationRequest PersonalInformationRequest);
+
         Task<SetPersonalInformationResponse> DeleteCandidatePersonalInformationAsync(GetPersonalInformationRequest PersonalInformationRequest);
 
     }
