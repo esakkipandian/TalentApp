@@ -15,25 +15,23 @@
             var url = 'http://localhost:8080/api/Courses';
             _this.service.loadRecords(url)
                          .then(function (response) {
-                             $scope.Courses = response.data.Courses
+                             $scope.Courses = response.data.courses
                          });
         };
         var loadUniversities = function () {
             var url = 'http://localhost:8080/api/University';
             _this.service.loadRecords(url)
                          .then(function (response) {
-                             $scope.University = response.data.University;
+                             $scope.Universities = response.data.universities;
                          });
         };
         var loadColleges = function () {
             var url = 'http://localhost:8080/api/Colleges';
             _this.service.loadRecords(url)
                          .then(function (response) {
-                             $scope.Collges = response.data.Collges;
+                             $scope.Colleges = response.data.colleges;
                          });
         };      
-      
-
 
         $scope.save = function () {
             _this.service.add('http://localhost:8080/api/Candidates/AddEducationInformation/', $scope.EducationalInformation);

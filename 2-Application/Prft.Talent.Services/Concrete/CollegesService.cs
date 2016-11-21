@@ -32,7 +32,7 @@ namespace Prft.Talent.Services.Concrete
 
             return new CollegesReponse
             {
-                Collges = await _collegeTypeRepository.GetCollegesAsync()
+                Colleges = await _collegeTypeRepository.GetCollegesAsync()
             };
            
         }

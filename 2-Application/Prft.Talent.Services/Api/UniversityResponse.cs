@@ -9,6 +9,6 @@ namespace Prft.Talent.Services.Api
 {
   public    class UniversityResponse:ResponseBase
     {
-        public IEnumerable<University> University { get; set; }
+        public IEnumerable<University> Universities { get; set; }
     }
 }
