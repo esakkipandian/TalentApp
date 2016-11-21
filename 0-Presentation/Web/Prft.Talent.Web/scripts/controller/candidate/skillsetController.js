@@ -34,10 +34,11 @@
         };
 
         $scope.save = function () {
-            if ($scope.personalInformation.$error.required) {
-                $scope.Submitted = true;
-                return;
-            }
+            _this.service.add('http://localhost:8080/api/Candidates/AddCandidateSkillSets/', $scope.Skills)
+                            .then(function (response) {
+                                _this.CandidateCommonServices.setCandidateId(response.data);
+                                perfUtils.getInstance().successMsg(_this.title + ' added Successfully!');
+                            });
         }
         $scope.open = function ($event, dt) {
             $event.preventDefault();
