@@ -15,8 +15,19 @@
                 $scope.Submitted = true;
                 return;
             }
-            if ($scope.personalInformation.$error.email){return}
-            _this.service.add('http://localhost:8080/api/Candidates/AddPersonalInformation/', $scope.PersonalInformation);
+            if ($scope.personalInformation.$error.email) { return }
+
+            if (_this.CandidateCommonServices.getCandidateId() > 0) {
+                _this.service.update('http://localhost:8080/api/Candidates/UpdatePersonalInformation/', $scope.PersonalInformation)
+                             .then(function (response) {
+                                 _this.CandidateCommonServices.setCandidateId(response.data);
+                             });
+            } else {
+                _this.service.add('http://localhost:8080/api/Candidates/AddPersonalInformation/', $scope.PersonalInformation)
+                             .then(function (response) {
+                                 _this.CandidateCommonServices.setCandidateId(response.data);
+                             });
+            }
         };
 
         var loadPersonalInformation = function () {
@@ -34,30 +45,3 @@
     PersonalInformationController.$inject = ['$scope', '$controller', 'DTColumnBuilder', 'commonAPIservice', 'candidateCommonServices'];
     mainApp.controller('personalInformationController', PersonalInformationController);
 })(angular);
-
-//mainApp.controller('personalInformationController', ['$scope', '$http', function ($scope, $http) {
-//    $scope.Submitted = false;
-
-//    $scope.submitPersonalInformation = function () {
-//        if ($scope.PI.$error.required) {
-//            $scope.submitted = true;
-
-//            return;
-//        }
-
-//        var inputData = $scope.PersonalInformation;
-//        $http({
-//            method: 'POST',
-//            url: 'http://localhost:8080/api/Candidates/AddPersonalInformation/',
-//            data: $scope.PersonalInformation, //forms user object
-//            headers: { 'Content-Type': 'application/json' }
-//        }).success(function (data) {
-//            if (!data.errors) {
-//                // Showing errors.
-//                $scope.message = "success";
-
-//            }
-//        });
-//    }
-//}]);
-

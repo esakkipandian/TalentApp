@@ -21,6 +21,14 @@
 	          url: url
 	        });
 	    };
+
+	    commonAPI.update = function (url, data) {
+	        return $http({
+	            method: 'put',
+	            data: data,
+	            url: url
+	        });
+	    };
 	    return commonAPI;
 	}]);
 })(angular);

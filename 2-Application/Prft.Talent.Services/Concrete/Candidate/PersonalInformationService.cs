@@ -43,5 +43,13 @@ namespace Prft.Talent.Services.Concrete.Candidate
                 SuccessFlag = await _personalInformationRepository.SetCandidatePersonalInformationAsync(personalInformationRequest.CandidatePersonalInformation)
             };
         }
+
+        public async Task<SetPersonalInformationResponse> UpdateCandidatePersonalInformationAsync(PersonalInformationRequest personalInformationRequest)
+        {
+            return new SetPersonalInformationResponse
+            {
+                SuccessFlag = await _personalInformationRepository.UpdateCandidatePersonalInformationAsync(personalInformationRequest.CandidatePersonalInformation)
+            };
+        }
     }
 }
