@@ -62,7 +62,7 @@
             <div class="form-group">
                 <label for="contactNumber" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Contact Number </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="number" class="form-control" placeholder="Mobile" name="Mobile" ng-model="PersonalInformation.mobile" maxlength="10" required />
+                    <input type="text" class="form-control"  placeholder="Mobile" name="Mobile" ng-model="PersonalInformation.mobile" maxlength="10" required />
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
             <div class="form-group">
                 <label for="alternateContact" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label">Alternate Contact: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="number" class="form-control" placeholder="Alternate Contact Number" name="AlternateContact" ng-model="PersonalInformation.alternateContact"  maxlength="10" />
+                    <input type="text" class="form-control" placeholder="Alternate Contact Number" name="AlternateContact" ng-model="PersonalInformation.alternateContact"  maxlength="10" />
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="form-group" ng-if="PersonalInformation.nationality=='Others'">
+            <div class="form-group" ng-show="PersonalInformation.nationality=='Others'">
                 <label for="otherNationality" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Others: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                     <input type="text" class="form-control" placeholder="Other Nationality" name="Others" ng-model="PersonalInformation.nationality" />
