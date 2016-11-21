@@ -24,8 +24,9 @@
             <div class="form-group">
                 <label for="DOB" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">D.O.B: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="text" class="datepicker" uib-datepicker-popup ng-model="PersonalInformation.DOB" is-open="PersonalInformation.opened" ng-click="open($event,dt)"
-                           placeholder="Date Of Birth" name="dateOfBirth" required />
+                    <!--<input type="text" class="form-control" uib-datepicker-popup="dd MM yyyy" ng-model="PersonalInformation.DOB" is-open="PersonalInformation.startOpen" ng-click="toggle($event,'startOpen',event)"
+                           placeholder="Date Of Birth" name="dateOfBirth" required />-->
+                    <input type="date" placeholder="Date Of Birth" uib-datepicker-popup="dd MM yyyy" ng-model="PersonalInformation.DOB" />
                 </div>
             </div>
         </div>
@@ -75,7 +76,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <!--<div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
                 <label for="nationality" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Nationality:</label>
@@ -96,7 +97,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -123,15 +124,15 @@
             <div class="form-group">
                 <label for="noticePeroid" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Notice Peroid:</label>              
                     <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                        <input type="number" class="form-control" placeholder="Enter in Months" name="NoticePeroid" ng-model="PersonalInformation.noticePeroid" />
+                        <input type="number" class="form-control" placeholder="Enter in Days"  maxlength="3" name="NoticePeroid" ng-model="PersonalInformation.noticePeroid" />
                     </div>             
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
                 <label for="Offer" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label">Have Any Offer ?: </label>
-                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="checkbox" class="form-control"  name="isOffer" ng-model="PersonalInformation.isoffer" />
+                <div class="col-md-2">
+                    <input type="checkbox" style="margin:7px"  name="isOffer" ng-model="PersonalInformation.haveoffer" />
                 </div>
             </div>
         </div>

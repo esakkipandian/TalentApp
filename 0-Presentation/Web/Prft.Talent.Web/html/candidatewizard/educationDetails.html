@@ -22,9 +22,9 @@
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="course" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.course" ng-selected="{{EducationalInformation.course}}">
-                                <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+                                <li nya-bs-option="course in Courses | orderBy: 'course' track by course.courseCode" data-value="course.courseName">
                                     <a>
-                                        {{college.course}}
+                                        {{course.courseName}}
                                         <span class="glyphicon glyphicon-ok check-mark"></span>
                                     </a>
                                 </li>
@@ -49,9 +49,9 @@
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="University" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.university" ng-selected="{{EducationalInformation.university}}">
-                                <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+                                <li nya-bs-option="university in Universities | orderBy: 'university' track by university.universityCode" data-value="university.universityName">
                                     <a>
-                                        {{college.university}}
+                                        {{university.universityName}}
                                         <span class="glyphicon glyphicon-ok check-mark"></span>
                                     </a>
                                 </li>

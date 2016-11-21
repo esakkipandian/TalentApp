@@ -10,6 +10,7 @@ namespace Prft.Talent.Data.Repositories.Abstract
     public interface IEducationalInformationRepository : IRepository
     {
         Task<EducationalInformation> GetEducationalInformationAsync(int CandidateId);
-        //Task<EducationalInformation> SaveEducationalInformationAsync(EducationalInformation EducationalInformation);
+        Task<int> SaveEducationalInformationAsync(EducationalInformation EducationalInformation);
+        Task<int> UpdateEducationalInformationAsync(EducationalInformation EducationalInformation);
     }
 }

@@ -1,50 +1,48 @@
 ﻿<form name="candidateSkillSetForm" class="form-horizontal" id="candidateSkillSetForm" ng-controller="skillSetController"
-      ng-submit="submit()" novalidate>
+       novalidate>
     <div class="skillset">
 
         <div data-ng-repeat="skill in skillset" ng-model="skill.length">
             <div class="col-sm-3">
-                <ol class="form-control nya-bs-select" name="Job Title" title="Select" data-live-search="true" required validType="select"
-                    ng-model="skill.candidateSkillSetName">
-                    <li nya-bs-option="skillSet in skillSets">
+                <ol class="form-control nya-bs-select textbox" name="Skill Set" title="Skill" data-live-search="true" validType="select"
+                    disabled="isProfile" ng-model="Skills.skill.SkillSetId" ng-selected="{{skill.SkillSetId}}" >
+                    <li nya-bs-option="skillSet in skillSets | orderBy: 'skillSet' track by skillSet.pk" data-value="skillSet.pk">
                         <a>
-                            {{skillSet.candidateSkillSetName}}
+                            {{skillSet.code}}
                             <span class="glyphicon glyphicon-ok check-mark"></span>
                         </a>
                     </li>
                 </ol>
+               
+            </div> 
 
-            </div>
             <div class="col-sm-2">
-                <select class="dropdown empty" name="skilltype" required>
-                    <option disabled selected>Type</option>
-                    <option value="Primary">Primary</option>
-                    <option value="Secondary">Secondary</option>
+                <select class="dropdown" name="skilltype" ng-model="Skills.Type" ng-init="Skills.Type='True'" required>                    
+                    <option value="True">Primary</option>
+                    <option value="False">Secondary</option>
                 </select>
-
+               
             </div>
 
             <div ng-repeat="dt in skill.dates" class="col-sm-2">
-                <input type="text" class="datepicker" uib-datepicker-popup ng-model="dt.dates" is-open="dt.opened" ng-click="open($event,dt)"
-                       placeholder="Last Used Date" name="lastuseddate" required />
-
+                <input type="text" class="datepicker" uib-datepicker-popup ng-model="Skills.dt.dates" datepicker-popup="MM/yyyy" is-open="dt.opened" ng-click="open($event,dt)"
+                       placeholder="Last Used Date" name="lastuseddate" datepicker-options="{minMode: 'month'}" datepicker-mode="'month'" required />
+                
             </div>
 
             <div class="col-sm-2">
-                <span uib-rating ng-model="rate" max="max" enable-reset="false" required></span> {{rate}}
+                <span uib-rating ng-model="Skills.rate" max="5" min="1" ng-init="Skills.rate=1" enable-reset="false" required></span>
             </div>
-            <div class="col-sm-2">
-                <button class="remove" ng-click="removeSkill($index)" ng-show="skillset.length>1">-</button>
-                <button class="remove" ng-show="$last" ng-click="addNewSkill()">+</button><br /><br />
+            <div class="col-sm-3">
+                <button type="submit" class="fa fa-minus-circle remove" ng-click="removeSkill($index)" ng-show="skillset.length>1" data-toggle="tooltip" 
+                        data-placement="bottom" title="Delete Skill"></button>
+                <button type="submit" class="fa fa-floppy-o remove" ng-click="saveSkill()" data-toggle="tooltip" data-placement="bottom" title="Save Skill"
+                        action="save"></button>
+                <button type="submit" class="fa fa-plus-circle remove" ng-show="$last" ng-click="addNewSkill()" 
+                        data-toggle="tooltip" data-placement="bottom" title="Save and Add New Skill"></button><br /><br />
             </div>
         </div>
-    </div>
-    <div class="col-sm-2 pull-left">
-        <div class="row">
-            <input type="submit" ng-click="submit()" class="btn btn-primary" />
-
-        </div>
-    </div>
+    </div> 
+    
 </form>
-
 

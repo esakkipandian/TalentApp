@@ -10,16 +10,19 @@
             }
         ];
 
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
 
         var loadSkillSets = function () {
-            var url = 'http://localhost:8080/api/candidateskillset';
+            var url = 'http://localhost:8080/api/skillset';
             _this.service.loadRecords(url)
                          .then(function (response) {
-                             $scope.skillSets = response.data.candidateSkillSets;
+                             $scope.skillSets = response.data.skillSets;
                          });
         };
 
-        $scope.addNewSkill = function () {
+        $scope.addNewSkill = function () {           
             var primarySkill = $scope.skillset.length + 1;
             var date = new Date();
             $scope.skillset.push({ 'id': 'skill' + primarySkill, 'dates': { date } });
@@ -30,23 +33,24 @@
             $scope.skillset.splice(index, 1);
         };
 
-
+        $scope.save = function () {
+            if ($scope.personalInformation.$error.required) {
+                $scope.Submitted = true;
+                return;
+            }
+        }
         $scope.open = function ($event, dt) {
             $event.preventDefault();
             $event.stopPropagation();
             dt.opened = true;
         };
 
-        $scope.rate = 1;
-        $scope.max = 5;
+      $scope.ratingStates = { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' };
+       
 
-        $scope.ratingStates = { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' };
-
-        $scope.submit = function () {
-            $scope.submitted = true;
-        }
+        loadSkillSets();
 
     };
-    SkillSetController.$inject = ['$scope', '$controller'];
+    SkillSetController.$inject = ['$scope', '$controller', 'commonAPIservice'];
     mainApp.controller('skillSetController', SkillSetController);
 })(angular);

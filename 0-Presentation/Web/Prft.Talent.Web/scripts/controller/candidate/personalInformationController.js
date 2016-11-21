@@ -5,10 +5,10 @@
         _this.service = commonAPIservice;
         _this.CandidateCommonServices = candidateCommonServices;
 
-        $scope.open = function ($event, dt) {
+        $scope.toggle = function ($event) {
             $event.preventDefault();
             $event.stopPropagation();
-            dt.opened = true;
+            event[field] = !event[field];
         };
 
         $scope.save = function () {
