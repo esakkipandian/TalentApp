@@ -1,6 +1,7 @@
 ﻿(function (angular) {
     var PersonalInformationController = function ($scope, $controller, DTColumnBuilder, commonAPIservice, candidateCommonServices) {
         var _this = this;
+        _this.title = "Candidate Basic Details";
         _this.service = commonAPIservice;
         _this.CandidateCommonServices = candidateCommonServices;
 
@@ -21,11 +22,13 @@
                 _this.service.update('http://localhost:8080/api/Candidates/UpdatePersonalInformation/', $scope.PersonalInformation)
                              .then(function (response) {
                                  _this.CandidateCommonServices.setCandidateId(response.data);
+                                 perfUtils.getInstance().successMsg(_this.title + ' updated Successfully!');
                              });
             } else {
                 _this.service.add('http://localhost:8080/api/Candidates/AddPersonalInformation/', $scope.PersonalInformation)
                              .then(function (response) {
                                  _this.CandidateCommonServices.setCandidateId(response.data);
+                                 perfUtils.getInstance().successMsg(_this.title + ' added Successfully!');
                              });
             }
         };
