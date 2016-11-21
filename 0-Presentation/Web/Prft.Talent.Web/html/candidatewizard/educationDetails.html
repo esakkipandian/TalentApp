@@ -51,7 +51,7 @@
             <label class="required">College</label>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <select style="max-width:80%;">
+            <select style="max-width:80%; " ng-controller="candidateEducationController" ng-model="EducationalInformation.Colleges" ng-options="items.CollgesName for items in Colleges">
                 <option><--Select--></option>
             </select>
             <!--<input type="text" name="CurrentAddress" ng-model="EducationalInformation.Specification" required />-->
