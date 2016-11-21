@@ -8,7 +8,7 @@
                         <label for="Qualification" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Qualification: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <select class="dropdown empty" name="qualification" required>
-                                <option disabled selected>select</option>
+                                <option disabled selected>Select</option>
                                 <option value="Primary">Doctorate</option>
                                 <option value="Secondary">PostGraduate</option>
                                 <option value="Secondary">UnderGraduate</option>
@@ -92,7 +92,7 @@
                         <label for="PassingYear" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">PassingYear: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <select class="dropdown empty" name="passingyr" required>
-                                <option disabled selected>select</option>
+                                <option disabled selected>Select</option>
                                 <option value="Primary">2016</option>
                                 <option value="Secondary">2015</option>
                                 <option value="Secondary">2014</option>
@@ -108,7 +108,7 @@
                     <div class="form-group">
                         <label for="Percentage" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Percentage/CGPA: </label>
                         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="PersonalInformation.firstName" required />
+                            <input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="PersonalInformation.firstName" required  />
                         </div>
                     </div>
                 </div>
@@ -123,13 +123,13 @@
                     <div class="pull-right">
                         <div>
                             <button type="submit" class="btn btn-primary" action="save">Save</button>
-                            <button class="remove" ng-click="addNewQualification()" >+</button>
-                            <button class="remove" ng-click="removeQualification($index)" ng-show="qualification.length>1">-</button>
+                            <button class="fa fa-plus-circle remove" ng-click="addNewQualification()" ></button>
+                            <button class="fa fa-minus-circle remove" ng-click="removeQualification($index)" ng-show="qualification.length>1"></button>
                         </div>
                     </div>
                 </div>
             </div>
-           <br/>
+           <hr/>
         </div>
     </div>
 </form>
