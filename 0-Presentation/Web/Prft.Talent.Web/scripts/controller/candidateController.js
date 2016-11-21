@@ -17,7 +17,7 @@
         }
 
         var vm = {
-            'title': 'Candidate Information',
+            'title': 'Candidates',
             'formId': '',
             'scope': $scope,
             'addUrl': perfUrl['addCandidateInformation'],

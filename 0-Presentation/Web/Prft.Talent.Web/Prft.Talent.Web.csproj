@@ -56,6 +56,7 @@
     <Content Include="home.html" />
     <Content Include="html\candidateInformation.html" />
     <Content Include="html\candidateInformationWizard.html" />
+    <Content Include="html\candidatewizard\newcandidate.html" />
     <Content Include="html\candidatewizard\Step1.html" />
     <Content Include="html\candidatewizard\Step2.html" />
     <Content Include="html\candidatewizard\Step3.html" />
@@ -105,6 +106,7 @@
     <Content Include="scripts\controller\abstractController.js" />
     <Content Include="scripts\controller\addressTypeController.js" />
     <Content Include="scripts\controller\candidateController.js" />
+    <Content Include="scripts\controller\candidate\new-candidate-controller.js" />
     <Content Include="scripts\controller\candidateInformationWizardController.js" />
     <Content Include="scripts\controller\candidate\candidateEducationController.js" />
     <Content Include="scripts\controller\candidate\step1controller.js" />
