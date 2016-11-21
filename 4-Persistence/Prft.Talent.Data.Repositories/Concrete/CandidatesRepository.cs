@@ -24,7 +24,7 @@ namespace Prft.Talent.Data.Repositories.Concrete
                 .ProjectTo<Candidates>(Mapper.ConfigurationProvider).ToListAsync();
         }
 
-        public async Task<int> AddCandidateDocumentAsync(CandiateDocument candiateDocument)
+        public async Task<int> AddCandidateDocumentAsync(CandidateDocument candiateDocument)
         {
             var objectToAdd = Mapper.Map<candidatedocument>(candiateDocument);
             objectToAdd.IsActive = true;

@@ -7,6 +7,6 @@ namespace Prft.Talent.Services.Abstract
     public interface ICandidateDocumentService : IApi
     {
         Task<CandidateDocumentResponse> GetDocumentAsync();
-        Task<int> AddDocumentAsync(CandiateDocument candiateDocument);
+        Task<int> AddDocumentAsync(CandidateDocument candiateDocument);
     }
 }

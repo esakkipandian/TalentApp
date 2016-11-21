@@ -6,7 +6,7 @@ namespace Prft.Talent.Data.Repositories.Abstract
 {
     public interface ICandidateDocumentRepository : IRepository
     {
-        Task<IEnumerable<CandiateDocument>> GetCandidateDocumentsAsync();
-        Task<int> AddCandidateDocumentsAsync(CandiateDocument candiateDocument);
+        Task<IEnumerable<CandidateDocument>> GetCandidateDocumentsAsync();
+        Task<int> AddCandidateDocumentsAsync(CandidateDocument candiateDocument);
     }
 }

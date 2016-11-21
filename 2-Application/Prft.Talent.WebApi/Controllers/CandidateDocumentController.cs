@@ -30,7 +30,7 @@ namespace Prft.Talent.WebApi.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void Post(CandiateDocument candiateDocument)
+        public void Post(CandidateDocument candiateDocument)
         {
             //, HttpPostedFileBase postedFile
             var file = System.Web.HttpContext.Current.Request.Files[0];
@@ -38,13 +38,12 @@ namespace Prft.Talent.WebApi.Controllers
 
             using (BinaryReader br = new BinaryReader(file.InputStream))
             {
-                bytes = br.ReadBytes((Int32)file.ContentLength);
+                bytes = br.ReadBytes(file.ContentLength);
             }
-            //CandiateDocument candiateDocument = new CandiateDocument();
-            //candiateDocument.DocumentContent = bytes;
-            //candiateDocument.DocumentName = file.FileName;
-            //candiateDocument.DocumentType = file.ContentType;
-            //_fileuploadService.AddDocumentAsync(candiateDocument);
+            candiateDocument.DocumentContent = bytes;
+            candiateDocument.DocumentName = file.FileName;
+            candiateDocument.DocumentType = file.ContentType;
+            _candidateDocumentService.AddDocumentAsync(candiateDocument);
 
         }
 

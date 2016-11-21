@@ -17,7 +17,7 @@ namespace Prft.Talent.Services.Concrete
         }
 
        
-        public async Task<int> AddDocumentAsync(CandiateDocument candiateDocument)
+        public async Task<int> AddDocumentAsync(CandidateDocument candiateDocument)
         {
             return await _candidateDocumentRepository.AddCandidateDocumentsAsync(candiateDocument);
         }
