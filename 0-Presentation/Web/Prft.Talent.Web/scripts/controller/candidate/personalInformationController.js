@@ -4,6 +4,12 @@
         _this.service = commonAPIservice;
         _this.CandidateCommonServices = candidateCommonServices;
 
+        $scope.open = function ($event, dt) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            dt.opened = true;
+        };
+
         $scope.save = function () {
             if ($scope.personalInformation.$error.required){
                 $scope.Submitted = true;
