@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Prft.Talent.Domain.Talent.Candidate;
 using AutoMapper.QueryableExtensions;
 using Prft.Talent.Logger;
+using System.Data.Entity;
 
 namespace Prft.Talent.Data.Repositories.Concrete.Candidate
 {
@@ -34,14 +35,25 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
 
         public async Task<int> UpdateCandidatePersonalInformationAsync(PersonalInformation personalInformation)
         {
-            var objectToAdd = Mapper.Map<Entities.candidate>(personalInformation);
-            var candidate = DatabaseContext.candidates.Where(x => x.PK == personalInformation.CandidateId).SingleOrDefault();
-            if (candidate != null)
+            //<<<<<<< Updated upstream
+            //            var objectToAdd = Mapper.Map<Entities.candidate>(personalInformation);
+            //            var candidate = DatabaseContext.candidates.Where(x => x.PK == personalInformation.CandidateId).SingleOrDefault();
+            //            if (candidate != null)
+            //            {
+            //                candidate = objectToAdd;
+            //                return await DatabaseContext.SaveChangesAsync();
+            //            }
+            //            return candidate.PK;
+            //=======
+            var objectToUpdate = Mapper.Map<Entities.candidate>(personalInformation);
+            objectToUpdate.IsActive = true;
+            DatabaseContext.Entry(objectToUpdate).State = EntityState.Modified;
+            var successFlag = await DatabaseContext.SaveChangesAsync();
+            if (successFlag > 0)
             {
-                candidate = objectToAdd;
-                return await DatabaseContext.SaveChangesAsync();
+                return objectToUpdate.PK;
             }
-            return candidate.PK;
+            return 0;
         }
 
         public async Task<int> DeleteCandidatePersonalInformationAsync(int candidateId)
