@@ -56,7 +56,7 @@
             function actionsHtml(data) {
                 params.vm.datalist[data.pk] = data;
                 var editRecord = '', deleteRecord = '';
-                var formId = (params.editFormId != '') ? param.editFormId : '';
+                var formId = (params.editFormId != '') ? params.editFormId : '';
                 if (params.editRow) {
                     if (params.navigateToUrl === true) {
                         editRecord = '<button class="btn btn-edit" data-toggle="modal" onclick="perfDatatable.loadTable.openRecord(this, '
