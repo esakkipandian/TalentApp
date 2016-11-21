@@ -4,15 +4,15 @@
         _this.service = commonAPIservice;
        
 
-        loadColleges();
+       // loadColleges();
         //Load Drop Down Values 
-        var loadColleges = function () {
-            var url = 'http://localhost:8078/api/colleges';
+       // var loadColleges = function () {
+            var url = 'http://localhost:8080/api/colleges';
             _this.service.loadRecords(url)
                          .then(function (response) {
-                             $scope.Colleges = response;
+                             $scope.Colleges = response.data.collges;
                          });
-        };
+       // };
 
         // Load Model data if Exsist
         var loadEducationInformation = function () {

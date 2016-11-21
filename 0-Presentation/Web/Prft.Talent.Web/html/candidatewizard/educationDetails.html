@@ -3,7 +3,7 @@
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <label class="required">Highest Qualification</label>
         </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" >
             <select style="max-width:80%;">
                 <option value=""><--Select--></option>
                 <option value="1">Doctorate</option>
@@ -17,7 +17,7 @@
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <label class="required"> Course</label>
         </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" ng-model="EducationalInformation.Course">
             <select style="max-width:80%;">
                 <option><--Select--></option>
             </select>
@@ -29,10 +29,8 @@
             <label class="required">Specialization</label>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <select style="max-width:80%;">
-                <option><--Select--></option>
-            </select>
-            <!--<input type="text" name="CurrentAddress" ng-model="EducationalInformation.Specification" required />-->
+         
+            <input type="text" name="Specilization" ng-model="EducationalInformation.Specification" required />
         </div>
     </div>
     <div class="row">
@@ -40,7 +38,7 @@
             <label class="required">University</label>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <select style="max-width:80%;">
+            <select style="max-width:80%;" ng-model="EducationalInformation.University">
                 <option><--Select--></option>
             </select>
             <!--<input type="text" name="CurrentAddress" ng-model="EducationalInformation.Specification" required />-->
@@ -51,8 +49,8 @@
             <label class="required">College</label>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <select style="max-width:80%; " ng-controller="candidateEducationController" ng-model="EducationalInformation.Colleges" ng-options="items.CollgesName for items in Colleges">
-                <option><--Select--></option>
+            <select style="max-width:80%; " ng-controller="candidateEducationController" ng-model="EducationalInformation.Colleges" ng-options="items.collegeName for items in Colleges">
+                <option value="" label="Select and item"></option>
             </select>
             <!--<input type="text" name="CurrentAddress" ng-model="EducationalInformation.Specification" required />-->
         </div>
@@ -61,7 +59,7 @@
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <label class="required">Course Type </label>
         </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" ng-model="EducationalInformation.CourseType">
             <input type="radio" />Full Time
             <input type="radio" />Part Time
             <input type="radio" />Correspondence
@@ -72,7 +70,7 @@
             <label class="required">Passing Year</label>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <select style="max-width:80%;">
+            <select style="max-width:80%;" ng-model="EducationalInformation.PassingYear">
                 <option><--Select--></option>
             </select>
             <!--<input type="text" name="Age" ng-model="EducationalInformation.YearOfPassedOut" required />-->
