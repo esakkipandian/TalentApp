@@ -16,12 +16,12 @@ namespace Prft.Talent.Domain.Mapping
                 .ReverseMap();
             profile.CreateMap<candidate, PersonalInformation>()
                 .ForMember(x => x.CandidateId, map => map.MapFrom(c => c.PK)).ReverseMap();
-            profile.CreateMap<college,Colleges>()
+            profile.CreateMap<college, Colleges>()
                   .ForMember(x => x.CollegeCode, map => map.MapFrom(c => c.Code))
                   .ForMember(x => x.CollegeName, map => map.MapFrom(c => c.Description))
-                
+
                 .ReverseMap();
-            profile.CreateMap<university, University > ()
+            profile.CreateMap<university, University>()
                   .ForMember(x => x.UniversityCode, map => map.MapFrom(c => c.Code))
                   .ForMember(x => x.UniversityName, map => map.MapFrom(c => c.Description))
 
@@ -39,6 +39,9 @@ namespace Prft.Talent.Domain.Mapping
 
             profile.CreateMap<candidatedocument, CandidateDocument>()
                    .ForMember(x => x.CandidateId, map => map.MapFrom(c => c.CandidateId)).ReverseMap();
+
+            profile.CreateMap<candidateskill, CandidateSkillSet>()
+                    .ForMember(x => x.CandidateSkillSetId, map => map.MapFrom(c => c.PK)).ReverseMap();
 
         }
     }
