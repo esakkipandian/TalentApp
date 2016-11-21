@@ -56,6 +56,7 @@
     <Content Include="home.html" />
     <Content Include="html\candidateInformation.html" />
     <Content Include="html\candidateInformationWizard.html" />
+    <Content Include="html\candidatewizard\basiccandiatedetails.html" />
     <Content Include="html\candidatewizard\newcandidate.html" />
     <Content Include="html\candidatewizard\Step1.html" />
     <Content Include="html\candidatewizard\Step2.html" />
