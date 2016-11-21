@@ -41,7 +41,7 @@
 
         $scope.addNewQualification = function () {
             var qualification = $scope.qualification.length + 1;
-            $scope.skillset.push({ 'id': 'q' + qualification, 'specialization': '',percentage:'' });
+            $scope.qualification.push({ 'id': 'q' + qualification, 'specialization': '','percentage':'' });
 
         };
 
