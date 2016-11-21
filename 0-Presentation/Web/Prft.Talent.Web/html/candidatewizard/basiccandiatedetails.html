@@ -1,0 +1,106 @@
+﻿
+
+<form role="form" name="personalInformation" class="form-horizontal" novalidate>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="FirstName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">First Name: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" placeholder="First Name" name="FirstName" ng-model="PersonalInformation.firstName" required />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="LastName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Last Name: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" placeholder="Last Name" name="LastName" ng-model="PersonalInformation.lastName" required />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="DOB" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">D.O.B: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" class="datepicker" uib-datepicker-popup ng-model="PersonalInformation.DOB" is-open="PersonalInformation.opened" ng-click="open($event,dt)"
+                           placeholder="Date Of Birth" name="dateOfBirth" required />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="fatherName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Father Name: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" placeholder="Father Name" name="FatherName" ng-model="PersonalInformation.fatherName" required />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="motherName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Mother Name:</label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" placeholder="Mother Name" name="MotherName" ng-model="PersonalInformation.motherName" required />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="emailAddress" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Email Address </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="email" class="form-control" placeholder="Email Address" name="EmailAddress" ng-model="PersonalInformation.email" required />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="contactNumber" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Contact Number </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="number" class="form-control" placeholder="Mobile" name="Mobile" ng-model="PersonalInformation.mobile" maxlength="10" required />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="alternateContact" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Alternate Contact: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="number" class="form-control" placeholder="Alternate Contact Number" name="AlternateContact" ng-model="PersonalInformation.alternateContact" required maxlength="10" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="nationality" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Nationality:</label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <select ng-model="PersonalInformation.nationality">
+                        <option value="">--Please Select--</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group" ng-if="PersonalInformation.nationality=='Others'">
+                <label for="otherNationality" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Others: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" placeholder="Other Nationality" name="Others" ng-model="PersonalInformation.nationality" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
+            <button type="submit" class="btn btn-primary" action="save">Submit</button>
+        </div>
+    </div>
+</form>
