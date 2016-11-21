@@ -1,27 +1,22 @@
 ﻿(function (angular) {
     var SkillSetController = function ($scope, $controller) {
 
-        $scope.primaryskills = [
+        $scope.skillset = [
             {
-                id: 'primaryskill',
-                dates: [
-                {
-
-                }
-                ]
-
+                id: 'skill',
+                dates: [{}]
             }
         ];
 
-        $scope.addNewPrimarySkill = function () {
-            var primarySkill = $scope.primaryskills.length + 1;
+        $scope.addNewSkill = function () {
+            var primarySkill = $scope.skillset.length + 1;
             var date = new Date();
-            $scope.primaryskills.push({ 'id': 'primaryskill' + primarySkill, 'dates': { date } });
+            $scope.skillset.push({ 'id': 'skill' + primarySkill, 'dates': { date } });
             
         };
 
-        $scope.removePrimarySkill = function (index) {
-            $scope.primaryskills.splice(index, 1);
+        $scope.removeSkill = function (index) {
+            $scope.skillset.splice(index, 1);
         };
 
 

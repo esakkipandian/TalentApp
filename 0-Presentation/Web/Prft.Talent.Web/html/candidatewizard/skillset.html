@@ -2,12 +2,10 @@
       ng-submit="submit()" novalidate>
     <div class="skillset">
 
-        <div data-ng-repeat="primaryskill in primaryskills" ng-model="primaryskill.length">
+        <div data-ng-repeat="skill in skillset" ng-model="skill.length">
             <div class="col-sm-3">
-                <input type="text" class="textbox" ng-model="primaryskill.name" name="skillname" placeholder="Skill" required>
-                <span ng-show="(candidateSkillSetForm.skillname.$dirty || submitted) && candidateSkillSetForm.skillname.$error.required">
-                    Required
-                </span>
+                <input type="text" class="textbox" ng-model="skill.name" name="skillname" placeholder="Skill" required>
+               
             </div>
             <div class="col-sm-2">
                 <select class="dropdown empty" name="skilltype" required>
@@ -15,25 +13,21 @@
                     <option value="Primary">Primary</option>
                     <option value="Secondary">Secondary</option>
                 </select>
-                <span ng-show="(candidateSkillSetForm.skilltype.$dirty || submitted) && candidateSkillSetForm.skilltype.$error.required">
-                    Required
-                </span>
+               
             </div>
 
-            <div ng-repeat="dt in primaryskill.dates" class="col-sm-2">
+            <div ng-repeat="dt in skill.dates" class="col-sm-2">
                 <input type="text" class="datepicker" uib-datepicker-popup ng-model="dt.dates" is-open="dt.opened" ng-click="open($event,dt)" 
                        placeholder="Last Used Date" name="lastuseddate" required/>
-                <span ng-show="(candidateSkillSetForm.lastuseddate.$dirty || submitted) && candidateSkillSetForm.lastuseddate.$error.required">
-                    Required
-                </span>
+                
             </div>
 
             <div class="col-sm-2">
                 <span uib-rating ng-model="rate" max="max" enable-reset="false" required></span> {{rate}}
             </div>
             <div class="col-sm-2">
-                <button class="remove" ng-click="removePrimarySkill($index)" ng-show="primaryskills.length>1">-</button>
-                <button class="remove" ng-show="$last" ng-click="addNewPrimarySkill()">+</button><br /><br />
+                <button class="remove" ng-click="removeSkill($index)" ng-show="skill.length>1">-</button>
+                <button class="remove" ng-show="$last" ng-click="addNewSkill()">+</button><br /><br />
             </div>
         </div>
     </div>
