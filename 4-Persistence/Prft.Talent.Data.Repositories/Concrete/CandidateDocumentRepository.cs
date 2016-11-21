@@ -14,17 +14,18 @@ namespace Prft.Talent.Data.Repositories.Concrete
     {
         public CandidateDocumentRepository(PrftDatabaseContext dbContext, IMapper mapper, IPrftLogger logger) : base(dbContext, mapper, logger) { }
 
-        public async Task<IEnumerable<CandiateDocument>> GetCandidateDocumentsAsync()
+        public async Task<IEnumerable<CandidateDocument>> GetCandidateDocumentsAsync()
         {   
-            return await DatabaseContext.candidatedocuments.ProjectTo<CandiateDocument>(Mapper.ConfigurationProvider).ToListAsync();
+            return await DatabaseContext.candidatedocuments.ProjectTo<CandidateDocument>(Mapper.ConfigurationProvider).ToListAsync();
         }
 
-        public async Task<int> AddCandidateDocumentsAsync(CandiateDocument candiateDocument)
+        public async Task<int> AddCandidateDocumentsAsync(CandidateDocument candiateDocument)
         {
             var objectToAdd = Mapper.Map<candidatedocument>(candiateDocument);
             objectToAdd.IsActive = true;
             DatabaseContext.candidatedocuments.Add(objectToAdd);
-            return await DatabaseContext.SaveChangesAsync();
+            var result = await DatabaseContext.SaveChangesAsync();
+            return objectToAdd.PK;
         }
     }
 }
