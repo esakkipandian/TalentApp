@@ -1,11 +1,6 @@
 ﻿using Prft.Talent.Data.Repositories.Abstract;
 using Prft.Talent.Services.Api;
 using Prft.Talent.Services.Abstract;
-using Prft.Talent.Domain.Talent;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Prft.Talent.Services.Concrete
