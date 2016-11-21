@@ -5,5 +5,6 @@ var perfUrl = {
     'deleteAddressType': apiUri + 'AddressType' + '/DeleteAddressType',
     'addCandidateInformation': apiUri + 'CandidateInformation',
     'loadCandidateInformation': apiUri + 'Candidates' + '/GetCandidate',
-    'updateCandidateInformation': apiUri + 'CandidateInformation'
+    'updateCandidateInformation': apiUri + 'CandidateInformation',
+    'deleteCandidateInformation': apiUri +'Candidates' +'/DeleteCandidateInformation'
 };

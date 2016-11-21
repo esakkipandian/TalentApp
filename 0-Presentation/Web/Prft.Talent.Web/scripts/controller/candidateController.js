@@ -22,7 +22,7 @@
             'scope': $scope,
             'addUrl': perfUrl['addCandidateInformation'],
             'updateUrl': perfUrl['updateCandidateInformation'],
-            'deleteUrl': 'http://localhost:8080/api/AddressType',
+            'deleteUrl': perfUrl['deleteCandidateInformation'],
             'loadListUrl': perfUrl['loadCandidateInformation'],
             'navigateToUrl': true,
             'addNavigateUrl': 'candidateinformationwizard',

@@ -44,12 +44,12 @@ namespace Prft.Talent.WebApi.Controllers
 
         [HttpPut]
         [Route("api/Candidates/DeleteCandidateInformation")]
-        public async Task<int> DeleteCandidateInformation(int id)
+        public async Task<int> DeleteCandidateInformation(PersonalInformation personalInformation)
         {
             var successFlag = await _personalInformationService.DeleteCandidatePersonalInformationAsync(
                 new GetPersonalInformationRequest
                 {
-                    CandidateId = id
+                    CandidateId = personalInformation.PK
                 });
             return successFlag.SuccessFlag;
         }
