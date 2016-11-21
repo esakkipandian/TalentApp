@@ -42,7 +42,9 @@ namespace Prft.Talent.WebApi.Controllers
             return personalInformation;
         }
 
-        public async Task<int> DeleteCandidatePersonalInformation(int id)
+        [HttpPut]
+        [Route("api/Candidates/DeleteCandidateInformation")]
+        public async Task<int> DeleteCandidateInformation(int id)
         {
             var successFlag = await _personalInformationService.DeleteCandidatePersonalInformationAsync(
                 new GetPersonalInformationRequest
@@ -58,6 +60,18 @@ namespace Prft.Talent.WebApi.Controllers
         public async Task<int> AddPersonalInformation(PersonalInformation personalInformation)
         {
             var successFlag = await _personalInformationService.SetCandidatePersonalInformationAsync(
+                new PersonalInformationRequest
+                {
+                    CandidatePersonalInformation = personalInformation
+                });
+            return successFlag.SuccessFlag;
+        }
+
+        [HttpPost]
+        [Route("api/Candidates/UpdatePersonalInformation")]
+        public async Task<int> UpdatePersonalInformation(PersonalInformation personalInformation)
+        {
+            var successFlag = await _personalInformationService.UpdateCandidatePersonalInformationAsync(
                 new PersonalInformationRequest
                 {
                     CandidatePersonalInformation = personalInformation

@@ -30,6 +30,19 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
             DatabaseContext.candidates.Add(objectToAdd);
             return await DatabaseContext.SaveChangesAsync();
         }
+
+        public async Task<int> UpdateCandidatePersonalInformationAsync(PersonalInformation personalInformation)
+        {
+            var objectToAdd = Mapper.Map<Entities.candidate>(personalInformation);
+            var candidate = DatabaseContext.candidates.Where(x => x.PK == personalInformation.CandidateId).SingleOrDefault();
+            if (candidate != null)
+            {
+                candidate = objectToAdd;
+                return await DatabaseContext.SaveChangesAsync();
+            }
+            return 0;
+        }
+
         public async Task<int> DeleteCandidatePersonalInformationAsync(int candidateId)
         {
             var candidate = DatabaseContext.candidates.Where(x => x.PK == candidateId).SingleOrDefault();
