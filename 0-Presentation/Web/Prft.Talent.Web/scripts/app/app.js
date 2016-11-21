@@ -47,7 +47,7 @@ var mainApp = angular.module("prftApp",
                controller: 'educationController'
            })
           .when('/fileupload', {
-              templateUrl: 'html/fileupload.html',
+              templateUrl: 'html/candidatewizard/fileupload.html',
               controller: 'fileuploadController'
           })
           .when('/newcandidate', {
