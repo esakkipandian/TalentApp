@@ -1,100 +1,133 @@
 ﻿<form role="form" name="candidateEducationForm" class="form-horizontal" id="candidateEducationForm" ng-controller="candidateEducationController" novalidate>
-    <ol class="form-control nya-bs-select" name="College" title="Select" data-live-search="true" required validType="select"
-        disabled="isProfile" ng-model="EducationalInformation.college" ng-selected="{{EducationalInformation.college}}">
-        <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
-            <a>
-                {{college.collegeName}}
-                <span class="glyphicon glyphicon-ok check-mark"></span>
-            </a>
-        </li>
-    </ol>
 
     <div class="row">
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <label class="required">Highest Qualification</label>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="Qualification" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Qualification: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <ol class="form-control nya-bs-select" name="Qualification" title="Select" data-live-search="true" required validType="select"
+                        disabled="isProfile" ng-model="EducationalInformation.college" ng-selected="{{EducationalInformation.college}}">
+                        <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+                            <a>
+                                {{college.collegeName}}
+                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" >
-            <select style="max-width:80%;">
-                <option value=""><--Select--></option>
-                <option value="1">Doctorate</option>
-                <option value="2">PostGraduate</option>
-                <option value="3">UnderGraduate</option>
-            </select>
-            <!--<input type="text" name="FirstName" ng-model="EducationalInformation.UnversityName" required />-->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="Course" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Course: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <ol class="form-control nya-bs-select" name="course" title="Select" data-live-search="true" required validType="select"
+                        disabled="isProfile" ng-model="EducationalInformation.college" ng-selected="{{EducationalInformation.college}}">
+                        <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+                            <a>
+                                {{college.collegeName}}
+                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <label class="required"> Course</label>
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" ng-model="EducationalInformation.Course">
-            <select style="max-width:80%;">
-                <option><--Select--></option>
-            </select>
-            <!--<input type="text" name="LastName" ng-model="EducationalInformation.CourseName" required />-->
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <label class="required">Specialization</label>
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-         
-            <input type="text" name="Specilization" ng-model="EducationalInformation.Specification" required />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <label class="required">University</label>
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <select style="max-width:80%;" ng-model="EducationalInformation.University">
-                <option><--Select--></option>
-            </select>
-            <!--<input type="text" name="CurrentAddress" ng-model="EducationalInformation.Specification" required />-->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="Course" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Specialization: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" placeholder="Specialization" name="Specialization" ng-model="PersonalInformation.firstName" required />
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <label class="required">College</label>
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <select style="max-width:80%; " ng-controller="candidateEducationController" ng-model="EducationalInformation.Colleges" ng-options="items.collegeName for items in Colleges">
-                <option value="" label="Select and item"></option>
-            </select>
-            <!--<input type="text" name="CurrentAddress" ng-model="EducationalInformation.Specification" required />-->
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <label class="required">Course Type </label>
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" ng-model="EducationalInformation.CourseType">
-            <input type="radio" />Full Time
-            <input type="radio" />Part Time
-            <input type="radio" />Correspondence
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <label class="required">Passing Year</label>
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <select style="max-width:80%;" ng-model="EducationalInformation.PassingYear">
-                <option><--Select--></option>
-            </select>
-            <!--<input type="text" name="Age" ng-model="EducationalInformation.YearOfPassedOut" required />-->
-        </div>
 
-    </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <label class="required">Percentage/CGPA</label>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="University" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">University: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <ol class="form-control nya-bs-select" name="University" title="Select" data-live-search="true" required validType="select"
+                        disabled="isProfile" ng-model="EducationalInformation.college" ng-selected="{{EducationalInformation.college}}">
+                        <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+                            <a>
+                                {{college.collegeName}}
+                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <input type="text" name="ContactNumber" ng-model="EducationalInformation.Percentage" required maxlength="10" />
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="College" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">College: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <ol class="form-control nya-bs-select" name="college" title="Select" data-live-search="true" required validType="select"
+                        disabled="isProfile" ng-model="EducationalInformation.college" ng-selected="{{EducationalInformation.college}}">
+                        <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+                            <a>
+                                {{college.collegeName}}
+                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                    <input type="radio" />Full Time &nbsp;
+                    <input type="radio" />Part Time &nbsp;
+                    <input type="radio" />Correspondence
+                </div>
+            </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary" action="save">Save</button>
-    
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="PassingYear" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">PassingYear: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <ol class="form-control nya-bs-select" name="PassingYear" title="Select" data-live-search="true" required validType="select"
+                        disabled="isProfile" ng-model="EducationalInformation.college" ng-selected="{{EducationalInformation.college}}">
+                        <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+                            <a>
+                                {{college.collegeName}}
+                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="Percentage" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Percentage/CGPA: </label>
+                <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="PersonalInformation.firstName" required />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="form-group">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+            <div class="pull-right">
+                <div>
+                    <button type="submit" class="btn btn-primary" action="save">Save</button>
+                    <button class="remove" ng-click="addNewSkill()">+</button>
+                    <button class="remove" ng-click="removeSkill($index)">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
