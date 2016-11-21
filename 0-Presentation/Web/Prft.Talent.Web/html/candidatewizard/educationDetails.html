@@ -1,4 +1,14 @@
-﻿<form role="form" class="form-horizontal" id="candidateEducationForm" ng-controller="candidateEducationController" novalidate>
+﻿<form role="form" name="candidateEducationForm" class="form-horizontal" id="candidateEducationForm" ng-controller="candidateEducationController" novalidate>
+    <ol class="form-control nya-bs-select" name="College" title="Select" data-live-search="true" required validType="select"
+        disabled="isProfile" ng-model="EducationalInformation.college" ng-selected="{{EducationalInformation.college}}">
+        <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+            <a>
+                {{college.collegeName}}
+                <span class="glyphicon glyphicon-ok check-mark"></span>
+            </a>
+        </li>
+    </ol>
+
     <div class="row">
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <label class="required">Highest Qualification</label>
@@ -86,9 +96,5 @@
         </div>
     </div>
     <button type="submit" class="btn btn-primary" action="save">Save</button>
-    <!--<div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xm-12">
-            <input type="button" action="submitEducationalInformation" ng-click="Submit()" value="Submit" />
-        </div>
-    </div>-->
+    
 </form>
