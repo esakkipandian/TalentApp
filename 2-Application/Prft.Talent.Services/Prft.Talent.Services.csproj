@@ -52,6 +52,7 @@
     <Compile Include="Abstract\ICandidateSkillSetService.cs" />
     <Compile Include="Abstract\ICollegesServices.cs" />
     <Compile Include="Abstract\ICoursesService.cs" />
+    <Compile Include="Abstract\IEducationalIformationService.cs" />
     <Compile Include="Abstract\IEmployeeService.cs" />
     <Compile Include="Abstract\IFileuploadService.cs" />
     <Compile Include="Abstract\IUniversityServices.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Api\Candidate\PersonalInformationResponse.cs" />
     <Compile Include="Api\CollegesReponse.cs" />
     <Compile Include="Api\CoursesResponse.cs" />
+    <Compile Include="Api\EducationalInforamtionResponse.cs" />
     <Compile Include="Api\EmployeeResponse.cs" />
     <Compile Include="Api\FileuploadResponse.cs" />
     <Compile Include="Api\UniversityResponse.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Concrete\Candidate\PersonalInformationService.cs" />
     <Compile Include="Concrete\CollegesService.cs" />
     <Compile Include="Concrete\CoursesServices.cs" />
+    <Compile Include="Concrete\EducationalInformationService.cs" />
     <Compile Include="Concrete\FileuploadService.cs" />
     <Compile Include="Concrete\UniversityServices.cs" />
     <Compile Include="RequestBase.cs" />

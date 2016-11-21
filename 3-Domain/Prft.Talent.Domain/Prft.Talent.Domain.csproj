@@ -50,6 +50,8 @@
     <Compile Include="Talent\CandiateDocument.cs" />
     <Compile Include="Talent\Colleges.cs" />
     <Compile Include="Talent\Courses.cs" />
+    <Compile Include="Talent\Document.cs" />
+    <Compile Include="Talent\EducationalInformation.cs" />
     <Compile Include="Talent\Employee.cs" />
     <Compile Include="Talent\University.cs" />
   </ItemGroup>
