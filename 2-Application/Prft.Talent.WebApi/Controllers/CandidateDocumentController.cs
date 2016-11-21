@@ -38,7 +38,7 @@ namespace Prft.Talent.WebApi.Controllers
 
             using (BinaryReader br = new BinaryReader(file.InputStream))
             {
-                bytes = br.ReadBytes((Int32)file.ContentLength);
+                bytes = br.ReadBytes(file.ContentLength);
             }
             //CandiateDocument candiateDocument = new CandiateDocument();
             //candiateDocument.DocumentContent = bytes;
