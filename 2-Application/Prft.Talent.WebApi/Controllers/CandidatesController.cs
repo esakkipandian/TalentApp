@@ -67,7 +67,7 @@ namespace Prft.Talent.WebApi.Controllers
             return successFlag.SuccessFlag;
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("api/Candidates/UpdatePersonalInformation")]
         public async Task<int> UpdatePersonalInformation(PersonalInformation personalInformation)
         {

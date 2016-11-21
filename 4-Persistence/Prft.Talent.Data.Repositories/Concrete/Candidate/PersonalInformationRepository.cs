@@ -28,7 +28,8 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
             var objectToAdd = Mapper.Map<Entities.candidate>(personalInformation);
             objectToAdd.IsActive = true;
             DatabaseContext.candidates.Add(objectToAdd);
-            return await DatabaseContext.SaveChangesAsync();
+            await DatabaseContext.SaveChangesAsync();
+            return objectToAdd.PK;
         }
 
         public async Task<int> UpdateCandidatePersonalInformationAsync(PersonalInformation personalInformation)
@@ -40,7 +41,7 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
                 candidate = objectToAdd;
                 return await DatabaseContext.SaveChangesAsync();
             }
-            return 0;
+            return candidate.PK;
         }
 
         public async Task<int> DeleteCandidatePersonalInformationAsync(int candidateId)
