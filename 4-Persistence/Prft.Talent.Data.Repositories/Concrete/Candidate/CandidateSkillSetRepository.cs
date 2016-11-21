@@ -30,7 +30,8 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
             var objectToAdd = Mapper.Map<Entities.candidateskill>(candidateSkillSet);
             objectToAdd.IsActive = true;
             DatabaseContext.candidateskills.Add(objectToAdd);
-            return await DatabaseContext.SaveChangesAsync();
+            var result = await DatabaseContext.SaveChangesAsync();
+            return objectToAdd.PK;
         }
 
         public async Task<int> DeleteCandidateSkillSetsAsync(int candidateId)

@@ -5,7 +5,7 @@
         <div data-ng-repeat="skill in skillset" ng-model="skill.length">
             <div class="col-sm-3">
                 <ol class="form-control nya-bs-select textbox" name="Skill Set" title="Skill" data-live-search="true" validType="select"
-                    disabled="isProfile" ng-model="Skills.skill.SkillSetId" ng-selected="{{skill.SkillSetId}}" >
+                    disabled="isProfile" ng-model="skill.skillId" ng-selected="{{skill.skillId}}" >
                     <li nya-bs-option="skillSet in skillSets | orderBy: 'skillSet' track by skillSet.pk" data-value="skillSet.pk">
                         <a>
                             {{skillSet.code}}
@@ -17,7 +17,7 @@
             </div> 
 
             <div class="col-sm-2">
-                <select class="dropdown" name="skilltype" ng-model="Skills.Type" ng-init="Skills.Type='True'" required>                    
+                <select class="dropdown" name="skilltype" ng-model="skill.isPrimary" ng-init="skill.isPrimary='True'" required>                    
                     <option value="True">Primary</option>
                     <option value="False">Secondary</option>
                 </select>
@@ -25,19 +25,18 @@
             </div>
 
             <div ng-repeat="dt in skill.dates" class="col-sm-2">
-                <input type="text" class="datepicker" uib-datepicker-popup ng-model="Skills.dt.dates" datepicker-popup="MM/yyyy" is-open="dt.opened" ng-click="open($event,dt)"
+                <input type="text" class="datepicker" uib-datepicker-popup ng-model="skill.sinceLastUsed" datepicker-popup="MM/yyyy" is-open="dt.opened" ng-click="open($event,dt)"
                        placeholder="Last Used Date" name="lastuseddate" datepicker-options="{minMode: 'month'}" datepicker-mode="'month'" required />
                 
             </div>
 
             <div class="col-sm-2">
-                <span uib-rating ng-model="Skills.rate" max="5" min="1" ng-init="Skills.rate=1" enable-reset="false" required></span>
+                <span uib-rating ng-model="skill.rating" max="5" min="1" ng-init="skill.rating=1" enable-reset="false" required></span>
             </div>
             <div class="col-sm-3">
                 <button type="submit" class="fa fa-minus-circle remove" ng-click="removeSkill($index)" ng-show="skillset.length>1" data-toggle="tooltip" 
                         data-placement="bottom" title="Delete Skill"></button>
-                <button type="submit" class="fa fa-floppy-o remove" ng-click="saveSkill()" data-toggle="tooltip" data-placement="bottom" title="Save Skill"
-                        action="save"></button>
+                <button type="submit" class="fa fa-floppy-o remove" ng-click="saveSkill($index)" data-toggle="tooltip" data-placement="bottom" title="Save Skill"></button>
                 <button type="submit" class="fa fa-plus-circle remove" ng-show="$last" ng-click="addNewSkill()" 
                         data-toggle="tooltip" data-placement="bottom" title="Save and Add New Skill"></button><br /><br />
             </div>

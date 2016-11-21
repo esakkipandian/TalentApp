@@ -1,11 +1,13 @@
 ﻿(function (angular) {
-    var SkillSetController = function ($scope, $controller, commonAPIservice) {
+    var SkillSetController = function ($scope, $controller, commonAPIservice, candidateCommonServices) {
         var _this = this;
+        _this.title = "Skillset";
         _this.service = commonAPIservice;
+        _this.CandidateCommonServices = candidateCommonServices;
 
         $scope.skillset = [
             {
-                id: 'skill',
+                id: 0,
                 dates: [{}]
             }
         ];
@@ -25,21 +27,25 @@
         $scope.addNewSkill = function () {           
             var primarySkill = $scope.skillset.length + 1;
             var date = new Date();
-            $scope.skillset.push({ 'id': 'skill' + primarySkill, 'dates': { date } });
-
+            $scope.skillset.push({ 'id': primarySkill, 'dates': { date } });
         };
 
         $scope.removeSkill = function (index) {
             $scope.skillset.splice(index, 1);
         };
 
-        $scope.save = function () {
-            _this.service.add('http://localhost:8080/api/Candidates/AddCandidateSkillSets/', $scope.Skills)
-                            .then(function (response) {
-                                _this.CandidateCommonServices.setCandidateId(response.data);
-                                perfUtils.getInstance().successMsg(_this.title + ' added Successfully!');
-                            });
-        }
+        $scope.saveSkill = function (recordIndex) {
+            var candidateId = _this.CandidateCommonServices.getCandidateId();
+            if (candidateId > 0) { 
+                var skillset = $scope.skillset[recordIndex];
+                skillset.candidateId = candidateId;
+                _this.service.add('http://localhost:8080/api/Candidates/AddCandidateSkillSets/', skillset)
+                    .then(function (response) {
+                        perfUtils.getInstance().successMsg(_this.title + ' added Successfully!');
+                    });
+            }
+        };
+
         $scope.open = function ($event, dt) {
             $event.preventDefault();
             $event.stopPropagation();
@@ -47,11 +53,9 @@
         };
 
       $scope.ratingStates = { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' };
-       
-
-        loadSkillSets();
+      loadSkillSets();
 
     };
-    SkillSetController.$inject = ['$scope', '$controller', 'commonAPIservice'];
+    SkillSetController.$inject = ['$scope', '$controller', 'commonAPIservice', 'candidateCommonServices'];
     mainApp.controller('skillSetController', SkillSetController);
 })(angular);
