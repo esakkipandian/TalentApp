@@ -18,10 +18,16 @@ namespace Prft.Talent.Data.Repositories.Concrete
         public async Task<EducationalInformation> GetEducationalInformationAsync(int candidateId)
         {
             return await Task.FromResult(DatabaseContext.candidateeducations
-                        .Where(x => x.PK == candidateId)
+                        .Where(x => x.CandidateId == candidateId)
                         .ProjectTo<EducationalInformation>(Mapper.ConfigurationProvider)
                         .FirstOrDefault());
         }
-
+        //public async Task<int> SaveEducationalInformationAsync(EducationalInformation EducationalInformation)
+        //{
+        //    var objectToAdd = Mapper.Map<Entities.candidateeducation>(EducationalInformation);
+        //    objectToAdd.IsActive = true;
+        //    DatabaseContext.candidateeducations.Add(objectToAdd);
+        //    return await DatabaseContext.SaveChangesAsync();
+        //}
     }
 }

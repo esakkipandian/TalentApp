@@ -16,9 +16,6 @@ namespace Prft.Talent.Services.Api
     {
         public int CandidateId { get; set; }
 
-        public static implicit operator int(EducationalInformationRequest v)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }
