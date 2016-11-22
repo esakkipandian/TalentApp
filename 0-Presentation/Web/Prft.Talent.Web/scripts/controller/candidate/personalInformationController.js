@@ -5,11 +5,14 @@
         _this.service = commonAPIservice;
         _this.CandidateCommonServices = candidateCommonServices;
 
-        $scope.toggle = function ($event) {
-            $event.preventDefault();
-            $event.stopPropagation();
-            event[field] = !event[field];
+        $scope.dob = {
+            opened: false
         };
+
+        $scope.dobDate = function () {
+            $scope.dob.opened = true;
+        };
+
 
         $scope.save = function () {
             if ($scope.personalInformation.$error.required){
