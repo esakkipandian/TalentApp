@@ -22,7 +22,7 @@ namespace Prft.Talent.Services.Concrete.Candidate
         {
             return new CandidateSkillSetResponse
             {
-                CandidateSkillSet = await _candidateSkillSetRepository.GetCandidateSkillSetsAsync(candidateSkillSetRequest.CandidateId)
+                CandidateSkillSet = await _candidateSkillSetRepository.GetCandidateSkillSetsAsync(candidateSkillSetRequest.CandidateSkillSetId)
             };
         }
 
@@ -38,7 +38,7 @@ namespace Prft.Talent.Services.Concrete.Candidate
         {
             return new SetCandidateSkillSetResponse
             {
-                SuccessFlag = await _candidateSkillSetRepository.DeleteCandidateSkillSetsAsync(candidateSkillSetRequest.CandidateId)
+                SuccessFlag = await _candidateSkillSetRepository.DeleteCandidateSkillSetsAsync(candidateSkillSetRequest.CandidateSkillSetId)
             };
         }
     }

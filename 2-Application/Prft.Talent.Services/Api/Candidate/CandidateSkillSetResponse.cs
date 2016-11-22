@@ -24,6 +24,6 @@ namespace Prft.Talent.Services.Api.Candidate
 
     public class CandidateSkillSetIdRequest : RequestBase
     {
-        public int CandidateId { get; set; }
+        public int CandidateSkillSetId { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace Prft.Talent.WebApi.Controllers
             var candidateSkillSets = await _candidateSkillSetService.GetCandidateSkillSetsAsync(
                 new CandidateSkillSetIdRequest
                 {
-                    CandidateId = id
+                    CandidateSkillSetId = id
                 });
             return candidateSkillSets.CandidateSkillSet;
         }
@@ -50,7 +50,7 @@ namespace Prft.Talent.WebApi.Controllers
             var successFlag = await _candidateSkillSetService.DeleteCandidateSkillSetsAsync(
                 new CandidateSkillSetIdRequest
                 {
-                    CandidateId = id
+                    CandidateSkillSetId = id
                 });
             return successFlag.SuccessFlag;
         }
