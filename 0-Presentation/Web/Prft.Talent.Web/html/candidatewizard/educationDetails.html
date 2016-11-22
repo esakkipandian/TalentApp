@@ -7,11 +7,11 @@
                     <div class="form-group">
                         <label for="Qualification" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Qualification: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                            <select class="dropdown empty" name="qualification" required>
+                            <select class="dropdown empty" name="qualification" ng-model="EducationalInformation.DegreeName" required>
                                 <option disabled selected>Select</option>
-                                <option value="Primary">Doctorate</option>
-                                <option value="Secondary">PostGraduate</option>
-                                <option value="Secondary">UnderGraduate</option>
+                                <option value="Doctorate">Doctorate</option>
+                                <option value="PostGraduate">PostGraduate</option>
+                                <option value="UnderGraduate">UnderGraduate</option>
                             </select>                           
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                     <div class="form-group">
                         <label for="PassingYear" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">PassingYear: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                            <select class="dropdown empty" name="passingyr" ng-model="EducationalInformation.passedOut" required>
+                            <select class="dropdown empty" name="passingyr" ng-model="EducationalInformation.PassedOut" required>
                                 <option disabled selected>Select</option>
                                 <option value="2016">2016</option>
                                 <option value="2015">2015</option>

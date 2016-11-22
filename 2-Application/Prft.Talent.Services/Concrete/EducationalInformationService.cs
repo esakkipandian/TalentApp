@@ -24,13 +24,25 @@ namespace Prft.Talent.Services.Concrete
                 EducationalInformation = await _educationalInformationRepository.GetEducationalInformationAsync(educationalInformationRequest.CandidateId)
             };
         }
-        public async Task<int> SaveEducationalInformationAsync(EducationalInformation EducationInformation)
+        public async Task<SetEducationalInformationResponse> SaveEducationalInformationAsync(EducationalInformation EducationInformation)
         {
-            return await _educationalInformationRepository.SaveEducationalInformationAsync(EducationInformation);
+            return new SetEducationalInformationResponse { 
+              SuccessFlag=await _educationalInformationRepository.SaveEducationalInformationAsync(EducationInformation)
+        };
+    }
+        public async Task<SetEducationalInformationResponse> UpdateEducationalInformationAsync(EducationalInformation EducationInformation)
+        {
+            return new SetEducationalInformationResponse
+            {
+                SuccessFlag = await _educationalInformationRepository.UpdateEducationalInformationAsync(EducationInformation)
+            };
         }
-        public async Task<int> UpdateEducationalInformationAsync(EducationalInformation EducationInformation)
+        public async Task<SetEducationalInformationResponse> DeleteEducationalInformationAsync(EducationalInformation EducationalInformation)
         {
-            return await _educationalInformationRepository.UpdateEducationalInformationAsync(EducationInformation);
+            return new SetEducationalInformationResponse
+            {
+                SuccessFlag = await _educationalInformationRepository.DeleteEducationalInformationAsync(EducationalInformation.CandidateId)
+            };
         }
     }
 }

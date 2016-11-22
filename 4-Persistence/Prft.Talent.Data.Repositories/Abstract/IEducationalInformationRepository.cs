@@ -12,5 +12,6 @@ namespace Prft.Talent.Data.Repositories.Abstract
         Task<EducationalInformation> GetEducationalInformationAsync(int CandidateId);
         Task<int> SaveEducationalInformationAsync(EducationalInformation EducationalInformation);
         Task<int> UpdateEducationalInformationAsync(EducationalInformation EducationalInformation);
+        Task<int> DeleteEducationalInformationAsync(int CandidateId);
     }
 }

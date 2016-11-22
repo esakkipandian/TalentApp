@@ -7,7 +7,8 @@ namespace Prft.Talent.Services.Abstract
     public interface IEducationalIformationService : IApi
     {
         Task<EducationalInforamtionResponse> GetEducationalInformationAsync(EducationalInformationRequest EducationalInformationRequest);
-        Task<int> SaveEducationalInformationAsync(EducationalInformation EducationalInformation);
-        Task<int> UpdateEducationalInformationAsync(EducationalInformation EducationalInformation);
+        Task<SetEducationalInformationResponse> SaveEducationalInformationAsync(EducationalInformation EducationalInformation);
+        Task<SetEducationalInformationResponse> UpdateEducationalInformationAsync(EducationalInformation EducationalInformation);
+        Task<SetEducationalInformationResponse> DeleteEducationalInformationAsync(EducationalInformation EducationalInformation);
     }
 }

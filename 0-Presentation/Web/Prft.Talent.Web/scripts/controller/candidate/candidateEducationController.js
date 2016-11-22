@@ -32,28 +32,51 @@
             _this.service.loadRecords(url)
                          .then(function (response) {
                              $scope.Colleges = response.data.colleges;
-                            
+
                          });
-        };      
+        };
 
         $scope.save = function (recordIndex) {
             var candidateId = _this.CandidateCommonServices.getCandidateId();
-            if (candidateId > 0) {
-                var education = $scope.qualification[recordIndex];
-                education.candidateId = candidateId;
+            var education = $scope.qualification[recordIndex];
+            education.candidateId = candidateId;
+            //if (recordIndex == 0) {
+            //    _this.service.add('http://localhost:8080/api/EducationInformation/Update/', education)
+            //  .then(function (response) {
+            //      perfUtils.getInstance().successMsg(_this.title + ' Updated Successfully!');
+            //  });
+            //}
+            //else {
+            //    _this.service.add('http://localhost:8080/api/EducationInformation/Post/', education)
+            //.then(function (response) {
+            //    perfUtils.getInstance().successMsg(_this.title + ' Added Successfully!');
+            //});
+            //}
+
+            //var education = $scope.qualification[recordIndex];
+            //education.candidateId = candidateId;
+            if (recordIndex==0) {
+
+                _this.service.update('http://localhost:8080/api/EducationInformation/Update/', education)
+                             .then(function (response) {
+                                 _this.CandidateCommonServices.setCandidateId(response.data);
+                                 perfUtils.getInstance().successMsg(_this.title + ' updated Successfully!');
+                             });
+            } else {
                 _this.service.add('http://localhost:8080/api/EducationInformation/Post/', education)
-            .then(function (response) {
-                perfUtils.getInstance().successMsg(_this.title + ' Added Successfully!');
-            });
+                             .then(function (response) {
+                                 _this.CandidateCommonServices.setCandidateId(response.data);
+                                 perfUtils.getInstance().successMsg(_this.title + ' added Successfully!');
+                             });
             }
         };
 
         $scope.addNewQualification = function () {
             var qualification = $scope.qualification.length + 1;
-            $scope.qualification.push({ 'id': 'q' + qualification, 'specialization': '','percentage':'' });
+            $scope.qualification.push({ 'id': 'q' + qualification, 'specialization': '', 'percentage': '' });
 
         };
-        
+
         $scope.removeQualification = function (index) {
             $scope.qualification.splice(index, 1);
         };
@@ -67,7 +90,7 @@
                 _this.service.loadRecords(url)
                              .then(function (response) {
                                  $scope.EducationalInformation = response.data.educationalInformation;
-                               
+
                              });
             }
         }
@@ -79,7 +102,7 @@
 
         //Load Model
         loadEducationInformation();
-        
+
     };
     CandidateEducationController.$inject = ['$scope', '$controller', 'DTColumnBuilder', 'commonAPIservice', 'candidateCommonServices'];
     mainApp.controller('candidateEducationController', CandidateEducationController);

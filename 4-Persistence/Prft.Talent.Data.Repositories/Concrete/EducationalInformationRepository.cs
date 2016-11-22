@@ -29,14 +29,30 @@ namespace Prft.Talent.Data.Repositories.Concrete
             var objectToAdd = Mapper.Map<Entities.candidateeducation>(EducationalInformation);
             objectToAdd.IsActive = true;
             DatabaseContext.candidateeducations.Add(objectToAdd);
-            return await DatabaseContext.SaveChangesAsync();
+            await DatabaseContext.SaveChangesAsync();
+            return objectToAdd.PK;
         }
         public async Task<int> UpdateEducationalInformationAsync(EducationalInformation EducationalInformation)
         {
             var objectToUpdate = Mapper.Map<Entities.candidateeducation>(EducationalInformation);
             objectToUpdate.IsActive = true;
             DatabaseContext.Entry(objectToUpdate).State = EntityState.Modified;
-            return await DatabaseContext.SaveChangesAsync();
+            var successFlag = await DatabaseContext.SaveChangesAsync();
+            if (successFlag > 0)
+            {
+                return objectToUpdate.PK;
+            }
+            return 0;
+        }
+        public async Task<int> DeleteEducationalInformationAsync(int candidateId)
+        {
+            var candidate = DatabaseContext.candidateeducations.Where(x => x.PK == candidateId).SingleOrDefault();
+            if (candidate != null)
+            {
+                candidate.IsActive = false;
+                return await DatabaseContext.SaveChangesAsync();
+            }
+            return 0;
         }
     }
 }

@@ -15,5 +15,9 @@ namespace Prft.Talent.Services.Api
     public class EducationalInformationRequest : RequestBase
     {
         public int CandidateId { get; set; }      
-    }   
+    }
+    public class SetEducationalInformationResponse : ResponseBase
+    {
+        public int SuccessFlag { get; set; }
+    }
 }

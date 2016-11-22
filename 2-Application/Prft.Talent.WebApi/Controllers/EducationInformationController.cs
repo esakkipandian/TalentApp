@@ -13,29 +13,42 @@ namespace Prft.Talent.WebApi.Controllers
     public class EducationInformationController : ApiController
     {
         public readonly IEducationalIformationService _educationService;
-         
+
         public EducationInformationController(IEducationalIformationService educationService)
         {
             _educationService = educationService;
         }
 
-        [HttpGet]        
+        [HttpGet]
         public async Task<EducationalInforamtionResponse> Get(int id)
         {
-            var education = await _educationService.GetEducationalInformationAsync(new EducationalInformationRequest { CandidateId=id});
+            var education = await _educationService.GetEducationalInformationAsync(new EducationalInformationRequest { CandidateId = id });
             return education;
         }
-        public void Post(EducationalInformation educationInformation)
+        [HttpPost]
+        [Route("api/EducationInformation/Post")]
+        public async Task<int> Post(EducationalInformation educationInformation)
         {
-            _educationService.SaveEducationalInformationAsync(educationInformation);
+            var successFlag = await _educationService.SaveEducationalInformationAsync(educationInformation);
+            return successFlag.SuccessFlag;
+            //_educationService.SaveEducationalInformationAsync(educationInformation);
         }
 
         [HttpPut]
-        [Route("api/EducationInformation/UpdateEducationInformation")]
-        public void UpdateEducationInformation(EducationalInformation educationInformation)
+        [Route("api/EducationInformation/Update")]
+        public async Task<int> Update(EducationalInformation educationInformation)
         {
-
-            _educationService.UpdateEducationalInformationAsync(educationInformation);
+            var successFlag = await _educationService.UpdateEducationalInformationAsync(educationInformation);
+            return successFlag.SuccessFlag;
+          //  _educationService.UpdateEducationalInformationAsync(educationInformation);
         }
+        [HttpPut]
+        [Route("api/EducationInformation/Delete")]
+        public async Task<int> Delete(EducationalInformation EducationalInformation)
+        {
+            var successFlag = await _educationService.DeleteEducationalInformationAsync(EducationalInformation);
+            return successFlag.SuccessFlag;
+        }
+
     }
 }
