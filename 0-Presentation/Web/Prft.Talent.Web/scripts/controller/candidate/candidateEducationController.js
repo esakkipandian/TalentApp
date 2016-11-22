@@ -44,7 +44,7 @@
             $scope.qualification.push({ 'id': 'q' + qualification, 'specialization': '','percentage':'' });
 
         };
-
+        
         $scope.removeQualification = function (index) {
             $scope.qualification.splice(index, 1);
         };
@@ -58,9 +58,7 @@
                 _this.service.loadRecords(url)
                              .then(function (response) {
                                  $scope.EducationalInformation = response.data.educationalInformation;
-                                 $scope.EducationalInformation.college.id = response.data.educationalInformation.collegeId;
-                                 $scope.EducationalInformation.university.id = response.data.educationalInformation.universityId;
-
+                               
                              });
             }
         }
