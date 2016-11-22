@@ -7,7 +7,7 @@
         $scope.uploadFile = function () {
             var file = $scope.candidateCV;
             var candidateId = _this.CandidateCommonServices.getCandidateId();
-            var uploadUrl = "http://localhost:8080/api/CandidateDocument", //Url of web service
+            var uploadUrl = "http://localhost:8080/api/candidatedocument", //Url of web service
                 promise = fileuploadServices.uploadFileToUrl(file, candidateId, uploadUrl);
 
             promise.then(function (response) {
