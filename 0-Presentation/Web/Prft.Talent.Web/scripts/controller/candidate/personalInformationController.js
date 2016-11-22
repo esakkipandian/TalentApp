@@ -41,6 +41,7 @@
             _this.service.loadRecords(url)
                          .then(function (response) {
                              $scope.PersonalInformation = response.data;
+                             $scope.PersonalInformation.dob = new Date(parseInt(response.data.dob.substr(6)));
                              perfDatatable.recordId = 0;
                          });
         };

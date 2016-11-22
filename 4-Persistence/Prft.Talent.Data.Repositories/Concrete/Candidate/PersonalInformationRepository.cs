@@ -35,17 +35,7 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
 
         public async Task<int> UpdateCandidatePersonalInformationAsync(PersonalInformation personalInformation)
         {
-            //<<<<<<< Updated upstream
-            //            var objectToAdd = Mapper.Map<Entities.candidate>(personalInformation);
-            //            var candidate = DatabaseContext.candidates.Where(x => x.PK == personalInformation.CandidateId).SingleOrDefault();
-            //            if (candidate != null)
-            //            {
-            //                candidate = objectToAdd;
-            //                return await DatabaseContext.SaveChangesAsync();
-            //            }
-            //            return candidate.PK;
-            //=======
-            var objectToUpdate = Mapper.Map<Entities.candidate>(personalInformation);
+             var objectToUpdate = Mapper.Map<Entities.candidate>(personalInformation);
             objectToUpdate.IsActive = true;
             DatabaseContext.Entry(objectToUpdate).State = EntityState.Modified;
             var successFlag = await DatabaseContext.SaveChangesAsync();
