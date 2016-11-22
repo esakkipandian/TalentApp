@@ -12,6 +12,7 @@
 
             promise.then(function (response) {
                 $scope.serverResponse = response;
+                perfUtils.getInstance().successMsg('file updated Successfully!');
             }, function () {
                 $scope.serverResponse = 'An error has occurred while uploading file.';
             })
