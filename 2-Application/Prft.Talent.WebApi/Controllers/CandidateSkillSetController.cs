@@ -34,7 +34,7 @@ namespace Prft.Talent.WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("api/Candidates/AddCandidateSkillSets")]
+        [Route("api/CandidateSkillSet/AddCandidateSkillSet")]
         public async Task<int> AddCandidateSkillSet(CandidateSkillSet candidateSkillSet)
         {
             var successFlag = await _candidateSkillSetService.AddCandidateSkillSetsAsync(
@@ -45,6 +45,8 @@ namespace Prft.Talent.WebApi.Controllers
             return successFlag.SuccessFlag;
         }
 
+        [HttpPut]
+        [Route("api/CandidateSkillSet/DeleteCandidateSkillSet")]
         public async Task<int> DeleteCandidateSkillSet(int id)
         {
             var successFlag = await _candidateSkillSetService.DeleteCandidateSkillSetsAsync(

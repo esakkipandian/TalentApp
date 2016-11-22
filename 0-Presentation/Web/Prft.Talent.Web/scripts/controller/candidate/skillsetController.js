@@ -39,7 +39,7 @@
             if (candidateId > 0) { 
                 var skillset = $scope.skillset[recordIndex];
                 skillset.candidateId = candidateId;
-                _this.service.add('http://localhost:8080/api/Candidates/AddCandidateSkillSets/', skillset)
+                _this.service.add('http://localhost:8080/api/CandidateSkillSet/AddCandidateSkillSet/', skillset)
                     .then(function (response) {
                         perfUtils.getInstance().successMsg(_this.title + ' added Successfully!');
                     });
