@@ -10,5 +10,6 @@ namespace Prft.Talent.Domain.Talent
     {
         public string UniversityCode { get; set; }
         public string UniversityName { get; set; }
+        public int Id { get; set; }
     }
 }

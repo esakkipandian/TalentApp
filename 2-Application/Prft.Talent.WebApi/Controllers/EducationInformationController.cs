@@ -13,12 +13,13 @@ namespace Prft.Talent.WebApi.Controllers
     public class EducationInformationController : ApiController
     {
         public readonly IEducationalIformationService _educationService;
-
+         
         public EducationInformationController(IEducationalIformationService educationService)
         {
             _educationService = educationService;
         }
 
+        [HttpGet]        
         public async Task<EducationalInforamtionResponse> Get(int id)
         {
             var education = await _educationService.GetEducationalInformationAsync(new EducationalInformationRequest { CandidateId=id});

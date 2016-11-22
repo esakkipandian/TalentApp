@@ -1,4 +1,4 @@
-﻿<form role="form" name="candidateEducationForm" class="form-horizontal" id="candidateEducationForm" ng-controller="candidateEducationController" novalidate>
+﻿<form role="form" name="candidateEducationForm" class="form-horizontal"  id="candidateEducationForm" ng-controller="candidateEducationController" novalidate>
 
     <div class="qualification">
         <div data-ng-repeat="qual in qualification" ng-model="qual.length">
@@ -49,7 +49,7 @@
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="University" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.university" ng-selected="{{EducationalInformation.university}}">
-                                <li nya-bs-option="university in Universities | orderBy: 'university' track by university.universityCode" data-value="university.universityName">
+                                <li nya-bs-option="university in Universities | orderBy: 'university' track by university.id" data-value="university.universityName">
                                     <a>
                                         {{university.universityName}}
                                         <span class="glyphicon glyphicon-ok check-mark"></span>
@@ -65,7 +65,7 @@
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="college" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.college" ng-selected="{{EducationalInformation.college}}">
-                                <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.collegeCode" data-value="college.collegeName">
+                                <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.id" data-value="college.collegeName">
                                     <a>
                                         {{college.collegeName}}
                                         <span class="glyphicon glyphicon-ok check-mark"></span>

@@ -8,6 +8,7 @@ namespace Prft.Talent.Domain.Talent
 {
    public class Colleges
     {
+        public string Id { get; set; }
         public string CollegeCode { get; set; }
         public string CollegeName { get; set; }
     }

@@ -20,7 +20,7 @@ namespace Prft.Talent.Data.Repositories.Concrete
         public async Task<EducationalInformation> GetEducationalInformationAsync(int candidateId)
         {
             return await Task.FromResult(DatabaseContext.candidateeducations
-                        .Where(x => x.CandidateId == candidateId)
+                        .Where(x => x.CandidateId == candidateId )
                         .ProjectTo<EducationalInformation>(Mapper.ConfigurationProvider)
                         .FirstOrDefault());
         }

@@ -31,6 +31,7 @@
             _this.service.loadRecords(url)
                          .then(function (response) {
                              $scope.Colleges = response.data.colleges;
+                            
                          });
         };      
 
@@ -57,6 +58,9 @@
                 _this.service.loadRecords(url)
                              .then(function (response) {
                                  $scope.EducationalInformation = response.data.educationalInformation;
+                                 $scope.EducationalInformation.college.id = response.data.educationalInformation.collegeId;
+                                 $scope.EducationalInformation.university.id = response.data.educationalInformation.universityId;
+
                              });
             }
         }

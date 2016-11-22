@@ -16,5 +16,9 @@ namespace Prft.Talent.Domain.Talent
         public string College { get; set; }        
         public DateTime? PassedOut { get; set; }
         public decimal? Percentage { get; set; }
+
+        public int? CollegeId { get; set; }
+        public int? UniversityId { get; set; }
+
     }
 }

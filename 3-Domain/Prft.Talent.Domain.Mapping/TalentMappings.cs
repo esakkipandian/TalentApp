@@ -19,11 +19,14 @@ namespace Prft.Talent.Domain.Mapping
             profile.CreateMap<college, Colleges>()
                   .ForMember(x => x.CollegeCode, map => map.MapFrom(c => c.Code))
                   .ForMember(x => x.CollegeName, map => map.MapFrom(c => c.Description))
+                  .ForMember(x => x.Id, map => map.MapFrom(c => c.PK))
+
 
                 .ReverseMap();
             profile.CreateMap<university, University>()
                   .ForMember(x => x.UniversityCode, map => map.MapFrom(c => c.Code))
                   .ForMember(x => x.UniversityName, map => map.MapFrom(c => c.Description))
+                  .ForMember(x => x.Id, map => map.MapFrom(c => c.PK))
 
                 .ReverseMap();
             profile.CreateMap<candidateeducation, EducationalInformation>()
@@ -33,7 +36,9 @@ namespace Prft.Talent.Domain.Mapping
             .ForMember(x => x.Specialization, map => map.MapFrom(c => c.Specialization))
             .ForMember(x => x.University, map => map.MapFrom(c => c.University))
             .ForMember(x => x.College, map => map.MapFrom(c => c.College))
-            .ForMember(x => x.Percentage, map => map.MapFrom(c => c.Percentage)).ReverseMap();
+            .ForMember(x => x.Percentage, map => map.MapFrom(c => c.Percentage)).ReverseMap()
+            .ForMember(x => x.CollegeId, map => map.MapFrom(c => c.CollegeId)).ReverseMap()
+            .ForMember(x => x.UniversityId, map => map.MapFrom(c => c.UniversityId)).ReverseMap();
 
             profile.CreateMap<skill, SkillSet>().ReverseMap();
 
