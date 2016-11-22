@@ -98,6 +98,7 @@
     <Content Include="images\sort_asc.png" />
     <Content Include="images\sort_both.png" />
     <Content Include="images\sort_desc.png" />
+    <Content Include="images\Talent-selection.jpg" />
     <Content Include="images\user.jpg" />
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\common.js" />
