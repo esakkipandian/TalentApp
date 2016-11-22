@@ -7,6 +7,8 @@ using Prft.Talent.Logger;
 using AutoMapper.QueryableExtensions;
 using System.Data.Entity;
 using Prft.Talent.Data.Entities;
+using System;
+using System.Linq;
 
 namespace Prft.Talent.Data.Repositories.Concrete
 {
@@ -14,9 +16,12 @@ namespace Prft.Talent.Data.Repositories.Concrete
     {
         public CandidateDocumentRepository(PrftDatabaseContext dbContext, IMapper mapper, IPrftLogger logger) : base(dbContext, mapper, logger) { }
 
-        public async Task<IEnumerable<CandidateDocument>> GetCandidateDocumentsAsync()
-        {   
-            return await DatabaseContext.candidatedocuments.ProjectTo<CandidateDocument>(Mapper.ConfigurationProvider).ToListAsync();
+        public async Task<IEnumerable<CandidateDocument>> GetCandidateDocumentsAsync(int candidateId)
+        {
+            return await DatabaseContext.candidatedocuments
+                       .Where(x => x.IsActive == true && x.CandidateId == candidateId)
+                       .ProjectTo<CandidateDocument>(Mapper.ConfigurationProvider).ToListAsync();
+            
         }
 
         public async Task<int> AddCandidateDocumentsAsync(CandidateDocument candiateDocument)

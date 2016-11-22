@@ -1,8 +1,8 @@
 ﻿using Prft.Talent.Services.Abstract;
-using System;
 using System.Threading.Tasks;
 using Prft.Talent.Data.Repositories.Abstract;
 using Prft.Talent.Domain.Talent;
+using System.Collections.Generic;
 using Prft.Talent.Services.Api;
 
 namespace Prft.Talent.Services.Concrete
@@ -21,10 +21,13 @@ namespace Prft.Talent.Services.Concrete
         {
             return await _candidateDocumentRepository.AddCandidateDocumentsAsync(candiateDocument);
         }
-
-        public Task<CandidateDocumentResponse> GetDocumentAsync()
+        
+        public async Task<CandidateDocumentResponse> GetCandidateDocumentsAsync(int candidateId)
         {
-            throw new NotImplementedException();
+            return new CandidateDocumentResponse
+            {
+                Entity = await _candidateDocumentRepository.GetCandidateDocumentsAsync(candidateId)
+            };
         }
     }
 }
