@@ -23,7 +23,7 @@ namespace Prft.Talent.WebApi.Controllers
             _candidateSkillSetService = candidateSkillSetService;
         }
 
-        public async Task<CandidateSkillSet> GetCandidateSkillSet(int id)
+        public async Task<IEnumerable<CandidateSkillSet>> GetCandidateSkillSet(int id)
         {
             var candidateSkillSets = await _candidateSkillSetService.GetCandidateSkillSetsAsync(
                 new CandidateSkillSetIdRequest

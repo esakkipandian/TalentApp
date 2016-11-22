@@ -9,7 +9,7 @@ namespace Prft.Talent.Services.Api.Candidate
 {
     public class CandidateSkillSetResponse : ResponseBase
     {
-        public CandidateSkillSet CandidateSkillSet { get; set; }
+        public IEnumerable<CandidateSkillSet> CandidateSkillSet { get; set; }
     }
 
     public class SetCandidateSkillSetResponse : ResponseBase

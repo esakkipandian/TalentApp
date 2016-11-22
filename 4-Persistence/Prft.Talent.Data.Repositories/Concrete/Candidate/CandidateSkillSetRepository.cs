@@ -8,6 +8,7 @@ using AutoMapper;
 using Prft.Talent.Logger;
 using Prft.Talent.Domain.Talent.Candidate;
 using AutoMapper.QueryableExtensions;
+using System.Data.Entity;
 
 namespace Prft.Talent.Data.Repositories.Concrete.Candidate
 {
@@ -17,12 +18,11 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
         {
         }
 
-        public async Task<CandidateSkillSet> GetCandidateSkillSetsAsync(int candidateId)
+        public async Task<IEnumerable<CandidateSkillSet>> GetCandidateSkillSetsAsync(int candidateId)
         {
-            return await Task.FromResult(DatabaseContext.candidateskills
-                        .Where(x => x.PK == candidateId)
-                        .ProjectTo<CandidateSkillSet>(Mapper.ConfigurationProvider)
-                        .FirstOrDefault());
+            return await DatabaseContext.candidateskills
+                        .Where(x => x.CandidateId == candidateId && x.IsActive == true)
+                        .ProjectTo<CandidateSkillSet>(Mapper.ConfigurationProvider).ToListAsync();
         }
 
         public async Task<int> AddCandidateSkillSetsAsync(CandidateSkillSet candidateSkillSet)

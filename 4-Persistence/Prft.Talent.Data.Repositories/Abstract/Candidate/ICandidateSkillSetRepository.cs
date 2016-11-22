@@ -9,7 +9,7 @@ namespace Prft.Talent.Data.Repositories.Abstract.Candidate
 {
     public interface ICandidateSkillSetRepository : IRepository
     {
-        Task<CandidateSkillSet> GetCandidateSkillSetsAsync(int candidateId);
+        Task<IEnumerable<CandidateSkillSet>> GetCandidateSkillSetsAsync(int candidateId);
 
         Task<int> AddCandidateSkillSetsAsync(CandidateSkillSet candidateSkillSet);
 
