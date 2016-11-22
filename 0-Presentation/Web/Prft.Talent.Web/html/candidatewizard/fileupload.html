@@ -1,17 +1,29 @@
-﻿<div ng-controller="fileuploadController">
-    <h2>CV Document Upload</h2>
+﻿<form role="form" class="form-horizontal" id="fileuploadController" ng-controller="fileuploadController" novalidate>
+    <div class="modal-header">
+        <h4 class="modal-title">Candidate CV</h4>
+    </div>
     <div>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <form>
-                    <div class="form-group">
-                        <label for="myFileField">Select a file: </label>
-                        <input type="file" fileupload-model="candidateCV" class="form-control" id="myFileField" />
-                    </div>
-                    <button ng-click="uploadFile()" class="btn btn-primary">Upload CV</button>
-                </form>
+        <div class="row">
+            <div ng-include="CandidateDocuments.documentname">
+            </div>
+            <div ng-include="CandidateDocuments.documenttype">
             </div>
         </div>
     </div>
-    <div>{{serverResponse}}</div>
-</div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6">
+                <div class="form-group">
+                    <label for="myFileField">Select a file: </label>
+                    <input type="file" fileupload-model="candidateCV" class="form-control" id="myFileField" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-lg-6">
+                <button ng-click="uploadFile()" class="btn btn-primary">Upload CV</button>
+            </div>
+        </div>
+    </div>
+</form>
+

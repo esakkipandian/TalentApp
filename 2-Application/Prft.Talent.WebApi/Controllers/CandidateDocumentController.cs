@@ -1,7 +1,9 @@
 ﻿using Prft.Talent.Domain.Talent;
 using Prft.Talent.Services.Abstract;
+using Prft.Talent.Services.Api;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Prft.Talent.WebApi.Controllers
@@ -16,11 +18,11 @@ namespace Prft.Talent.WebApi.Controllers
         }
 
         // GET api/<controller>
-        //public async Task<FileDocumentResponse> Get()
-        //{
-        //    var fileDocument = await _fileuploadService.GetFileDocumentAsync();
-        //    return fileDocument;
-        //}
+        public async Task<CandidateDocumentResponse> Get(int id)
+        {
+            var fileDocument = await _candidateDocumentService.GetCandidateDocumentsAsync(id);
+            return fileDocument;
+        }
 
         // GET api/<controller>/5
         //public string Get(int id)

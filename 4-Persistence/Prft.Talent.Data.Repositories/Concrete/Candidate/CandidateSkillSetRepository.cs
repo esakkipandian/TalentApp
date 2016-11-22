@@ -34,9 +34,9 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
             return objectToAdd.PK;
         }
 
-        public async Task<int> DeleteCandidateSkillSetsAsync(int candidateId)
+        public async Task<int> DeleteCandidateSkillSetsAsync(int candidateSkillSetId)
         {
-            var candidate = DatabaseContext.candidateskills.Where(x => x.PK == candidateId).SingleOrDefault();
+            var candidate = DatabaseContext.candidateskills.Where(x => x.PK == candidateSkillSetId).SingleOrDefault();
             if (candidate != null)
             {
                 candidate.IsActive = false;
