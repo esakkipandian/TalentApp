@@ -13,6 +13,7 @@
             promise.then(function (response) {
                 $scope.serverResponse = response;
                 perfUtils.getInstance().successMsg('file updated Successfully!');
+                loadCandidateDocuments(candidateId);
             }, function () {
                 $scope.serverResponse = 'An error has occurred while uploading file.';
             })
@@ -22,7 +23,7 @@
             var url = 'http://localhost:8080/api/candidatedocument/' + candidateId;
             _this.service.loadRecords(url)
                          .then(function (response) {
-                             $scope.CandidateDocuments = response.data;
+                             $scope.CandidateDocuments = response.data.entity;
                          });
         };
 
