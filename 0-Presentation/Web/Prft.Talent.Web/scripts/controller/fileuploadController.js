@@ -17,6 +17,21 @@
             })
         };
 
+        var loadCandidateDocuments = function (candidateId) {
+            var url = 'http://localhost:8080/api/candidatedocument/' + candidateId;
+            _this.service.loadRecords(url)
+                         .then(function (response) {
+                             $scope.CandidateDocuments = response.data;
+                         });
+        };
+
+        var candidateId = _this.CandidateCommonServices.getCandidateId();
+
+        if (candidateId > 0) {
+            loadCandidateDocuments(candidateId);
+        };
+
+
     };
     FileuploadController.$inject = ['$scope', '$controller', 'commonAPIservice', 'candidateCommonServices', 'fileuploadServices'];
     mainApp.controller('fileuploadController', FileuploadController);
