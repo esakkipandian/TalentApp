@@ -1,7 +1,7 @@
 ﻿<form role="form" name="candidateEducationForm" class="form-horizontal"  id="candidateEducationForm" ng-controller="candidateEducationController" novalidate>
 
     <div class="qualification">
-        <div data-ng-repeat="qual in qualification" ng-model="qual.length">
+        <div data-ng-repeat="EducationalInformation in qualification" ng-model="qual.length">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
@@ -48,8 +48,8 @@
                         <label for="University" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">University: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="University" title="Select" data-live-search="true" required validType="select"
-                                disabled="isProfile" ng-model="EducationalInformation.university" ng-selected="{{EducationalInformation.university}}">
-                                <li nya-bs-option="university in Universities | orderBy: 'university' track by university.id" data-value="university.universityName">
+                                disabled="isProfile" ng-model="EducationalInformation.universityId" ng-selected="{{EducationalInformation.universityId}}">
+                                <li nya-bs-option="university in Universities | orderBy: 'university' track by university.id" data-value="university.id">
                                     <a>
                                         {{university.universityName}}
                                         <span class="glyphicon glyphicon-ok check-mark"></span>
@@ -64,8 +64,8 @@
                         <label for="College" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">College: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="college" title="Select" data-live-search="true" required validType="select"
-                                disabled="isProfile" ng-model="EducationalInformation.college" ng-selected="{{EducationalInformation.college}}">
-                                <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.id" data-value="college.collegeName">
+                                disabled="isProfile" ng-model="EducationalInformation.collegeId" ng-selected="{{EducationalInformation.collegeId}}">
+                                <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.id" data-value="college.id">
                                     <a>
                                         {{college.collegeName}}
                                         <span class="glyphicon glyphicon-ok check-mark"></span>
@@ -93,13 +93,13 @@
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <select class="dropdown empty" name="passingyr" ng-model="EducationalInformation.passedOut" required>
                                 <option disabled selected>Select</option>
-                                <option value="Primary">2016</option>
-                                <option value="Secondary">2015</option>
-                                <option value="Secondary">2014</option>
-                                <option value="Secondary">2013</option>
-                                <option value="Secondary">2012</option>
-                                <option value="Secondary">2011</option>
-                                <option value="Secondary">2010</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
                             </select>                          
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <div class="pull-right">
                         <div>
-                            <button type="submit" class="btn btn-primary" action="save">Save</button>
+                            <button type="submit" class="btn btn-primary" ng-click="save($index)">Save</button>
                             <button class="fa fa-plus-circle remove" ng-click="addNewQualification()" ></button>
                             <button class="fa fa-minus-circle remove" ng-click="removeQualification($index)" ng-show="qualification.length>1"></button>
                         </div>

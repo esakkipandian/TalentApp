@@ -1,6 +1,7 @@
 ﻿(function (angular) {
     var CandidateEducationController = function ($scope, $controller, DTColumnBuilder, commonAPIservice, candidateCommonServices) {
         var _this = this;
+        _this.title = "Education Details";
         _this.service = commonAPIservice;
         _this.CandidateCommonServices = candidateCommonServices;
 
@@ -35,8 +36,16 @@
                          });
         };      
 
-        $scope.save = function () {
-            _this.service.add('http://localhost:8080/api/Candidates/AddEducationInformation/', $scope.EducationalInformation);
+        $scope.save = function (recordIndex) {
+            var candidateId = _this.CandidateCommonServices.getCandidateId();
+            if (candidateId > 0) {
+                var education = $scope.qualification[recordIndex];
+                education.candidateId = candidateId;
+                _this.service.add('http://localhost:8080/api/EducationInformation/Post/', education)
+            .then(function (response) {
+                perfUtils.getInstance().successMsg(_this.title + ' Added Successfully!');
+            });
+            }
         };
 
         $scope.addNewQualification = function () {
