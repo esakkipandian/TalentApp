@@ -1,7 +1,8 @@
 ﻿(function (angular) {
-    var CandidateEducationController = function ($scope, $controller, DTColumnBuilder, commonAPIservice) {
+    var CandidateEducationController = function ($scope, $controller, DTColumnBuilder, commonAPIservice, candidateCommonServices) {
         var _this = this;
         _this.service = commonAPIservice;
+        _this.CandidateCommonServices = candidateCommonServices;
 
         $scope.qualification = [
           {
@@ -50,21 +51,26 @@
 
         // Load Model data if Exsist
         var loadEducationInformation = function () {
-            var url = 'http://localhost:8080/api/candidates/' + perfDatatable.recordId;
-            _this.service.loadRecords(url)
-                         .then(function (response) {
-                             $scope.EducationalInformation = response.data;
-                             perfDatatable.recordId = 0;
-                         });
+            var candidateId = _this.CandidateCommonServices.getCandidateId();
+            if (candidateId > 0) {
+                var url = 'http://localhost:8080/api/EducationInformation/' + candidateId;
+                _this.service.loadRecords(url)
+                             .then(function (response) {
+                                 $scope.EducationalInformation = response.data.educationalInformation;
+                             });
+            }
         }
 
         //Load Drop Down Values 
         loadCourses();
         loadUniversities();
         loadColleges();
+
+        //Load Model
+        loadEducationInformation();
         
     };
-    CandidateEducationController.$inject = ['$scope', '$controller', 'DTColumnBuilder', 'commonAPIservice'];
+    CandidateEducationController.$inject = ['$scope', '$controller', 'DTColumnBuilder', 'commonAPIservice', 'candidateCommonServices'];
     mainApp.controller('candidateEducationController', CandidateEducationController);
 })(angular);
 

@@ -91,7 +91,7 @@
                     <div class="form-group">
                         <label for="PassingYear" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">PassingYear: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                            <select class="dropdown empty" name="passingyr" required>
+                            <select class="dropdown empty" name="passingyr" ng-model="EducationalInformation.passedOut" required>
                                 <option disabled selected>Select</option>
                                 <option value="Primary">2016</option>
                                 <option value="Secondary">2015</option>
@@ -108,7 +108,7 @@
                     <div class="form-group">
                         <label for="Percentage" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Percentage/CGPA: </label>
                         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="PersonalInformation.firstName" required  />
+                            <input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="EducationalInformation.percentage" required  />
                         </div>
                     </div>
                 </div>
