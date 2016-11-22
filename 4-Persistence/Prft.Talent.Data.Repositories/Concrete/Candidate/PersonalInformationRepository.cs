@@ -62,7 +62,6 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
             if (candidate != null)
             {
                 candidate.IsActive = false;
-                candidate.IsExperienced = true;
                 return await DatabaseContext.SaveChangesAsync();
             }
             return 0;
