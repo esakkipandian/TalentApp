@@ -39,7 +39,7 @@
 
             </div>-->
             <div class="col-sm-2">
-                <span uib-rating ng-model="skill.rating" max="5" min="1" ng-init="skill.rating={{skill.rating}}" enable-reset="false" required></span>
+                <span uib-rating ng-model="skill.rating" max="5" min="1"  enable-reset="false" required></span>
             </div>
             <div class="col-sm-3">
                 <button type="submit" class="fa fa-minus-circle remove" ng-click="removeSkill($index)" ng-show="skillset.length>1" data-toggle="tooltip"
