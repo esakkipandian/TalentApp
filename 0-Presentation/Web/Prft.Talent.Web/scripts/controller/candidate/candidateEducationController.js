@@ -40,35 +40,11 @@
             var candidateId = _this.CandidateCommonServices.getCandidateId();
             var education = $scope.qualification[recordIndex];
             education.candidateId = candidateId;
-            //if (recordIndex == 0) {
-            //    _this.service.add('http://localhost:8080/api/EducationInformation/Update/', education)
-            //  .then(function (response) {
-            //      perfUtils.getInstance().successMsg(_this.title + ' Updated Successfully!');
-            //  });
-            //}
-            //else {
-            //    _this.service.add('http://localhost:8080/api/EducationInformation/Post/', education)
-            //.then(function (response) {
-            //    perfUtils.getInstance().successMsg(_this.title + ' Added Successfully!');
-            //});
-            //}
-
-            //var education = $scope.qualification[recordIndex];
-            //education.candidateId = candidateId;
-            if (recordIndex==0) {
-
-                _this.service.update('http://localhost:8080/api/EducationInformation/Update/', education)
-                             .then(function (response) {
-                                 _this.CandidateCommonServices.setCandidateId(response.data);
-                                 perfUtils.getInstance().successMsg(_this.title + ' updated Successfully!');
-                             });
-            } else {
-                _this.service.add('http://localhost:8080/api/EducationInformation/Post/', education)
-                             .then(function (response) {
-                                 _this.CandidateCommonServices.setCandidateId(response.data);
-                                 perfUtils.getInstance().successMsg(_this.title + ' added Successfully!');
-                             });
-            }
+            
+            _this.service.add('http://localhost:8080/api/EducationInformation/Post/', education)
+          .then(function (response) {
+              perfUtils.getInstance().successMsg(_this.title + ' Added Successfully!');
+          });
         };
 
         $scope.addNewQualification = function () {
