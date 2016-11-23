@@ -29,15 +29,16 @@ namespace Prft.Talent.Data.Repositories.Concrete
 
             return new List<Courses>
             {
-                new Courses { CourseCode="1" ,CourseName="xx"},
-                new Courses { CourseCode="2" ,CourseName="yy"}
+                new Courses { CourseCode="B.E" ,CourseName="B.E"},
+                new Courses { CourseCode="B.Tech" ,CourseName="B.Tech"},
+                new Courses { CourseCode="MBA" ,CourseName="MBA"}
             };
         }
 
 
     }
 }
-           
 
-            
+
+
 

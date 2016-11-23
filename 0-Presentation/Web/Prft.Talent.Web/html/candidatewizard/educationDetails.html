@@ -1,4 +1,4 @@
-﻿<form role="form" name="candidateEducationForm" class="form-horizontal"  id="candidateEducationForm" ng-controller="candidateEducationController" novalidate>
+﻿<form role="form" name="candidateEducationForm" class="form-horizontal" id="candidateEducationForm" ng-controller="candidateEducationController" novalidate>
 
     <div class="qualification">
         <div data-ng-repeat="EducationalInformation in qualification" ng-model="qual.length">
@@ -8,11 +8,10 @@
                         <label for="Qualification" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Qualification: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <select class="dropdown empty" name="qualification" ng-model="EducationalInformation.DegreeName" required>
-                                <option disabled selected>Select</option>
                                 <option value="Doctorate">Doctorate</option>
                                 <option value="PostGraduate">PostGraduate</option>
                                 <option value="UnderGraduate">UnderGraduate</option>
-                            </select>                           
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -100,7 +99,7 @@
                                 <option value="2012">2012</option>
                                 <option value="2011">2011</option>
                                 <option value="2010">2010</option>
-                            </select>                          
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -108,7 +107,7 @@
                     <div class="form-group">
                         <label for="Percentage" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Percentage/CGPA: </label>
                         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="EducationalInformation.percentage" required  />
+                            <input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="EducationalInformation.percentage" required />
                         </div>
                     </div>
                 </div>
@@ -123,13 +122,13 @@
                     <div class="pull-right">
                         <div>
                             <button type="submit" class="btn btn-primary" ng-click="save($index)">Save</button>
-                            <button class="fa fa-plus-circle remove" ng-click="addNewQualification()" ></button>
+                            <button class="fa fa-plus-circle remove" ng-click="addNewQualification()"></button>
                             <button class="fa fa-minus-circle remove" ng-click="removeQualification($index)" ng-show="qualification.length>1"></button>
                         </div>
                     </div>
                 </div>
             </div>
-           <hr/>
+            <hr />
         </div>
     </div>
 </form>
