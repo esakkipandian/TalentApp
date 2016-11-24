@@ -1,0 +1,119 @@
+﻿<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-touch">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perficient Chennai - Talent </title>
+    <!-- Vendors CSS -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/p.png" />
+    <link rel="stylesheet" href="css/vendors.css">
+    
+    <!-- MDB4 css -->
+    <link href="css/mdb.min.css" rel="stylesheet" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/perf.css">
+    <link rel="stylesheet" href="css/theme3.css">
+
+    <!--<link href="css/candidateinformationwizard.css" rel="stylesheet" />-->
+</head>
+<body ng-app="prftApp" class="fixedsubmenu">
+    <nav id="menu" class="mm-menu" style="display: none;">
+        <ul>
+         
+            <!--<li> <a href="#/employee"><i class="fa fa-user-times fa-lg" aria-hidden="true"></i>Employee</a></li>-->
+            <!--<li> <a href="#/addresstype"><i class="fa fa-user-times" aria-hidden="true"></i>Address Type</a></li>-->
+            <li> <a href="#/newcandidate"><i class="fa fa-user-plus" aria-hidden="true"></i>New Candidate</a></li>
+            <li> <a href="#/candidateInformation"><i class="fa fa-list-ol" aria-hidden="true"></i>Candidates</a></li>
+            <!--<li> <a href="#/candidateinformationwizard"><i class="fa fa-user" aria-hidden="true"></i>New Candidate Wizard</a></li>
+            <li> <a href="#/fileupload"><i class="fa fa-file" aria-hidden="true"></i>Candidate CV Upload</a></li>-->
+            <li><a href="logout"><i class="fa fa-power-off" aria-hidden="true"></i>Logout</a></li>
+        </ul>
+    </nav>
+
+    <a id="sidePanel" class="mm-slideout" href="#"><span></span></a>
+
+    <div class="submenu fixed mm-slideout">
+        <div class="header">
+            <h1><a href="#/dashboard"><img class="" src="images/logo2.png"></a></h1>
+            <ul class="nav-right pull-right list-inline">
+                <li class="dropdown nav-profile">
+                    <a data-toggle="dropdown" class="dropdown-toggle rightheader" href="" aria-expanded="true">
+                        <figure class="user-image"><i class="fa fa-user fa-3x"></i></figure>
+                        <label>{{user.firstName}}, {{user.lastName}}<i class="fa fa-angle-down"></i></label>
+                    </a>
+                    <ul role="menu" class="dropdown-menu animated littleFadeInRight">
+                        <li>
+                            <a href="#/profile">
+                                <i class="fa fa-user"></i>Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="logout">
+                                <i class="fa fa-sign-out"></i>Logout
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-cog"></i>Theme Settings
+                            </a>
+                        </li>
+                        <ul class="colortheme">
+                            <li class="lime themecolor"></li>
+                            <li class="black themecolor"></li>
+                            <li class="bright-red themecolor"></li>
+
+                            <li class="dark-blue themecolor"></li>
+                            <li class="cyan themecolor"></li>
+                            <li class="scorpion themecolor"></li>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="divContainer" id="divContainer">
+            <div id="overlay" ajax-loading><img id="loading" src="images/gears.gif"></div>
+            <ng-view></ng-view>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="scripts/lib.js"></script>
+
+<!-- MDB 4 scripts -->
+<script src="scripts/lib/tether.min.js"></script>
+<script src="scripts/lib/mdb.min.js"></script>
+
+<script src="scripts/app/app.js"></script>
+
+<!--Common Script Start-->
+<!--<script src="scripts/perf-common.min.js"></script>-->
+<script src="scripts/app/common.js"></script>
+<script src="scripts/constants/constants.js"></script>
+<script src="scripts/constants/url.js"></script>
+<script src="scripts/constants/utils.js"></script>
+<script src="scripts/directive/perfdirective.js"></script>
+<script src="scripts/service/commonServices.js"></script>
+<script src="scripts/service/candidateCommonServices.js"></script>
+<script src="scripts/controller/abstractController.js"></script>
+<script src="scripts/controller/datatableController.js"></script>
+<!--Common Script End -->
+
+<script src="scripts/controller/interviewController.js"></script>
+<script src="scripts/controller/employeeController.js"></script>
+<script src="scripts/controller/addressTypeController.js"></script>
+<script src="scripts/controller/candidateInformationWizardController.js"></script>
+<script src="scripts/controller/candidate/skillsetController.js"></script>
+<script src="scripts/controller/candidateController.js"></script>
+<script src="scripts/controller/candidate/new-candidate-controller.js"></script>
+
+<!-- Candidate CV Upload (Fileupload) -->
+<script src="scripts/controller/fileuploadController.js"></script>
+<script src="scripts/directive/fileuploaddirective.js"></script>
+<script src="scripts/service/fileuploadServices.js"></script>
+<script src="scripts/controller/candidate/step1controller.js"></script>
+<script src="scripts/controller/candidate/personalInformationController.js"></script>
+<script src="scripts/controller/candidate/candidateEducationController.js"></script>
