@@ -1,5 +1,5 @@
 ﻿(function (angular) {
-    var FileuploadController = function ($scope, $controller, commonAPIservice, candidateCommonServices, fileuploadServices) {
+    var FileuploadController = function ($scope, $controller, commonAPIservice, candidateCommonServices, fileuploadServices, filedownloadServices) {
         var _this = this;
         _this.service = commonAPIservice;
         _this.CandidateCommonServices = candidateCommonServices;
@@ -33,8 +33,14 @@
             loadCandidateDocuments(candidateId);
         };
 
+        $scope.download = function (candidateDocument) {
+            alert('In...');
+            var data = new Blob([candidateDocument.documentContent], { type: candidateDocument.documentType + ';charset=utf-8' });
+            filedownloadServices.FileSaver.SaveAs(data, candidateDocument.documentName);
+            //filesaverServices.FileSaver.saveAs(data, candidateDocument.documentName);
+        };
 
     };
-    FileuploadController.$inject = ['$scope', '$controller', 'commonAPIservice', 'candidateCommonServices', 'fileuploadServices'];
+    FileuploadController.$inject = ['$scope', '$controller', 'commonAPIservice', 'candidateCommonServices', 'fileuploadServices', 'filedownloadServices'];
     mainApp.controller('fileuploadController', FileuploadController);
 })(angular);

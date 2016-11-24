@@ -4,7 +4,10 @@
     </div>
     <div class="row" ng-repeat="document in CandidateDocuments">
        <div class="col-lg-12">
-           {{document.documentName}} 
+           <a ng-click="download(document)" title="{{document.documentContent}}" target="_blank">{{document.documentName}}</a> &nbsp;
+           <a href="" class="btn btn-dark btn-small" ng-click="download(document)">
+               Download
+           </a>
        </div>
     </div>
     <div class="modal-body">

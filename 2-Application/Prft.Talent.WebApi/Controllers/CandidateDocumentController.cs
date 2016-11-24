@@ -24,12 +24,6 @@ namespace Prft.Talent.WebApi.Controllers
             return fileDocument;
         }
 
-        // GET api/<controller>/5
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
         // POST api/<controller>
         [HttpPost]
         public void Post(CandidateDocument candiateDocument)
@@ -57,6 +51,7 @@ namespace Prft.Talent.WebApi.Controllers
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+
         }
     }
 }
