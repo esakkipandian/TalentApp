@@ -10,7 +10,7 @@ namespace Prft.Talent.Services.Api
 {
     public class EducationalInforamtionResponse : ResponseBase
     {
-        public IEnumerable<EducationalInformation> EducationalInformation { get; set; }
+        public EducationalInformation EducationalInformation { get; set; }
     }
     public class EducationalInformationRequest : RequestBase
     {

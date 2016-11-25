@@ -1,7 +1,6 @@
 ﻿using Prft.Talent.Domain.Talent;
 using Prft.Talent.Services.Api;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 
 namespace Prft.Talent.Services.Abstract
 {
