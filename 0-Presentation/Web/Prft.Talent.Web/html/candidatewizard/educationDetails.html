@@ -7,10 +7,10 @@
                     <div class="form-group">
                         <label for="Qualification" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Qualification: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                            <select class="dropdown empty" name="qualification" ng-model="EducationalInformation.DegreeName" required>
-                                <option value="Doctorate">Doctorate</option>
-                                <option value="PostGraduate">PostGraduate</option>
-                                <option value="UnderGraduate">UnderGraduate</option>
+                            <select class="dropdown empty" name="qualification" ng-model="EducationalInformation.DegreeName" ng-selected="{{EducationalInformation.DegreeName}}" required>
+                                <option value=1>Doctorate</option>
+                                <option value=2>PostGraduate</option>
+                                <option value=3>UnderGraduate</option>
                             </select>
                         </div>
                     </div>
@@ -89,20 +89,17 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
                         <label for="PassingYear" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">PassingYear: </label>
-                        <div ng-repeat="dt in EducationalInformation.passedyear " class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                            <input type="text" class="datepicker" uib-datepicker-popup ng-model="EducationalInformation.passedOut" datepicker-popup="yyyy" is-open="dt.opened" ng-click="open($event,dt)"
-                                   placeholder="Passed Year" name="PassedYear" datepicker-options="{minMode: 'year'}" datepicker-mode="'year'" required />
-
-                            <!--<select class="dropdown empty" name="passingyr" ng-model="EducationalInformation.PassedOut" required>
-            <option disabled selected>Select</option>
-            <option value="2016">2016</option>
-            <option value="2015">2015</option>
-            <option value="2014">2014</option>
-            <option value="2013">2013</option>
-            <option value="2012">2012</option>
-            <option value="2011">2011</option>
-            <option value="2010">2010</option>
-        </select>-->
+                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                            <select class="dropdown empty" name="PassedOut" ng-model="EducationalInformation.PassedOut" required>
+                                <option disabled selected>Select</option>
+                                <option value=2016>2016</option>
+                                <option value=2015>2015</option>
+                                <option value=2014>2014</option>
+                                <option value=2013>2013</option>
+                                <option value=2012>2012</option>
+                                <option value=2011>2011</option>
+                                <option value=2010>2010</option>
+                            </select>
                         </div>
                     </div>
                 </div>

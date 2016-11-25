@@ -9,7 +9,6 @@
           {
               id: 'q',
               specialization: '',
-              passedyear:[{}],
               percentage: '',
           }
         ];
@@ -41,38 +40,51 @@
             var candidateId = _this.CandidateCommonServices.getCandidateId();
             var education = $scope.qualification[recordIndex];
             education.candidateId = candidateId;
-            
-            _this.service.add('http://localhost:8080/api/EducationInformation/Post/', education)
-          .then(function (response) {
-              perfUtils.getInstance().successMsg(_this.title + ' Added Successfully!');
-          });
+            if (_this.CandidateCommonServices.getCandidateId() > 0) {
+                _this.service.update('http://localhost:8080/api/EducationInformation/Update/', education)
+                             .then(function (response) {
+                                 perfUtils.getInstance().successMsg(_this.title + ' updated Successfully!');
+                             });
+            }
+            else {
+                _this.service.add('http://localhost:8080/api/EducationInformation/Post/', education)
+              .then(function (response) {
+                  perfUtils.getInstance().successMsg(_this.title + ' Added Successfully!');
+              });
+            }
         };
 
         $scope.addNewQualification = function () {
             var qualification = $scope.qualification.length + 1;
-            $scope.qualification.push({ 'id': 'q' + qualification, 'specialization': '','passedyear':'' ,'percentage': '' });
+            $scope.qualification.push({ 'id': 'q' + qualification, 'specialization': '', 'percentage': '' });
 
         };
-    
+
         $scope.removeQualification = function (index) {
             $scope.qualification.splice(index, 1);
         };
 
-        $scope.open = function ($event, dt) {
-            $event.preventDefault();
-            $event.stopPropagation();
-            dt.opened = true;
-        };
 
         // Load Model data if Exsist
         var loadEducationInformation = function () {
             var candidateId = _this.CandidateCommonServices.getCandidateId();
             if (candidateId > 0) {
-                var url = 'http://localhost:8080/api/EducationInformation/' + candidateId;
+                var url = 'http://localhost:8080/api/EducationInformation/Get/' + candidateId;
                 _this.service.loadRecords(url)
                              .then(function (response) {
-                                 $scope.EducationalInformation = response.data.educationalInformation;
-
+                                 //$scope.qualification = response.data.educationalInformation;
+                                 var cid = response.data.educationalInformation.length;
+                                 if (cid > 0) {
+                                     $scope.qualification = response.data.educationalInformation;
+                                 }
+                                 else {
+                                     $scope.qualification = [
+                                          {
+                                              specialization: '',
+                                              percentage: ''
+                                          }
+                                     ];
+                                 }
                              });
             }
         }

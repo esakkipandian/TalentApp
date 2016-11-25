@@ -40,7 +40,7 @@ namespace Prft.Talent.WebApi.Controllers
         {
             var successFlag = await _educationService.UpdateEducationalInformationAsync(educationInformation);
             return successFlag.SuccessFlag;
-          //  _educationService.UpdateEducationalInformationAsync(educationInformation);
+            //  _educationService.UpdateEducationalInformationAsync(educationInformation);
         }
         [HttpPut]
         [Route("api/EducationInformation/Delete")]
