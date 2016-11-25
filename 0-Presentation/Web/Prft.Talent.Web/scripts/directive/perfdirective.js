@@ -50,7 +50,10 @@
 	                    regEx = /^(0?[1-9]|[12][0-9]|3[01])-(jan|Jan|JAN|feb|Feb|FEB|mar|Mar|MAR|apr|Apr|APR|may|May|MAY|jun|Jun|JUN|jul|Jul|JUL|aug|Aug|AUG|sep|Sep|SEP|oct|Oct|OCT|nov|Nov|NOV|dec|Dec|DEC)-(19|20)\d\d\s([0-1][0-9]|[2][0-3]):([0-5][0-9])(\s{0,1})(AM|PM|am|pm|aM|Am|pM|Pm{2,2})$/;
 	                } else if(eleType === 'alpha-numeric'){
 	                    regEx = /^[a-zA-Z0-9 ]*$/;
-	                } else if(eleType === 'all-chars'){
+	                } else if (eleType == 'decimal-2point') {
+	                    regEx = /^[0-9]+(\.[0-9]{1,2})?$/;
+	                }
+	                else if (eleType === 'all-chars') {
 	                	regEx = '';
 	                }
 	            }
@@ -103,5 +106,25 @@
 	            });
 	        }
 	    };
+	}])
+	.directive("limitTo", [function () {
+	    return {
+	        restrict: "A",
+	        link: function (scope, elem, attrs) {
+	            var regEx = /^[0-9]+(\.[0-9]{1,2})?$/;
+	            var limit = parseInt(attrs.limitTo);
+	            angular.element(elem).on("keydown", function (e) {
+	                var keyCode = (e.keyCode||e.charCode);
+	                if (keyCode != 8 && keyCode != 46) {
+	                    var valueLength = $(elem).val().length;
+	                    if (valueLength > 0) {                   
+	                        if (!regEx.test($(elem).val()) || this.value.length == limit) { e.preventDefault(); }
+	                    }
+	                }
+	            });
+	        }
+	    }
 	}]);
+    ;
+
 }());

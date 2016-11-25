@@ -9,7 +9,7 @@
         };
 
         $scope.tabs = [
-          { title: 'Basic Details', url: 'html/candidatewizard/personalInformation.html', icon : 'fa fa-user' },
+          { title: 'Personal Details', url: 'html/candidatewizard/personalInformation.html', icon : 'fa fa-user' },
           { title: 'Educational Details', url: 'html/candidatewizard/educationDetails.html', icon: 'fa fa-book' },
           { title: 'Skillset Details', url: 'html/candidatewizard/skillset.html', icon: 'fa fa-list' },
           { title: 'Resume', url: 'html/candidatewizard/fileupload.html', icon: 'fa fa-file' }
