@@ -17,12 +17,12 @@ namespace Prft.Talent.Data.Repositories.Concrete
             : base(dbContext, mapper, logger)
         {
         }
-        public async Task<EducationalInformation> GetEducationalInformationAsync(int candidateId)
+        public async Task<IEnumerable<EducationalInformation>> GetEducationalInformationAsync(int candidateId)
         {
             return await Task.FromResult(DatabaseContext.candidateeducations
                         .Where(x => x.CandidateId == candidateId )
                         .ProjectTo<EducationalInformation>(Mapper.ConfigurationProvider)
-                        .FirstOrDefault());
+                        .ToList());
         }
         public async Task<int> SaveEducationalInformationAsync(EducationalInformation EducationalInformation)
         {
