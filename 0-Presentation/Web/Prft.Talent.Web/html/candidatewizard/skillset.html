@@ -20,9 +20,9 @@
             </div>
 
             <div ng-repeat="dt in dates" class="col-sm-2">
-                <input id="datePickerItem_{{$index}}" type="text" class="datepicker" uib-datepicker-popup="shortDate" 
-                       ng-value="skill.sinceLastUsed" ng-model="skill.sinceLastUsed"  is-open="dt.opened" ng-click="open($event,dt)"
-                       placeholder="Last Used Date" name="lastuseddate" validType="date" datepicker-options="{minMode: 'month'}" datepicker-mode="'month'"/>
+                <input id="datePickerItem_{{$parent.$index}}_{{$index}}" type="text" class="datepicker" uib-datepicker-popup="shortDate" 
+                       ng-value="skill.sinceLastUsed" ng-model="skill.sinceLastUsed"  is-open="opened[$parent.$index]" ng-click="open($event, $parent.$index)"
+                       placeholder="Last Used Date" name="datePickerItem_{{$parent.$index}}_{{$index}}" validType="date" datepicker-options="{minMode: 'month'}" datepicker-mode="'month'"/>
             </div>
             
             <div class="col-sm-2">

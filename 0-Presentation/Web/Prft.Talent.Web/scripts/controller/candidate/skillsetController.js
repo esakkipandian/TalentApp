@@ -111,10 +111,11 @@
         };
        
         //Function to open Datepicker
-        $scope.open   = function ($event, dt) {
+        $scope.opened = [];
+        $scope.open   = function ($event, index) {
             $event.preventDefault();
             $event.stopPropagation();
-            dt.opened = true;
+            $scope.opened[index] = true;
         };
 
         //Load Skill Type Dropdown
