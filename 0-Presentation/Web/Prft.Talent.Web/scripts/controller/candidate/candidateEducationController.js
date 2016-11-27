@@ -39,24 +39,26 @@
         $scope.save = function (recordIndex) {
             var candidateId = _this.CandidateCommonServices.getCandidateId();
             var education = $scope.qualification[recordIndex];
-            education.candidateId = candidateId;
-            if (_this.CandidateCommonServices.getCandidateId() > 0) {
-                _this.service.update('http://localhost:8080/api/EducationInformation/Update/', education)
-                             .then(function (response) {
-                                 perfUtils.getInstance().successMsg(_this.title + ' updated Successfully!');
-                             });
-            }
-            else {
+            var check = $scope.qualification[recordIndex].id;
+            education.candidateId = candidateId;         
+            if (check == "new") {
+                $scope.qualification[recordIndex].id = 'q';
                 _this.service.add('http://localhost:8080/api/EducationInformation/Post/', education)
               .then(function (response) {
                   perfUtils.getInstance().successMsg(_this.title + ' Added Successfully!');
               });
             }
+            else {
+                _this.service.update('http://localhost:8080/api/EducationInformation/Update/', education)
+                                         .then(function (response) {
+                                             perfUtils.getInstance().successMsg(_this.title + ' updated Successfully!');
+                                         });
+            }
         };
 
         $scope.addNewQualification = function () {
             var qualification = $scope.qualification.length + 1;
-            $scope.qualification.push({ 'id': 'q' + qualification, 'specialization': '', 'percentage': '' });
+            $scope.qualification.push({ 'id': 'new', 'specialization': '', 'percentage': '' });
 
         };
 
@@ -80,6 +82,7 @@
                                  else {
                                      $scope.qualification = [
                                           {
+                                              id:'new',
                                               specialization: '',
                                               percentage: ''
                                           }

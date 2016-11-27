@@ -7,7 +7,7 @@
                     <div class="form-group">
                         <label for="Qualification" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Qualification: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                            <select class="dropdown empty" name="qualification" ng-model="EducationalInformation.DegreeName" ng-selected="{{EducationalInformation.DegreeName}}" required>
+                            <select class="dropdown empty" name="qualification" ng-model="EducationalInformation.Qualification" ng-selected="{{EducationalInformation.Qualification}}" required>
                                 <option value=1>Doctorate</option>
                                 <option value=2>PostGraduate</option>
                                 <option value=3>UnderGraduate</option>
@@ -76,10 +76,10 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                            <input type="radio" name="coursetype" />Full Time &nbsp;
-                            <input type="radio" name="coursetype" />Part Time &nbsp;
-                            <input type="radio" name="coursetype" />Correspondence
+                        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12" ng-model="EducationalInformation.CourseType" ng-selected="{{EducationalInformation.CourseType}}">
+                            <input type="radio" name="FullTime" value="1" />Full Time &nbsp;
+                            <input type="radio" name="PartTime" value="2" />Part Time &nbsp;
+                            <input type="radio" name="Correspondence" value="3" />Correspondence
                         </div>
                     </div>
                 </div>
