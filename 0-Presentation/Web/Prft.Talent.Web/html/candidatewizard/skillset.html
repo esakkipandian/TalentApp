@@ -3,7 +3,7 @@
     <div class="skillset">
 
         <div data-ng-repeat="skill in skillset" ng-model="skill.length">
-            <div class="col-sm-3">
+            <div class="col-sm-3">                
                 <ol class="form-control nya-bs-select textbox" name="Skill Set" title="Skill" data-live-search="true" validType="select"
                     disabled="isProfile" ng-model="skill.skillId" ng-selected="{{skill.skillId}}">
                     <li nya-bs-option="skillSet in skillSets | orderBy: 'skillSet' track by skillSet.pk" data-value="skillSet.pk">
@@ -13,43 +13,30 @@
                         </a>
                     </li>
                 </ol>
-
             </div>
 
-            <div class="col-sm-2">
-                <!--<select class="dropdown" name="skilltype" ng-model="skill.isPrimary" ng-init="skill.isPrimary={{skill.isPrimary}}" required>
-                    <option value=true>Primary</option>
-                    <option value=false>Secondary</option>
-                </select>-->
-                <!--<select class="dropdown" data-ng-options="o.value for o in options" data-ng-model="isPrimary"></select>-->
+            <div class="col-sm-2">              
                 <select class="dropdown" ng-model="skill.isPrimary" ng-options="skillset.value as skillset.name for skillset in register.skillsets"></select>
-
             </div>
 
-            <!--<div ng-repeat="dt in dates" class="col-sm-2">
-                <input id="datePickerItem_{{$index}}" type="text" class="datepicker" uib-datepicker-popup ng-model="skill.sinceLastUsed" datepicker-popup="MM/yyyy" is-open="opened[$index]" ng-click="open($event,$index)"
-                       placeholder="Last Used Date" name="lastuseddate" datepicker-options="{minMode: 'month'}" datepicker-mode="'month'" required />
-
-            </div>-->
-            <!--<div ng-repeat="item in dates" class="col-sm-2">
-                <input ng-model="skill.sinceLastUsed" type="text" class="datepicker"
-                       id="datePickerItem_{{$index}}"  datepicker-popup="MM/yyyy"
-                       is-open="opened[$index]" datepicker-options="{minMode: 'month'}"
-                       ng-click="openDatePicker($event,$index)" datepicker-mode="'month'" required />
-
-            </div>-->
+            <div ng-repeat="dt in dates" class="col-sm-2">
+                <input id="datePickerItem_{{$index}}" type="text" class="datepicker" uib-datepicker-popup="shortDate" 
+                       ng-value="skill.sinceLastUsed" ng-model="skill.sinceLastUsed"  is-open="dt.opened" ng-click="open($event,dt)"
+                       placeholder="Last Used Date" name="lastuseddate" validType="date" datepicker-options="{minMode: 'month'}" datepicker-mode="'month'"/>
+            </div>
+            
             <div class="col-sm-2">
-                <span uib-rating ng-model="skill.rating" max="5" min="1"  enable-reset="false" required></span>
+                <span uib-rating ng-model="skill.rating" max="5" min="1"  enable-reset="false"></span>
             </div>
+
             <div class="col-sm-3">
-                <button type="submit" class="fa fa-minus-circle remove" ng-click="removeSkill($index)" ng-show="skillset.length>1" data-toggle="tooltip"
+                <button type="button" class="fa fa-minus-circle remove" ng-click="deleteSkill($index)" ng-show="skillset.length>1" data-toggle="tooltip"
                         data-placement="bottom" title="Delete Skill"></button>
-                <button type="submit" class="fa fa-floppy-o remove" ng-click="saveSkill($index)" data-toggle="tooltip" data-placement="bottom" title="Save Skill"></button>
-                <button type="submit" class="fa fa-plus-circle remove" ng-show="$last" ng-click="addNewSkill()"
+                <button type="button" class="fa fa-floppy-o remove" ng-click="saveSkill($index)" data-toggle="tooltip" data-placement="bottom" title="Save Skill"></button>
+                <button type="button" class="fa fa-plus-circle remove" ng-show="$last" ng-click="addNewSkill($index)"
                         data-toggle="tooltip" data-placement="bottom" title="Save and Add New Skill"></button><br /><br />
             </div>
         </div>
     </div>
-
 </form>
 
