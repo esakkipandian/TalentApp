@@ -46,6 +46,7 @@
     <Compile Include="Talent\AddressType.cs" />
     <Compile Include="Talent\Candidates.cs" />
     <Compile Include="Talent\Candidate\CandidateSkillSet.cs" />
+    <Compile Include="Talent\Qualification.cs" />
     <Compile Include="Talent\SkillSet.cs" />
     <Compile Include="Talent\Candidate\PersonalInformation.cs" />
     <Compile Include="Talent\CandiateDocument.cs" />

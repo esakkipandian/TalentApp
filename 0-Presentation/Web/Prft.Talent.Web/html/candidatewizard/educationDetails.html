@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <label for="University" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">University: </label>
+                        <label for="University" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">University/Board: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="University" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.universityId" ng-selected="{{EducationalInformation.universityId}}">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <label for="College" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">College: </label>
+                        <label for="College" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">College/School: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="college" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.collegeId" ng-selected="{{EducationalInformation.collegeId}}">
@@ -77,9 +77,9 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
                         <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12" ng-model="EducationalInformation.CourseType" ng-selected="{{EducationalInformation.CourseType}}">
-                            <input type="radio" name="FullTime" value="1" />Full Time &nbsp;
-                            <input type="radio" name="PartTime" value="2" />Part Time &nbsp;
-                            <input type="radio" name="Correspondence" value="3" />Correspondence
+                            <input type="radio" name="FullTime" ng-model="EducationalInformation.CourseType" ng-selected="{{EducationalInformation.CourseType}}" value="1" />Full Time &nbsp;
+                            <input type="radio" name="PartTime" ng-model="EducationalInformation.CourseType" ng-selected="{{EducationalInformation.CourseType}}" value="2" />Part Time &nbsp;
+                            <input type="radio" name="Correspondence" ng-model="EducationalInformation.CourseType" ng-selected="{{EducationalInformation.CourseType}}" value="3" />Correspondence
                         </div>
                     </div>
                 </div>
