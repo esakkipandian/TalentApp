@@ -17,21 +17,21 @@ namespace Prft.Talent.Data.Repositories.Concrete
 
 
         public QualificationRepository(PrftDatabaseContext dbContext, IMapper mapper, IPrftLogger logger) : base(dbContext, mapper, logger) { }
-        public async Task<IEnumerable<Qualification>> GetQualificationAsync()
+        public async Task<IEnumerable<EducationQualification>> GetQualificationAsync()
         {
 
             return await Task.Run(() => GetQualificationDetails());
         }
 
-        public IEnumerable<Qualification> GetQualificationDetails()
+        public IEnumerable<EducationQualification> GetQualificationDetails()
         {
 
-            return new List<Qualification>
+            return new List<EducationQualification>
             {
-                new Qualification { QualificationCode="UG" ,QualificationName="UnderGraduate",Id=1},
-                new Qualification { QualificationCode="PG" ,QualificationName="PostGraduate",Id=2},
-                new Qualification { QualificationCode="DR" ,QualificationName="Doctorate",Id=3},
-                new Qualification { QualificationCode="OT" ,QualificationName="Others",Id=4}
+                new EducationQualification { QualificationCode="UG" ,QualificationName="UnderGraduate",Id=1},
+                new EducationQualification { QualificationCode="PG" ,QualificationName="PostGraduate",Id=2},
+                new EducationQualification { QualificationCode="DR" ,QualificationName="Doctorate",Id=3},
+                new EducationQualification { QualificationCode="OT" ,QualificationName="Others",Id=4}
             };
         }
 

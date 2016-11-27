@@ -53,7 +53,7 @@ namespace Prft.Talent.Data.Entities
         public virtual college college1 { get; set; }
 
         public virtual university university1 { get; set; }
-        public int Qualification { get; set; }
+        public string Qualification { get; set; }
         public string CourseType { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Prft.Talent.Domain.Talent
 
         public int? CollegeId { get; set; }
         public int? UniversityId { get; set; }
-        public int Qualification { get; set; }
+        public string EducationQualification { get; set; }
         public string CourseType { get; set; }
 
     }

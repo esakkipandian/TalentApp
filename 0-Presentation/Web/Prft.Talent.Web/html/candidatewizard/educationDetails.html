@@ -7,11 +7,15 @@
                     <div class="form-group">
                         <label for="Qualification" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Qualification: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                            <select class="dropdown empty" name="qualification" ng-model="EducationalInformation.Qualification" ng-selected="{{EducationalInformation.Qualification}}" required>
-                                <option value=1>Doctorate</option>
-                                <option value=2>PostGraduate</option>
-                                <option value=3>UnderGraduate</option>
-                            </select>
+                            <ol class="form-control nya-bs-select" name="Qualification" title="Select" data-live-search="true" required validType="select"
+                                disabled="isProfile" ng-model="EducationalInformation.EducationQualification" ng-selected="{{EducationalInformation.EducationQualification}}">
+                                <li nya-bs-option="qual in EducationQualification | orderBy: 'qual' track by qual.id" data-value="qual.id">
+                                    <a>
+                                        {{qual.qualificationName}}
+                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                    </a>
+                                </li>
+                            </ol>
                         </div>
                     </div>
                 </div>

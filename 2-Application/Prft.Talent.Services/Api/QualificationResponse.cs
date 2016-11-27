@@ -9,7 +9,7 @@ namespace Prft.Talent.Services.Api
 {
     public class QualificationResponse : ResponseBase
     {
-        public IEnumerable<Qualification> Qualification { get; set; }
+        public IEnumerable<EducationQualification> Qualification { get; set; }
     }
 
 }

@@ -17,7 +17,14 @@
             var url = 'http://localhost:8080/api/Courses';
             _this.service.loadRecords(url)
                          .then(function (response) {
-                             $scope.Courses = response.data.courses
+                             $scope.Courses = response.data.courses;
+                         });
+        };
+        var loadQualification = function () {
+            var url = 'http://localhost:8080/api/Qualification';
+            _this.service.loadRecords(url)
+                         .then(function (response) {
+                             $scope.EducationQualification = response.data.qualification;
                          });
         };
         var loadUniversities = function () {
@@ -96,6 +103,7 @@
         loadCourses();
         loadUniversities();
         loadColleges();
+        loadQualification();
 
         //Load Model
         loadEducationInformation();

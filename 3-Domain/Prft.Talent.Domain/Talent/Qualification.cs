@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prft.Talent.Domain.Talent
 {
-    public class Qualification
+    public class EducationQualification
     {
         public int Id { get; set; }
         public string QualificationCode { get; set; }
