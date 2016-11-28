@@ -38,7 +38,6 @@
                                              var sinceLastUsed = new Date($scope.skillset[key].sinceLastUsed);
                                              $scope.skillset[key].sinceLastUsed = (("0" + (sinceLastUsed.getMonth() + 1)).slice(-2) + "/" + ("0"+(sinceLastUsed.getDate())).slice(-2) + "/" + sinceLastUsed.getFullYear());
                                              
-                                             
                                      });
                                  }
                                  else {
@@ -51,13 +50,20 @@
 
         //Function to save and add new Skill
         $scope.addNewSkill = function (recordIndex) {            
-            var skillset = $scope.skillset[recordIndex];
+            var skillset = $scope.skillset[recordIndex];  
             if (skillset.pk >= 0 )
                 $scope.skillset.push({});
             else {
                 if (!skillset.skillId || !skillset.rating || !skillset.sinceLastUsed || typeof skillset.isPrimary == 'undefined') {
                     perfUtils.getInstance().successMsg('All Fields are mandatory');
                     return;
+                }
+                var length = $scope.skillset.length - 1;
+                for (var i = 0; i < length; i++) {
+                    if ($scope.skillset[i].skillId === skillset.skillId) {
+                        perfUtils.getInstance().successMsg('Same skill cannot be entered twice');
+                        return;
+                    }
                 }
                 var candidateId = _this.CandidateCommonServices.getCandidateId();
                     if (candidateId > 0) {                      
@@ -86,6 +92,13 @@
                     alert("Updated Successfully");                 
                 }
                 else                {
+                    var length = $scope.skillset.length - 1;
+                    for (var i = 0; i < length; i++) {
+                        if ($scope.skillset[i].skillId === skillset.skillId) {
+                            perfUtils.getInstance().successMsg('Same skill cannot be entered twice');
+                            return;
+                        }
+                    }
                     skillset.candidateId = candidateId;
                     skillset.sinceLastUsed = (("0" + (skillset.sinceLastUsed.getMonth() + 1)).slice(-2) + "/" + ("0" + (skillset.sinceLastUsed.getDate())).slice(-2) + "/" + skillset.sinceLastUsed.getFullYear());
                     _this.service.add('http://localhost:8080/api/CandidateSkillSet/AddCandidateSkillSet/', skillset)
