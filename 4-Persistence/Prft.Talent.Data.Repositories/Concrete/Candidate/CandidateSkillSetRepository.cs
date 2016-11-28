@@ -44,5 +44,18 @@ namespace Prft.Talent.Data.Repositories.Concrete.Candidate
             }
             return 0;
         }
+
+        public async Task<int> UpdateCandidateSkillSetAsync(CandidateSkillSet candidateSkillSet)
+        {
+            var objectToUpdate = Mapper.Map<Entities.candidateskill>(candidateSkillSet);
+            objectToUpdate.IsActive = true;
+            DatabaseContext.Entry(objectToUpdate).State = EntityState.Modified;
+            var successFlag = await DatabaseContext.SaveChangesAsync();
+            if (successFlag > 0)
+            {
+                return objectToUpdate.PK;
+            }
+            return 0;
+        }
     }
 }

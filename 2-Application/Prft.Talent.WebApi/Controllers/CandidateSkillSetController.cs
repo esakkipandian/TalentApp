@@ -47,12 +47,24 @@ namespace Prft.Talent.WebApi.Controllers
 
         [HttpPut]
         [Route("api/CandidateSkillSet/DeleteCandidateSkillSet")]
-        public async Task<int> DeleteCandidateSkillSet(int id)
+        public async Task<int> DeleteCandidateSkillSet(CandidateSkillSet candidateSkillSet)
         {
             var successFlag = await _candidateSkillSetService.DeleteCandidateSkillSetsAsync(
                 new CandidateSkillSetIdRequest
                 {
-                    CandidateSkillSetId = id
+                    CandidateSkillSetId = candidateSkillSet.PK
+                });
+            return successFlag.SuccessFlag;
+        }
+
+        [HttpPut]
+        [Route("api/CandidateSkillSet/UpdateCandidateSkillSet")]
+        public async Task<int> UpdateCandidateSkillSet(CandidateSkillSet candidateSkillSet)
+        {
+            var successFlag = await _candidateSkillSetService.UpdateCandidateSkillSetAsync(
+                new CandidateSkillSetRequest
+                {
+                    CandidateSkillSet = candidateSkillSet
                 });
             return successFlag.SuccessFlag;
         }

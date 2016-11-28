@@ -37,7 +37,6 @@
                                      angular.forEach($scope.skillset, function (value, key) {                                         
                                              var sinceLastUsed = new Date($scope.skillset[key].sinceLastUsed);
                                              $scope.skillset[key].sinceLastUsed = (("0" + (sinceLastUsed.getMonth() + 1)).slice(-2) + "/" + ("0"+(sinceLastUsed.getDate())).slice(-2) + "/" + sinceLastUsed.getFullYear());
-                                             
                                      });
                                  }
                                  else {
@@ -89,9 +88,13 @@
             var candidateId = _this.CandidateCommonServices.getCandidateId();
             if (candidateId > 0) {
                 if (skillset.pk > 0) {
-                    alert("Updated Successfully");                 
+                    _this.service.update('http://localhost:8080/api/CandidateSkillSet/UpdateCandidateSkillSet/', skillset)
+                             .then(function (response) {
+                                 loadCandidateSkillSets();
+                                 perfUtils.getInstance().successMsg(_this.title + ' updated Successfully!');
+                             });
                 }
-                else                {
+                else{
                     var length = $scope.skillset.length - 1;
                     for (var i = 0; i < length; i++) {
                         if ($scope.skillset[i].skillId === skillset.skillId) {

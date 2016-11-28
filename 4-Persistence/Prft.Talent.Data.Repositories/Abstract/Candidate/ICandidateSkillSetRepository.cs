@@ -14,5 +14,7 @@ namespace Prft.Talent.Data.Repositories.Abstract.Candidate
         Task<int> AddCandidateSkillSetsAsync(CandidateSkillSet candidateSkillSet);
 
         Task<int> DeleteCandidateSkillSetsAsync(int candidateId);
+
+        Task<int> UpdateCandidateSkillSetAsync(CandidateSkillSet candidateSkillSet);
     }
 }

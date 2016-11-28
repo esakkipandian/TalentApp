@@ -41,5 +41,13 @@ namespace Prft.Talent.Services.Concrete.Candidate
                 SuccessFlag = await _candidateSkillSetRepository.DeleteCandidateSkillSetsAsync(candidateSkillSetRequest.CandidateSkillSetId)
             };
         }
+
+        public async Task<SetCandidateSkillSetResponse> UpdateCandidateSkillSetAsync(CandidateSkillSetRequest candidateSkillSetRequest)
+        {
+            return new SetCandidateSkillSetResponse
+            {
+                SuccessFlag = await _candidateSkillSetRepository.UpdateCandidateSkillSetAsync(candidateSkillSetRequest.CandidateSkillSet)
+            };
+        }
     }
 }

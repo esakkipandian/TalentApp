@@ -16,5 +16,7 @@ namespace Prft.Talent.Services.Abstract.Candidate
 
         Task<SetCandidateSkillSetResponse> DeleteCandidateSkillSetsAsync(CandidateSkillSetIdRequest candidateSkillSetRequest);
 
+        Task<SetCandidateSkillSetResponse> UpdateCandidateSkillSetAsync(CandidateSkillSetRequest candidateSkillSetRequest);
+
     }
 }
