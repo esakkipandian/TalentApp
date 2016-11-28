@@ -36,7 +36,8 @@
                                      $scope.dates = [{}];
                                      angular.forEach($scope.skillset, function (value, key) {                                         
                                              var sinceLastUsed = new Date($scope.skillset[key].sinceLastUsed);
-                                             $scope.skillset[key].sinceLastUsed = ((sinceLastUsed.getMonth() + 1) + "/" + sinceLastUsed.getDate() + "/" + sinceLastUsed.getFullYear());
+                                             $scope.skillset[key].sinceLastUsed = (("0" + (sinceLastUsed.getMonth() + 1)).slice(-2) + "/" + ("0"+(sinceLastUsed.getDate())).slice(-2) + "/" + sinceLastUsed.getFullYear());
+                                             
                                              
                                      });
                                  }
@@ -59,11 +60,12 @@
                     return;
                 }
                 var candidateId = _this.CandidateCommonServices.getCandidateId();
-                    if (candidateId > 0) {
-                        var skillset = $scope.skillset[recordIndex];
-                            skillset.candidateId = candidateId;
+                    if (candidateId > 0) {                      
+                        skillset.candidateId = candidateId;
+                      
+                        skillset.sinceLastUsed = (("0" + (skillset.sinceLastUsed.getMonth() + 1)).slice(-2) + "/" + ("0" + (skillset.sinceLastUsed.getDate())).slice(-2) + "/" + skillset.sinceLastUsed.getFullYear());
                             _this.service.add('http://localhost:8080/api/CandidateSkillSet/AddCandidateSkillSet/', skillset)
-                                .then(function (response) {                                   
+                                .then(function (response) {                                    
                                     perfUtils.getInstance().successMsg(_this.title + ' added Successfully!');
                                 });     
                     }
@@ -83,9 +85,9 @@
                 if (skillset.pk > 0) {
                     alert("Updated Successfully");                 
                 }
-                else
-                {
+                else                {
                     skillset.candidateId = candidateId;
+                    skillset.sinceLastUsed = (("0" + (skillset.sinceLastUsed.getMonth() + 1)).slice(-2) + "/" + ("0" + (skillset.sinceLastUsed.getDate())).slice(-2) + "/" + skillset.sinceLastUsed.getFullYear());
                     _this.service.add('http://localhost:8080/api/CandidateSkillSet/AddCandidateSkillSet/', skillset)
                         .then(function (response) {                            
                             loadCandidateSkillSets();
