@@ -5,10 +5,10 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <label for="Qualification" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Qualification: </label>
-                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                        <label for="Qualification" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Qualification: </label>
+                        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="Qualification" title="Select" data-live-search="true" required validType="select"
-                                disabled="isProfile" ng-model="EducationalInformation.Qualification" ng-change="onQualificationChange(EducationalInformation.Qualification)"  ng-selected="{{EducationalInformation.Qualification}}">
+                                disabled="isProfile" ng-model="EducationalInformation.Qualification" ng-change="onQualificationChange(EducationalInformation.Qualification)" ng-selected="{{EducationalInformation.Qualification}}">
                                 <li nya-bs-option="qual in Qualification | orderBy: 'qual' track by qual.id" data-value="qual.id">
                                     <a>
                                         {{qual.qualificationName}}
@@ -21,8 +21,8 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <label for="Course" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Course: </label>
-                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                        <label for="Course" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Course: </label>
+                        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="course" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.course" ng-selected="{{EducationalInformation.course}}">
                                 <li nya-bs-option="course in Courses | orderBy: 'course' track by course.courseCode" data-value="course.courseName">
@@ -37,9 +37,11 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <label for="Course" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Specialization: </label>
-                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Specialization" name="Specialization" ng-model="EducationalInformation.specialization" required />
+                        <label for="Course" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Specialization: </label>
+                        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                            <input type="text" class="form-control" placeholder="Specialization" name="Specialization" ng-model="EducationalInformation.specialization" required
+                                   validtype="text-only" ng-maxlength="30" />
+
                         </div>
                     </div>
                 </div>
@@ -48,8 +50,8 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <label for="University" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">University/Board: </label>
-                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                        <label for="University" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">University/Board: </label>
+                        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="University" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.universityId" ng-selected="{{EducationalInformation.universityId}}">
                                 <li nya-bs-option="university in Universities | orderBy: 'university' track by university.id" data-value="university.id">
@@ -64,8 +66,8 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <label for="College" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">College/School: </label>
-                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                        <label for="College" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">College/School: </label>
+                        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="college" title="Select" data-live-search="true" required validType="select"
                                 disabled="isProfile" ng-model="EducationalInformation.collegeId" ng-selected="{{EducationalInformation.collegeId}}">
                                 <li nya-bs-option="college in Colleges | orderBy: 'college' track by college.id" data-value="college.id">
@@ -80,7 +82,8 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12" ng-model="EducationalInformation.CourseType" ng-selected="{{EducationalInformation.CourseType}}">
+                        <div class="col-lg-1 col-md-1 col-sm-6 col-xs-12" ></div>
+                        <div class="col-lg-11 col-md-11 col-sm-6 col-xs-12" ng-model="EducationalInformation.CourseType" ng-selected="{{EducationalInformation.CourseType}}">
                             <input type="radio" name="FullTime" ng-model="EducationalInformation.CourseType" ng-selected="{{EducationalInformation.CourseType}}" value="1" />Full Time &nbsp;
                             <input type="radio" name="PartTime" ng-model="EducationalInformation.CourseType" ng-selected="{{EducationalInformation.CourseType}}" value="2" />Part Time &nbsp;
                             <input type="radio" name="Correspondence" ng-model="EducationalInformation.CourseType" ng-selected="{{EducationalInformation.CourseType}}" value="3" />Correspondence
@@ -92,18 +95,10 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <label for="PassingYear" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">PassingYear: </label>
-                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                            <select class="dropdown empty" name="PassedOut" ng-model="EducationalInformation.PassedOut" required>
-                                <option disabled selected>Select</option>
-                                <option value=2016>2016</option>
-                                <option value=2015>2015</option>
-                                <option value=2014>2014</option>
-                                <option value=2013>2013</option>
-                                <option value=2012>2012</option>
-                                <option value=2011>2011</option>
-                                <option value=2010>2010</option>
-                            </select>
+                        <label for="PassingYear" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">PassingYear: </label>
+                        <div ng-repeat="dt in EducationalInformation.passedyear " class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                            <input type="text" class="datepicker" uib-datepicker-popup ng-model="EducationalInformation.passedOut" datepicker-popup="yyyy" is-open="dt.opened" ng-click="open($event,dt)"
+                                   placeholder="Passed Year" name="PassedYear" datepicker-options="{minMode: 'year','year-format': 'yyyy',startingDay: 1}" datepicker-mode="'year'" required validtype="number-only" ng-minlength="4" ng-maxlength="4" />
                         </div>
                     </div>
                 </div>
@@ -111,7 +106,9 @@
                     <div class="form-group">
                         <label for="Percentage" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Percentage/CGPA: </label>
                         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="EducationalInformation.percentage" required />
+                            <input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="EducationalInformation.percentage" required
+                                   validtype="decimal-2point" ng-minlength="1" ng-maxlength="5" />
+
                         </div>
                     </div>
                 </div>

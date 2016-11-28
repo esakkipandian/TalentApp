@@ -9,6 +9,7 @@
           {
               id: 'q',
               specialization: '',
+              passedyear: [{}],
               percentage: '',
           }
         ];
@@ -72,14 +73,18 @@
 
         $scope.addNewQualification = function () {
             var qualification = $scope.qualification.length + 1;
-            $scope.qualification.push({ 'id': 'new', 'specialization': '', 'percentage': '' });
-
+            $scope.qualification.push({ 'id': 'q' + qualification, 'specialization': '', 'passedyear': [{}], 'percentage': '' });
         };
 
         $scope.removeQualification = function (index) {
             $scope.qualification.splice(index, 1);
         };
 
+        $scope.open = function ($event, dt) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            dt.opened = true;
+        };
 
         // Load Model data if Exsist
         var loadEducationInformation = function () {
