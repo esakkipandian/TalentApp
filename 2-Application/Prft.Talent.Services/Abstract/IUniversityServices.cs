@@ -11,7 +11,7 @@ namespace Prft.Talent.Services.Abstract
 {
     public interface IUniversityServices:IApi
     {
-        Task<UniversityResponse> GetUniversityAsync();
+        Task<UniversityResponse> GetUniversityAsync(int qId);
     }
 
 }

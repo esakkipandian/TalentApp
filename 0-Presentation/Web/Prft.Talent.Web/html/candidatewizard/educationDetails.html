@@ -8,8 +8,8 @@
                         <label for="Qualification" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Qualification: </label>
                         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <ol class="form-control nya-bs-select" name="Qualification" title="Select" data-live-search="true" required validType="select"
-                                disabled="isProfile" ng-model="EducationalInformation.EducationQualification" ng-selected="{{EducationalInformation.EducationQualification}}">
-                                <li nya-bs-option="qual in EducationQualification | orderBy: 'qual' track by qual.id" data-value="qual.id">
+                                disabled="isProfile" ng-model="EducationalInformation.Qualification" ng-change="onQualificationChange(EducationalInformation.Qualification)"  ng-selected="{{EducationalInformation.Qualification}}">
+                                <li nya-bs-option="qual in Qualification | orderBy: 'qual' track by qual.id" data-value="qual.id">
                                     <a>
                                         {{qual.qualificationName}}
                                         <span class="glyphicon glyphicon-ok check-mark"></span>

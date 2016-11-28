@@ -18,12 +18,22 @@ namespace Prft.Talent.Data.Repositories.Concrete
 
        
 
-        public async Task<IEnumerable<University>> GetUniversityAsync()
+        public async Task<IEnumerable<University>> GetUniversityAsync(int qId)
         {
-            return await DatabaseContext.universities
-                .ProjectTo<University>(Mapper.ConfigurationProvider).ToListAsync();
+            if (qId == 4) {
+                return new List<University>
+            {
+                new University { UniversityCode="ST" ,UniversityName="State Board",Id=11},
+                new University { UniversityCode="MT" ,UniversityName="Matric",Id=12},
+                new University { UniversityCode="CBSC" ,UniversityName="CBSC",Id=13}
+            };
+            }
+            else
+            {
+                return await DatabaseContext.universities
+                    .ProjectTo<University>(Mapper.ConfigurationProvider).ToListAsync();
 
-
+            }
         }
 
     }

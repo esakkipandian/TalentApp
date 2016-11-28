@@ -26,9 +26,9 @@ namespace Prft.Talent.WebApi.Controllers
             _collegesService = collegeservices;
             _logger = logger;
            }
-        public async Task<CollegesReponse> Get()
+        public async Task<CollegesReponse> Get(int id)
         {
-            var Collges = await _collegesService.GetCollegesAsync();
+            var Collges = await _collegesService.GetCollegesAsync(id);
             //LogException();
             return Collges;
         }

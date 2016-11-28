@@ -10,6 +10,6 @@ namespace Prft.Talent.Data.Repositories.Abstract
 {
     public interface IUniversityRepository:IRepository
     {
-        Task<IEnumerable<University>> GetUniversityAsync();
+        Task<IEnumerable<University>> GetUniversityAsync(int qId);
     }
 }

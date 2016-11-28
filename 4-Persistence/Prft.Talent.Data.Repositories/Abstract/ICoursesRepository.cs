@@ -10,6 +10,6 @@ namespace Prft.Talent.Data.Repositories.Abstract
 {
     public interface ICoursesRepository :IRepository
     {
-        Task<IEnumerable<Courses>> GetCoursesAsync();
+        Task<IEnumerable<Courses>> GetCoursesAsync(string qualificationId);
     }
 }

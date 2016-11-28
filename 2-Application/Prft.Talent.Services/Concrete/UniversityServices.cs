@@ -23,12 +23,12 @@ namespace Prft.Talent.Services.Concrete
         }
 
 
-        public async Task<UniversityResponse> GetUniversityAsync()
+        public async Task<UniversityResponse> GetUniversityAsync(int qId)
         {
 
             return new UniversityResponse
             {
-                Universities = await _UniversityRepository.GetUniversityAsync()
+                Universities = await _UniversityRepository.GetUniversityAsync(qId)
             };
 
         }

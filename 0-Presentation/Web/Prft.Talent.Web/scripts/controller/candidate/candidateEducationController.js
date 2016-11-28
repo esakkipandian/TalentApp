@@ -13,8 +13,8 @@
           }
         ];
 
-        var loadCourses = function () {
-            var url = 'http://localhost:8080/api/Courses';
+        var loadCourses = function (qId) {
+            var url = 'http://localhost:8080/api/Courses/' + qId;
             _this.service.loadRecords(url)
                          .then(function (response) {
                              $scope.Courses = response.data.courses;
@@ -24,35 +24,42 @@
             var url = 'http://localhost:8080/api/Qualification';
             _this.service.loadRecords(url)
                          .then(function (response) {
-                             $scope.EducationQualification = response.data.qualification;
+                             $scope.Qualification = response.data.qualification;
                          });
         };
-        var loadUniversities = function () {
-            var url = 'http://localhost:8080/api/University';
+        var loadUniversities = function (qId) {
+            var url = 'http://localhost:8080/api/University/' + qId;
             _this.service.loadRecords(url)
                          .then(function (response) {
                              $scope.Universities = response.data.universities;
                          });
         };
-        var loadColleges = function () {
-            var url = 'http://localhost:8080/api/Colleges';
+        var loadColleges = function (qId) {
+            var url = 'http://localhost:8080/api/Colleges/' + qId;
             _this.service.loadRecords(url)
                          .then(function (response) {
                              $scope.Colleges = response.data.colleges;
 
                          });
         };
+        $scope.onQualificationChange = function (itemSelected) {
+            loadCourses(itemSelected);
+            loadUniversities(itemSelected);
+            loadColleges(itemSelected);
+        }
 
         $scope.save = function (recordIndex) {
             var candidateId = _this.CandidateCommonServices.getCandidateId();
             var education = $scope.qualification[recordIndex];
             var check = $scope.qualification[recordIndex].id;
-            education.candidateId = candidateId;         
+            education.candidateId = candidateId;
             if (check == "new") {
                 $scope.qualification[recordIndex].id = 'q';
                 _this.service.add('http://localhost:8080/api/EducationInformation/Post/', education)
               .then(function (response) {
                   perfUtils.getInstance().successMsg(_this.title + ' Added Successfully!');
+                  loadEducationInformation();
+
               });
             }
             else {
@@ -89,7 +96,7 @@
                                  else {
                                      $scope.qualification = [
                                           {
-                                              id:'new',
+                                              id: 'new',
                                               specialization: '',
                                               percentage: ''
                                           }
@@ -100,9 +107,9 @@
         }
 
         //Load Drop Down Values 
-        loadCourses();
-        loadUniversities();
-        loadColleges();
+        loadCourses(0);
+        loadUniversities(0);
+        loadColleges(0);
         loadQualification();
 
         //Load Model

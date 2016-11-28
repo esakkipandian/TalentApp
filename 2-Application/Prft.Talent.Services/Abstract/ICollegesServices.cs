@@ -10,6 +10,6 @@ namespace Prft.Talent.Services.Abstract
 {
     public interface ICollegesServices:IApi
     {
-        Task<CollegesReponse> GetCollegesAsync();
+        Task<CollegesReponse> GetCollegesAsync(int qId);
     }
 }

@@ -23,9 +23,9 @@ namespace Prft.Talent.WebApi.Controllers
             _courseService = courseservices;
             _logger = logger;
         }
-        public async Task<CoursesResponse> Get()
+        public async Task<CoursesResponse> Get(int id)
         {
-            var Courses = await _courseService.GetCoursesAsync();
+            var Courses = await _courseService.GetCoursesAsync(id.ToString());
             //LogException();
             return Courses;
         }

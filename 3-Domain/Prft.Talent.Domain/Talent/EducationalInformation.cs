@@ -8,6 +8,7 @@ namespace Prft.Talent.Domain.Talent
 {
     public class EducationalInformation : BaseDomain
     {
+        public int PK { get; set; }
         public int CandidateId { get; set; }
         public string DegreeName { get; set; }
         public string Course { get; set; }
@@ -19,7 +20,7 @@ namespace Prft.Talent.Domain.Talent
 
         public int? CollegeId { get; set; }
         public int? UniversityId { get; set; }
-        public string EducationQualification { get; set; }
+        public int Qualification { get; set; }
         public string CourseType { get; set; }
 
     }

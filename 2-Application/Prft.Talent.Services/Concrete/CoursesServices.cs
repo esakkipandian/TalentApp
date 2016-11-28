@@ -22,12 +22,12 @@ namespace Prft.Talent.Services.Concrete
         }
 
 
-        public async Task<CoursesResponse> GetCoursesAsync()
+        public async Task<CoursesResponse> GetCoursesAsync(string qualificationId)
         {
 
             return new CoursesResponse
             {
-                Courses = await _courseRepository.GetCoursesAsync()
+                Courses = await _courseRepository.GetCoursesAsync(qualificationId)
             };
 
         }

@@ -27,12 +27,12 @@ namespace Prft.Talent.Services.Concrete
 
        
 
-        public async  Task<CollegesReponse> GetCollegesAsync()
+        public async  Task<CollegesReponse> GetCollegesAsync(int qId)
         {
 
             return new CollegesReponse
             {
-                Colleges = await _collegeTypeRepository.GetCollegesAsync()
+                Colleges = await _collegeTypeRepository.GetCollegesAsync(qId)
             };
            
         }
