@@ -68,6 +68,7 @@
     <Compile Include="Abstract\ICoursesRepository.cs" />
     <Compile Include="Abstract\IEducationalInformationRepository.cs" />
     <Compile Include="Abstract\IEmployeeRepository.cs" />
+    <Compile Include="Abstract\ISourceRepository.cs" />
     <Compile Include="Abstract\IUniversityRepository.cs" />
     <Compile Include="Concrete\AddressTypeRepository.cs" />
     <Compile Include="Concrete\CandidatesRepository.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Concrete\CoursesRepository.cs" />
     <Compile Include="Concrete\EducationalInformationRepository.cs" />
     <Compile Include="Concrete\EmployeeRepository.cs" />
+    <Compile Include="Concrete\SourceRepository.cs" />
     <Compile Include="Concrete\UniversityRepository.cs" />
     <Compile Include="IocRegistration.cs" />
     <Compile Include="Abstract\IRepository.cs" />
