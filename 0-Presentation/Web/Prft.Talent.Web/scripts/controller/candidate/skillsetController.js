@@ -54,24 +54,30 @@
                 $scope.skillset.push({});
             else {
                 if (!skillset.skillId || !skillset.rating || !skillset.sinceLastUsed || typeof skillset.isPrimary == 'undefined') {
-                    perfUtils.getInstance().successMsg('All Fields are mandatory');
+                    perfUtils.getInstance().errorMsg('All Fields are mandatory');
                     return;
                 }
+                if (recordIndex == 0 && !skillset.isPrimary)
+                {
+                    perfUtils.getInstance().errorMsg('Enter atleast one primary skill');
+                    return;
+                }
+                    
                 var length = $scope.skillset.length - 1;
                 for (var i = 0; i < length; i++) {
                     if ($scope.skillset[i].skillId === skillset.skillId) {
-                        perfUtils.getInstance().successMsg('Same skill cannot be entered twice');
+                        perfUtils.getInstance().errorMsg('Same skill cannot be entered twice');
                         return;
                     }
                 }
                 var candidateId = _this.CandidateCommonServices.getCandidateId();
                     if (candidateId > 0) {                      
-                        skillset.candidateId = candidateId;
-                      
+                        skillset.candidateId = candidateId;                        
                         skillset.sinceLastUsed = (("0" + (skillset.sinceLastUsed.getMonth() + 1)).slice(-2) + "/" + ("0" + (skillset.sinceLastUsed.getDate())).slice(-2) + "/" + skillset.sinceLastUsed.getFullYear());
                             _this.service.add('http://localhost:8080/api/CandidateSkillSet/AddCandidateSkillSet/', skillset)
                                 .then(function (response) {                                    
                                     perfUtils.getInstance().successMsg(_this.title + ' added Successfully!');
+                                    skillset.sinceLastUsed = new Date(skillset.sinceLastUsed);
                                 });     
                     }
                     $scope.skillset.push({});
@@ -82,7 +88,11 @@
         $scope.saveSkill = function (recordIndex) {
             var skillset = $scope.skillset[recordIndex];
             if (!skillset.skillId || !skillset.rating || !skillset.sinceLastUsed || typeof skillset.isPrimary == 'undefined') {
-                perfUtils.getInstance().successMsg('All Fields are mandatory');
+                perfUtils.getInstance().errorMsg('All Fields are mandatory');
+                return;
+            }
+            if (recordIndex == 0 && !skillset.isPrimary) {
+                perfUtils.getInstance().errorMsg('Enter atleast one primary skill');
                 return;
             }
             var candidateId = _this.CandidateCommonServices.getCandidateId();
@@ -98,12 +108,13 @@
                     var length = $scope.skillset.length - 1;
                     for (var i = 0; i < length; i++) {
                         if ($scope.skillset[i].skillId === skillset.skillId) {
-                            perfUtils.getInstance().successMsg('Same skill cannot be entered twice');
+                            perfUtils.getInstance().errorMsg('Same skill cannot be entered twice');
                             return;
                         }
                     }
                     skillset.candidateId = candidateId;
-                    skillset.sinceLastUsed = (("0" + (skillset.sinceLastUsed.getMonth() + 1)).slice(-2) + "/" + ("0" + (skillset.sinceLastUsed.getDate())).slice(-2) + "/" + skillset.sinceLastUsed.getFullYear());
+                    var sinceLastUsedDate = new Date(skillset.sinceLastUsed);
+                    skillset.sinceLastUsed = (("0" + (sinceLastUsedDate.getMonth() + 1)).slice(-2) + "/" + ("0" + (sinceLastUsedDate.getDate())).slice(-2) + "/" + sinceLastUsedDate.getFullYear());
                     _this.service.add('http://localhost:8080/api/CandidateSkillSet/AddCandidateSkillSet/', skillset)
                         .then(function (response) {                            
                             loadCandidateSkillSets();
