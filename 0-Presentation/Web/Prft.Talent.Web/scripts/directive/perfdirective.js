@@ -111,14 +111,16 @@
 	    return {
 	        restrict: "A",
 	        link: function (scope, elem, attrs) {
-	            var regEx = /^[0-9]+(\.[0-9]{1,2})?$/;
+	            var regEx = /^[0-9]+(\.[0-9]{1,2})?$/
 	            var limit = parseInt(attrs.limitTo);
 	            angular.element(elem).on("keydown", function (e) {
+	                var currentPressedValue = e.which == 190 ? ".0" : String.fromCharCode(e.which);
+	                var previousValue = $(elem).val();
+	                var actualValue = previousValue.toString() + currentPressedValue.toString();
 	                var keyCode = (e.keyCode||e.charCode);
-	                if (keyCode != 8 && keyCode != 46) {
-	                    var valueLength = $(elem).val().length;
-	                    if (valueLength > 0) {                   
-	                        if (!regEx.test($(elem).val()) || this.value.length == limit) { e.preventDefault(); }
+	                if (keyCode != 8 && keyCode != 46) {	                   
+	                    if (actualValue.length > 0) {
+	                        if ((regEx.test(actualValue) == false) || (actualValue.length > limit)) { e.preventDefault(); }
 	                    }
 	                }
 	            });
