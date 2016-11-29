@@ -30,17 +30,17 @@ namespace Prft.Talent.Data.Repositories.Concrete
             {
                 return new List<Courses>
             {
-                new Courses { CourseCode="SSLC" ,CourseName="SSLC"},
-                new Courses { CourseCode="HSC" ,CourseName="HSC"}
+                new Courses { CourseCode="SSLC" ,CourseName="SSLC",Id=11},
+                new Courses { CourseCode="HSC" ,CourseName="HSC",Id=12}
             };
             }
             else
             {
                 return new List<Courses>
             {
-                new Courses { CourseCode="B.E" ,CourseName="B.E"},
-                new Courses { CourseCode="B.Tech" ,CourseName="B.Tech"},
-                new Courses { CourseCode="MBA" ,CourseName="MBA"}
+                new Courses { CourseCode="B.E" ,CourseName="B.E",Id=1},
+                new Courses { CourseCode="B.Tech" ,CourseName="B.Tech",Id=2},
+                new Courses { CourseCode="MBA" ,CourseName="MBA",Id=3}
             };
             }
         }

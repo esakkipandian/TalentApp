@@ -72,8 +72,12 @@
         };
 
         $scope.addNewQualification = function () {
+            //var qualification = $scope.qualification.length + 1;
+            //$scope.qualification.push({ 'id': 'new', 'specialization': '', 'percentage': '' });
             var qualification = $scope.qualification.length + 1;
-            $scope.qualification.push({ 'id': 'q' + qualification, 'specialization': '', 'passedyear': [{}], 'percentage': '' });
+
+            $scope.qualification.push({ 'id': 'new' , 'specialization': '', 'passedyear': [{}], 'percentage': '' });
+
         };
 
         $scope.removeQualification = function (index) {
@@ -96,7 +100,19 @@
                                  //$scope.qualification = response.data.educationalInformation;
                                  var cid = response.data.educationalInformation.length;
                                  if (cid > 0) {
-                                     $scope.qualification = response.data.educationalInformation;
+                                     $scope.qualification = response.data.educationalInformation;                                    
+                                     for (var i = 0; i < cid; i++) {
+                                         if ($scope.qualification[i].courseType == 2) {
+                                             $scope.qualification[i].course = 2
+                                         }
+                                         else if ($scope.qualification[i].courseType == 3) {
+                                             $scope.qualification[i].course = 3
+                                         }
+                                         else {
+                                             $scope.qualification[i].course = 1
+                                         }
+                                     }
+                                   
                                  }
                                  else {
                                      $scope.qualification = [
