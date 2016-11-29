@@ -1,0 +1,65 @@
+<form role="form" name="personalInformation" class="form-horizontal" ng-controller="employerDetailsController" novalidate>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="FirstName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Employer Name: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" placeholder="Employer Name" name="Employer Name" ng-model="EmployerDetails.employerName" required validType="text-only" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="LastName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label">Employer Address: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <textarea class="form-control" placeholder="Employer Address" name="Employer Address" ng-model="EmployerDetails.employerAddress" validType="alpha-numeric" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="DOB" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Join Date: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" name="D.O.B" class="form-control" uib-datepicker-popup="dd-MMM-yyyy" ng-model="EmployerDetails.joinDate" is-open="dob.opened"
+                           placeholder="Choose the Date Of Join" datepicker-options="dateOptions" required ng-minlength="11" validType="date" ng-maxlength="11" close-text="Close" ng-click="joinDate()" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="DOB" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Relieve Date: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" name="D.O.B" class="form-control" uib-datepicker-popup="dd-MMM-yyyy" ng-model="EmployerDetails.endDate" is-open="dob.opened"
+                           placeholder="Choose the Date Of Relieve" datepicker-options="dateOptions" required ng-minlength="11" validType="date" ng-maxlength="11" close-text="Close" ng-click="joinDate()" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="emailAddress" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">HR/Project Manager Name: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="email" class="form-control" placeholder="HR/Project Manager Name" name="Email Address" ng-model="EmployerDetails.hrName" required validType="email" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="contactNumber" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">HR/Project Manager <br/>Contact Number: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" placeholder="Contact Number" name="Contact Number" ng-model="EmployerDetails.hrContact" maxlength="10" required validType="number-only" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xm-12 col-lg-push-10 col-md-push-10 col-sm-push-8">
+            <button type="submit" class="btn btn-primary" action="save"><i class="fa fa-save"></i> Save</button>
+        </div>
+    </div>
+</form>

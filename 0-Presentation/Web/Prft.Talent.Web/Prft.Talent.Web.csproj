@@ -67,7 +67,7 @@
     <Content Include="html\dashboard.html" />
     <Content Include="html\candidatewizard\educationDetails.html" />
     <Content Include="html\addresstype.html" />
-    <Content Include="html\employee.html" />
+    <Content Include="html\candidatewizard\employerDetails.html" />
     <Content Include="html\candidatewizard\fileupload.html" />
     <Content Include="html\interviewfeedback.html" />
     <Content Include="html\candidatewizard\personalInformation.html" />

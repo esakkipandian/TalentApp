@@ -58,6 +58,11 @@ var mainApp = angular.module("prftApp",
              templateUrl: 'html/interviewfeedback.html',
              controller: 'interviewFeedbackController'
          })
+          .when('/employer', {
+              templateUrl: 'html/candidatewizard/employerDetails.html',
+              controller: 'employerDetailsController'
+          })
+
           .otherwise({
               redirectTo: '/home'
           });
