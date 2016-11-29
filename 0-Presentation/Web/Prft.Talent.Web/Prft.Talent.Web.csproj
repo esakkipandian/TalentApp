@@ -69,7 +69,7 @@
     <Content Include="html\addresstype.html" />
     <Content Include="html\employee.html" />
     <Content Include="html\candidatewizard\fileupload.html" />
-    <Content Include="html\interview.html" />
+    <Content Include="html\interviewfeedback.html" />
     <Content Include="html\candidatewizard\personalInformation.html" />
     <Content Include="html\candidatewizard\skillset.html" />
     <Content Include="html\templates\deleteTemplate.html" />
@@ -118,7 +118,7 @@
     <Content Include="scripts\controller\datatableController.js" />
     <Content Include="scripts\controller\employeeController.js" />
     <Content Include="scripts\controller\fileuploadController.js" />
-    <Content Include="scripts\controller\interviewController.js" />
+    <Content Include="scripts\controller\interviewFeedbackController.js" />
     <Content Include="scripts\controller\educationController.js" />
     <Content Include="scripts\controller\candidate\personalInformationController.js" />
     <Content Include="scripts\controller\candidate\skillsetController.js" />
