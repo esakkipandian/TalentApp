@@ -89,9 +89,9 @@
 
                         <div class="col-lg-1 col-md-1 col-sm-6 col-xs-12"></div>
                         <div class="col-lg-11 col-md-11 col-sm-6 col-xs-12" ng-model="EducationalInformation.courseType" ng-selected="{{EducationalInformation.courseType}}">
-                            <input type="radio" name="FullTime" ng-model="EducationalInformation.courseType" ng-selected="{{EducationalInformation.courseType}}" value="1" />Full Time &nbsp;
-                            <input type="radio" name="PartTime" ng-model="EducationalInformation.courseType" ng-selected="{{EducationalInformation.courseType}}" value="2" />Part Time &nbsp;
-                            <input type="radio" name="Correspondence" ng-model="EducationalInformation.courseType" ng-selected="{{EducationalInformation.courseType}}" value="3" />Correspondence
+                            <input type="radio" name="group" ng-model="EducationalInformation.courseType" ng-selected="{{EducationalInformation.courseType}}" value="1"  checked="checked"  />Full Time &nbsp;
+                            <input type="radio" name="group" ng-model="EducationalInformation.courseType" ng-selected="{{EducationalInformation.courseType}}" value="2" />Part Time &nbsp;
+                            <input type="radio" name="group" ng-model="EducationalInformation.courseType" ng-selected="{{EducationalInformation.courseType}}" value="3" />Correspondence
 
                         </div>
                     </div>
@@ -117,8 +117,8 @@
                         </div>-->
 
                         <div ng-repeat="dt in EducationalInformation.passedyear " class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-                            <input type="text" class="datepicker" uib-datepicker-popup ng-model="EducationalInformation.passedOut" datepicker-popup="yyyy" is-open="dt.opened" ng-click="open($event,dt)"
-                                   placeholder="Passed Year" name="PassedYear" datepicker-options="{minMode: 'year','year-format': 'yyyy',startingDay: 1}" datepicker-mode="'year'" required validtype="number-only" ng-minlength="4" ng-maxlength="4" />
+                            <input type="text" class="datepicker" uib-datepicker-popup ng-model="EducationalInformation.passedOut" datepicker-popup="MM/yyyy" is-open="dt.opened" ng-click="open($event,dt)"
+                                   placeholder="Passed Year" name="PassedYear" datepicker-options="{minMode: 'month'}" datepicker-mode="'month'" required validtype="number-only" ng-minlength="4" ng-maxlength="4" />
                         </div> 
 
                     </div>
@@ -130,7 +130,7 @@
 
                             <!--<input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="EducationalInformation.percentage" required />-->
                             <input type="text" class="form-control" placeholder="Percentage" name="Percentage" ng-model="EducationalInformation.percentage" required
-                                   validtype="decimal-2point" ng-minlength="1" ng-maxlength="5" /> 
+                                   validtype="decimal-2point" ng-minlength="1" ng-maxlength="5" maxlength="5" /> 
 
                         </div>
                     </div>
