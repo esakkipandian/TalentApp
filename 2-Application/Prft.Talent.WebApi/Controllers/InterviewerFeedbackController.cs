@@ -16,11 +16,11 @@ namespace Prft.Talent.WebApi.Controllers
             _interviewerFeedbackService = interviewerFeedbackService;
         }
         [HttpGet]
-        [Route("api/InterviewerFeedback/GetInterviewerName")]
-        public  async Task<InterviwerFeedbackResponse> GetInterviewerName()
+        [Route("api/InterviewerFeedback/GetInterviewerDesignation")]
+        public  async Task<InterviwerFeedbackResponse> GetInterviewerDesignation()
         {
-            var interviewerName =await _interviewerFeedbackService.GetInterviewerNameAsync();
-            return interviewerName;
+            var interviewerDesignation =await _interviewerFeedbackService.GetInterviewerDesignationAsync();
+            return interviewerDesignation;
         }
        
     }

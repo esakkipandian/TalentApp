@@ -18,11 +18,11 @@ namespace Prft.Talent.Services.Concrete
 
         }
         
-        public async Task<InterviwerFeedbackResponse> GetInterviewerNameAsync()
+        public async Task<InterviwerFeedbackResponse> GetInterviewerDesignationAsync()
         {
             return new InterviwerFeedbackResponse
             {
-                InterviewerName =await  _interviewerFeedbackRepository.GetInterviewerNameAsync()
+                InterviewerDesignation =await  _interviewerFeedbackRepository.GetInterviewerDesignationAsync()
             };
         }
     }

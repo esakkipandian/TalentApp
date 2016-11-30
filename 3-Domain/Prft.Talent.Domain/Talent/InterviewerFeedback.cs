@@ -10,10 +10,11 @@ namespace Prft.Talent.Domain.Talent
     {
         public int MyProperty { get; set; }
     }
+    
 
-    public class InterviewerName
+    public class InterviewerDesignation
     {
         public int id { get; set; }
-        public string Name { get; set; }
+        public string Designation { get; set; }
     }
 }

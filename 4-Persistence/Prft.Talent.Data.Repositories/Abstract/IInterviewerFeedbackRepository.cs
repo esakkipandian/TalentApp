@@ -9,6 +9,6 @@ namespace Prft.Talent.Data.Repositories.Abstract
 {
     public interface IInterviewerFeedbackRepository:IRepository
     {
-        Task<IEnumerable<InterviewerName>> GetInterviewerNameAsync();
+        Task<IEnumerable<InterviewerDesignation>> GetInterviewerDesignationAsync();
     }
 }

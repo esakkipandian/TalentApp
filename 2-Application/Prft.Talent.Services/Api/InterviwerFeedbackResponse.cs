@@ -1,4 +1,5 @@
-﻿using Prft.Talent.Domain.Talent;
+﻿using Newtonsoft.Json;
+using Prft.Talent.Domain.Talent;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Prft.Talent.Services.Api
 {
     public class InterviwerFeedbackResponse:ResponseBase
     {
-        public IEnumerable<InterviewerName> InterviewerName { get; set; }
+        [JsonProperty("interviewerDesignation")]
+        public IEnumerable<InterviewerDesignation> InterviewerDesignation { get; set; }
     }
 }

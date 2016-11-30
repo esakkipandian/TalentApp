@@ -10,6 +10,6 @@ namespace Prft.Talent.Services.Abstract
 {
     public interface IInterviewerFeedbackService:IApi
     {
-        Task<InterviwerFeedbackResponse> GetInterviewerNameAsync();
+        Task<InterviwerFeedbackResponse> GetInterviewerDesignationAsync();
     }
 }
