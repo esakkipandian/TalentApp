@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Prft.Talent.Data.Repositories.Abstract
 {
-    public interface IEmployeeRepository : IRepository
+    public interface IEmployerDetailsRepository : IRepository
     {
-        Task<IEnumerable<Employee>> GetEmployeesAsync();
+        Task<IEnumerable<EmployerDetails>> GetEmployeesAsync();
     }
 }

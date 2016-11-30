@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Prft.Talent.Services.Abstract
 {
-    public interface IEmployeeService : IApi
+    public interface IEmployerDetailsService : IApi
     {
-        Task<EmployeeResponse> GetEmployeesAsync();
+        Task<EmployerDetailsResponse> GetEmployeesAsync();
     }
 }

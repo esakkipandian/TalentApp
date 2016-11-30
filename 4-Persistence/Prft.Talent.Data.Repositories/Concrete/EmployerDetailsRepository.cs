@@ -13,13 +13,13 @@ using Prft.Talent.Logger;
 
 namespace Prft.Talent.Data.Repositories.Concrete
 {
-    public class EmployeeRepository : Repository, IEmployeeRepository
+    public class EmployerDetailsRepository : Repository, IEmployerDetailsRepository
     {
-        public EmployeeRepository(PrftDatabaseContext dbContext, IMapper mapper, IPrftLogger logger) : base(dbContext, mapper, logger) { }
+        public EmployerDetailsRepository(PrftDatabaseContext dbContext, IMapper mapper, IPrftLogger logger) : base(dbContext, mapper, logger) { }
 
-        public async Task<IEnumerable<Employee>> GetEmployeesAsync()
+        public async Task<IEnumerable<EmployerDetails>> GetEmployeesAsync()
         {
-            return new List<Employee>();
+            return new List<EmployerDetails>();
             //return await DatabaseContext.employees.ProjectTo<Employee>(Mapper.ConfigurationProvider).ToListAsync();
         }
     }

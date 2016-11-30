@@ -13,17 +13,17 @@ using System.Web.Http;
 
 namespace Prft.Talent.WebApi.Controllers
 {
-    public class EmployeeController : ApiController
+    public class EmployerDetailsController : ApiController
     {
-        private readonly IEmployeeService _employeeService;
+        private readonly IEmployerDetailsService _employeeService;
 
-        public EmployeeController(IEmployeeService employeeService)
+        public EmployerDetailsController(IEmployerDetailsService employeeService)
         {
             _employeeService = employeeService;
         }
 
         // GET api/<controller>
-        public async Task<EmployeeResponse> Get()
+        public async Task<EmployerDetailsResponse> Get()
         {
             var employees = await _employeeService.GetEmployeesAsync();
             return employees;
