@@ -56,7 +56,7 @@
     <Compile Include="Abstract\ICollegesServices.cs" />
     <Compile Include="Abstract\ICoursesService.cs" />
     <Compile Include="Abstract\IEducationalIformationService.cs" />
-    <Compile Include="Abstract\IEmployeeService.cs" />
+    <Compile Include="Abstract\IEmployerDetailsService.cs" />
     <Compile Include="Abstract\ICandidateDocumentService.cs" />
     <Compile Include="Abstract\ISourceService.cs" />
     <Compile Include="Abstract\IUniversityServices.cs" />
@@ -70,7 +70,7 @@
     <Compile Include="Api\CollegesReponse.cs" />
     <Compile Include="Api\CoursesResponse.cs" />
     <Compile Include="Api\EducationalInforamtionResponse.cs" />
-    <Compile Include="Api\EmployeeResponse.cs" />
+    <Compile Include="Api\EmployerDetailsResponse.cs" />
     <Compile Include="Api\CandidateDocumentResponse.cs" />
     <Compile Include="Api\SourceResponse.cs" />
     <Compile Include="Api\UniversityResponse.cs" />
@@ -89,7 +89,7 @@
     <Compile Include="Concrete\UniversityServices.cs" />
     <Compile Include="RequestBase.cs" />
     <Compile Include="ResponseBase.cs" />
-    <Compile Include="Concrete\EmployeeService.cs" />
+    <Compile Include="Concrete\EmployerDetailsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

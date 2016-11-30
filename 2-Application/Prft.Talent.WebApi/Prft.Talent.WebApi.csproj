@@ -123,7 +123,7 @@
     <Compile Include="Controllers\CollegesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\EducationInformationController.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployerDetailsController.cs" />
     <Compile Include="Controllers\CandidateDocumentController.cs" />
     <Compile Include="Controllers\SourceController.cs" />
     <Compile Include="Controllers\UniversityController.cs" />

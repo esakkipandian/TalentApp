@@ -111,6 +111,7 @@
     <Content Include="scripts\controller\abstractController.js" />
     <Content Include="scripts\controller\addressTypeController.js" />
     <Content Include="scripts\controller\candidateController.js" />
+    <Content Include="scripts\controller\candidate\employerDetailsController.js" />
     <Content Include="scripts\controller\candidate\new-candidate-controller.js" />
     <Content Include="scripts\controller\candidateInformationWizardController.js" />
     <Content Include="scripts\controller\candidate\candidateEducationController.js" />
