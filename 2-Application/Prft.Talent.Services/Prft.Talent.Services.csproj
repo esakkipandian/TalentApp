@@ -50,6 +50,7 @@
     <Compile Include="Abstract\IApi.cs" />
     <Compile Include="Abstract\IAddressTypeService.cs" />
     <Compile Include="Abstract\ICandidatesService.cs" />
+    <Compile Include="Abstract\IInterviewerFeedbackService.cs" />
     <Compile Include="Abstract\IQualificationService.cs" />
     <Compile Include="Abstract\ISkillSetService.cs" />
     <Compile Include="Abstract\ICollegesServices.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Api\AddressTypeResponse.cs" />
     <Compile Include="Api\CandidatesResponse.cs" />
     <Compile Include="Api\Candidate\CandidateSkillSetResponse.cs" />
+    <Compile Include="Api\InterviwerFeedbackResponse.cs" />
     <Compile Include="Api\QualificationResponse.cs" />
     <Compile Include="Api\SkillSetResponse.cs" />
     <Compile Include="Api\Candidate\PersonalInformationResponse.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Concrete\AddressTypeService.cs" />
     <Compile Include="Concrete\CandidatesService.cs" />
     <Compile Include="Concrete\Candidate\CandidateSkillSetService.cs" />
+    <Compile Include="Concrete\InterviewerFeedbackService.cs" />
     <Compile Include="Concrete\QualificationService.cs" />
     <Compile Include="Concrete\SkillSetService.cs" />
     <Compile Include="Concrete\Candidate\PersonalInformationService.cs" />

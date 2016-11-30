@@ -60,6 +60,7 @@
     <Compile Include="Abstract\Candidate\ICandidateSkillSetRepository.cs" />
     <Compile Include="Abstract\Candidate\IPersonalInformationRepository.cs" />
     <Compile Include="Abstract\IAddressTypeRepository.cs" />
+    <Compile Include="Abstract\IInterviewerFeedbackRepository.cs" />
     <Compile Include="Abstract\IQualificationRepository.cs" />
     <Compile Include="Abstract\ISkillSetRepository.cs" />
     <Compile Include="Abstract\ICandidatesRepository.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Concrete\AddressTypeRepository.cs" />
     <Compile Include="Concrete\CandidatesRepository.cs" />
     <Compile Include="Concrete\Candidate\CandidateSkillSetRepository.cs" />
+    <Compile Include="Concrete\InterviewerFeedbackRepository.cs" />
     <Compile Include="Concrete\QualificationRepository.cs" />
     <Compile Include="Concrete\SkillSetRepository.cs" />
     <Compile Include="Concrete\Candidate\PersonalInformationRepository.cs" />
