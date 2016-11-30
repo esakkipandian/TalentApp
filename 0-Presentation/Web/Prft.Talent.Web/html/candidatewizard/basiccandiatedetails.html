@@ -1,7 +1,7 @@
 ﻿
 
 <form role="form" name="personalInformation" class="form-horizontal" ng-controller="personalInformationController" novalidate>
-    
+
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
@@ -15,7 +15,7 @@
             <div class="form-group">
                 <label for="LastName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Last Name: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="text" class="form-control" placeholder="Last Name" validType="text" name="Last Name" ng-model="PersonalInformation.lastName" required/>
+                    <input type="text" class="form-control" placeholder="Last Name" validType="text" name="Last Name" ng-model="PersonalInformation.lastName" required />
                 </div>
             </div>
         </div>
@@ -25,8 +25,8 @@
             <div class="form-group">
                 <label for="DOB" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">D.O.B: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="text" name="D.O.B" class="form-control" uib-datepicker-popup="dd-MMM-yyyy"  ng-model="PersonalInformation.dob" is-open="dob.opened"
-                            placeholder="Choose the Date Of Birth" datepicker-options="dateOptions" required ng-minlength="11" validType="date" ng-maxlength="11" close-text="Close" ng-click="dobDate()" />                    
+                    <input type="text" name="D.O.B" class="form-control" uib-datepicker-popup="dd-MMM-yyyy" ng-model="PersonalInformation.dob" is-open="dob.opened"
+                           placeholder="Choose the Date Of Birth" datepicker-options="dateOptions" required ng-minlength="11" validType="date" ng-maxlength="11" close-text="Close" ng-click="dobDate()" />
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
             <div class="form-group">
                 <label for="fatherName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label ">Father Name: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="text" class="form-control" placeholder="Father Name" name="Father Name" ng-model="PersonalInformation.fatherName" validType="text-only"/>
+                    <input type="text" class="form-control" placeholder="Father Name" name="Father Name" ng-model="PersonalInformation.fatherName" validType="text-only" />
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
             <div class="form-group">
                 <label for="motherName" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label ">Mother Name:</label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="text" class="form-control" placeholder="Mother Name" name="Mother Name"  ng-model="PersonalInformation.motherName" validType="text-only"/>
+                    <input type="text" class="form-control" placeholder="Mother Name" name="Mother Name" ng-model="PersonalInformation.motherName" validType="text-only" />
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="form-group">
                 <label for="emailAddress" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Email Address: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="email" class="form-control" placeholder="Email Address" name="Email Address" ng-model="PersonalInformation.email" required validType="email"/>
+                    <input type="email" class="form-control" placeholder="Email Address" name="Email Address" ng-model="PersonalInformation.email" required validType="email" />
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
             <div class="form-group">
                 <label for="contactNumber" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Contact Number: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="text" class="form-control"  placeholder="Mobile" name="Contact Number" ng-model="PersonalInformation.mobile" maxlength="10" required validType="number-only"/>
+                    <input type="text" class="form-control" placeholder="Mobile" name="Contact Number" ng-model="PersonalInformation.mobile" maxlength="10" required validType="number-only" />
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
             <div class="form-group">
                 <label for="alternateContact" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label">Alternate Contact: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="text" class="form-control" placeholder="Alternate Contact Number" name="AlternateContact" ng-model="PersonalInformation.alternateContact"  maxlength="10" validType="number-only"/>
+                    <input type="text" class="form-control" placeholder="Alternate Contact Number" name="AlternateContact" ng-model="PersonalInformation.alternateContact" maxlength="10" validType="number-only" />
                 </div>
             </div>
         </div>
@@ -102,30 +102,29 @@
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
-                <label for="actualCTC" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Actual CTC:</label>               
-                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                        <input type="number" class="form-control" placeholder="Enter CTC in Lakhs (Eg:10.75)" name="Actual CTC" ng-model="PersonalInformation.actualCTC" required  limit-to="5"/>
-                    </div>
-                
+                <label for="actualCTC" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Actual CTC:</label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" placeholder="Enter CTC in Lakhs (Eg:10.75)" name="Actual CTC" ng-model="PersonalInformation.actualCTC" required limit-to="5" />
+                </div>
+
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
                 <label for="expectedCTC" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Expected CTC: </label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="number" class="form-control" placeholder="Enter CTC in Lakhs (Eg:10.75)" name="Expected CTC" ng-model="PersonalInformation.expectedCTC" ng-maxlength=5  required limit-to="5"  />
+                    <input type="text" class="form-control" placeholder="Enter CTC in Lakhs (Eg:10.75)" name="Expected CTC" ng-model="PersonalInformation.expectedCTC" ng-maxlength=5 required limit-to="5" />
                 </div>
             </div>
         </div>
     </div>
-    
+
     <div class="row">
-       
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
                 <label for="Offer" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label">Have Any Offer ?: </label>
                 <div class="col-md-2">
-                    <input type="checkbox" style="margin:7px"  name="isOffer" ng-model="PersonalInformation.haveoffer" />
+                    <input type="checkbox" style="margin:7px" name="isOffer" ng-model="PersonalInformation.haveoffer" />
                 </div>
             </div>
         </div>
@@ -143,34 +142,34 @@
             <div class="form-group">
                 <label for="noticePeroid" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Notice Peroid:</label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="number" class="form-control" placeholder="Enter in Days" maxlength="3" name="Notice Peroid" ng-model="PersonalInformation.noticePeroid" required validType="number-only" />
+                    <input type="text" class="form-control" placeholder="Enter in Days" maxlength="3" name="Notice Peroid" ng-model="PersonalInformation.noticePeroid" required validType="number-only" />
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">            
-                <div class="form-group">
-                    <label for="Source" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Source: </label>
-                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-                        <ol class="form-control nya-bs-select" name="Source" title="Select" data-live-search="true" required validType="select"
-                            disabled="isProfile" ng-model="EducationalInformation.source" ng-selected="{{EducationalInformation.source}}">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="Source" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Source: </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <ol class="form-control nya-bs-select" name="Source" title="Select" data-live-search="true" required validType="select"
+                        disabled="isProfile" ng-model="EducationalInformation.source" ng-selected="{{EducationalInformation.source}}">
 
-                            <li nya-bs-option="src in Source | orderBy: 'src' track by src.id" data-value="src.id">
-                                <a>
-                                    {{src.sourceName}}
-                                    <span class="glyphicon glyphicon-ok check-mark"></span>
-                                </a>
-                            </li>
-                        </ol>
-                    </div>
+                        <li nya-bs-option="src in Source | orderBy: 'src' track by src.id" data-value="src.id">
+                            <a>
+                                {{src.sourceName}}
+                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                            </a>
+                        </li>
+                    </ol>
                 </div>
-            </div>       
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="form-group">
                 <label for="yearsOfExperience" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Years Of Experience:</label>
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <input type="number" class="form-control" placeholder="Enter in Years" maxlength="3" name="Experience Years" ng-model="PersonalInformation.yearsOfExperience" required validType="number-only" />
+                    <input type="text" class="form-control" placeholder="Enter in Years" maxlength="3" name="Experience Years" ng-model="PersonalInformation.yearsOfExperience" required validType="number-only" />
                 </div>
             </div>
         </div>
@@ -181,10 +180,25 @@
                     <select ng-model="PersonalInformation.campusSelected">
                         <option value="0">--Please Select--</option>
                         <option value="1">Yes</option>
-                        <option value="2">No</option>                       
+                        <option value="2">No</option>
                     </select>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label for="Schedule" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label">Scheduled Date </label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <input type="text" name="schedule" class="form-control" uib-datepicker-popup="dd-MMM-yyyy" ng-model="data.scheduledDate" is-open="doi.opened"
+                           placeholder="Scheduled Date" required ng-minlength="11" validType="date" ng-maxlength="11" close-text="Close" ng-click="doiDate()" />
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
         </div>
     </div>
     <div class="row" ng-repeat="document in CandidateDocuments">

@@ -19,11 +19,15 @@ namespace Prft.Talent.Domain.Talent.Candidate
         public string Mobile { get; set; }
         public string AlternateContact { get; set; }
         public bool? IsExperienced { get; set; }
-        public string ActualCTC { get; set; }
-        public string ExpectedCTC { get; set; }
-        public string NoticePeroid { get; set; }
+        public decimal ActualCTC { get; set; }
+        public decimal ExpectedCTC { get; set; }       
         public bool haveOffer { get; set; }
         public string OfferDescription { get; set; }
+        public int NoticePeriod { get; set; }
+        public int Source { get; set; }
+        public decimal ExperiencedYears { get; set; }
+        public int CampusSelected { get; set; }
+        public DateTime ScheduledDate { get; set; }
 
 
     }

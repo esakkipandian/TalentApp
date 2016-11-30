@@ -14,7 +14,13 @@ namespace Prft.Talent.Domain.Talent
         public string FullName { get; set; }
         public string Mobile { get; set; }
         public string Email { get; set; }
-
-
+        public decimal ActualCTC { get; set; }
+        public decimal ExpectedCTC { get; set; }       
+        public string OfferDescription { get; set; }
+        public int NoticePeriod { get; set; }
+        public int Source { get; set; }
+        public decimal ExperiencedYears { get; set; }
+        public int CampusSelected { get; set; }
+        public DateTime ScheduledDate { get; set; }
     }
 }
