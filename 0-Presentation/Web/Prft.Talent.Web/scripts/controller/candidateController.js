@@ -5,7 +5,10 @@
         $scope.dtColumns = [
             DTColumnBuilder.newColumn('fullName').withTitle('Candidate Name'),
             DTColumnBuilder.newColumn('mobile').withTitle('Phone number'),
-            DTColumnBuilder.newColumn('email').withTitle('Email ID')
+            DTColumnBuilder.newColumn('email').withTitle('Email ID'),
+            DTColumnBuilder.newColumn('scheduledDate').withTitle('Scheduled Date'),
+            DTColumnBuilder.newColumn('createdBy').withTitle('Created By'),
+            DTColumnBuilder.newColumn('createdDate').withTitle('Created Date')
         ];
 
         $scope.validate = function () {

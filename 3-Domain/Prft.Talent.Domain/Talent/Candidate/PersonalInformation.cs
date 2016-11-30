@@ -27,7 +27,8 @@ namespace Prft.Talent.Domain.Talent.Candidate
         public int Source { get; set; }
         public decimal ExperiencedYears { get; set; }
         public int CampusSelected { get; set; }
-        public DateTime ScheduledDate { get; set; }
+        public DateTime? ScheduledDate { get; set; }
+
 
 
     }

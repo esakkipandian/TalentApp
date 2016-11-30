@@ -59,6 +59,8 @@ namespace Prft.Talent.WebApi.Controllers
         [Route("api/Candidates/AddPersonalInformation")]
         public async Task<int> AddPersonalInformation(PersonalInformation personalInformation)
         {
+            personalInformation.CreatedBy = "Raj";
+            personalInformation.CreatedDate = System.DateTime.Now;
             var successFlag = await _personalInformationService.SetCandidatePersonalInformationAsync(
                 new PersonalInformationRequest
                 {
