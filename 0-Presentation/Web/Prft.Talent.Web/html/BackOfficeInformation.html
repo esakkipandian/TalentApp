@@ -1,0 +1,67 @@
+﻿
+<form role="form" class="form-horizontal" style="background:#fff; padding:15px" novalidate>
+    <div class="panel panel-success perfhr-panel">
+        <div class="panel-heading">
+            <h1 class="section-title ng-binding">Back Office Information</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-lg-6">
+            <div class="form-group">
+                <label for="inputName" class="col-md-4 control-label">Current CTC:</label>
+                <div class="col-md-8">
+                    <input type="text" id="inputName" ng-model="data.currentctc" class="form-control textbox" placeholder="Candidate Name" value="{{data.currentctc}}">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+            <div class="form-group">
+                <label for="in" class="col-md-4 control-label">Variable Pay:</label>
+                <div class="col-md-8">
+                    <input type="text" id="inputName" ng-model="data.variablepay" class="form-control textbox" placeholder="Candidate Name" value="{{data.variablepay}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6 col-lg-6">
+            <div class="form-group">
+                <label for="InterviewDate" class="col-md-4 control-label">Last Increment Date:</label>
+                <div class="col-md-8">
+                    <input type="text" name="InterviewDate" class="form-control datepicker" uib-datepicker-popup="dd-MMM-yyyy" ng-model="data.lastincrementdate" is-open="doi.opened"
+                           placeholder="Interview Date" required ng-minlength="11" validType="date" ng-maxlength="11" close-text="Close" ng-click="doDate()" style="width:250px" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+            <div class="form-group">
+                <label for="Form16Verified" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 control-label required">Form 16 verified:</label>
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <select ng-model="data.Form16Verified">
+                        <option value="">--Please Select--</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    
+
+
+    <div class="form-group">
+        <label for="inputName" class="col-md-2  control-label">Project Details</label>
+        <div class="col-md-9">
+            <textarea id="inputName" ng-model="data.projectdetails" class="form-control" rows="5" required></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-save" ng-show="!data.pk" action="save">Save</button>
+        <button type="submit" class="btn btn-update" ng-show="data.pk" action="update">Update</button>
+    </div>
+
+</form>
