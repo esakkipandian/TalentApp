@@ -5,6 +5,33 @@
         _this.service = commonAPIservice;
         _this.CandidateCommonServices = candidateCommonServices;
 
+
+        $scope.employerInformation = [
+         {
+             id: 'emp',
+             empname: '',
+             empaddr: '',
+             designation: '',
+             jdate: [{}],
+             rdate: [{}],
+             reason: '',
+             hrname: '',
+             hraddr:''
+         }
+        ];
+
+        $scope.addEmployerDetails = function () {           
+            var addEmpDetails = $scope.employerInformation.length + 1;
+            $scope.addEmpDetails.push({
+                'id': 'emp', 'empname': '', 'empaddr': '', 'designation': '', 'jdate': [{}], 'rdate': [{}],
+                'reason': '','hrname': '','hraddr': ''});
+
+        };
+
+        $scope.removeEmployerDetails = function (index) {
+            $scope.employerInformation.splice(index, 1);
+        };
+
         $scope.join = {
             opened: false
         };
