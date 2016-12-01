@@ -19,43 +19,15 @@ namespace Prft.Talent.Data.Migrations
         protected override void Seed(TalentContext context)
         {
             //  This method will be called after migrating to the latest version.
-
-            SeedAddressType(context);
             SeedCountries(context);
             SeedStates(context);
             SeedUniversities(context);
             SeedSkills(context);
             SeedColleges(context);
             SeedCandidates(context);
-
         }
 
-        #region AddressType
-        private static void SeedAddressType(TalentContext context)
-        {
-            //Address Type
-            context.addresstypes.AddOrUpdate(
-                a => a.Code,
-                new addresstype
-                {
-                    Code = "C",
-                    Description = "Communication Address",
-                    IsActive = true,
-                    CreatedDate = DateTime.Now,
-                    LastUpdatedDate = DateTime.Now,
 
-                },
-                new addresstype
-                {
-                    Code = "P",
-                    Description = "Permanent Address",
-                    IsActive = true,
-                    CreatedDate = DateTime.Now,
-                    LastUpdatedDate = DateTime.Now,
-                }
-            );
-        }
-        #endregion
         #region Country
         private static void SeedCountries(TalentContext context)
         {
@@ -210,7 +182,6 @@ namespace Prft.Talent.Data.Migrations
                     LastName = "Karthick",
                     DOB = DateTime.Parse("1991/07/22"),
                     FatherName = "Karthick",
-                    MotherName = "Swathy",
                     Nationality = "Indian",
                     Email = "priyanka.karthick@hotmail.com",
                     Mobile = "9997865432",
@@ -226,7 +197,6 @@ namespace Prft.Talent.Data.Migrations
                      LastName = "BalaKrishnan",
                      DOB = DateTime.Parse("1993/07/22"),
                      FatherName = "BalaKrishnan",
-                     MotherName = "Radhika",
                      Nationality = "Indian",
                      Email = "madhumitha.radhika@gmail.com",
                      Mobile = "9894345672",
@@ -239,6 +209,6 @@ namespace Prft.Talent.Data.Migrations
                 );
         }
         #endregion
-      
+
     }
 }

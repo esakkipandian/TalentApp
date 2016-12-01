@@ -7,13 +7,13 @@ namespace Prft.Talent.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Sprint21 : IMigrationMetadata
+    public sealed partial class Sprint22 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Sprint21));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Sprint22));
         
         string IMigrationMetadata.Id
         {
-            get { return "201612011052287_Sprint-2.1"; }
+            get { return "201612011532134_Sprint-2.2"; }
         }
         
         string IMigrationMetadata.Source

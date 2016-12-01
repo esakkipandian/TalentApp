@@ -31,6 +31,12 @@ namespace Prft.Talent.Data.Entities
         [StringLength(200)]
         public string LeavingReason { get; set; }
 
+        [StringLength(200)]
+        public string ContactPerson { get; set; }
+
+        [StringLength(45)]
+        public string ContactNumber { get; set; }
+
         [Column(TypeName = "bit")]
         public bool? IsActive { get; set; }
 

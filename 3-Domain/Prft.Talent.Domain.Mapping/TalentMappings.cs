@@ -10,14 +10,13 @@ namespace Prft.Talent.Domain.Mapping
     {
         public static void RegisterTalentMappings(IProfileExpression profile)
         {
-            profile.CreateMap<addresstype, AddressType>().ReverseMap();
             profile.CreateMap<candidate, Candidates>()
                  .ForMember(x => x.FullName, map => map.MapFrom(c => c.FirstName + " " + c.LastName))
                 .ReverseMap();
             profile.CreateMap<candidate, PersonalInformation>()
                 .ForMember(x => x.CandidateId, map => map.MapFrom(c => c.PK)).ReverseMap();
-                //.ForMember(x=>x.NoticePeriod,map=>map.MapFrom(c=>c.NoticePeriod)).ReverseMap();
-           
+            //.ForMember(x=>x.NoticePeriod,map=>map.MapFrom(c=>c.NoticePeriod)).ReverseMap();
+
             profile.CreateMap<college, Colleges>()
                   .ForMember(x => x.CollegeCode, map => map.MapFrom(c => c.Code))
                   .ForMember(x => x.CollegeName, map => map.MapFrom(c => c.Description))
@@ -31,7 +30,7 @@ namespace Prft.Talent.Domain.Mapping
                   .ForMember(x => x.Id, map => map.MapFrom(c => c.PK))
 
                 .ReverseMap();
-            profile.CreateMap<candidateeducation, EducationalInformation>()              
+            profile.CreateMap<candidateeducation, EducationalInformation>()
             .ForMember(x => x.PassedOut, map => map.MapFrom(c => c.YearOfPassing))
             .ForMember(x => x.Course, map => map.MapFrom(c => c.DegreeName))
             .ForMember(x => x.Specialization, map => map.MapFrom(c => c.Specialization))
@@ -43,16 +42,16 @@ namespace Prft.Talent.Domain.Mapping
             .ForMember(x => x.CourseType, map => map.MapFrom(c => c.CourseType)).ReverseMap()
             .ForMember(x => x.UniversityId, map => map.MapFrom(c => c.UniversityId)).ReverseMap()
             .ForMember(x => x.PK, map => map.MapFrom(c => c.PK)).ReverseMap();
-            
+
 
             profile.CreateMap<skill, SkillSet>().ReverseMap();
 
             profile.CreateMap<candidatedocument, CandidateDocument>()
                    .ForMember(x => x.CandidateId, map => map.MapFrom(c => c.CandidateId)).ReverseMap();
-            
+
 
             profile.CreateMap<candidateskill, CandidateSkillSet>().ReverseMap();
-                   // .ForMember(x => x.CandidateSkillSetId, map => map.MapFrom(c => c.PK)).ReverseMap();
+            // .ForMember(x => x.CandidateSkillSetId, map => map.MapFrom(c => c.PK)).ReverseMap();
 
         }
     }

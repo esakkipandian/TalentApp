@@ -49,9 +49,9 @@ namespace Prft.Talent.Data.Entities
         [StringLength(100)]
         public string ModifiedBy { get; set; }
 
-        public int CourseType { get; set; }
+        public int? Qualification { get; set; }
 
-        public int Qualification { get; set; }
+        public int? CourseType { get; set; }
 
         public virtual candidate candidate { get; set; }
 

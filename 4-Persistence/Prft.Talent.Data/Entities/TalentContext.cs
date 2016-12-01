@@ -9,9 +9,8 @@ namespace Prft.Talent.Data.Entities
         {
         }
 
-        public virtual DbSet<addresstype> addresstypes { get; set; }
+        public virtual DbSet<backofficeinformation> backofficeinformations { get; set; }
         public virtual DbSet<candidate> candidates { get; set; }
-        public virtual DbSet<candidateaddress> candidateaddresses { get; set; }
         public virtual DbSet<candidatedocument> candidatedocuments { get; set; }
         public virtual DbSet<candidateeducation> candidateeducations { get; set; }
         public virtual DbSet<candidatefeedback> candidatefeedbacks { get; set; }
@@ -27,27 +26,9 @@ namespace Prft.Talent.Data.Entities
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<addresstype>()
-           .Property(e => e.Code)
-           .IsUnicode(false);
-
-            modelBuilder.Entity<addresstype>()
-                .Property(e => e.Description)
+            modelBuilder.Entity<backofficeinformation>()
+                .Property(e => e.ProjectDetails)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<addresstype>()
-                .Property(e => e.CreatedBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<addresstype>()
-                .Property(e => e.LastUpdatedBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<addresstype>()
-                .HasMany(e => e.candidateaddresses)
-                .WithRequired(e => e.addresstype)
-                .HasForeignKey(e => e.AddressTypeId)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<candidate>()
                 .Property(e => e.FirstName)
@@ -62,7 +43,11 @@ namespace Prft.Talent.Data.Entities
                 .IsUnicode(false);
 
             modelBuilder.Entity<candidate>()
-                .Property(e => e.MotherName)
+                .Property(e => e.PermanentAddress)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<candidate>()
+                .Property(e => e.CommunicationAddress)
                 .IsUnicode(false);
 
             modelBuilder.Entity<candidate>()
@@ -90,7 +75,12 @@ namespace Prft.Talent.Data.Entities
                 .IsUnicode(false);
 
             modelBuilder.Entity<candidate>()
-                .HasMany(e => e.candidateaddresses)
+                .HasMany(e => e.backofficeinformations)
+                .WithOptional(e => e.candidate)
+                .HasForeignKey(e => e.CandidateId);
+
+            modelBuilder.Entity<candidate>()
+                .HasMany(e => e.candidatefeedbacks)
                 .WithRequired(e => e.candidate)
                 .HasForeignKey(e => e.CandidateId)
                 .WillCascadeOnDelete(false);
@@ -108,12 +98,6 @@ namespace Prft.Talent.Data.Entities
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<candidate>()
-                .HasMany(e => e.candidatefeedbacks)
-                .WithRequired(e => e.candidate)
-                .HasForeignKey(e => e.CandidateId)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<candidate>()
                 .HasMany(e => e.candidateskills)
                 .WithRequired(e => e.candidate)
                 .HasForeignKey(e => e.CandidateId)
@@ -124,26 +108,6 @@ namespace Prft.Talent.Data.Entities
                 .WithRequired(e => e.candidate)
                 .HasForeignKey(e => e.CandidateId)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<candidateaddress>()
-                .Property(e => e.AddressLine1)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<candidateaddress>()
-                .Property(e => e.AddressLine2)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<candidateaddress>()
-                .Property(e => e.City)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<candidateaddress>()
-                .Property(e => e.CreatedBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<candidateaddress>()
-                .Property(e => e.ModifiedBy)
-                .IsUnicode(false);
 
             modelBuilder.Entity<candidatedocument>()
                 .Property(e => e.DocumentName)
@@ -220,6 +184,14 @@ namespace Prft.Talent.Data.Entities
                 .IsUnicode(false);
 
             modelBuilder.Entity<candidateworkexperience>()
+                .Property(e => e.ContactPerson)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<candidateworkexperience>()
+                .Property(e => e.ContactNumber)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<candidateworkexperience>()
                 .Property(e => e.CreatedBy)
                 .IsUnicode(false);
 
@@ -263,11 +235,6 @@ namespace Prft.Talent.Data.Entities
             modelBuilder.Entity<country>()
                 .Property(e => e.LastUpdatedBy)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<country>()
-                .HasMany(e => e.candidateaddresses)
-                .WithOptional(e => e.country)
-                .HasForeignKey(e => e.CountryId);
 
             modelBuilder.Entity<evaluation>()
                 .Property(e => e.EvaluationComments)
@@ -324,11 +291,6 @@ namespace Prft.Talent.Data.Entities
             modelBuilder.Entity<state>()
                 .Property(e => e.LastUpdatedBy)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<state>()
-                .HasMany(e => e.candidateaddresses)
-                .WithOptional(e => e.state)
-                .HasForeignKey(e => e.StateId);
 
             modelBuilder.Entity<university>()
                 .Property(e => e.Code)

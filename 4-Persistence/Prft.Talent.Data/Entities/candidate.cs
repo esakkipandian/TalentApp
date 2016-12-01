@@ -12,10 +12,10 @@ namespace Prft.Talent.Data.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public candidate()
         {
-            candidateaddresses = new HashSet<candidateaddress>();
+            backofficeinformations = new HashSet<backofficeinformation>();
+            candidatefeedbacks = new HashSet<candidatefeedback>();
             candidatedocuments = new HashSet<candidatedocument>();
             candidateeducations = new HashSet<candidateeducation>();
-            candidatefeedbacks = new HashSet<candidatefeedback>();
             candidateskills = new HashSet<candidateskill>();
             candidateworkexperiences = new HashSet<candidateworkexperience>();
         }
@@ -37,8 +37,11 @@ namespace Prft.Talent.Data.Entities
         [StringLength(100)]
         public string FatherName { get; set; }
 
-        [StringLength(100)]
-        public string MotherName { get; set; }
+        [StringLength(3000)]
+        public string PermanentAddress { get; set; }
+
+        [StringLength(3000)]
+        public string CommunicationAddress { get; set; }
 
         [StringLength(45)]
         public string Nationality { get; set; }
@@ -70,16 +73,16 @@ namespace Prft.Talent.Data.Entities
         public string ModifiedBy { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<candidateaddress> candidateaddresses { get; set; }
+        public virtual ICollection<backofficeinformation> backofficeinformations { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<candidatefeedback> candidatefeedbacks { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidatedocument> candidatedocuments { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidateeducation> candidateeducations { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<candidatefeedback> candidatefeedbacks { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidateskill> candidateskills { get; set; }

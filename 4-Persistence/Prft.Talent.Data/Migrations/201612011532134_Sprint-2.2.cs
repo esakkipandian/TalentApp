@@ -3,52 +3,25 @@ namespace Prft.Talent.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class Sprint22 : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.addresstype",
+                "dbo.backofficeinformation",
                 c => new
                     {
                         PK = c.Int(nullable: false, identity: true),
-                        Code = c.String(nullable: false, maxLength: 50, unicode: false),
-                        Description = c.String(maxLength: 250, unicode: false),
-                        IsActive = c.Boolean(nullable: false, storeType: "bit"),
-                        CreatedBy = c.String(maxLength: 100, unicode: false),
-                        CreatedDate = c.DateTime(precision: 0),
-                        LastUpdatedBy = c.String(maxLength: 100, unicode: false),
-                        LastUpdatedDate = c.DateTime(precision: 0),
-                    })
-                .PrimaryKey(t => t.PK);
-            
-            CreateTable(
-                "dbo.candidateaddress",
-                c => new
-                    {
-                        PK = c.Int(nullable: false, identity: true),
-                        CandidateId = c.Int(nullable: false),
-                        AddressTypeId = c.Int(nullable: false),
-                        AddressLine1 = c.String(maxLength: 150, unicode: false),
-                        AddressLine2 = c.String(maxLength: 150, unicode: false),
-                        City = c.String(maxLength: 150, unicode: false),
-                        StateId = c.Int(),
-                        CountryId = c.Int(),
-                        IsActive = c.Boolean(nullable: false, storeType: "bit"),
-                        CreatedDate = c.DateTime(precision: 0),
-                        CreatedBy = c.String(maxLength: 100, unicode: false),
-                        ModifiedDate = c.DateTime(precision: 0),
-                        ModifiedBy = c.String(maxLength: 100, unicode: false),
+                        CurrentCTC = c.Decimal(precision: 18, scale: 2),
+                        VariablePay = c.Decimal(precision: 18, scale: 2),
+                        LastIncrementedDate = c.DateTime(precision: 0),
+                        Form16Verified = c.Boolean(),
+                        ProjectDetails = c.String(maxLength: 255, unicode: false),
+                        CandidateId = c.Int(),
                     })
                 .PrimaryKey(t => t.PK)
                 .ForeignKey("dbo.candidate", t => t.CandidateId)
-                .ForeignKey("dbo.country", t => t.CountryId)
-                .ForeignKey("dbo.state", t => t.StateId)
-                .ForeignKey("dbo.addresstype", t => t.AddressTypeId)
-                .Index(t => t.CandidateId)
-                .Index(t => t.AddressTypeId)
-                .Index(t => t.StateId)
-                .Index(t => t.CountryId);
+                .Index(t => t.CandidateId);
             
             CreateTable(
                 "dbo.candidate",
@@ -59,7 +32,8 @@ namespace Prft.Talent.Data.Migrations
                         LastName = c.String(nullable: false, maxLength: 100, unicode: false),
                         DOB = c.DateTime(nullable: false, precision: 0),
                         FatherName = c.String(maxLength: 100, unicode: false),
-                        MotherName = c.String(maxLength: 100, unicode: false),
+                        PermanentAddress = c.String(maxLength: 3000, unicode: false),
+                        CommunicationAddress = c.String(maxLength: 3000, unicode: false),
                         Nationality = c.String(maxLength: 45, unicode: false),
                         Email = c.String(nullable: false, maxLength: 100, unicode: false),
                         Mobile = c.String(maxLength: 15, unicode: false),
@@ -111,8 +85,8 @@ namespace Prft.Talent.Data.Migrations
                         CreatedBy = c.String(maxLength: 100, unicode: false),
                         ModifiedDate = c.DateTime(precision: 0),
                         ModifiedBy = c.String(maxLength: 100, unicode: false),
-                        CourseType = c.Int(nullable: false),
-                        Qualification = c.Int(nullable: false),
+                        Qualification = c.Int(),
+                        CourseType = c.Int(),
                     })
                 .PrimaryKey(t => t.PK)
                 .ForeignKey("dbo.college", t => t.CollegeId)
@@ -242,6 +216,8 @@ namespace Prft.Talent.Data.Migrations
                         StartDate = c.DateTime(precision: 0),
                         EndDate = c.DateTime(precision: 0),
                         LeavingReason = c.String(maxLength: 200, unicode: false),
+                        ContactPerson = c.String(maxLength: 200, unicode: false),
+                        ContactNumber = c.String(maxLength: 45, unicode: false),
                         IsActive = c.Boolean(storeType: "bit"),
                         CreatedDate = c.DateTime(precision: 0),
                         CreatedBy = c.String(maxLength: 100, unicode: false),
@@ -286,9 +262,6 @@ namespace Prft.Talent.Data.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.candidateaddress", "AddressTypeId", "dbo.addresstype");
-            DropForeignKey("dbo.candidateaddress", "StateId", "dbo.state");
-            DropForeignKey("dbo.candidateaddress", "CountryId", "dbo.country");
             DropForeignKey("dbo.candidateworkexperience", "CandidateId", "dbo.candidate");
             DropForeignKey("dbo.candidateskill", "CandidateId", "dbo.candidate");
             DropForeignKey("dbo.candidateskill", "SkillId", "dbo.skill");
@@ -299,7 +272,7 @@ namespace Prft.Talent.Data.Migrations
             DropForeignKey("dbo.candidateeducation", "UniversityId", "dbo.university");
             DropForeignKey("dbo.candidateeducation", "CollegeId", "dbo.college");
             DropForeignKey("dbo.candidatedocument", "CandidateId", "dbo.candidate");
-            DropForeignKey("dbo.candidateaddress", "CandidateId", "dbo.candidate");
+            DropForeignKey("dbo.backofficeinformation", "CandidateId", "dbo.candidate");
             DropIndex("dbo.candidateworkexperience", new[] { "CandidateId" });
             DropIndex("dbo.candidateskill", new[] { "SkillId" });
             DropIndex("dbo.candidateskill", new[] { "CandidateId" });
@@ -310,10 +283,7 @@ namespace Prft.Talent.Data.Migrations
             DropIndex("dbo.candidateeducation", new[] { "CollegeId" });
             DropIndex("dbo.candidateeducation", new[] { "CandidateId" });
             DropIndex("dbo.candidatedocument", new[] { "CandidateId" });
-            DropIndex("dbo.candidateaddress", new[] { "CountryId" });
-            DropIndex("dbo.candidateaddress", new[] { "StateId" });
-            DropIndex("dbo.candidateaddress", new[] { "AddressTypeId" });
-            DropIndex("dbo.candidateaddress", new[] { "CandidateId" });
+            DropIndex("dbo.backofficeinformation", new[] { "CandidateId" });
             DropTable("dbo.state");
             DropTable("dbo.country");
             DropTable("dbo.candidateworkexperience");
@@ -327,8 +297,7 @@ namespace Prft.Talent.Data.Migrations
             DropTable("dbo.candidateeducation");
             DropTable("dbo.candidatedocument");
             DropTable("dbo.candidate");
-            DropTable("dbo.candidateaddress");
-            DropTable("dbo.addresstype");
+            DropTable("dbo.backofficeinformation");
         }
     }
 }

@@ -55,9 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\addresstype.cs" />
+    <Compile Include="Entities\backofficeinformation.cs" />
     <Compile Include="Entities\candidate.cs" />
-    <Compile Include="Entities\candidateaddress.cs" />
     <Compile Include="Entities\candidatedocument.cs" />
     <Compile Include="Entities\candidateeducation.cs" />
     <Compile Include="Entities\candidatefeedback.cs" />
@@ -71,13 +70,9 @@
     <Compile Include="Entities\state.cs" />
     <Compile Include="Entities\TalentContext.cs" />
     <Compile Include="Entities\university.cs" />
-    <Compile Include="Migrations\201612010955448_Initial.cs" />
-    <Compile Include="Migrations\201612010955448_Initial.Designer.cs">
-      <DependentUpon>201612010955448_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612011052287_Sprint-2.1.cs" />
-    <Compile Include="Migrations\201612011052287_Sprint-2.1.Designer.cs">
-      <DependentUpon>201612011052287_Sprint-2.1.cs</DependentUpon>
+    <Compile Include="Migrations\201612011532134_Sprint-2.2.cs" />
+    <Compile Include="Migrations\201612011532134_Sprint-2.2.Designer.cs">
+      <DependentUpon>201612011532134_Sprint-2.2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PrftDatabaseContext.cs" />
@@ -88,11 +83,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612010955448_Initial.resx">
-      <DependentUpon>201612010955448_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612011052287_Sprint-2.1.resx">
-      <DependentUpon>201612011052287_Sprint-2.1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612011532134_Sprint-2.2.resx">
+      <DependentUpon>201612011532134_Sprint-2.2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

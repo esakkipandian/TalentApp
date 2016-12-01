@@ -9,12 +9,6 @@ namespace Prft.Talent.Data.Entities
     [Table("country")]
     public partial class country
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public country()
-        {
-            candidateaddresses = new HashSet<candidateaddress>();
-        }
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PK { get; set; }
@@ -37,8 +31,5 @@ namespace Prft.Talent.Data.Entities
         public string LastUpdatedBy { get; set; }
 
         public DateTime? LastUpdatedDate { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<candidateaddress> candidateaddresses { get; set; }
     }
 }
