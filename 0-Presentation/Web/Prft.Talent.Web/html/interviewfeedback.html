@@ -1,247 +1,245 @@
-
-<form role="form" class="form-horizontal" style="background:#fff; padding:15px" novalidate>  
-    <div class="panel panel-success perfhr-panel">
-        <div class="panel-heading">
-            <h1 class="section-title ng-binding">Interview Feedback</h1>
-        </div>
-    </div>  
-    <div class="row">
-        <div class="col-sm-6 col-lg-6">
-            <div class="form-group">
-                <label for="inputName" class="col-md-4 control-label">Candidate Name:</label>
-                <div class="col-md-8">
-                    <input type="text" id="inputName" ng-model="data.candidate_Name" class="form-control textbox" placeholder="Candidate Name" value="{{data.candidate_Name}}">
+<div ng-include src="'html/templates/panelTemplate.html'"></div>
+<!-- Modal -->
+<div class="modal fade" id="interviewForm" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form role="form" class="form-horizontal" style="background:#fff; padding:15px" novalidate>                
+                <div class="modal-body">
+                    <div class="panel panel-success perfhr-panel">
+                        <div class="panel-heading">
+                            <h1 class="section-title ng-binding">Interview Feedback</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="inputName" class="col-md-4 control-label">Candidate Name:</label>
+                                <div class="col-md-8">
+                                    <input type="text" id="inputName" ng-model="data.candidate_Name" class="form-control textbox" placeholder="Candidate Name" value="{{data.candidate_Name}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="in" class="col-md-4 control-label"> Interviewer Name:</label>
+                                <div class="col-md-8">
+                                    <input type="text" id="interviewerName" ng-model="data.interviewer_Name" class="form-control textbox" placeholder="Interviewer Name" value="{{data.interviewer_Name}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="doi" class="col-md-4 control-label">Date of Interview:</label>
+                                <div class="col-md-8">
+                                    <input type="text" name="D.O.I" class="form-control datepicker" uib-datepicker-popup="dd-MMM-yyyy" ng-model="dateofinterview" is-open="doi.opened"
+                                           placeholder="Interview Date" required ng-minlength="11" validType="date" ng-maxlength="11" close-text="Close" ng-click="doiDate()" style="width:250px" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="moi" class="col-md-4 control-label">Applied Role:</label>
+                                <div class="col-md-8">
+                                    <input class="form-control textbox" id="appliedrole" name="appliedrole" type="text" ng-model="data.appliedrole" placeholder="Applied Role" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <table class="table table-bordered table-striped" style="border-radius: 25px;padding: 10px;border-collapse:separate">
+                        <thead style="background:#e74c3c">
+                            <tr>
+                                <td class="col-sm-4 col-lg-4">
+                                    <span style="color:#fff">Assessment</span>
+                                </td>
+                                <td class="col-sm-1 col-lg-1">
+                                    <span style="color:#fff">Rating</span>
+                                </td>
+                                <td class="col-sm-6 col-lg-6">
+                                    <span style="color:#fff">Comments</span>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label for="text1">Educational Background</label></td>
+                                <td>
+                                    <select class="form-control" id="sel1">
+                                        <option>NE</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" id="text1" class="form-control" ng-model="data.f1"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="text2">Technical Knowledge</label></td>
+                                <td>
+                                    <select class="form-control" id="sel1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="text2" ng-model="data.f2"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="text3">Experience Level</label></td>
+                                <td>
+                                    <select class="form-control" id="sel1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="text3" ng-model="data.f3"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="text4">Application of Skills</label></td>
+                                <td>
+                                    <select class="form-control" id="sel1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="text4" ng-model="data.f4"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="text5">Ability to Demonstrate</label></td>
+                                <td>
+                                    <select class="form-control" id="sel1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="text5" ng-model="data.f5"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="text6">Communicational Skills</label></td>
+                                <td>
+                                    <select class="form-control" id="sel1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="text6" ng-model="data.f6"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="text7">Analytical / Logical Skills</label></td>
+                                <td>
+                                    <select class="form-control" id="sel1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="text7" ng-model="data.f7"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="text8">Leadership Qualities</label></td>
+                                <td>
+                                    <select class="form-control" id="sel1">
+                                        <option>NE</option>
+                                        <option>Yes</option>
+                                        <option>No</option>                                        
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="text8" ng-model="data.f8"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="text9">Interest Level</label></td>
+                                <td>
+                                    <select class="form-control" id="sel1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="text9" ng-model="data.f9"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="text10">Decision Making Skills</label></td>
+                                <td>
+                                    <select class="form-control" id="sel1">
+                                        <option>NE</option>
+                                        <option>Yes</option>
+                                        <option>No</option>  
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="text10" ng-model="data.f10"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="sr" class="col-md-4  control-label"> Suggested role :</label>
+                                <div class="col-md-8">
+                                    <ol class="form-control nya-bs-select textbox" name="Suggested Role" title="Select" data-live-search="true" validType="select"
+                                        disabled="isProfile" ng-model="data.interviewerid" ng-selected="{{data.interviewerid}}" style="width:250px" required>
+                                        <li nya-bs-option="skillSet in skillSets | orderBy: 'skillSet' track by skillSet.pk" data-value="skillSet.pk">
+                                            <a>
+                                                {{data.code}}
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="doi" class="col-md-4  control-label">Recommendations :</label>
+                                <div class="col-md-8">
+                                    <select class="form-control dropdown" id="status" ng-model="data.recommendations" style="width:250px" required>
+                                        <option>Selected</option>
+                                        <option>Not Selected</option>
+                                        <option>On-Hold</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="inputName" class="col-md-2  control-label">Feedback:</label>
+                        <div class="col-md-9">
+                            <textarea id="inputName" ng-model="data.candidate_Name" class="form-control" rows="5" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-save" ng-show="!data.pk" action="save">Save</button>
+                        <button type="submit" class="btn btn-update" ng-show="data.pk" action="update">Update</button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
-        <div class="col-sm-6 col-lg-6">
-            <div class="form-group">
-                <label for="in" class="col-md-4 control-label"> Interviewer Name:</label>
-                <div class="col-md-8">
-                    <ol class="form-control nya-bs-select textbox" name="Interviewer Name" title="Select" data-live-search="true" validType="select"
-                        disabled="isProfile" ng-model="data.interviewerid" ng-selected="{{data.interviewerid}}" style="width:250px" required>
-                        <li nya-bs-option="skillSet in skillSets | orderBy: 'skillSet' track by skillSet.pk" data-value="skillSet.pk">
-                            <a>
-                                {{data.code}}
-                                <span class="glyphicon glyphicon-ok check-mark"></span>
-                            </a>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>       
     </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-6 col-lg-6">
-            <div class="form-group">
-                <label for="doi" class="col-md-4 control-label">Date of Interview:</label>
-                <div class="col-md-8">
-                    <input type="text" name="D.O.I" class="form-control datepicker" uib-datepicker-popup="dd-MMM-yyyy" ng-model="data.dateofinterview" is-open="doi.opened"
-                           placeholder="Interview Date" required ng-minlength="11" validType="date" ng-maxlength="11" close-text="Close" ng-click="doiDate()" style="width:250px" />
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-6">
-            <div class="form-group">
-                <label for="moi" class="col-md-4 control-label">Applied Role:</label>
-                <div class="col-md-8">
-                    <input class="form-control textbox" id="appliedrole" name="appliedrole" type="text" ng-model="data.appliedrole" placeholder="Applied Role" required>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>    
-    <br>
-    <table class="table table-bordered table-striped" style="border-radius: 25px;padding: 10px;border-collapse:separate">
-        <thead style="background:#e74c3c">
-            <tr>
-                <td class="col-sm-4 col-lg-4">
-                    <span style="font-weight:bold">Assessment</span>
-                </td>
-                <td class="col-sm-1 col-lg-1">
-                    <span style="font-weight:bold">Rating</span>
-                </td>
-                <td class="col-sm-6 col-lg-6">
-                    <span style="font-weight:bold">Comments</span>
-                </td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><label for="text1">Educational Background</label></td>
-                <td>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </td>
-                <td><input type="text" id="text1" class="form-control" id="usr" ng-model="data.f1"></td>
-            </tr>
-            <tr>
-                <td><label for="text2">Technical Knowledge</label></td>
-                <td>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </td>
-                <td><input type="text" class="form-control" id="text2" ng-model="data.f2"></td>
-            </tr>
-            <tr>
-                <td><label for="text3">Experience Level</label></td>
-                <td>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </td>
-                <td><input type="text" class="form-control" id="text3" ng-model="data.f3"></td>
-            </tr>
-            <tr>
-                <td><label for="text4">Application of Skills</label></td>
-                <td>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </td>
-                <td><input type="text" class="form-control" id="text4" ng-model="data.f4"></td>
-            </tr>
-            <tr>
-                <td><label for="text5">Ability to Demonstrate</label></td>
-                <td>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </td>
-                <td><input type="text" class="form-control" id="text5" ng-model="data.f5"></td>
-            </tr>
-            <tr>
-                <td><label for="text6">Communicational Skills</label></td>
-                <td>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </td>
-                <td><input type="text" class="form-control" id="text6" ng-model="data.f6"></td>
-            </tr>
-            <tr>
-                <td><label for="text7">Analytical / Logical Skills</label></td>
-                <td>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </td>
-                <td><input type="text" class="form-control" id="text7" ng-model="data.f7"></td>
-            </tr>
-            <tr>
-                <td><label for="text8">Leadership Qualities</label></td>
-                <td>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </td>
-                <td><input type="text" class="form-control" id="text8" ng-model="data.f8"></td>
-            </tr>
-            <tr>
-                <td><label for="text9">Interest Level</label></td>
-                <td>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </td>
-                <td><input type="text" class="form-control" id="text9" ng-model="data.f9"></td>
-            </tr>
-            <tr>
-                <td><label for="text10">Decision Making Skills</label></td>
-                <td>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </td>
-                <td><input type="text" class="form-control" id="text10" ng-model="data.f10"></td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <div class="row">
-        <div class="col-sm-6 col-lg-6">
-            <div class="form-group">
-                <label for="sr" class="col-md-4  control-label"> Suggested role :</label>
-                <div class="col-md-8">
-                    <ol class="form-control nya-bs-select textbox" name="Suggested Role" title="Select" data-live-search="true" validType="select"
-                        disabled="isProfile" ng-model="data.interviewerid" ng-selected="{{data.interviewerid}}" style="width:250px" required>
-                        <li nya-bs-option="skillSet in skillSets | orderBy: 'skillSet' track by skillSet.pk" data-value="skillSet.pk">
-                            <a>
-                                {{data.code}}
-                                <span class="glyphicon glyphicon-ok check-mark"></span>
-                            </a>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-6">
-            <div class="form-group">
-                <label for="doi" class="col-md-4  control-label">Recommendations :</label>
-                <div class="col-md-8">
-                    <select class="form-control dropdown" id="status" ng-model="data.recommendations" style="width:250px" required>
-                        <option>Selected</option>
-                        <option>Not Selected</option>
-                        <option>On-Hold</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="inputName" class="col-md-2  control-label">Feedback:</label>
-        <div class="col-md-9">
-            <textarea id="inputName" ng-model="data.candidate_Name" class="form-control" rows="5" required></textarea>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-save" ng-show="!data.pk" action="save">Save</button>
-        <button type="submit" class="btn btn-update" ng-show="data.pk" action="update">Update</button>
-    </div>
-
-</form>
+</div>
