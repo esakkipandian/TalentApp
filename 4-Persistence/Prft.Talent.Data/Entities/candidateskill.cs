@@ -9,7 +9,8 @@ namespace Prft.Talent.Data.Entities
     [Table("candidateskill")]
     public partial class candidateskill
     {
-        [Key]        
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PK { get; set; }
 
         public int CandidateId { get; set; }

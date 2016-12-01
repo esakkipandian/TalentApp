@@ -10,6 +10,7 @@ namespace Prft.Talent.Data.Entities
     public partial class candidateeducation
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PK { get; set; }
 
         public int CandidateId { get; set; }
@@ -48,12 +49,14 @@ namespace Prft.Talent.Data.Entities
         [StringLength(100)]
         public string ModifiedBy { get; set; }
 
+        public int CourseType { get; set; }
+
+        public int Qualification { get; set; }
+
         public virtual candidate candidate { get; set; }
 
         public virtual college college1 { get; set; }
 
         public virtual university university1 { get; set; }
-        public int Qualification { get; set; }
-        public string CourseType { get; set; }
     }
 }

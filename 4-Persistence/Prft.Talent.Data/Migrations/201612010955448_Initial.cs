@@ -3,7 +3,7 @@ namespace Prft.Talent.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialModel : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -74,10 +74,29 @@ namespace Prft.Talent.Data.Migrations
                 .PrimaryKey(t => t.PK);
             
             CreateTable(
+                "dbo.candidatedocument",
+                c => new
+                    {
+                        PK = c.Int(nullable: false, identity: true),
+                        CandidateId = c.Int(nullable: false),
+                        DocumentName = c.String(nullable: false, maxLength: 100, unicode: false),
+                        DocumentType = c.String(nullable: false, maxLength: 45, unicode: false),
+                        DocumentContent = c.Binary(nullable: false, storeType: "blob"),
+                        IsActive = c.Boolean(nullable: false, storeType: "bit"),
+                        CreatedDate = c.DateTime(precision: 0),
+                        CreatedBy = c.String(maxLength: 100, unicode: false),
+                        ModifiedDate = c.DateTime(precision: 0),
+                        ModifiedBy = c.String(maxLength: 100, unicode: false),
+                    })
+                .PrimaryKey(t => t.PK)
+                .ForeignKey("dbo.candidate", t => t.CandidateId)
+                .Index(t => t.CandidateId);
+            
+            CreateTable(
                 "dbo.candidateeducation",
                 c => new
                     {
-                        PK = c.Int(nullable: false),
+                        PK = c.Int(nullable: false, identity: true),
                         CandidateId = c.Int(nullable: false),
                         DegreeName = c.String(maxLength: 100, unicode: false),
                         Specialization = c.String(maxLength: 200, unicode: false),
@@ -92,13 +111,15 @@ namespace Prft.Talent.Data.Migrations
                         CreatedBy = c.String(maxLength: 100, unicode: false),
                         ModifiedDate = c.DateTime(precision: 0),
                         ModifiedBy = c.String(maxLength: 100, unicode: false),
+                        CourseType = c.Int(nullable: false),
+                        Qualification = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.PK)
-                .ForeignKey("dbo.college", t => t.PK)
+                .ForeignKey("dbo.college", t => t.CollegeId)
                 .ForeignKey("dbo.university", t => t.UniversityId)
                 .ForeignKey("dbo.candidate", t => t.CandidateId)
-                .Index(t => t.PK)
                 .Index(t => t.CandidateId)
+                .Index(t => t.CollegeId)
                 .Index(t => t.UniversityId);
             
             CreateTable(
@@ -132,10 +153,51 @@ namespace Prft.Talent.Data.Migrations
                 .PrimaryKey(t => t.PK);
             
             CreateTable(
+                "dbo.candidatefeedback",
+                c => new
+                    {
+                        PK = c.Int(nullable: false, identity: true),
+                        CandidateId = c.Int(nullable: false),
+                        InterviewDate = c.DateTime(precision: 0),
+                        InterviewerId = c.Int(),
+                        DateOfInterview = c.DateTime(nullable: false, precision: 0),
+                        ApppliedPosition = c.String(maxLength: 100, unicode: false),
+                    })
+                .PrimaryKey(t => t.PK)
+                .ForeignKey("dbo.candidate", t => t.CandidateId)
+                .Index(t => t.CandidateId);
+            
+            CreateTable(
+                "dbo.evaluation",
+                c => new
+                    {
+                        PK = c.Int(nullable: false, identity: true),
+                        CandidateFeedbackId = c.Int(nullable: false),
+                        EvaluationSkillId = c.Int(nullable: false),
+                        Rating = c.Int(),
+                        EvaluationComments = c.String(maxLength: 500, unicode: false),
+                    })
+                .PrimaryKey(t => t.PK)
+                .ForeignKey("dbo.skillevaluation", t => t.EvaluationSkillId)
+                .ForeignKey("dbo.candidatefeedback", t => t.CandidateFeedbackId)
+                .Index(t => t.CandidateFeedbackId)
+                .Index(t => t.EvaluationSkillId);
+            
+            CreateTable(
+                "dbo.skillevaluation",
+                c => new
+                    {
+                        PK = c.Int(nullable: false, identity: true),
+                        EvaluationSkillName = c.String(maxLength: 200, unicode: false),
+                        EvaluationSkillDescription = c.String(maxLength: 500, unicode: false),
+                    })
+                .PrimaryKey(t => t.PK);
+            
+            CreateTable(
                 "dbo.candidateskill",
                 c => new
                     {
-                        PK = c.Int(nullable: false),
+                        PK = c.Int(nullable: false, identity: true),
                         CandidateId = c.Int(nullable: false),
                         SkillId = c.Int(nullable: false),
                         Rating = c.Int(nullable: false),
@@ -172,7 +234,7 @@ namespace Prft.Talent.Data.Migrations
                 "dbo.candidateworkexperience",
                 c => new
                     {
-                        PK = c.Int(nullable: false),
+                        PK = c.Int(nullable: false, identity: true),
                         CandidateId = c.Int(nullable: false),
                         OrganizationName = c.String(maxLength: 300, unicode: false),
                         Designation = c.String(maxLength: 200, unicode: false),
@@ -230,16 +292,24 @@ namespace Prft.Talent.Data.Migrations
             DropForeignKey("dbo.candidateworkexperience", "CandidateId", "dbo.candidate");
             DropForeignKey("dbo.candidateskill", "CandidateId", "dbo.candidate");
             DropForeignKey("dbo.candidateskill", "SkillId", "dbo.skill");
+            DropForeignKey("dbo.candidatefeedback", "CandidateId", "dbo.candidate");
+            DropForeignKey("dbo.evaluation", "CandidateFeedbackId", "dbo.candidatefeedback");
+            DropForeignKey("dbo.evaluation", "EvaluationSkillId", "dbo.skillevaluation");
             DropForeignKey("dbo.candidateeducation", "CandidateId", "dbo.candidate");
             DropForeignKey("dbo.candidateeducation", "UniversityId", "dbo.university");
-            DropForeignKey("dbo.candidateeducation", "PK", "dbo.college");
+            DropForeignKey("dbo.candidateeducation", "CollegeId", "dbo.college");
+            DropForeignKey("dbo.candidatedocument", "CandidateId", "dbo.candidate");
             DropForeignKey("dbo.candidateaddress", "CandidateId", "dbo.candidate");
             DropIndex("dbo.candidateworkexperience", new[] { "CandidateId" });
             DropIndex("dbo.candidateskill", new[] { "SkillId" });
             DropIndex("dbo.candidateskill", new[] { "CandidateId" });
+            DropIndex("dbo.evaluation", new[] { "EvaluationSkillId" });
+            DropIndex("dbo.evaluation", new[] { "CandidateFeedbackId" });
+            DropIndex("dbo.candidatefeedback", new[] { "CandidateId" });
             DropIndex("dbo.candidateeducation", new[] { "UniversityId" });
+            DropIndex("dbo.candidateeducation", new[] { "CollegeId" });
             DropIndex("dbo.candidateeducation", new[] { "CandidateId" });
-            DropIndex("dbo.candidateeducation", new[] { "PK" });
+            DropIndex("dbo.candidatedocument", new[] { "CandidateId" });
             DropIndex("dbo.candidateaddress", new[] { "CountryId" });
             DropIndex("dbo.candidateaddress", new[] { "StateId" });
             DropIndex("dbo.candidateaddress", new[] { "AddressTypeId" });
@@ -249,9 +319,13 @@ namespace Prft.Talent.Data.Migrations
             DropTable("dbo.candidateworkexperience");
             DropTable("dbo.skill");
             DropTable("dbo.candidateskill");
+            DropTable("dbo.skillevaluation");
+            DropTable("dbo.evaluation");
+            DropTable("dbo.candidatefeedback");
             DropTable("dbo.university");
             DropTable("dbo.college");
             DropTable("dbo.candidateeducation");
+            DropTable("dbo.candidatedocument");
             DropTable("dbo.candidate");
             DropTable("dbo.candidateaddress");
             DropTable("dbo.addresstype");

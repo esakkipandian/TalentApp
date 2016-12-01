@@ -1,10 +1,6 @@
 namespace Prft.Talent.Data.Entities
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-
     [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public partial class TalentContext : DbContext
     {
@@ -18,19 +14,22 @@ namespace Prft.Talent.Data.Entities
         public virtual DbSet<candidateaddress> candidateaddresses { get; set; }
         public virtual DbSet<candidatedocument> candidatedocuments { get; set; }
         public virtual DbSet<candidateeducation> candidateeducations { get; set; }
+        public virtual DbSet<candidatefeedback> candidatefeedbacks { get; set; }
         public virtual DbSet<candidateskill> candidateskills { get; set; }
         public virtual DbSet<candidateworkexperience> candidateworkexperiences { get; set; }
         public virtual DbSet<college> colleges { get; set; }
         public virtual DbSet<country> countries { get; set; }
+        public virtual DbSet<evaluation> evaluations { get; set; }
         public virtual DbSet<skill> skills { get; set; }
+        public virtual DbSet<skillevaluation> skillevaluations { get; set; }
         public virtual DbSet<state> states { get; set; }
         public virtual DbSet<university> universities { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<addresstype>()
-                .Property(e => e.Code)
-                .IsUnicode(false);
+           .Property(e => e.Code)
+           .IsUnicode(false);
 
             modelBuilder.Entity<addresstype>()
                 .Property(e => e.Description)
@@ -97,7 +96,19 @@ namespace Prft.Talent.Data.Entities
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<candidate>()
+                .HasMany(e => e.candidatedocuments)
+                .WithRequired(e => e.candidate)
+                .HasForeignKey(e => e.CandidateId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<candidate>()
                 .HasMany(e => e.candidateeducations)
+                .WithRequired(e => e.candidate)
+                .HasForeignKey(e => e.CandidateId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<candidate>()
+                .HasMany(e => e.candidatefeedbacks)
                 .WithRequired(e => e.candidate)
                 .HasForeignKey(e => e.CandidateId)
                 .WillCascadeOnDelete(false);
@@ -110,12 +121,6 @@ namespace Prft.Talent.Data.Entities
 
             modelBuilder.Entity<candidate>()
                 .HasMany(e => e.candidateworkexperiences)
-                .WithRequired(e => e.candidate)
-                .HasForeignKey(e => e.CandidateId)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<candidate>()
-                .HasMany(e => e.candidatedocuments)
                 .WithRequired(e => e.candidate)
                 .HasForeignKey(e => e.CandidateId)
                 .WillCascadeOnDelete(false);
@@ -180,6 +185,16 @@ namespace Prft.Talent.Data.Entities
                 .Property(e => e.ModifiedBy)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<candidatefeedback>()
+                .Property(e => e.ApppliedPosition)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<candidatefeedback>()
+                .HasMany(e => e.evaluations)
+                .WithRequired(e => e.candidatefeedback)
+                .HasForeignKey(e => e.CandidateFeedbackId)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<candidateskill>()
                 .Property(e => e.CreatedBy)
                 .IsUnicode(false);
@@ -229,8 +244,9 @@ namespace Prft.Talent.Data.Entities
                 .IsUnicode(false);
 
             modelBuilder.Entity<college>()
-                .HasOptional(e => e.candidateeducation)
-                .WithRequired(e => e.college1);
+                .HasMany(e => e.candidateeducations)
+                .WithOptional(e => e.college1)
+                .HasForeignKey(e => e.CollegeId);
 
             modelBuilder.Entity<country>()
                 .Property(e => e.Code)
@@ -253,6 +269,10 @@ namespace Prft.Talent.Data.Entities
                 .WithOptional(e => e.country)
                 .HasForeignKey(e => e.CountryId);
 
+            modelBuilder.Entity<evaluation>()
+                .Property(e => e.EvaluationComments)
+                .IsUnicode(false);
+
             modelBuilder.Entity<skill>()
                 .Property(e => e.Code)
                 .IsUnicode(false);
@@ -273,6 +293,20 @@ namespace Prft.Talent.Data.Entities
                 .HasMany(e => e.candidateskills)
                 .WithRequired(e => e.skill)
                 .HasForeignKey(e => e.SkillId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<skillevaluation>()
+                .Property(e => e.EvaluationSkillName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<skillevaluation>()
+                .Property(e => e.EvaluationSkillDescription)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<skillevaluation>()
+                .HasMany(e => e.evaluations)
+                .WithRequired(e => e.skillevaluation)
+                .HasForeignKey(e => e.EvaluationSkillId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<state>()

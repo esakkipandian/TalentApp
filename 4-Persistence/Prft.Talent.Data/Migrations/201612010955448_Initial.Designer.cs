@@ -7,13 +7,13 @@ namespace Prft.Talent.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedCandidateDocument : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedCandidateDocument));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611171134513_AddedCandidateDocument"; }
+            get { return "201612010955448_Initial"; }
         }
         
         string IMigrationMetadata.Source

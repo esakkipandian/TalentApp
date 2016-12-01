@@ -9,7 +9,14 @@ namespace Prft.Talent.Data.Entities
     [Table("college")]
     public partial class college
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public college()
+        {
+            candidateeducations = new HashSet<candidateeducation>();
+        }
+
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PK { get; set; }
 
         [StringLength(5)]
@@ -31,6 +38,7 @@ namespace Prft.Talent.Data.Entities
 
         public DateTime? LastUpdatedDate { get; set; }
 
-        public virtual candidateeducation candidateeducation { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<candidateeducation> candidateeducations { get; set; }
     }
 }

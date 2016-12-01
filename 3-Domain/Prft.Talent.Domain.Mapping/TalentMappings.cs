@@ -15,8 +15,8 @@ namespace Prft.Talent.Domain.Mapping
                  .ForMember(x => x.FullName, map => map.MapFrom(c => c.FirstName + " " + c.LastName))
                 .ReverseMap();
             profile.CreateMap<candidate, PersonalInformation>()
-                .ForMember(x => x.CandidateId, map => map.MapFrom(c => c.PK)).ReverseMap()
-                .ForMember(x=>x.NoticePeriod,map=>map.MapFrom(c=>c.NoticePeriod)).ReverseMap();
+                .ForMember(x => x.CandidateId, map => map.MapFrom(c => c.PK)).ReverseMap();
+                //.ForMember(x=>x.NoticePeriod,map=>map.MapFrom(c=>c.NoticePeriod)).ReverseMap();
            
             profile.CreateMap<college, Colleges>()
                   .ForMember(x => x.CollegeCode, map => map.MapFrom(c => c.Code))

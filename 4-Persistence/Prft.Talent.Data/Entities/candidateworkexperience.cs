@@ -10,7 +10,7 @@ namespace Prft.Talent.Data.Entities
     public partial class candidateworkexperience
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PK { get; set; }
 
         public int CandidateId { get; set; }

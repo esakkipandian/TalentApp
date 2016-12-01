@@ -10,6 +10,7 @@ namespace Prft.Talent.Data.Entities
     public partial class candidateaddress
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PK { get; set; }
 
         public int CandidateId { get; set; }

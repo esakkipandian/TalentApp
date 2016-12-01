@@ -16,6 +16,7 @@ namespace Prft.Talent.Data.Entities
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PK { get; set; }
 
         [StringLength(5)]

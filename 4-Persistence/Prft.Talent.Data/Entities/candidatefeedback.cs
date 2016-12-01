@@ -6,39 +6,33 @@ namespace Prft.Talent.Data.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("skill")]
-    public partial class skill
+    [Table("candidatefeedback")]
+    public partial class candidatefeedback
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public skill()
+        public candidatefeedback()
         {
-            candidateskills = new HashSet<candidateskill>();
+            evaluations = new HashSet<evaluation>();
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PK { get; set; }
 
-        [StringLength(5)]
-        public string Code { get; set; }
+        public int CandidateId { get; set; }
 
-        [StringLength(250)]
-        public string Description { get; set; }
+        public DateTime? InterviewDate { get; set; }
 
-        [Column(TypeName = "bit")]
-        public bool? IsActive { get; set; }
+        public int? InterviewerId { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
-
-        public DateTime? CreatedDate { get; set; }
+        public DateTime DateOfInterview { get; set; }
 
         [StringLength(100)]
-        public string LastUpdatedBy { get; set; }
+        public string ApppliedPosition { get; set; }
 
-        public DateTime? LastUpdatedDate { get; set; }
+        public virtual candidate candidate { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<candidateskill> candidateskills { get; set; }
+        public virtual ICollection<evaluation> evaluations { get; set; }
     }
 }
