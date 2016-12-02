@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-lg">
         <!-- Modal content-->
         <div class="modal-content">
-            <form role="form" class="form-horizontal" style="background:#fff; padding:15px" novalidate>                
+            <form role="form" class="form-horizontal" style="background:#fff; padding:15px" novalidate>
                 <div class="modal-body">
                     <div class="panel panel-success perfhr-panel">
                         <div class="panel-heading">
@@ -16,7 +16,7 @@
                             <div class="form-group">
                                 <label for="inputName" class="col-md-4 control-label">Candidate Name:</label>
                                 <div class="col-md-8">
-                                    <input type="text" id="inputName" ng-model="data.fullName" class="form-control textbox" placeholder="Candidate Name" value="{{data.fullName}}">
+                                    <input type="text" id="inputName" ng-model="Feedback.candidateName" class="form-control textbox" placeholder="Candidate Name" value="{{data.candidate_Name}}">
                                 </div>
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                             <div class="form-group">
                                 <label for="in" class="col-md-4 control-label"> Interviewer Name:</label>
                                 <div class="col-md-8">
-                                    <input type="text" id="interviewerName" ng-model="data.interviewer_Name" class="form-control textbox" placeholder="Interviewer Name" value="{{data.interviewer_Name}}">
+                                    <input type="text" id="interviewerName" ng-model="Feedback.interviewerName" class="form-control textbox" placeholder="Interviewer Name" value="{{data.interviewer_Name}}">
                                 </div>
                             </div>
                         </div>
@@ -69,118 +69,75 @@
                             <tr>
                                 <td><label for="text1">Educational Background</label></td>
                                 <td>
-                                    <select class="form-control" id="sel1">
-                                        <option>NE</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <select class="form-control" id="sel1" ng-model="Feedback.RatingOptions.educationBackgroundRating"
+                                            ng-options="option.name for option in Feedback.RatingOptions.availableOptions track by option.id"></select>
                                 </td>
-                                <td><input type="text" id="text1" class="form-control" ng-model="data.f1"></td>
+                                <td><input type="text" class="form-control" ng-model="Feedback.educationBackgroundComments" ng-disabled="Feedback.RatingOptions.educationBackgroundRating.name=='NE'"></td>
                             </tr>
                             <tr>
                                 <td><label for="text2">Technical Knowledge</label></td>
                                 <td>
-                                    <select class="form-control" id="sel1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <select class="form-control" ng-model="Feedback.RatingOptions.technicalKnowledgeRating"
+                                            ng-options="option.name for option in Feedback.RatingOptions.availableOptions track by option.id"></select>
                                 </td>
-                                <td><input type="text" class="form-control" id="text2" ng-model="data.f2"></td>
+                                <td><input type="text" class="form-control" ng-model="Feedback.technicalKnowledgeComments" ng-disabled="Feedback.RatingOptions.technicalKnowledgeRating.name=='NE'"></td>
                             </tr>
                             <tr>
                                 <td><label for="text3">Experience Level</label></td>
                                 <td>
-                                    <select class="form-control" id="sel1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <select class="form-control" ng-model="Feedback.RatingOptions.experienceLevelRating"
+                                            ng-options="option.name for option in Feedback.RatingOptions.availableOptions track by option.id"></select>
                                 </td>
-                                <td><input type="text" class="form-control" id="text3" ng-model="data.f3"></td>
+                                <td><input type="text" class="form-control" ng-model="Feedback.experienceLevelComments" ng-disabled="Feedback.RatingOptions.experienceLevelRating.name=='NE'"></td>
+
                             </tr>
                             <tr>
                                 <td><label for="text4">Application of Skills</label></td>
                                 <td>
-                                    <select class="form-control" id="sel1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <select class="form-control" ng-model="Feedback.RatingOptions.applicationSkillRating"
+                                            ng-options="option.name for option in Feedback.RatingOptions.availableOptions track by option.id"></select>
                                 </td>
-                                <td><input type="text" class="form-control" id="text4" ng-model="data.f4"></td>
+                                <td><input type="text" class="form-control" ng-model="Feedback.applicationSkillComments" ng-disabled="Feedback.RatingOptions.applicationSkillRating.name=='NE'"></td>
                             </tr>
                             <tr>
                                 <td><label for="text5">Ability to Demonstrate</label></td>
                                 <td>
-                                    <select class="form-control" id="sel1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <select class="form-control" ng-model="Feedback.RatingOptions.abilityDemonstrateRating"
+                                            ng-options="option.name for option in Feedback.RatingOptions.availableOptions track by option.id"></select>
                                 </td>
-                                <td><input type="text" class="form-control" id="text5" ng-model="data.f5"></td>
+                                <td><input type="text" class="form-control" ng-model="Feedback.abilityDemonstrateComments" ng-disabled="Feedback.RatingOptions.abilityDemonstrateRating.name=='NE'"></td>
                             </tr>
                             <tr>
                                 <td><label for="text6">Communicational Skills</label></td>
                                 <td>
-                                    <select class="form-control" id="sel1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <select class="form-control" ng-model="Feedback.RatingOptions.communicationSkillsRating"
+                                            ng-options="option.name for option in Feedback.RatingOptions.availableOptions track by option.id"></select>
                                 </td>
-                                <td><input type="text" class="form-control" id="text6" ng-model="data.f6"></td>
+                                <td><input type="text" class="form-control" ng-model="Feedback.communicationSkillsComments" ng-disabled="Feedback.RatingOptions.communicationSkillsRating.name=='NE'"></td>
                             </tr>
                             <tr>
                                 <td><label for="text7">Analytical / Logical Skills</label></td>
                                 <td>
-                                    <select class="form-control" id="sel1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <select class="form-control" ng-model="Feedback.RatingOptions.analyticalSkillsRating"
+                                            ng-options="option.name for option in Feedback.RatingOptions.availableOptions track by option.id"></select>
                                 </td>
-                                <td><input type="text" class="form-control" id="text7" ng-model="data.f7"></td>
+                                <td><input type="text" class="form-control" ng-model="Feedback.analyticalSkillsComments" ng-disabled="Feedback.RatingOptions.analyticalSkillsRating.name=='NE'"></td>
                             </tr>
                             <tr>
                                 <td><label for="text8">Leadership Qualities</label></td>
                                 <td>
-                                    <select class="form-control" id="sel1">
-                                        <option>NE</option>
-                                        <option>Yes</option>
-                                        <option>No</option>                                        
-                                    </select>
+                                    <select class="form-control" ng-model="Feedback.RatingOptions.leadershipQualitiesRating"
+                                            ng-options="option.name for option in Feedback.RatingOptions.availableOptions track by option.id"></select>
                                 </td>
-                                <td><input type="text" class="form-control" id="text8" ng-model="data.f8"></td>
+                                <td><input type="text" class="form-control" ng-model="Feedback.leadershipQualitiesComments" ng-disabled="Feedback.RatingOptions.leadershipQualitiesRating.name=='NE'"></td>
                             </tr>
                             <tr>
                                 <td><label for="text9">Interest Level</label></td>
                                 <td>
-                                    <select class="form-control" id="sel1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <select class="form-control" ng-model="Feedback.RatingOptions.interestLevelRating"
+                                            ng-options="option.name for option in Feedback.RatingOptions.availableOptions track by option.id"></select>
                                 </td>
-                                <td><input type="text" class="form-control" id="text9" ng-model="data.f9"></td>
+                                <td><input type="text" class="form-control" ng-model="Feedback.interestLevelComments" ng-disabled="Feedback.RatingOptions.interestLevelRating.name=='NE'"></td>
                             </tr>
                             <tr>
                                 <td><label for="text10">Decision Making Skills</label></td>
@@ -188,7 +145,7 @@
                                     <select class="form-control" id="sel1">
                                         <option>NE</option>
                                         <option>Yes</option>
-                                        <option>No</option>  
+                                        <option>No</option>
                                     </select>
                                 </td>
                                 <td><input type="text" class="form-control" id="text10" ng-model="data.f10"></td>
