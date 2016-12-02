@@ -13,6 +13,7 @@ namespace Prft.Talent.Data.Entities
         public skill()
         {
             candidateskills = new HashSet<candidateskill>();
+            interviewers = new HashSet<interviewer>();
         }
 
         [Key]
@@ -40,5 +41,8 @@ namespace Prft.Talent.Data.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidateskill> candidateskills { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<interviewer> interviewers { get; set; }
     }
 }

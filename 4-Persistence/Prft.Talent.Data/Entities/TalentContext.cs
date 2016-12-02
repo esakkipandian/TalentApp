@@ -1,6 +1,9 @@
 namespace Prft.Talent.Data.Entities
 {
+    using System;
     using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
     [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public partial class TalentContext : DbContext
     {
@@ -19,6 +22,9 @@ namespace Prft.Talent.Data.Entities
         public virtual DbSet<college> colleges { get; set; }
         public virtual DbSet<country> countries { get; set; }
         public virtual DbSet<evaluation> evaluations { get; set; }
+        public virtual DbSet<interviewer> interviewers { get; set; }
+        public virtual DbSet<interviewlevel> interviewlevels { get; set; }
+        public virtual DbSet<interviewschedule> interviewschedules { get; set; }
         public virtual DbSet<skill> skills { get; set; }
         public virtual DbSet<skillevaluation> skillevaluations { get; set; }
         public virtual DbSet<state> states { get; set; }
@@ -28,6 +34,14 @@ namespace Prft.Talent.Data.Entities
         {
             modelBuilder.Entity<backofficeinformation>()
                 .Property(e => e.ProjectDetails)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<backofficeinformation>()
+                .Property(e => e.CreatedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<backofficeinformation>()
+                .Property(e => e.ModifiedBy)
                 .IsUnicode(false);
 
             modelBuilder.Entity<candidate>()
@@ -76,8 +90,15 @@ namespace Prft.Talent.Data.Entities
 
             modelBuilder.Entity<candidate>()
                 .HasMany(e => e.backofficeinformations)
-                .WithOptional(e => e.candidate)
-                .HasForeignKey(e => e.CandidateId);
+                .WithRequired(e => e.candidate)
+                .HasForeignKey(e => e.CandidateId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<candidate>()
+                .HasMany(e => e.interviewschedules)
+                .WithRequired(e => e.candidate)
+                .HasForeignKey(e => e.CandidateId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<candidate>()
                 .HasMany(e => e.candidatefeedbacks)
@@ -154,6 +175,14 @@ namespace Prft.Talent.Data.Entities
                 .IsUnicode(false);
 
             modelBuilder.Entity<candidatefeedback>()
+                .Property(e => e.CreatedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<candidatefeedback>()
+                .Property(e => e.ModifiedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<candidatefeedback>()
                 .HasMany(e => e.evaluations)
                 .WithRequired(e => e.candidatefeedback)
                 .HasForeignKey(e => e.CandidateFeedbackId)
@@ -172,11 +201,11 @@ namespace Prft.Talent.Data.Entities
                 .IsUnicode(false);
 
             modelBuilder.Entity<candidateworkexperience>()
-                .Property(e => e.Designation)
+                .Property(e => e.OrganizationAddress)
                 .IsUnicode(false);
 
             modelBuilder.Entity<candidateworkexperience>()
-                .Property(e => e.Roles)
+                .Property(e => e.Designation)
                 .IsUnicode(false);
 
             modelBuilder.Entity<candidateworkexperience>()
@@ -240,6 +269,66 @@ namespace Prft.Talent.Data.Entities
                 .Property(e => e.EvaluationComments)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<evaluation>()
+                .Property(e => e.CreatedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<evaluation>()
+                .Property(e => e.ModifiedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<interviewer>()
+                .Property(e => e.InterviewerName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<interviewer>()
+                .Property(e => e.InterviewerEmail)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<interviewer>()
+                .Property(e => e.InterviewerPhone)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<interviewer>()
+                .Property(e => e.CreatedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<interviewer>()
+                .Property(e => e.ModifiedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<interviewer>()
+                .HasMany(e => e.interviewschedules)
+                .WithRequired(e => e.interviewer)
+                .HasForeignKey(e => e.InterviewerId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<interviewlevel>()
+                .Property(e => e.InterviewLevelName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<interviewlevel>()
+                .Property(e => e.CreatedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<interviewlevel>()
+                .Property(e => e.ModifiedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<interviewlevel>()
+                .HasMany(e => e.interviewschedules)
+                .WithRequired(e => e.interviewlevel)
+                .HasForeignKey(e => e.LevelId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<interviewschedule>()
+                .Property(e => e.CreatedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<interviewschedule>()
+                .Property(e => e.ModifiedBy)
+                .IsUnicode(false);
+
             modelBuilder.Entity<skill>()
                 .Property(e => e.Code)
                 .IsUnicode(false);
@@ -262,12 +351,25 @@ namespace Prft.Talent.Data.Entities
                 .HasForeignKey(e => e.SkillId)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<skill>()
+                .HasMany(e => e.interviewers)
+                .WithOptional(e => e.skill)
+                .HasForeignKey(e => e.SkillId);
+
             modelBuilder.Entity<skillevaluation>()
                 .Property(e => e.EvaluationSkillName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<skillevaluation>()
                 .Property(e => e.EvaluationSkillDescription)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<skillevaluation>()
+                .Property(e => e.CreatedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<skillevaluation>()
+                .Property(e => e.ModifiedBy)
                 .IsUnicode(false);
 
             modelBuilder.Entity<skillevaluation>()

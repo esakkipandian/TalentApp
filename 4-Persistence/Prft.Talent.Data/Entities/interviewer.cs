@@ -6,24 +6,29 @@ namespace Prft.Talent.Data.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("skillevaluation")]
-    public partial class skillevaluation
+    [Table("interviewer")]
+    public partial class interviewer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public skillevaluation()
+        public interviewer()
         {
-            evaluations = new HashSet<evaluation>();
+            interviewschedules = new HashSet<interviewschedule>();
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PK { get; set; }
 
-        [StringLength(200)]
-        public string EvaluationSkillName { get; set; }
+        [StringLength(100)]
+        public string InterviewerName { get; set; }
 
-        [StringLength(500)]
-        public string EvaluationSkillDescription { get; set; }
+        [StringLength(100)]
+        public string InterviewerEmail { get; set; }
+
+        [StringLength(45)]
+        public string InterviewerPhone { get; set; }
+
+        public int? SkillId { get; set; }
 
         [Column(TypeName = "bit")]
         public bool IsActive { get; set; }
@@ -39,6 +44,8 @@ namespace Prft.Talent.Data.Entities
         public string ModifiedBy { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<evaluation> evaluations { get; set; }
+        public virtual ICollection<interviewschedule> interviewschedules { get; set; }
+
+        public virtual skill skill { get; set; }
     }
 }

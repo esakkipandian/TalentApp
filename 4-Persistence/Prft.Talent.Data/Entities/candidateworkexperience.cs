@@ -18,11 +18,11 @@ namespace Prft.Talent.Data.Entities
         [StringLength(300)]
         public string OrganizationName { get; set; }
 
+        [StringLength(250)]
+        public string OrganizationAddress { get; set; }
+
         [StringLength(200)]
         public string Designation { get; set; }
-
-        [StringLength(1000)]
-        public string Roles { get; set; }
 
         public DateTime? StartDate { get; set; }
 

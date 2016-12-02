@@ -9,6 +9,12 @@ namespace Prft.Talent.Data.Entities
     [Table("backofficeinformation")]
     public partial class backofficeinformation
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int PK { get; set; }
+
+        public int CandidateId { get; set; }
+
         public decimal? CurrentCTC { get; set; }
 
         public decimal? VariablePay { get; set; }
@@ -20,11 +26,18 @@ namespace Prft.Talent.Data.Entities
         [StringLength(255)]
         public string ProjectDetails { get; set; }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PK { get; set; }
+        [Column(TypeName = "bit")]
+        public bool IsActive { get; set; }
 
-        public int? CandidateId { get; set; }
+        public DateTime? CreatedDate { get; set; }
+
+        [StringLength(100)]
+        public string CreatedBy { get; set; }
+
+        public DateTime? ModifiedDate { get; set; }
+
+        [StringLength(100)]
+        public string ModifiedBy { get; set; }
 
         public virtual candidate candidate { get; set; }
     }

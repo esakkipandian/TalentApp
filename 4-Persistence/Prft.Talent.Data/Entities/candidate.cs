@@ -13,6 +13,7 @@ namespace Prft.Talent.Data.Entities
         public candidate()
         {
             backofficeinformations = new HashSet<backofficeinformation>();
+            interviewschedules = new HashSet<interviewschedule>();
             candidatefeedbacks = new HashSet<candidatefeedback>();
             candidatedocuments = new HashSet<candidatedocument>();
             candidateeducations = new HashSet<candidateeducation>();
@@ -74,6 +75,9 @@ namespace Prft.Talent.Data.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<backofficeinformation> backofficeinformations { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<interviewschedule> interviewschedules { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidatefeedback> candidatefeedbacks { get; set; }

@@ -65,14 +65,17 @@
     <Compile Include="Entities\college.cs" />
     <Compile Include="Entities\country.cs" />
     <Compile Include="Entities\evaluation.cs" />
+    <Compile Include="Entities\interviewer.cs" />
+    <Compile Include="Entities\interviewlevel.cs" />
+    <Compile Include="Entities\interviewschedule.cs" />
     <Compile Include="Entities\skill.cs" />
     <Compile Include="Entities\skillevaluation.cs" />
     <Compile Include="Entities\state.cs" />
     <Compile Include="Entities\TalentContext.cs" />
     <Compile Include="Entities\university.cs" />
-    <Compile Include="Migrations\201612011532134_Sprint-2.2.cs" />
-    <Compile Include="Migrations\201612011532134_Sprint-2.2.Designer.cs">
-      <DependentUpon>201612011532134_Sprint-2.2.cs</DependentUpon>
+    <Compile Include="Migrations\201612021240115_Sprint-2.3.cs" />
+    <Compile Include="Migrations\201612021240115_Sprint-2.3.Designer.cs">
+      <DependentUpon>201612021240115_Sprint-2.3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PrftDatabaseContext.cs" />
@@ -83,8 +86,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612011532134_Sprint-2.2.resx">
-      <DependentUpon>201612011532134_Sprint-2.2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612021240115_Sprint-2.3.resx">
+      <DependentUpon>201612021240115_Sprint-2.3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

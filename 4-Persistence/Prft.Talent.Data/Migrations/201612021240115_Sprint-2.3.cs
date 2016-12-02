@@ -3,7 +3,7 @@ namespace Prft.Talent.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Sprint22 : DbMigration
+    public partial class Sprint23 : DbMigration
     {
         public override void Up()
         {
@@ -12,12 +12,17 @@ namespace Prft.Talent.Data.Migrations
                 c => new
                     {
                         PK = c.Int(nullable: false, identity: true),
+                        CandidateId = c.Int(nullable: false),
                         CurrentCTC = c.Decimal(precision: 18, scale: 2),
                         VariablePay = c.Decimal(precision: 18, scale: 2),
                         LastIncrementedDate = c.DateTime(precision: 0),
                         Form16Verified = c.Boolean(),
                         ProjectDetails = c.String(maxLength: 255, unicode: false),
-                        CandidateId = c.Int(),
+                        IsActive = c.Boolean(nullable: false, storeType: "bit"),
+                        CreatedDate = c.DateTime(precision: 0),
+                        CreatedBy = c.String(maxLength: 100, unicode: false),
+                        ModifiedDate = c.DateTime(precision: 0),
+                        ModifiedBy = c.String(maxLength: 100, unicode: false),
                     })
                 .PrimaryKey(t => t.PK)
                 .ForeignKey("dbo.candidate", t => t.CandidateId)
@@ -136,6 +141,11 @@ namespace Prft.Talent.Data.Migrations
                         InterviewerId = c.Int(),
                         DateOfInterview = c.DateTime(nullable: false, precision: 0),
                         ApppliedPosition = c.String(maxLength: 100, unicode: false),
+                        IsActive = c.Boolean(nullable: false, storeType: "bit"),
+                        CreatedDate = c.DateTime(precision: 0),
+                        CreatedBy = c.String(maxLength: 100, unicode: false),
+                        ModifiedDate = c.DateTime(precision: 0),
+                        ModifiedBy = c.String(maxLength: 100, unicode: false),
                     })
                 .PrimaryKey(t => t.PK)
                 .ForeignKey("dbo.candidate", t => t.CandidateId)
@@ -150,6 +160,11 @@ namespace Prft.Talent.Data.Migrations
                         EvaluationSkillId = c.Int(nullable: false),
                         Rating = c.Int(),
                         EvaluationComments = c.String(maxLength: 500, unicode: false),
+                        IsActive = c.Boolean(nullable: false, storeType: "bit"),
+                        CreatedDate = c.DateTime(precision: 0),
+                        CreatedBy = c.String(maxLength: 100, unicode: false),
+                        ModifiedDate = c.DateTime(precision: 0),
+                        ModifiedBy = c.String(maxLength: 100, unicode: false),
                     })
                 .PrimaryKey(t => t.PK)
                 .ForeignKey("dbo.skillevaluation", t => t.EvaluationSkillId)
@@ -164,6 +179,11 @@ namespace Prft.Talent.Data.Migrations
                         PK = c.Int(nullable: false, identity: true),
                         EvaluationSkillName = c.String(maxLength: 200, unicode: false),
                         EvaluationSkillDescription = c.String(maxLength: 500, unicode: false),
+                        IsActive = c.Boolean(nullable: false, storeType: "bit"),
+                        CreatedDate = c.DateTime(precision: 0),
+                        CreatedBy = c.String(maxLength: 100, unicode: false),
+                        ModifiedDate = c.DateTime(precision: 0),
+                        ModifiedBy = c.String(maxLength: 100, unicode: false),
                     })
                 .PrimaryKey(t => t.PK);
             
@@ -205,14 +225,71 @@ namespace Prft.Talent.Data.Migrations
                 .PrimaryKey(t => t.PK);
             
             CreateTable(
+                "dbo.interviewer",
+                c => new
+                    {
+                        PK = c.Int(nullable: false, identity: true),
+                        InterviewerName = c.String(maxLength: 100, unicode: false),
+                        InterviewerEmail = c.String(maxLength: 100, unicode: false),
+                        InterviewerPhone = c.String(maxLength: 45, unicode: false),
+                        SkillId = c.Int(),
+                        IsActive = c.Boolean(nullable: false, storeType: "bit"),
+                        CreatedDate = c.DateTime(precision: 0),
+                        CreatedBy = c.String(maxLength: 100, unicode: false),
+                        ModifiedDate = c.DateTime(precision: 0),
+                        ModifiedBy = c.String(maxLength: 100, unicode: false),
+                    })
+                .PrimaryKey(t => t.PK)
+                .ForeignKey("dbo.skill", t => t.SkillId)
+                .Index(t => t.SkillId);
+            
+            CreateTable(
+                "dbo.interviewschedule",
+                c => new
+                    {
+                        PK = c.Int(nullable: false, identity: true),
+                        CandidateId = c.Int(nullable: false),
+                        ScheduleDate = c.DateTime(storeType: "date"),
+                        ScheduleTime = c.Time(precision: 0),
+                        InterviewerId = c.Int(nullable: false),
+                        LevelId = c.Int(nullable: false),
+                        IsActive = c.Boolean(nullable: false, storeType: "bit"),
+                        CreatedDate = c.DateTime(precision: 0),
+                        CreatedBy = c.String(maxLength: 100, unicode: false),
+                        ModifiedDate = c.DateTime(precision: 0),
+                        ModifiedBy = c.String(maxLength: 100, unicode: false),
+                    })
+                .PrimaryKey(t => t.PK)
+                .ForeignKey("dbo.interviewlevel", t => t.LevelId)
+                .ForeignKey("dbo.interviewer", t => t.InterviewerId)
+                .ForeignKey("dbo.candidate", t => t.CandidateId)
+                .Index(t => t.CandidateId)
+                .Index(t => t.InterviewerId)
+                .Index(t => t.LevelId);
+            
+            CreateTable(
+                "dbo.interviewlevel",
+                c => new
+                    {
+                        PK = c.Int(nullable: false, identity: true),
+                        InterviewLevelName = c.String(maxLength: 100, unicode: false),
+                        IsActive = c.Boolean(nullable: false, storeType: "bit"),
+                        CreatedDate = c.DateTime(precision: 0),
+                        CreatedBy = c.String(maxLength: 100, unicode: false),
+                        ModifiedDate = c.DateTime(precision: 0),
+                        ModifiedBy = c.String(maxLength: 100, unicode: false),
+                    })
+                .PrimaryKey(t => t.PK);
+            
+            CreateTable(
                 "dbo.candidateworkexperience",
                 c => new
                     {
                         PK = c.Int(nullable: false, identity: true),
                         CandidateId = c.Int(nullable: false),
                         OrganizationName = c.String(maxLength: 300, unicode: false),
+                        OrganizationAddress = c.String(maxLength: 250, unicode: false),
                         Designation = c.String(maxLength: 200, unicode: false),
-                        Roles = c.String(maxLength: 1000, unicode: false),
                         StartDate = c.DateTime(precision: 0),
                         EndDate = c.DateTime(precision: 0),
                         LeavingReason = c.String(maxLength: 200, unicode: false),
@@ -262,8 +339,12 @@ namespace Prft.Talent.Data.Migrations
         
         public override void Down()
         {
+            DropForeignKey("dbo.interviewschedule", "CandidateId", "dbo.candidate");
             DropForeignKey("dbo.candidateworkexperience", "CandidateId", "dbo.candidate");
             DropForeignKey("dbo.candidateskill", "CandidateId", "dbo.candidate");
+            DropForeignKey("dbo.interviewer", "SkillId", "dbo.skill");
+            DropForeignKey("dbo.interviewschedule", "InterviewerId", "dbo.interviewer");
+            DropForeignKey("dbo.interviewschedule", "LevelId", "dbo.interviewlevel");
             DropForeignKey("dbo.candidateskill", "SkillId", "dbo.skill");
             DropForeignKey("dbo.candidatefeedback", "CandidateId", "dbo.candidate");
             DropForeignKey("dbo.evaluation", "CandidateFeedbackId", "dbo.candidatefeedback");
@@ -274,6 +355,10 @@ namespace Prft.Talent.Data.Migrations
             DropForeignKey("dbo.candidatedocument", "CandidateId", "dbo.candidate");
             DropForeignKey("dbo.backofficeinformation", "CandidateId", "dbo.candidate");
             DropIndex("dbo.candidateworkexperience", new[] { "CandidateId" });
+            DropIndex("dbo.interviewschedule", new[] { "LevelId" });
+            DropIndex("dbo.interviewschedule", new[] { "InterviewerId" });
+            DropIndex("dbo.interviewschedule", new[] { "CandidateId" });
+            DropIndex("dbo.interviewer", new[] { "SkillId" });
             DropIndex("dbo.candidateskill", new[] { "SkillId" });
             DropIndex("dbo.candidateskill", new[] { "CandidateId" });
             DropIndex("dbo.evaluation", new[] { "EvaluationSkillId" });
@@ -287,6 +372,9 @@ namespace Prft.Talent.Data.Migrations
             DropTable("dbo.state");
             DropTable("dbo.country");
             DropTable("dbo.candidateworkexperience");
+            DropTable("dbo.interviewlevel");
+            DropTable("dbo.interviewschedule");
+            DropTable("dbo.interviewer");
             DropTable("dbo.skill");
             DropTable("dbo.candidateskill");
             DropTable("dbo.skillevaluation");
