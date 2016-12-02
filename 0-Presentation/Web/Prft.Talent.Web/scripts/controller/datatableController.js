@@ -4,12 +4,13 @@
     perfDatatable.loadTable = {
         init: function(params){
             this.params = params;
-            var editRow = true, deleteRow = true, actions = true;
+            var editRow = true, deleteRow = true, actions = true, feedback =true;
             params.vm.message = '';
             params.vm.dtInstance = {};
             params.vm.datalist = {};
             params.url = (params.loadListUrl)?params.loadListUrl:'';
-            params.editRow = (params.editRow === undefined)?editRow:params.editRow;
+            params.editRow = (params.editRow === undefined) ? editRow : params.editRow;
+            params.feedback = (params.feedback === undefined) ? feedback : params.feedback;
             params.deleteRow = (params.deleteRow === undefined)?deleteRow:params.deleteRow;
             params.actions = (params.actions === undefined)?actions:params.actions;
             params.responsive = params.responsive?params.responsive: false;
@@ -70,6 +71,21 @@
                         '</button>&nbsp;';
                     }
                 }
+
+                if (params.feedback) {
+                    if (params.navigateToUrl === true) {
+                        editRecord = '<button class="btn btn-edit" data-toggle="modal" onclick="perfDatatable.loadTable.openRecord(this, '
+                                        + data.pk + ', \'' + params.editNavigateUrl + '\' )">' +
+                                        '   <i class="fa fa-pencil"></i>' +
+                                        'Feedback</button>&nbsp;';
+                    }
+                    else {
+                        editRecord = '<button class="btn btn-edit" data-toggle="modal" onclick="perfDatatable.loadTable.popRecord(this, ' + data.pk + ', ' + params.editFormId + ' )">' +
+                        '   <i class="fa fa-pencil"></i>' +
+                        'Feedback</button>&nbsp;';
+                    }
+                }
+
                 if(params.deleteRow){
                     deleteRecord = '<button class="btn btn-danger" data-toggle="modal" onclick="perfDatatable.loadTable.popRecord(this, '+data.pk+', '+params.deleteFormId+')">' +
                     '   <i class="fa fa-trash-o"></i>' +

@@ -81,6 +81,7 @@
     <Content Include="images\bg_theme1.jpg" />
     <Content Include="images\black.jpg" />
     <Content Include="images\black_bg.jpg" />
+    <Content Include="images\feedback.png" />
     <Content Include="images\female-user.png" />
     <Content Include="images\gears.gif" />
     <Content Include="images\glyphicons-halflings-white.png" />

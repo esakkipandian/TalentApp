@@ -1,5 +1,9 @@
 ﻿(function (angular) {  
     var InterviewFeedbackController = function ($scope, $controller, DTColumnBuilder) {
+        $scope.hide = function () {
+            return true;
+        }
+       
         $scope.dateofinterview = new Date();
         var _this = this;
         $scope.dtColumns = [
@@ -10,12 +14,12 @@
         var vm = {
             'title': 'Scheduled Candidates',
             'formId': 'interviewForm',
-            'scope': $scope,
-            'addUrl': perfUrl['addDesignation'],
+            'scope': $scope,            
             'updateUrl': perfUrl['updateDesignation'],
             'deleteUrl': perfUrl['deleteDesignation'],
             'loadListUrl': perfUrl['loadCandidateInformation'],
-            'actions': false
+            'deleteRow': false,
+            'editRow':false
         };
         angular.extend(this, $controller('AbstractController', { _this: _this, vm: vm }));
 

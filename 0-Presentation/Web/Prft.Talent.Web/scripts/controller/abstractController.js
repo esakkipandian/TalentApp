@@ -27,7 +27,9 @@
             'editFormId' : vm.formId,
             'deleteFormId': 'deleteRecord',
             'navigateToUrl': vm.navigateToUrl,
-            'editNavigateUrl' : vm.editNavigateUrl
+            'editNavigateUrl': vm.editNavigateUrl,
+            "deleteRow": vm.deleteRow,
+            "editRow":vm.editRow
         };
         perfDatatable.loadTable.init(paramObj);
 	};

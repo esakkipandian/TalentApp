@@ -127,9 +127,14 @@ select option[disabled]:first-child {
 
 
 .glyphicon-star-empty {
-    color: #0e0e0e;    
-    padding: 1px;   
-    font-size: 20px;    
+    color: #0e0e0e;
+    padding: 1px;
+    font-size: 20px;
     list-style-type: none;
     display: inline-block;
-    cursor: pointer;
+    cursor: pointer;
+}
+
+.btn-feedback {
+    background-image: url('/images/feedback.png');
+}
