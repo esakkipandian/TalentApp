@@ -59,7 +59,6 @@
   <ItemGroup>
     <Compile Include="Abstract\Candidate\ICandidateSkillSetRepository.cs" />
     <Compile Include="Abstract\Candidate\IPersonalInformationRepository.cs" />
-    <Compile Include="Abstract\IAddressTypeRepository.cs" />
     <Compile Include="Abstract\IBackOfficeRepository.cs" />
     <Compile Include="Abstract\IInterviewerFeedbackRepository.cs" />
     <Compile Include="Abstract\IQualificationRepository.cs" />

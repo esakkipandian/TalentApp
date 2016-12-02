@@ -25,10 +25,10 @@ var mainApp = angular.module("prftApp",
               templateUrl: 'html/employee.html',
               controller: 'employeeController'
           })
-            .when('/addresstype', {
-                templateUrl: 'html/addresstype.html',
-                controller : 'addressTypeController'
-            })
+            //.when('/addresstype', {
+            //    templateUrl: 'html/addresstype.html',
+            //    controller : 'addressTypeController'
+            //})
             .when('/personalInformation', {
                 templateUrl: 'html/basiccandiatedetails.html',
                 controller: 'personalInformationController'
