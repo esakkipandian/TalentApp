@@ -62,8 +62,8 @@ var mainApp = angular.module("prftApp",
               templateUrl: 'html/candidatewizard/employerDetails.html',
               controller: 'employerDetailsController'
           })
-            .when('/', {
-                templateUrl: 'html/backofficeInformation',
+            .when('/backofficeInformation', {
+                templateUrl: 'html/backOfficeInformation.html',
                 controller: 'backOfficeController'
             })
 
