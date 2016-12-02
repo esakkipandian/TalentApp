@@ -53,9 +53,7 @@
         };
         $scope.Feedback = {};
         $scope.Feedback.RatingOptions = ratingLevel;     
-    };
-      
-    };
+    };          
     InterviewFeedbackController.$inject = ['$scope', '$controller', 'DTColumnBuilder'];
     mainApp.controller('interviewFeedbackController', InterviewFeedbackController);
 })(angular);
