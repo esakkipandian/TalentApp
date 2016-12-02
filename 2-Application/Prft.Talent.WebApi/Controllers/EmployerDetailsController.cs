@@ -1,4 +1,5 @@
 ﻿using Prft.Talent.Domain.Talent;
+using Prft.Talent.Logger;
 using Prft.Talent.Services;
 using Prft.Talent.Services.Abstract;
 using Prft.Talent.Services.Api;
@@ -15,39 +16,59 @@ namespace Prft.Talent.WebApi.Controllers
 {
     public class EmployerDetailsController : ApiController
     {
-        private readonly IEmployerDetailsService _employeeService;
+        private readonly IPrftLogger _logger;        
+        private readonly IEmployerDetailsService _employerService;
 
-        public EmployerDetailsController(IEmployerDetailsService employeeService)
+        public EmployerDetailsController(IPrftLogger logger, IEmployerDetailsService employeeService)
         {
-            _employeeService = employeeService;
+            _logger = logger;
+            _employerService = employeeService;
         }
 
-        // GET api/<controller>
-        public async Task<EmployerDetailsResponse> Get()
+        public async Task<IEnumerable<EmployerDetails>> GetEmployerDetails(int id)
         {
-            var employees = await _employeeService.GetEmployeesAsync();
-            return employees;
+            var employerDetails = await _employerService.GetEmployersAsync(
+                new EmployerDetailsIdRequest
+                {
+                    CandidateEmployerId = id
+                });
+            return employerDetails.EmployerDetails;
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        [HttpPost]
+        [Route("api/EmployerDetails/AddEmployerDetails")]
+        public async Task<int> AddEmployerDetails(EmployerDetails employerDetail)
         {
-            return "value";
+            var successFlag = await _employerService.AddEmployerInfoAsync(
+                new EmployerDetailsRequest
+                {
+                    EmployerDetails = employerDetail
+                });
+            return successFlag.Successflag;
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        [HttpPut]
+        [Route("api/EmployerDetails/DeleteEmployerDetail")]
+        public async Task<int> DeleteEmployerDetail(EmployerDetails employerDetail)
         {
+            var successFlag = await _employerService.DeleteEmployerInfoAsync(
+                new EmployerDetailsIdRequest
+                {
+                    CandidateEmployerId = employerDetail.PK
+                });
+            return successFlag.Successflag;
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        [Route("api/EmployerDetails/UpdateEmployerDetails")]
+        public async Task<int> UpdateEmployerDetails(EmployerDetails employerDetail)
         {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
+            var successFlag = await _employerService.UpdateEmployerInfoAsync(
+                new EmployerDetailsRequest
+                {
+                    EmployerDetails = employerDetail
+                });
+            return successFlag.Successflag;
         }
     }
 }

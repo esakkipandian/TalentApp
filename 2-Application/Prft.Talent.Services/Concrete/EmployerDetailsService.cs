@@ -9,16 +9,16 @@ namespace Prft.Talent.Services.Concrete
     {
         private readonly IEmployerDetailsRepository _employeeRepository;
 
-        public EmployerDetailsService(IEmployerDetailsRepository employeeRepository)
+        public EmployerDetailsService(IEmployerDetailsRepository employerRepository)
         {
-            _employeeRepository = employeeRepository;
+            _employeeRepository = employerRepository;
         }
 
-        public async Task<EmployerDetailsResponse> GetEmployeesAsync()
+        public async Task<EmployerDetailsResponse> GetEmployersAsync()
         {
             return new EmployerDetailsResponse
             {
-                Entity = await _employeeRepository.GetEmployeesAsync()
+                EmployerDetails = await _employeeRepository.GetEmployersAsync()
             };
         }
     }

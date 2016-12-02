@@ -12,10 +12,14 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="form-group">
                     <label for="JoinedDate" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Joined Date: </label>
-                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                    <div ng-repeat="dt in EmployerDetails.jdate " class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                        <input type="text" class="datepicker" tabindex="4" uib-datepicker-popup ng-model="EmployerDetails.joinDate" datepicker-popup="dd/MM/yyyy" is-open="dt.opened" ng-click="open($event,dt)"
+                               placeholder="Joined Date" name="JoinedDate" datepicker-options="dateOptions" required validtype="date" ng-minlength="10" ng-maxlength="10" />
+                    </div> 
+                    <!--<div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
                         <input type="text" tabindex="4" name="RelievedDate" class="form-control" uib-datepicker-popup="dd-MMM-yyyy" ng-model="EmployerDetails.joinDate" is-open="dob.opened"
                                placeholder="Date Of Join" datepicker-options="dateOptions" required ng-minlength="11" validType="date" ng-maxlength="11" close-text="Close" ng-click="joinDate()" />
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -31,10 +35,14 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="form-group">
                     <label for="RelievedDate" class="col-lg-5 col-md-5 col-sm-6 col-xs-12 control-label required">Relieved Date: </label>
-                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                    <div ng-repeat="dt in EmployerDetails.rdate " class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                        <input type="text" tabindex="5" class="datepicker" uib-datepicker-popup ng-model="EmployerDetails.endDate" datepicker-popup="dd/MM/yyyy" is-open="dt.opened" ng-click="open($event,dt)"
+                               placeholder="Relieved Date" name="RelievedDate" datepicker-options="dateOptions" required validtype="date" ng-minlength="10" ng-maxlength="10" />
+                    </div> 
+                    <!--<div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
                         <input type="text"tabindex="5" name="RelievedDate" class="form-control" uib-datepicker-popup="dd-MMM-yyyy" ng-model="EmployerDetails.endDate" is-open="dob.opened"
                                placeholder="Date Of Relieve" datepicker-options="dateOptions" required ng-minlength="11" validType="date" ng-maxlength="11" close-text="Close" ng-click="joinDate()" />
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>

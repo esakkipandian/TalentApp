@@ -22,8 +22,8 @@
 
         $scope.addEmployerDetails = function () {           
             var addEmpDetails = $scope.employerInformation.length + 1;
-            $scope.addEmpDetails.push({
-                'id': 'emp', 'empname': '', 'empaddr': '', 'designation': '', 'jdate': [{}], 'rdate': [{}],
+            $scope.employerInformation.push({
+                'id': 'emp' + addEmpDetails, 'empname': '', 'empaddr': '', 'designation': '', 'jdate': [{}], 'rdate': [{}],
                 'reason': '','hrname': '','hraddr': ''});
 
         };
@@ -32,12 +32,17 @@
             $scope.employerInformation.splice(index, 1);
         };
 
-        $scope.join = {
-            opened: false
-        };
+        //$scope.join = {
+        //    opened: false
+        //};
 
-        $scope.joinDate = function () {
-            $scope.join.opened = true;
+        //$scope.joinDate = function () {
+        //    $scope.join.opened = true;
+        //};
+        $scope.open = function ($event, dt) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            dt.opened = true;
         };
 
     };

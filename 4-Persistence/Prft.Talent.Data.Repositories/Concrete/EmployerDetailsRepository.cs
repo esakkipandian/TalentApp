@@ -17,10 +17,9 @@ namespace Prft.Talent.Data.Repositories.Concrete
     {
         public EmployerDetailsRepository(PrftDatabaseContext dbContext, IMapper mapper, IPrftLogger logger) : base(dbContext, mapper, logger) { }
 
-        public async Task<IEnumerable<EmployerDetails>> GetEmployeesAsync()
+        public async Task<IEnumerable<EmployerDetails>> GetEmployersAsync()
         {
-            return new List<EmployerDetails>();
-            //return await DatabaseContext.employees.ProjectTo<Employee>(Mapper.ConfigurationProvider).ToListAsync();
+            return await DatabaseContext.candidateworkexperiences.ProjectTo<EmployerDetails>(Mapper.ConfigurationProvider).ToListAsync();
         }
     }
 }

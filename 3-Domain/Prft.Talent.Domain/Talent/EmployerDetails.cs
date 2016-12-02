@@ -10,15 +10,19 @@ namespace Prft.Talent.Domain.Talent
 
         public string OrganizationName { get; set; }
 
-        public string Designation { get; set; }
+        public string OrganizationAddress { get; set; }
 
-        public string Roles { get; set; }
+        public string Designation { get; set; }
 
         public DateTime? StartDate { get; set; }
 
         public DateTime? EndDate { get; set; }
 
         public string LeavingReason { get; set; }
+
+        public string ContactPerson { get; set; }
+
+        public string ContactNumber { get; set; }
 
         public bool? IsActive { get; set; }
 

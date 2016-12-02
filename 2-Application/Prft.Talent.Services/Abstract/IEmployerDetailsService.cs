@@ -10,6 +10,12 @@ namespace Prft.Talent.Services.Abstract
 {
     public interface IEmployerDetailsService : IApi
     {
-        Task<EmployerDetailsResponse> GetEmployeesAsync();
+        Task<EmployerDetailsResponse> GetEmployersAsync(EmployerDetailsIdRequest employerDetailByIdRequest);
+
+        Task<SetEmployerDetailsResponse> AddEmployerInfoAsync(EmployerDetailsRequest employerDetailRequest);
+
+        Task<SetEmployerDetailsResponse> UpdateEmployerInfoAsync(EmployerDetailsRequest employerDetailRequest);
+
+        Task<SetEmployerDetailsResponse> DeleteEmployerInfoAsync(EmployerDetailsIdRequest employerDetailByIdRequest);
     }
 }
